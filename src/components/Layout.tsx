@@ -5,7 +5,7 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-const LayoutProps: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -13,18 +13,30 @@ const LayoutProps: React.FC<LayoutProps> = ({ children }) => {
         <h1 className="text-xl font-bold">Mi portafolio</h1>
 
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About</Link>
-          <Link to="contact">Contact</Link>
+          <Link to="/" className="mr-4 hover:underline">
+            Home
+          </Link>
+          <Link to="/projects" className="mr-4 hover:underline">
+            Projects
+          </Link>
+          <Link to="/about" className="mr-4 hover:underline">
+            About
+          </Link>
+          <Link to="contact" className=" hover:underline">
+            Contact
+          </Link>
         </nav>
       </header>
 
       {/* Main content */}
-      <main>{children}</main>
+      <main className="flex-1 p-4">{children}</main>
 
       {/* Footer */}
-      <footer>2026 Juan Valencia</footer>
+      <footer className="bg-gray-800 text-white p-4 text-center">
+        2026 Juan Valencia
+      </footer>
     </div>
   );
 };
+
+export default Layout;
