@@ -1,11 +1,7 @@
 import "./index.css";
+import AppRoutes from "./routes/AppRoutes";
 
-function App() {
-  return (
-    <>
-      <h1>Hola Mundo</h1>
-    </>
-  );
-}
-
+const App: React.FC = () => {
+  return <AppRoutes />;
+};
 export default App;
