@@ -1,41 +1,44 @@
-import React, { useState } from "react";
-
-const Contact: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Mensaje enviado");
-    setEmail("");
-    setMessage("");
-  };
-
+const Contact = () => {
   return (
-    <section className="max-w-md mx-auto py-16 px-4">
+    <section id="contact" className="max-w-4xl mx-auto py-20 px-6 text-center">
       <h2 className="text-3xl font-bold mb-6">Contacto</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="email"
-          placeholder="Tu email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border p-3 rounded"
-          required
-        />
-        <textarea
-          placeholder="Tu mensaje"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="border p-3 rounded"
-          rows={4}
-          required
-        />
-        <button className="bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">
-          Enviar
-        </button>
-      </form>
+
+      <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-10">
+        Si tienes una oportunidad, una idea o simplemente quieres contactarme,
+        estaré encantado de conversar contigo.
+      </p>
+
+      {/* Links */}
+      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        <a
+          href="mailto:juanvalencia9411@outlook.com"
+          className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium
+                     hover:bg-indigo-700 transition"
+        >
+          Enviar email
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/jdvalmart/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 border border-indigo-600 text-indigo-600
+                     rounded-lg font-medium hover:bg-indigo-50 transition"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/jdvalmart"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 py-3 text-zinc-700 dark:text-zinc-300 hover:underline"
+        >
+          GitHub
+        </a>
+      </div>
     </section>
   );
 };
+
 export default Contact;
