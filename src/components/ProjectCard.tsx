@@ -6,66 +6,119 @@ interface Props {
 
 export function ProjectCard({ project }: Props) {
   return (
-    <article className="bg-slate-800 rounded-xl mt-3 p-8 space-y-4">
-      {/* Imagen → Netlify */}
-      {project.liveUrl ? (
+    <article
+      className="
+      group
+      bg-white
+      mt-3
+      border border-zinc-400
+      rounded-2xl
+      overflow-hidden
+      shadow-sm
+      hover:shadow-lg
+      transition-all
+      duration-300
+    "
+    >
+      {/* Imagen */}
+      {project.liveUrl && (
         <a
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block"
+          className="block bg-zinc-50"
         >
-          <div className="h-40 flex items-center justify-center">
+          <div className="h-44 flex items-center justify-center">
             <img
               src={project.image}
               alt={project.title}
-              className="w-45 h-50 object-contain rounded-xl backdrop-blur-md p-4 transform transition-all duration-500 hover:scale-105 hover:rotate-2"
+              className="
+                max-h-32
+                object-contain
+                transition-transform
+                duration-300
+                group-hover:scale-105
+              "
             />
           </div>
         </a>
-      ) : null}
+      )}
 
-      <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+      {/* Contenido */}
+      <div className="p-5 space-y-4">
+        <h3 className="text-lg font-semibold text-zinc-900">{project.title}</h3>
 
-      <p className="text-slate-300 text-sm">{project.description}</p>
+        <p className="text-sm text-zinc-600 leading-relaxed">
+          {project.description}
+        </p>
 
-      {/* Tecnologías */}
-      <div className="flex flex-wrap gap-2">
-        {project.techs.map((tech) => (
-          <span
-            key={tech}
-            className="text-xs bg-slate-700 text-white px-2 py-1 rounded"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
+        {/* Tecnologías */}
+        <div className="flex flex-wrap gap-2">
+          {project.techs.map((tech) => (
+            <span
+              key={tech}
+              className="
+                text-xs
+                bg-zinc-100
+                text-zinc-700
+                px-2.5
+                py-1
+                rounded-full
+              "
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
 
-      {/* Botones */}
-      <div className="flex gap-3 pt-2">
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700"
-          >
-            Ver demo
-          </a>
-        )}
+        {/* Acciones */}
+        <div className="flex gap-3 pt-2">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                text-sm
+                font-medium
+                px-4
+                py-2
+                rounded-lg
+                bg-indigo-600
+                text-white
+                hover:bg-indigo-700
+                transition
+              "
+            >
+              Ver demo
+            </a>
+          )}
 
-        {project.repoUrl && (
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm px-3 py-1 rounded bg-slate-700 text-white hover:bg-slate-600"
-          >
-            Ver código
-          </a>
-        )}
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                text-sm
+                font-medium
+                px-4
+                py-2
+                rounded-lg
+                border
+                border-zinc-300
+                text-zinc-700
+                hover:bg-zinc-100
+                transition
+              "
+            >
+              Código
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
 }
+
 export default ProjectCard;
