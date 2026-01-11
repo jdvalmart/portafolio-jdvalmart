@@ -29,4 +29,24 @@ export const projects: Project[] = [
     liveUrl: "https://eccommercevalmart.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/e-commerce-react",
   },
+  {
+    id: 3,
+    title: "Explorador de Rick and Morty",
+    description:
+      "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
+    image: "/explorador.png",
+    techs: ["React", "Tailwind", "Vite"],
+    liveUrl: "https://rickmorty-reac.netlify.app/",
+    repoUrl: "https://github.com/jdvalmart/Rick-Morty-App-React",
+  },
+  {
+    id: 4,
+    title: "Consulta de Gifs",
+    description:
+      "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
+    image: "/gifs.png",
+    techs: ["React", "Tailwind", "Vite"],
+    liveUrl: "https://consulta-gifs.netlify.app/",
+    repoUrl: "https://github.com/jdvalmart/consulta-gif-react",
+  },
 ];
