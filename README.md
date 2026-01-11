@@ -1,73 +1,115 @@
-# React + TypeScript + Vite
+🚀 Portfolio jdvalmart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi portafolio personal desarrollado con React, TypeScript y Tailwind CSS, donde presento proyectos prácticos enfocados en buenas prácticas de desarrollo frontend, componentes reutilizables y una estructura clara y mantenible.
 
-Currently, two official plugins are available:
+El objetivo de este portafolio es demostrar mis conocimientos fundamentales en React y servir como base para seguir incorporando conceptos más avanzados a futuro.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tecnologías utilizadas
 
-## React Compiler
+⚛️ React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🟦 TypeScript
 
-## Expanding the ESLint configuration
+🎨 Tailwind CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+⚡ Vite
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🌐 Netlify (deploy)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+📂 Estructura del proyecto
+src/
+├── components/ # Componentes reutilizables
+│ └── ProjectCard.tsx
+├── data/ # Datos estáticos del portafolio
+│ └── projects.ts
+├── pages/ # Páginas principales
+│ └── Portfolio.tsx
+├── App.tsx
+└── main.tsx
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+✨ Características principales
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Diseño responsive con Tailwind CSS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Componentes tipados con TypeScript
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Renderizado dinámico de proyectos usando .map()
+
+Separación clara entre datos y UI
+
+Enlaces a:
+
+🌍 Demo en producción (Netlify)
+
+💻 Repositorio en GitHub
+
+Buenas prácticas de estructura y legibilidad de código
+
+📌 Proyectos incluidos
+📝 ToDo App
+
+Aplicación de gestión de tareas desarrollada con React y TypeScript.
+
+Características:
+
+Creación y listado de tareas
+
+Componentes reutilizables
+
+Estilos modernos con Tailwind
+
+Deploy en Netlify
+
+🔗 Demo: <https://todoappts1.netlify.app/>
+
+💻 Código: <https://github.com/jdvalmart/portafolio-jdvalmart>
+
+▶️ Instalación y ejecución local
+
+Si deseas ejecutar el proyecto localmente:
+
+# Clonar el repositorio
+
+git clone <git@github.com>:jdvalmart/portafolio-jdvalmart.git
+
+# Entrar al proyecto
+
+cd portfolio-react
+
+# Instalar dependencias
+
+bun install
+
+# Ejecutar en modo desarrollo
+
+bun run dev
+
+Luego abre <http://localhost:5173> en tu navegador.
+
+🎯 Objetivo del proyecto
+
+Este portafolio fue creado como parte de mi proceso de aprendizaje en React, aplicando conceptos fundamentales como:
+
+Componentes
+
+Props
+
+Renderizado condicional
+
+Tipado con TypeScript
+
+Estilos con Tailwind CSS
+
+📬 Contacto
+
+Si deseas ponerte en contacto conmigo:
+
+GitHub: <https://github.com/jdvalmart>
+
+LinkedIn: <https://www.linkedin.com/in/jdvalmart/>
+
+Email: <juanvalencia9411@outlook.com>
+
+⭐ Gracias por visitar mi portafolio
+
+Si te gusta el proyecto, no dudes en dejar una estrella ⭐ en el repositorio.

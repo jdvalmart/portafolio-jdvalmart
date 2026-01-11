@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { email } from "zod";
 
 const Contact: React.FC = () => {
   const [email, setEmail] = useState("");
