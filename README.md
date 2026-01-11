@@ -60,7 +60,7 @@ Estilos modernos con Tailwind
 
 Deploy en Netlify
 
-🔗 Demo: <https://todoappts1.netlify.app/>
+🔗 Demo: <https://portafoliojdvm.netlify.app/>
 
 💻 Código: <https://github.com/jdvalmart/portafolio-jdvalmart>
 

@@ -11,12 +11,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Header */}
       <header className="bg-gray-900 text-white p-4 flex justify-between items-center">
         <div className="h-5 flex items-center justify-center">
-          <a href="./">
-            <img
-              src="/miLogo.png"
-              alt="Mi Logo"
-              className="w-20 h-15 object-contain rounded-[2rem] "
-            />
+          <img
+            src="/pulpo.gif"
+            alt="Mi Logo"
+            className="w-10 h-10 rounded-full"
+          />
+          <a href="/">
+            <h2 className="ml-4 text-3xl font-semibold">Jdvalmart</h2>
           </a>
         </div>
 

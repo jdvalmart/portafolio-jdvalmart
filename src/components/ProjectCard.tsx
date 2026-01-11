@@ -19,7 +19,7 @@ export function ProjectCard({ project }: Props) {
             <img
               src={project.image}
               alt={project.title}
-              className="w-45 h-50 object-contain rounded-[2rem] shadow-2xl bg-white/50 backdrop-blur-md border border-white/20 p-4 transform transition-all duration-500 hover:scale-105 hover:rotate-2"
+              className="w-45 h-50 object-contain rounded-xl backdrop-blur-md p-4 transform transition-all duration-500 hover:scale-105 hover:rotate-2"
             />
           </div>
         </a>
