@@ -1,9 +1,18 @@
 import React from "react";
+import { projects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
 
 const Projects: React.FC = () => {
   return (
-    <div className="text-center">
-      <h2 className="text-3xl font-bold mb-4"> Estos son mis proyectos</h2>
+    <div className="max-w-6xl mx-auto py16 px-4">
+      <h2 className="text-gray-600 text-center mb-10">
+        Proyectos desarrollados usando React y TypeScript
+      </h2>
+      <div>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
     </div>
   );
 };
