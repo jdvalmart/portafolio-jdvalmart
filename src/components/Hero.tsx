@@ -1,7 +1,7 @@
 export const Hero = () => {
   return (
     <section className="min-h-screen flex items-center">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Texto */}
         <div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
@@ -27,7 +27,7 @@ export const Hero = () => {
               href="/projects"
               className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition"
             >
-              Ver proyectos
+              Proyectos
             </a>
 
             <a
@@ -40,7 +40,7 @@ export const Hero = () => {
               href="/cv/Juan-David-Valencia-cv.pdf"
               download="/cv/Juan-David-Valencia-cv.pdf"
               rel="noopener noreferrer"
-              className="px-6 py-3 text-zinc-700 dark:text-zinc-400 hover:underline transition"
+              className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
             >
               Descargar CV
             </a>

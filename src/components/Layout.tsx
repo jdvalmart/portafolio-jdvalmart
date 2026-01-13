@@ -26,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Navigation */}
           <nav className="flex items-center gap-6 text-sm font-medium">
             {["/", "/projects", "/about", "/contact"].map((path, i) => {
-              const labels = ["Home", "Projects", "About", "Contact"];
+              const labels = ["Inicio", "Proyectos", "Sobre mi", "Contacto"];
               return (
                 <NavLink
                   key={path}
@@ -50,7 +50,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm">
             © {new Date().getFullYear()} Jdvalmart. Todos los derechos
             reservados.

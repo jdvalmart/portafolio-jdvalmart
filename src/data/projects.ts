@@ -21,6 +21,16 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Expense Tracker",
+    description:
+      "Aplicación web para el control de gastos personales construida con React, TypeScript y Tailwind CSS.",
+    image: "/costo.png",
+    techs: ["React", "TypeScript", "Bun", "Tailwind", "Vite"],
+    liveUrl: "https://expenses-tracker10.netlify.app/",
+    repoUrl: "https://github.com/jdvalmart/expense-tracker?tab=readme-ov-file",
+  },
+  {
+    id: 3,
     title: "E-commerce",
     description:
       "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
@@ -29,8 +39,9 @@ export const projects: Project[] = [
     liveUrl: "https://eccommercevalmart.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/e-commerce-react",
   },
+
   {
-    id: 3,
+    id: 4,
     title: "Manejador de extensiones",
     description:
       "¡Bienvenido a la lista de extensiones! Este es un proyecto educativo diseñado para dominar los fundamentos de React, el manejo de estado con Hooks, y la estilización moderna con Tailwind CSS.",
@@ -41,7 +52,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "Explorador de Rick and Morty",
     description:
       "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
@@ -51,7 +62,7 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/jdvalmart/Rick-Morty-App-React",
   },
   {
-    id: 5,
+    id: 6,
     title: "Consulta de Gifs",
     description:
       "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",

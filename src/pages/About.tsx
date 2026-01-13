@@ -6,7 +6,6 @@ const About: React.FC = () => {
     <>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold mb-10 text-center">Sobre mí</h2>
-
         <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
           <p>
             Soy <strong>Ingeniero de Software</strong> con enfoque en desarrollo
