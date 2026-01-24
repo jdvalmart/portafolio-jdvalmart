@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
+      <header className="sticky top-0 z-50 relative bg-white/80 backdrop-blur border-b border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
