@@ -16,7 +16,7 @@ export const Hero = () => {
             prácticas, arquitectura limpia y experiencia de usuario.
           </p>
 
-          <p className="text-zinc-600 dark:text-zinc-400 mb-8 max-w-xl">
+          <p className="text-zinc-600 dark:text-zinc-400 mb-6 max-w-xl">
             Ingeniero de Software con formación en desarrollo web moderno. He
             construido proyectos con React, TypeScript y Tailwind CSS, y
             finalicé un bootcamp enfocado en Inteligencia Artificial.
