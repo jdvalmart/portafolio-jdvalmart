@@ -1,10 +1,10 @@
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-start md:items-center pt-24 md:pt-0">
+    <section className="min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden">
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Texto */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 break-words">
             Ingeniero de Software <br />
             <span className="text-indigo-600">
               Frontend Developer con React y TypeScript
@@ -22,7 +22,7 @@ export const Hero = () => {
             finalicé un bootcamp enfocado en Inteligencia Artificial.
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/projects"
               className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition"
