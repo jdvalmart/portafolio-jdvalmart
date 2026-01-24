@@ -78,7 +78,7 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
 
       {/* Main */}
-      <main className="flex-1px-4 md:px-6 py-10">{children}</main>
+      <main className="flex-1 px-4 md:px-6 py-4">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400">
