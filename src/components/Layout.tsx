@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -22,9 +25,14 @@ const Layout = ({ children }: LayoutProps) => {
               Jdvalmart
             </span>
           </Link>
-
-          {/* Navigation */}
-          <nav className="flex items-center gap-6 text-sm font-medium">
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-2xl text-zinc-800"
+          >
+            ☰
+          </button>
+          {/* Navigation  desktop*/}
+          <nav className="hidden md:flex gap-6 text-sm font-medium">
             {["/", "/projects", "/about", "/contact"].map((path, i) => {
               const labels = ["Inicio", "Proyectos", "Sobre mi", "Contacto"];
               return (
@@ -43,6 +51,30 @@ const Layout = ({ children }: LayoutProps) => {
             })}
           </nav>
         </div>
+        {/* Menú móvil desplegable */}
+        {open && (
+          <nav className="md:hidden absolute right-6 bg-white/95 backdrop-blur border-b border-zinc-200 shadow">
+            <div className="flex flex-col gap-4 px-6 py-4 text-sm font-medium">
+              {["/", "/projects", "/about", "/contact"].map((path, i) => {
+                const labels = ["Inicio", "Proyectos", "Sobre mi", "Contacto"];
+                return (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-indigo-600"
+                        : "text-zinc-700 hover:text-indigo-600 transition"
+                    }
+                  >
+                    {labels[i]}
+                  </NavLink>
+                );
+              })}
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* Main */}
