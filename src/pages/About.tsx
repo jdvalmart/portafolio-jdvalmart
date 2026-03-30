@@ -5,34 +5,24 @@ const About: React.FC = () => {
   return (
     <>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">Sobre mí</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center">About Me</h2>
         <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
           <p>
-            Soy <strong>Ingeniero de Software</strong> con enfoque en desarrollo
-            frontend, especializado en la construcción de interfaces modernas
-            con
-            <strong> React y TypeScript</strong>.
+            Software Engineer with a strong focus on backend development,
+            specializing in building scalable APIs and web applications using
+            FastAPI, NestJS, and PostgreSQL.
           </p>
 
           <p>
-            Me enfoco en escribir código limpio y mantenible, aplicando buenas
-            prácticas, una componentización clara y separación de
-            responsabilidades. Disfruto construir soluciones escalables y
-            fáciles de mantener.
+            Experienced in developing full stack applications, integrating
+            modern frontend solutions with React, and designing efficient,
+            maintainable backend architectures.
           </p>
 
           <p>
-            Finalicé mi formación como Ingeniero de Software y complementé mis
-            estudios con un{" "}
-            <strong>bootcamp enfocado en Inteligencia Artificial</strong>.
-            Actualmente continúo fortaleciendo mis conocimientos en desarrollo
-            web moderno.
-          </p>
-
-          <p>
-            Estoy buscando mi primera oportunidad profesional como desarrollador
-            frontend, donde pueda aportar valor desde el primer día y seguir
-            creciendo en un entorno de buenas prácticas y aprendizaje continuo.
+            Currently expanding my expertise in Artificial Intelligence,
+            applying Python and data-driven approaches to develop smarter and
+            more intelligent solutions.
           </p>
         </div>
       </section>

@@ -34,7 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Navigation  desktop*/}
           <nav className="hidden md:flex gap-6 text-sm font-medium">
             {["/", "/projects", "/about", "/contact"].map((path, i) => {
-              const labels = ["Inicio", "Proyectos", "Sobre mi", "Contacto"];
+              const labels = ["Home", "Projects", "About Me", "Contact"];
               return (
                 <NavLink
                   key={path}
@@ -56,7 +56,7 @@ const Layout = ({ children }: LayoutProps) => {
           <nav className="md:hidden absolute right-6 top-full mt-2 bg-white/95 backdrop-blur border-b border-zinc-200 shadow rounded-lg">
             <div className="flex flex-col gap-4 px-6 py-4 text-sm font-medium">
               {["/", "/projects", "/about", "/contact"].map((path, i) => {
-                const labels = ["Inicio", "Proyectos", "Sobre mi", "Contacto"];
+                const labels = ["Home", "Projects", "About Me", "Contact"];
                 return (
                   <NavLink
                     key={path}
@@ -84,8 +84,7 @@ const Layout = ({ children }: LayoutProps) => {
       <footer className="bg-gray-900 text-gray-400">
         <div className="max-w-5xl mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm">
-            © {new Date().getFullYear()} Jdvalmart. Todos los derechos
-            reservados.
+            © {new Date().getFullYear()} Jdvalmart. All rights reserved.
           </p>
 
           <div className="flex gap-6 text-sm">

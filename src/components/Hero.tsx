@@ -2,24 +2,18 @@ export const Hero = () => {
   return (
     <section className="min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden">
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* Texto */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 break-words">
-            Ingeniero de Software <br />
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
+            Hi, I'm Juan David ✌🏾
+            <br />
             <span className="text-indigo-600">
-              Frontend Developer con React y TypeScript
+              Software Engineer & Full Stack Developer
             </span>
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            Desarrollo aplicaciones web modernas con enfoque en buenas
-            prácticas, arquitectura limpia y experiencia de usuario.
-          </p>
-
-          <p className="text-zinc-600 dark:text-zinc-400 mb-6 max-w-xl">
-            Ingeniero de Software con formación en desarrollo web moderno. He
-            construido proyectos con React, TypeScript y Tailwind CSS, y
-            finalicé un bootcamp enfocado en Inteligencia Artificial.
+            I build scalable web applications and APIs using React, FastApi, and
+            NestJS.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -27,22 +21,22 @@ export const Hero = () => {
               href="/projects"
               className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition"
             >
-              Proyectos
+              Projects
             </a>
 
             <a
               href="/about"
               className="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition"
             >
-              Sobre mí
+              About Me
             </a>
             <a
-              href="/cv/Juan-David-Valencia-cv.pdf"
-              download="/cv/Juan-David-Valencia-cv.pdf"
+              href="/cv/JuanDavidValencia_FullStackDeveloper_CV_Eng.pdf"
+              download="/cv/JuanDavidValencia_FullStackDeveloper_CV_Eng.pdf"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
             >
-              Descargar CV
+              download CV
             </a>
           </div>
         </div>

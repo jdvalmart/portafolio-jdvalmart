@@ -1,11 +1,11 @@
 const Contact = () => {
   return (
     <section id="contact" className="max-w-4xl mx-auto py-20 px-6 text-center">
-      <h2 className="text-3xl font-bold mb-6">Contacto</h2>
+      <h2 className="text-3xl font-bold mb-6">Contact</h2>
 
       <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-10">
-        Si tienes una oportunidad, una idea o simplemente quieres contactarme,
-        estaré encantado de conversar contigo.
+        If you have an opportunity, an idea, or simply want to contact me, I'd
+        be happy to talk to you.
       </p>
 
       {/* Links */}
@@ -15,7 +15,7 @@ const Contact = () => {
           className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium
                      hover:bg-indigo-700 transition"
         >
-          Enviar email
+          Send Email
         </a>
 
         <a

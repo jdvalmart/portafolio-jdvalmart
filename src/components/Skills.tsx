@@ -1,22 +1,10 @@
 const skills = {
-  frontend: [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "Tailwind CSS",
-    "HTML",
-    "CSS",
-  ],
-  state: ["useState", "useEffect", "Context API", "Custom Hooks"],
-  tools: ["Git", "GitHub", "Vite", "Netlify", "npm", "Bun", "Nvim", "VS code"],
-  extra: [
-    "APIs REST",
-    "Nodejs",
-    "Python",
-    "Backend básico",
-    "SQL",
-    "Fundamentos de IA",
-  ],
+  frontend: ["React", "TypeScript", "JavaScript", "Tailwind CSS"],
+  backend: ["FastAPI", "NestJS", "Node.js", "Python", "REST APIs"],
+  database: ["PostgreSQL", "SQL"],
+  devops: ["Docker"],
+  tools: ["Git", "GitHub", "Vite", "npm"],
+  ai: ["Machine Learning (basics)", "Natural Language Processing (basics)"],
 };
 
 export const Skills = () => {
@@ -26,12 +14,11 @@ export const Skills = () => {
 
       <div className="space-y-10">
         <SkillGroup title="Frontend" items={skills.frontend} />
-        <SkillGroup title="Estado & Arquitectura" items={skills.state} />
-        <SkillGroup title="Herramientas" items={skills.tools} />
-        <SkillGroup
-          title="Conocimientos Complementarios"
-          items={skills.extra}
-        />
+        <SkillGroup title="Backend" items={skills.backend} />
+        <SkillGroup title="Database" items={skills.database} />
+        <SkillGroup title="devops" items={skills.devops} />
+        <SkillGroup title="Tools" items={skills.tools} />
+        <SkillGroup title="AI" items={skills.ai} />
       </div>
     </section>
   );

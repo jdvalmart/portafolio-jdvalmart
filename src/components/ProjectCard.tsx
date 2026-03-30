@@ -90,7 +90,7 @@ export function ProjectCard({ project }: Props) {
                 transition
               "
             >
-              Ver demo
+              View Demo
             </a>
           )}
 
@@ -112,7 +112,7 @@ export function ProjectCard({ project }: Props) {
                 transition
               "
             >
-              Código
+              Code Repository
             </a>
           )}
         </div>
