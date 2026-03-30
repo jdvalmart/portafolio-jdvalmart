@@ -11,39 +11,64 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "ToDo App",
+    title: "Book-tracker",
     description:
-      "Aplicación de lista de tareas desarrollada con React, TypeScript y Tailwind CSS, enfocada en demostrar dominio de los fundamentos de React y buenas prácticas de organización de componentes.",
-    image: "/lista.png",
-    techs: ["React", "TypeScript", "Tailwind", "Vite", "Bun"],
-    liveUrl: "https://todoappts1.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/todo-app-ts",
+      "Full Stack application to manage books and personal reading progress.",
+    image: "/book-tracker.png",
+    techs: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Railway",
+    ],
+    liveUrl: "https://book-tracker1.netlify.app/",
+    repoUrl: "https://github.com/jdvalmart/book-tracker",
   },
   {
     id: 2,
+    title: "Blog Backend API (In Progress)",
+    description:
+      "Backend API built with NestJS, currently under development. Includes authentication, role-based access control, and PostgreSQL integration, following a modular and scalable architecture.",
+    image: "/lista.png",
+    techs: [
+      "NestJS",
+      "Node.js",
+      "PostgreSQL",
+      "TypeScript",
+      "Docker",
+      "Railway",
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/jdvalmart/blog-backend-nestjs",
+  },
+  {
+    id: 3,
     title: "ToDo App",
     description:
-      "Aplicación de lista de tareas desarrollada con React, TypeScript y Tailwind CSS, enfocada en demostrar dominio de los fundamentos de React y buenas prácticas de organización de componentes.",
+      "A to-do list application developed with React, TypeScript, and Tailwind CSS, focused on demonstrating mastery of React fundamentals and good component organization practices.",
     image: "/lista.png",
     techs: ["React", "TypeScript", "Tailwind", "Vite", "Bun"],
     liveUrl: "https://todoappts1.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/todo-app-ts",
   },
   {
-    id: 3,
+    id: 4,
     title: "Expense Tracker",
     description:
-      "Aplicación web para el control de gastos personales construida con React, TypeScript y Tailwind CSS.",
+      "Web application for tracking personal expenses, developed with React, TypeScript and Tailwind CSS.",
     image: "/costo.png",
     techs: ["React", "TypeScript", "Bun", "Tailwind", "Vite"],
     liveUrl: "https://expenses-tracker10.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/expense-tracker?tab=readme-ov-file",
   },
   {
-    id: 4,
+    id: 5,
     title: "E-commerce",
     description:
-      "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
+      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
     image: "/e-commerce.png",
     techs: ["React", "Tailwind", "Vite"],
     liveUrl: "https://eccommercevalmart.netlify.app/",
@@ -51,10 +76,10 @@ export const projects: Project[] = [
   },
 
   {
-    id: 5,
-    title: "Manejador de extensiones",
+    id: 6,
+    title: "Extension manager",
     description:
-      "¡Bienvenido a la lista de extensiones! Este es un proyecto educativo diseñado para dominar los fundamentos de React, el manejo de estado con Hooks, y la estilización moderna con Tailwind CSS.",
+      "Welcome to the extensions list! This is an educational project designed to help you master the fundamentals of React, state management with Hooks, and modern styling with Tailwind CSS.",
     image: "/extension.png",
     techs: ["React", "Tailwind", "Vite"],
     liveUrl: "https://extensionmanag3r.netlify.app/",
@@ -62,20 +87,20 @@ export const projects: Project[] = [
   },
 
   {
-    id: 6,
-    title: "Explorador de Rick and Morty",
+    id: 7,
+    title: "Rick and Morty Explorer",
     description:
-      "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
+      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
     image: "/explorador.png",
     techs: ["React", "Tailwind", "Vite"],
     liveUrl: "https://rickmorty-reac.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/Rick-Morty-App-React",
   },
   {
-    id: 7,
-    title: "Consulta de Gifs",
+    id: 8,
+    title: "GIF search",
     description:
-      "Este es un proyecto de aprendizaje de una tienda virtual, desarrollado con React y Vite. El objetivo principal fue practicar la arquitectura de componentes y la gestión de estado global.",
+      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
     image: "/gifs.png",
     techs: ["React", "Tailwind", "Vite"],
     liveUrl: "https://consulta-gifs.netlify.app/",
