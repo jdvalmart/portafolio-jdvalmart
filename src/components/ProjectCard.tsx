@@ -84,9 +84,9 @@ export function ProjectCard({ project }: Props) {
                 px-4
                 py-2
                 rounded-lg
-                bg-indigo-600
+                bg-teal-600
                 text-white
-                hover:bg-indigo-700
+                hover:bg-teal-700
                 transition
               "
             >

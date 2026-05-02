@@ -41,8 +41,8 @@ const Layout = ({ children }: LayoutProps) => {
                   to={path}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-indigo-600"
-                      : "text-zinc-700 hover:text-indigo-600 transition"
+                      ? "text-teal-600"
+                      : "text-zinc-700 hover:text-teal-600 transition"
                   }
                 >
                   {labels[i]}
@@ -64,8 +64,8 @@ const Layout = ({ children }: LayoutProps) => {
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       isActive
-                        ? "text-indigo-600"
-                        : "text-zinc-700 hover:text-indigo-600 transition"
+                        ? "text-teal-600"
+                        : "text-zinc-700 hover:text-teal-600 transition"
                     }
                   >
                     {labels[i]}

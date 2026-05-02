@@ -11,7 +11,45 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Book-tracker",
+    title: "Pequelectores",
+    description:
+      "Book recommendation system for children (ages 6-14) with AI-powered TF-IDF recommendations, reading streaks, badge gamification, and JWT parent auth. Full test coverage on both frontend and backend.",
+    image: "/pequelectores.png",
+    techs: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "scikit-learn",
+      "Docker",
+      "Railway",
+      "Netlify",
+    ],
+    liveUrl: "https://pequeletores.netlify.app/",
+    repoUrl: "https://github.com/jdvalmart/pequeletores",
+  },
+  {
+    id: 2,
+    title: "XAI CIFAR-10",
+    description:
+      "CNN image classifier for CIFAR-10 with XAI explanations using LIME, SHAP, and Grad-CAM. Achieved 87.14% accuracy with interpretability overlays.",
+    image: "/xai.png",
+    techs: ["Python", "TensorFlow", "LIME", "SHAP", "Grad-CAM", "NumPy"],
+    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
+  },
+  {
+    id: 3,
+    title: "NLP Labs",
+    description:
+      "Hands-on labs covering sentiment analysis, Named Entity Recognition (NER), and text classification using NLTK, spaCy, and transformers.",
+    image: "/nlp.png",
+    techs: ["Python", "NLTK", "spaCy", "transformers", "pandas"],
+    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
+  },
+  {
+    id: 4,
+    title: "Book-Tracker",
     description:
       "Full Stack application to manage books and personal reading progress.",
     image: "/book-tracker.png",
@@ -26,84 +64,5 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://book-tracker1.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/book-tracker",
-  },
-  {
-    id: 2,
-    title: "Blog Backend API (In Progress)",
-    description:
-      "Backend API built with NestJS, currently under development. Includes authentication, role-based access control, and PostgreSQL integration, following a modular and scalable architecture.",
-    image: "/lista.png",
-    techs: [
-      "NestJS",
-      "Node.js",
-      "PostgreSQL",
-      "TypeScript",
-      "Docker",
-      "Railway",
-    ],
-    liveUrl: "",
-    repoUrl: "https://github.com/jdvalmart/blog-backend-nestjs",
-  },
-  {
-    id: 3,
-    title: "ToDo App",
-    description:
-      "A to-do list application developed with React, TypeScript, and Tailwind CSS, focused on demonstrating mastery of React fundamentals and good component organization practices.",
-    image: "/lista.png",
-    techs: ["React", "TypeScript", "Tailwind", "Vite", "Bun"],
-    liveUrl: "https://todoappts1.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/todo-app-ts",
-  },
-  {
-    id: 4,
-    title: "Expense Tracker",
-    description:
-      "Web application for tracking personal expenses, developed with React, TypeScript and Tailwind CSS.",
-    image: "/costo.png",
-    techs: ["React", "TypeScript", "Bun", "Tailwind", "Vite"],
-    liveUrl: "https://expenses-tracker10.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/expense-tracker?tab=readme-ov-file",
-  },
-  {
-    id: 5,
-    title: "E-commerce",
-    description:
-      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
-    image: "/e-commerce.png",
-    techs: ["React", "Tailwind", "Vite"],
-    liveUrl: "https://eccommercevalmart.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/e-commerce-react",
-  },
-
-  {
-    id: 6,
-    title: "Extension manager",
-    description:
-      "Welcome to the extensions list! This is an educational project designed to help you master the fundamentals of React, state management with Hooks, and modern styling with Tailwind CSS.",
-    image: "/extension.png",
-    techs: ["React", "Tailwind", "Vite"],
-    liveUrl: "https://extensionmanag3r.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/extensions-manager-react",
-  },
-
-  {
-    id: 7,
-    title: "Rick and Morty Explorer",
-    description:
-      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
-    image: "/explorador.png",
-    techs: ["React", "Tailwind", "Vite"],
-    liveUrl: "https://rickmorty-reac.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/Rick-Morty-App-React",
-  },
-  {
-    id: 8,
-    title: "GIF search",
-    description:
-      "This is a learning project for an online store, developed with React and Vite. The main objective was to practice component architecture and global state management.",
-    image: "/gifs.png",
-    techs: ["React", "Tailwind", "Vite"],
-    liveUrl: "https://consulta-gifs.netlify.app/",
-    repoUrl: "https://github.com/jdvalmart/consulta-gif-react",
   },
 ];
