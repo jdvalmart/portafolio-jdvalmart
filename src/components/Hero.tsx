@@ -1,6 +1,6 @@
 export const Hero = () => {
   return (
-    <section className="min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden bg-zinc-50">
+    <section className="min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden">
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
