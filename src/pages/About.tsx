@@ -45,8 +45,8 @@ const About: React.FC = () => {
           {t.about.philosophy}
         </h2>
         <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 bg-teal-50 dark:bg-teal-950 rounded-r-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
-          <p className="text-lg italic">{t.about.quote}</p>
-          <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic">
+          <p className="text-lg italic text-center">{t.about.quote}</p>
+          <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic text-center">
             {t.about.quoteAuthor}
           </p>
         </blockquote>

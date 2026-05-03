@@ -48,39 +48,41 @@ export const skillGroups: SkillGroupData[] = [
 
 import { useT } from "../i18n/LanguageContext";
 
+function SkillBadge({ skill }: { skill: SkillLevel }) {
+  const icon = skill.name.substring(0, 2).toUpperCase();
+  return (
+    <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-teal-50 dark:bg-teal-950 border border-teal-100 dark:border-teal-900 text-center">
+      <span
+        className="w-14 h-14 rounded-xl bg-teal-600 dark:bg-teal-500 text-white text-lg font-extrabold flex items-center justify-center shadow-sm"
+        aria-label={skill.name}
+      >
+        {icon}
+      </span>
+      <span className="text-sm font-semibold leading-tight text-zinc-800 dark:text-zinc-200">
+        {skill.name}
+      </span>
+      <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+        {skill.level}/10
+      </span>
+    </div>
+  );
+}
+
 export const Skills = () => {
   const { t } = useT();
-  return (
-    <section id="skills" className="max-w-5xl mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900 dark:text-zinc-100">{t.skills.title}</h2>
+  const allSkills = skillGroups.flatMap((g) => g.skills);
 
-      <div className="space-y-10">
-        {skillGroups.map((group) => (
-          <SkillGroup key={group.title} group={group} />
+  return (
+    <section id="skills" className="max-w-5xl mx-auto px-6 pb-20">
+      <h2 className="text-3xl font-bold text-center mb-10 text-zinc-900 dark:text-zinc-100">
+        {t.skills.title}
+      </h2>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {allSkills.map((skill) => (
+          <SkillBadge key={skill.name} skill={skill} />
         ))}
       </div>
     </section>
   );
 };
-
-interface SkillGroupProps {
-  group: SkillGroupData;
-}
-
-const SkillGroup = ({ group }: SkillGroupProps) => (
-  <div>
-    <h3 className="text-xl font-semibold mb-4 text-zinc-800 dark:text-zinc-200">{group.title}</h3>
-    <div className="flex flex-wrap gap-3">
-      {group.skills.map((skill) => (
-        <span
-          key={skill.name}
-          className="px-4 py-2 rounded-full text-sm
-                     bg-teal-50 text-teal-700
-                     dark:bg-teal-950 dark:text-teal-300"
-        >
-          {skill.name} [{skill.level}/10]
-        </span>
-      ))}
-    </div>
-  </div>
-);
