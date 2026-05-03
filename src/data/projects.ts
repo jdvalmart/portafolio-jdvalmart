@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "Hands-on labs covering sentiment analysis, Named Entity Recognition (NER), and text classification using NLTK, spaCy, and transformers.",
     image: "/nlp.png",
     techs: ["Python", "NLTK", "spaCy", "transformers", "pandas"],
-    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning/blob/main/nivel_intermedio/Laboratorio_9_Analisis_de_sentimiento_y_mineria_de_opiniones.ipynb",
+    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning/tree/main/nivel_intermedio",
     category: "ai-ml",
     metrics: {
       labCount: 20,
