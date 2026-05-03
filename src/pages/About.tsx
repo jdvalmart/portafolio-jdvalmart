@@ -23,31 +23,20 @@ const About: React.FC = () => {
         >
           <p>
             I'm a{" "}
-            <strong className="text-zinc-800 dark:text-zinc-200">Software Engineer</strong>{" "}
-            with 4 years of experience as a Technology Media Operator and
-            professional practice in Full-Stack development.
+            <strong className="text-zinc-800 dark:text-zinc-200">Software Engineer</strong>.
+            I build complete web applications with React, TypeScript, FastAPI,
+            and PostgreSQL, integrating machine learning and NLP. My background
+            monitoring critical systems taught me to develop with operational
+            discipline and zero margin for error.
           </p>
 
           <p>
-            I combine web application development with{" "}
-            <strong className="text-zinc-800 dark:text-zinc-200">
-              React, TypeScript, FastAPI, NestJS, and PostgreSQL
-            </strong>{" "}
-            with advanced AI training (MinTIC, 20 weeks). I handle the full
-            machine learning lifecycle — from data preparation to model
-            deployment as REST APIs — and integrate deep learning fundamentals
-            (MLP, CNN, LSTM),{" "}
+            My AI training (MinTIC) covers the full machine learning lifecycle
+            — from data preparation to model deployment as REST APIs — and
+            integrates deep learning (MLP, CNN, LSTM),{" "}
             <strong className="text-teal-600 dark:text-teal-400">NLP</strong>,
-            and MLOps.
-          </p>
-
-          <p>
-            My experience monitoring critical systems taught me{" "}
-            <strong className="text-zinc-800 dark:text-zinc-200">
-              operational discipline
-            </strong>
-            , incident response capability, and how to automate processes with
-            Python and SQL.
+            and MLOps. I automate processes with Python and SQL, documenting
+            every step.
           </p>
         </div>
       </section>
