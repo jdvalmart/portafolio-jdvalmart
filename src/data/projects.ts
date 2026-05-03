@@ -43,7 +43,7 @@ export const projects: Project[] = [
       "CNN image classifier for CIFAR-10 with XAI explanations using LIME, SHAP, and Grad-CAM. Achieved 87.14% accuracy with interpretability overlays.",
     image: "/xai.png",
     techs: ["Python", "TensorFlow", "LIME", "SHAP", "Grad-CAM", "NumPy"],
-    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
+    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning/blob/main/nivel_intermedio/Laboratorio_5_Redes_neuronales_convolucionales.ipynb",
     category: "ai-ml",
     metrics: {
       accuracy: 87.14,
