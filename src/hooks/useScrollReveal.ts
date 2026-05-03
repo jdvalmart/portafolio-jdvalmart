@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-interface ScrollRevealResult {
-  ref: React.RefObject<HTMLElement | null>;
+interface ScrollRevealResult<T extends HTMLElement = HTMLElement> {
+  ref: React.RefObject<T | null>;
   isVisible: boolean;
 }
 
@@ -13,8 +13,8 @@ interface ScrollRevealResult {
  * - threshold: 0.1 (trigger when 10% of the element is visible)
  * - rootMargin: "0px 0px -50px 0px" (trigger slightly before the element enters)
  */
-export function useScrollReveal(): ScrollRevealResult {
-  const ref = useRef<HTMLElement | null>(null);
+export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(): ScrollRevealResult<T> {
+  const ref = useRef<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
