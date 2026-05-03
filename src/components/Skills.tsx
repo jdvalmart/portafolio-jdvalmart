@@ -103,10 +103,10 @@ export const Skills = () => {
       <div className="space-y-10">
         {skillGroups.map((group) => (
           <div key={group.title}>
-            <h3 className="text-sm font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wide mb-4 text-center sm:text-left">
+            <h3 className="text-sm font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wide mb-4 text-center">
               {group.title}
             </h3>
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 justify-items-center">
               {group.skills.map((skill) => (
                 <SkillRing key={skill.name} skill={skill} />
               ))}
