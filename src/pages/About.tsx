@@ -9,29 +9,57 @@ const About: React.FC = () => {
   return (
     <>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">About Me</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">
+          About Me
+        </h2>
+
         <div
           ref={ref}
-          className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
+          className={`${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          } transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
         >
           <p>
-            AI Engineer & ML Engineer with a focus on NLP and interpretable AI.
-            I build machine learning pipelines, train models with transformers,
-            and deploy APIs that make AI accessible and explainable.
+            Soy <strong className="text-zinc-800 dark:text-zinc-200">Ingeniero de Software</strong>{" "}
+            con <strong className="text-teal-600 dark:text-teal-400">4 años de experiencia</strong>{" "}
+            en entornos tecnológicos. Combino el desarrollo{" "}
+            <strong className="text-zinc-800 dark:text-zinc-200">Full-Stack</strong>{" "}
+            (React, FastAPI, NestJS, PostgreSQL) con una especialización en{" "}
+            <strong className="text-teal-600 dark:text-teal-400">
+              Inteligencia Artificial y NLP
+            </strong>
+            , adquirida en el bootcamp de 20 semanas del MinTIC.
           </p>
 
           <p>
-            Bootcamp MINTIC — Ministerio de Tecnologías de Colombia. Two
-            intensive 10-week cycles: Basic (ML, NLP, Big Data) and Intermediate
-            (Deep Learning, XAI). Applied CNNs to CIFAR-10 with LIME, SHAP, and
-            Grad-CAM explainability techniques.
+            No soy un dev que solo codea — construyo aplicaciones completas{" "}
+            <strong className="text-zinc-800 dark:text-zinc-200">
+              integrando modelos de machine learning
+            </strong>{" "}
+            para resolver problemas reales. Me apasiona automatizar procesos,
+            documentar lo que hago, y trabajar en equipo con enfoque en
+            resultados.
           </p>
 
           <p>
-            Skilled in the full ML lifecycle: data preprocessing with pandas,
-            model training with TensorFlow and scikit-learn, NLP with spaCy and
-            HuggingFace transformers, and model serving via FastAPI. Currently
-            building real-world AI projects to deploy in production.
+            Mi experiencia va desde la automatización de inventarios con Python
+            y SQL en el sector de seguridad privada, hasta el desarrollo de
+            sistemas de recomendación con TF-IDF, clasificadores CNN con
+            explicabilidad XAI, y laboratorios avanzados de NLP con
+            Transformers y HuggingFace.
+          </p>
+
+          <p>
+            Actualmente construyo proyectos reales de IA desplegados en
+            producción, combinando FastAPI para el serving de modelos, React
+            para las interfaces, y Docker para la contenerización. Mi enfoque
+            está en hacer la IA{" "}
+            <strong className="text-teal-600 dark:text-teal-400">
+              accesible, interpretable y útil
+            </strong>
+            .
           </p>
         </div>
       </section>
@@ -48,11 +76,45 @@ const About: React.FC = () => {
 
       {/* Professional Philosophy */}
       <section className="max-w-5xl mx-auto px-6 mb-16">
-        <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 my-8 bg-teal-50 dark:bg-teal-950 rounded-r-lg italic text-zinc-700 dark:text-zinc-300">
-          "My professional philosophy: I'm not a developer who just codes — I
-          build complete applications integrating machine learning models to
-          solve real-world problems."
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-zinc-900 dark:text-zinc-100">
+          Philosophy
+        </h2>
+        <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 bg-teal-50 dark:bg-teal-950 rounded-r-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          <p className="text-lg italic">
+            "No soy un dev que solo codea — construyo aplicaciones completas
+            integrando modelos de machine learning para resolver problemas
+            reales. Me apasiona automatizar procesos, documentar lo que hago, y
+            trabajar en equipo con enfoque en resultados."
+          </p>
+          <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic">
+            — Juan David Valencia
+          </p>
         </blockquote>
+      </section>
+
+      {/* Current Goals */}
+      <section className="max-w-5xl mx-auto px-6 mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-zinc-900 dark:text-zinc-100">
+          Current Goals
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { icon: "🚀", text: "Crear proyecto AI real desplegado con NLP API" },
+            { icon: "🐳", text: "MLOps: deploy de modelos con Docker + FastAPI" },
+            { icon: "🧪", text: "Testing en todos los proyectos" },
+            { icon: "☁️", text: "Certificación cloud (AWS/GCP)" },
+          ].map((goal) => (
+            <div
+              key={goal.text}
+              className="flex items-center gap-3 p-4 rounded-xl bg-teal-50 dark:bg-teal-950 border border-teal-100 dark:border-teal-900"
+            >
+              <span className="text-xl">{goal.icon}</span>
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                {goal.text}
+              </span>
+            </div>
+          ))}
+        </div>
       </section>
 
       <Skills />

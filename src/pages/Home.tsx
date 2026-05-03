@@ -20,7 +20,11 @@ const Home: React.FC = () => {
     <>
       <div
         ref={ref}
-        className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700`}
+        className={`${
+          isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8"
+        } transition-all duration-700`}
       >
         <Hero />
       </div>
@@ -43,6 +47,33 @@ const Home: React.FC = () => {
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6">
           <SkillsPreview />
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-teal-600 dark:bg-teal-800">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            ¿Tienes un proyecto de IA en mente?
+          </h2>
+          <p className="text-teal-100 text-lg mb-8">
+            Construyo soluciones completas: desde el modelo de ML hasta la API y
+            la interfaz. Hablemos de cómo puedo ayudarte.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/contact"
+              className="px-8 py-3 bg-white text-teal-700 rounded-lg font-semibold hover:bg-teal-50 transition"
+            >
+              Contáctame
+            </a>
+            <a
+              href="/projects"
+              className="px-8 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition"
+            >
+              Ver proyectos
+            </a>
+          </div>
         </div>
       </section>
     </>
