@@ -7,26 +7,26 @@ export interface TimelineEntry {
 export const timeline: TimelineEntry[] = [
   {
     year: 2021,
-    title: "Operador de Medios Tecnológicos",
+    title: "Technology Media Operator",
     description:
-      "Automatización de inventario con Python y SQL. Configuración de salas de cómputo. Primer contacto real con la tecnología en producción y resolución de problemas con scripts.",
+      "Inventory automation with Python and SQL. Computer lab setup. First real contact with production technology and solving problems with scripts.",
   },
   {
     year: 2022,
-    title: "Desarrollador Full-Stack (Prácticas SENA)",
+    title: "Full-Stack Developer (SENA Internship)",
     description:
-      "Desarrollo de interfaces con Vue.js y backend con PHP/Laravel. Gestión de bases de datos MySQL. Experiencia en metodologías ágiles en equipo de desarrollo.",
+      "Built interfaces with Vue.js and backends with PHP/Laravel. MySQL database management. Agile methodology experience within a development team.",
   },
   {
     year: 2025,
-    title: "Bootcamp IA — MinTIC",
+    title: "AI Bootcamp — MinTIC",
     description:
-      "20 semanas intensivas: Machine Learning, NLP, Deep Learning, XAI, MLOps. Proyectos con TensorFlow, HuggingFace, Transformer models, y despliegue de modelos.",
+      "20 intensive weeks: Machine Learning, NLP, Deep Learning, XAI, MLOps. Projects with TensorFlow, HuggingFace, Transformer models, and model deployment.",
   },
   {
     year: 2026,
     title: "AI Engineer & ML Engineer",
     description:
-      "Proyectos reales de IA desplegados: sistemas de recomendación con TF-IDF, clasificadores CNN con explicabilidad XAI, laboratorios NLP avanzados. Desarrollo full-stack con React, FastAPI y PostgreSQL.",
+      "Real AI projects deployed: TF-IDF recommendation systems, CNN classifiers with XAI explainability, advanced NLP labs. Full-stack development with React, FastAPI, and PostgreSQL.",
   },
 ];

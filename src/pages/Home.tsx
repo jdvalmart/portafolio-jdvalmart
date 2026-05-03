@@ -54,24 +54,24 @@ const Home: React.FC = () => {
       <section className="py-20 bg-teal-600 dark:bg-teal-800">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            ¿Tienes un proyecto de IA en mente?
+            Have an AI project in mind?
           </h2>
           <p className="text-teal-100 text-lg mb-8">
-            Construyo soluciones completas: desde el modelo de ML hasta la API y
-            la interfaz. Hablemos de cómo puedo ayudarte.
+            I build complete solutions: from the ML model to the API and the
+            interface. Let's talk about how I can help you.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
               className="px-8 py-3 bg-white text-teal-700 rounded-lg font-semibold hover:bg-teal-50 transition"
             >
-              Contáctame
+              Contact Me
             </a>
             <a
               href="/projects"
               className="px-8 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition"
             >
-              Ver proyectos
+              View Projects
             </a>
           </div>
         </div>

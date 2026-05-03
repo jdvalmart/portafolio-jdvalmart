@@ -22,42 +22,40 @@ const About: React.FC = () => {
           } transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
         >
           <p>
-            Soy <strong className="text-zinc-800 dark:text-zinc-200">Ingeniero de Software</strong>{" "}
-            con <strong className="text-teal-600 dark:text-teal-400">4 años de experiencia</strong>{" "}
-            en entornos tecnológicos. Combino el desarrollo{" "}
+            I'm a <strong className="text-zinc-800 dark:text-zinc-200">Software Engineer</strong>{" "}
+            with <strong className="text-teal-600 dark:text-teal-400">4 years of experience</strong>{" "}
+            in technology environments. I combine{" "}
             <strong className="text-zinc-800 dark:text-zinc-200">Full-Stack</strong>{" "}
-            (React, FastAPI, NestJS, PostgreSQL) con una especialización en{" "}
+            development (React, FastAPI, NestJS, PostgreSQL) with a specialization in{" "}
             <strong className="text-teal-600 dark:text-teal-400">
-              Inteligencia Artificial y NLP
+              Artificial Intelligence and NLP
             </strong>
-            , adquirida en el bootcamp de 20 semanas del MinTIC.
+            , acquired through MinTIC's 20-week AI bootcamp.
           </p>
 
           <p>
-            No soy un dev que solo codea — construyo aplicaciones completas{" "}
+            I'm not just a dev who codes — I build complete applications{" "}
             <strong className="text-zinc-800 dark:text-zinc-200">
-              integrando modelos de machine learning
+              integrating machine learning models
             </strong>{" "}
-            para resolver problemas reales. Me apasiona automatizar procesos,
-            documentar lo que hago, y trabajar en equipo con enfoque en
-            resultados.
+            to solve real-world problems. I'm passionate about automating
+            processes, documenting everything I do, and working in teams with a
+            focus on results.
           </p>
 
           <p>
-            Mi experiencia va desde la automatización de inventarios con Python
-            y SQL en el sector de seguridad privada, hasta el desarrollo de
-            sistemas de recomendación con TF-IDF, clasificadores CNN con
-            explicabilidad XAI, y laboratorios avanzados de NLP con
-            Transformers y HuggingFace.
+            My experience ranges from inventory automation with Python and SQL
+            in the private security sector, to developing recommendation systems
+            with TF-IDF, CNN classifiers with XAI explainability, and advanced
+            NLP labs with Transformers and HuggingFace.
           </p>
 
           <p>
-            Actualmente construyo proyectos reales de IA desplegados en
-            producción, combinando FastAPI para el serving de modelos, React
-            para las interfaces, y Docker para la contenerización. Mi enfoque
-            está en hacer la IA{" "}
+            I'm currently building real AI projects deployed to production,
+            combining FastAPI for model serving, React for interfaces, and
+            Docker for containerization. My focus is on making AI{" "}
             <strong className="text-teal-600 dark:text-teal-400">
-              accesible, interpretable y útil
+              accessible, interpretable, and useful
             </strong>
             .
           </p>
@@ -81,10 +79,10 @@ const About: React.FC = () => {
         </h2>
         <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 bg-teal-50 dark:bg-teal-950 rounded-r-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
           <p className="text-lg italic">
-            "No soy un dev que solo codea — construyo aplicaciones completas
-            integrando modelos de machine learning para resolver problemas
-            reales. Me apasiona automatizar procesos, documentar lo que hago, y
-            trabajar en equipo con enfoque en resultados."
+            "I'm not just a dev who codes — I build complete applications
+            integrating machine learning models to solve real-world problems.
+            I'm passionate about automating processes, documenting everything I
+            do, and working in teams with a focus on results."
           </p>
           <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic">
             — Juan David Valencia
@@ -99,10 +97,10 @@ const About: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { icon: "🚀", text: "Crear proyecto AI real desplegado con NLP API" },
-            { icon: "🐳", text: "MLOps: deploy de modelos con Docker + FastAPI" },
-            { icon: "🧪", text: "Testing en todos los proyectos" },
-            { icon: "☁️", text: "Certificación cloud (AWS/GCP)" },
+            { icon: "🚀", text: "Ship a real AI project with an NLP API" },
+            { icon: "🐳", text: "MLOps: model deployment with Docker + FastAPI" },
+            { icon: "🧪", text: "Testing across all projects" },
+            { icon: "☁️", text: "Cloud certification (AWS/GCP)" },
           ].map((goal) => (
             <div
               key={goal.text}

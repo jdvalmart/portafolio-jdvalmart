@@ -27,45 +27,57 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-200/60 dark:border-zinc-800/60">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo — minimalist octopus */}
           <Link to="/" className="flex items-center gap-3 group">
             <svg
-              viewBox="0 0 40 40"
+              viewBox="0 0 36 36"
               className="w-9 h-9"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               aria-label="JDV Logo"
             >
-              {/* Hexagon container */}
-              <polygon
-                points="20,2 37,11 37,29 20,38 3,29 3,11"
-                className="fill-teal-600 dark:fill-teal-500 stroke-teal-700 dark:stroke-teal-400"
-                strokeWidth="1.5"
-              />
-              {/* "JDV" monogram */}
-              <text
-                x="20"
-                y="24"
-                textAnchor="middle"
-                className="fill-white text-[11px] font-bold"
-                fontFamily="system-ui, sans-serif"
-              >
-                JDV
-              </text>
+              {/* Head */}
+              <ellipse cx="18" cy="10" rx="9" ry="7.5" className="fill-teal-600 dark:fill-teal-500" />
+              {/* Eyes */}
+              <circle cx="14.5" cy="8" r="1.3" className="fill-white" />
+              <circle cx="21.5" cy="8" r="1.3" className="fill-white" />
+              {/* Tentacles */}
+              <path d="M10 16.5 Q 8 24 10 28" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M13.5 17 Q 12.5 25 13.5 30" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M18 17.5 Q 18 27 18 31" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M22.5 17 Q 23.5 25 22.5 30" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M26 16.5 Q 28 24 26 28" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
             <span className="text-lg font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
               jdvalmart
             </span>
           </Link>
 
-          {/* Dark mode toggle + mobile hamburger */}
+          {/* Dark mode toggle (desktop) + mobile hamburger */}
           <div className="flex items-center gap-2">
+            {/* Dark mode toggle — mobile only (desktop toggle is in the nav bar) */}
             <button
               onClick={toggle}
-              className="text-lg p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+              className="md:hidden p-2 text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
               aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {isDark ? "☀️" : "🌙"}
+              {isDark ? (
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
             </button>
             <button
               onClick={() => setOpen(!open)}
@@ -98,6 +110,30 @@ const Layout = ({ children }: LayoutProps) => {
                 {label}
               </NavLink>
             ))}
+            {/* Dark mode toggle — desktop, last item in nav bar */}
+            <button
+              onClick={toggle}
+              className="ml-1 p-2 text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              <svg className="w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {isDark ? (
+                  <>
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  </>
+                ) : (
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                )}
+              </svg>
+            </button>
           </nav>
         </div>
 
@@ -134,97 +170,52 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Main */}
       <main className="flex-1">{children}</main>
 
-      {/* Footer */}
-      <footer className="bg-zinc-900 dark:bg-black border-t border-zinc-800 dark:border-zinc-900">
-        <div className="max-w-6xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <svg viewBox="0 0 32 32" className="w-6 h-6" fill="none">
-                  <polygon
-                    points="16,1 30,9 30,23 16,31 2,23 2,9"
-                    className="fill-teal-600"
-                  />
-                  <text
-                    x="16" y="20" textAnchor="middle"
-                    className="fill-white text-[9px] font-bold"
-                    fontFamily="system-ui"
-                  >JDV</text>
-                </svg>
-                <span className="text-white font-semibold text-sm">jdvalmart</span>
-              </div>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                AI Engineer & ML Engineer. NLP, Transformers, XAI.
-                Construyendo el futuro con IA interpretable.
-              </p>
-            </div>
+      {/* Footer — compact single row */}
+      <footer className="bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-zinc-500 dark:text-zinc-400">
+            {/* Left: Copyright */}
+            <p>© 2026 Juan David Valencia</p>
 
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-white font-semibold text-sm mb-3">Links</h4>
-              <div className="flex flex-col gap-2 text-sm">
-                {[
-                  { to: "/", label: "Home" },
-                  { to: "/projects", label: "Projects" },
-                  { to: "/about", label: "About Me" },
-                  { to: "/contact", label: "Contact" },
-                ].map(({ to, label }) => (
-                  <Link
-                    key={to}
-                    to={to}
-                    className="text-zinc-400 hover:text-teal-400 transition"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            {/* Center: Built with */}
+            <p>Built with React · TypeScript · Tailwind</p>
 
-            {/* Connect */}
-            <div>
-              <h4 className="text-white font-semibold text-sm mb-3">Connect</h4>
-              <div className="flex flex-col gap-2 text-sm">
-                <a
-                  href="https://github.com/jdvalmart"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-400 hover:text-teal-400 transition"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/jdvalmart/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-400 hover:text-teal-400 transition"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://huggingface.co/jdvalmart"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-400 hover:text-teal-400 transition"
-                >
-                  HuggingFace
-                </a>
-                <a
-                  href="mailto:juanvalencia9411@outlook.com"
-                  className="text-zinc-400 hover:text-teal-400 transition"
-                >
-                  Email
-                </a>
-              </div>
+            {/* Right: Social links as text */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/jdvalmart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-teal-600 dark:hover:text-teal-400 transition"
+              >
+                GitHub
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="https://www.linkedin.com/in/jdvalmart/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-teal-600 dark:hover:text-teal-400 transition"
+              >
+                LinkedIn
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="https://huggingface.co/jdvalmart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-teal-600 dark:hover:text-teal-400 transition"
+              >
+                HuggingFace
+              </a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="mailto:juanvalencia9411@outlook.com"
+                className="hover:text-teal-600 dark:hover:text-teal-400 transition"
+              >
+                Email
+              </a>
             </div>
-          </div>
-
-          {/* Bottom bar */}
-          <div className="mt-8 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
-            <p>© {new Date().getFullYear()} Juan David Valencia. All rights reserved.</p>
-            <p>
-              Built with React · TypeScript · Tailwind CSS · ❤️
-            </p>
           </div>
         </div>
       </footer>

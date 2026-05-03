@@ -51,7 +51,7 @@ function findFallbackResponse(query: string): string {
     }
   }
 
-  return "Interesante pregunta. No tengo información específica sobre eso, pero puedo hablarte sobre los proyectos, habilidades y experiencia de Juan David. ¿Qué te gustaría saber? 😊";
+  return "Interesting question. I don't have specific information about that, but I can tell you about Juan David's projects, skills, and experience. What would you like to know? 😊";
 }
 
 /**
@@ -71,7 +71,7 @@ export function useChatBot(): UseChatBotReturn {
     {
       role: "assistant",
       content:
-        "¡Hola! Soy el asistente virtual de Juan David. Puedo hablarte sobre sus habilidades, proyectos, experiencia y formación. ¿En qué puedo ayudarte? 😊",
+        "Hello! I'm Juan David's virtual assistant. I can tell you about his skills, projects, experience, and education. How can I help you? 😊",
       timestamp: Date.now(),
     },
   ]);
@@ -134,7 +134,7 @@ export function useChatBot(): UseChatBotReturn {
     } catch (err) {
       // Catch-all error handler
       const message =
-        err instanceof Error ? err.message : "Ocurrió un error inesperado.";
+        err instanceof Error ? err.message : "An unexpected error occurred.";
       setError(message);
       // Still provide a fallback response on error
       const fallbackResponse = findFallbackResponse(query);

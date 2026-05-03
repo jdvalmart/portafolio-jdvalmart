@@ -6,7 +6,7 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
-    name: "Bootcamp Inteligencia Artificial",
+    name: "AI Bootcamp",
     issuer: "MinTIC",
     icon: "AI",
   },
