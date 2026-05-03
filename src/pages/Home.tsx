@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 bg-zinc-50">
+      <section className="py-16 bg-zinc-50 dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto px-6">
           <FeaturedProjects projects={projects} />
         </div>

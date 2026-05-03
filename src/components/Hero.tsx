@@ -48,12 +48,41 @@ export const Hero = () => {
 
         {/* Visual */}
         <div className="hidden md:flex justify-center">
-          <img
-            src="/lanzamiento.gif"
-            alt="AI & ML Engineering illustration"
-            loading="lazy"
-            className="w-80"
-          />
+          <svg
+            viewBox="0 0 200 200"
+            className="w-72 h-72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="AI & Machine Learning illustration"
+          >
+            {/* Neural network nodes */}
+            <circle cx="40" cy="40" r="6" className="fill-teal-500" />
+            <circle cx="100" cy="30" r="6" className="fill-teal-600" />
+            <circle cx="160" cy="40" r="6" className="fill-teal-500" />
+            <circle cx="40" cy="100" r="8" className="fill-teal-600" />
+            <circle cx="100" cy="100" r="10" className="fill-teal-500" />
+            <circle cx="160" cy="100" r="8" className="fill-teal-600" />
+            <circle cx="40" cy="160" r="6" className="fill-teal-500" />
+            <circle cx="100" cy="170" r="6" className="fill-teal-600" />
+            <circle cx="160" cy="160" r="6" className="fill-teal-500" />
+            {/* Connections */}
+            <line x1="46" y1="40" x2="94" y2="36" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="106" y1="36" x2="154" y2="40" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="46" y1="46" x2="94" y2="92" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="106" y1="36" x2="94" y2="92" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="154" y1="46" x2="106" y2="92" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="46" y1="160" x2="94" y2="164" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="106" y1="164" x2="154" y2="160" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="48" y1="106" x2="94" y2="108" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="106" y1="108" x2="152" y2="106" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="48" y1="94" x2="48" y2="154" className="stroke-teal-300" strokeWidth="1.5" />
+            <line x1="152" y1="94" x2="152" y2="154" className="stroke-teal-300" strokeWidth="1.5" />
+            {/* Data pulse animation */}
+            <circle cx="100" cy="100" r="4" className="fill-teal-600">
+              <animate attributeName="r" values="4;14;4" dur="3s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite" />
+            </circle>
+          </svg>
         </div>
       </div>
     </section>

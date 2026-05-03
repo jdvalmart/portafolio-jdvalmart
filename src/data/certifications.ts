@@ -8,21 +8,21 @@ export const certifications: Certification[] = [
   {
     name: "Bootcamp Inteligencia Artificial",
     issuer: "MinTIC",
-    icon: "🧠",
+    icon: "AI",
   },
   {
-    name: "TensorFlow Developer Certificate",
+    name: "TensorFlow Developer",
     issuer: "TensorFlow",
-    icon: "🤖",
+    icon: "TF",
   },
   {
     name: "FastAPI Professional",
     issuer: "FastAPI",
-    icon: "⚡",
+    icon: "FA",
   },
   {
     name: "React Development",
     issuer: "React",
-    icon: "⚛️",
+    icon: "⚛",
   },
 ];

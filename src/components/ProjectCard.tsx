@@ -9,9 +9,9 @@ export function ProjectCard({ project }: Props) {
     <article
       className="
       group
-      bg-white
+      bg-white dark:bg-zinc-900
       mt-3
-      border border-zinc-400
+      border border-zinc-200 dark:border-zinc-700
       rounded-2xl
       overflow-hidden
       shadow-sm
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: Props) {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-zinc-50"
+          className="block bg-zinc-50 dark:bg-zinc-800"
         >
           <div className="h-44 flex items-center justify-center">
             <img
@@ -47,9 +47,9 @@ export function ProjectCard({ project }: Props) {
 
       {/* Contenido */}
       <div className="p-5 space-y-4">
-        <h3 className="text-lg font-semibold text-zinc-900">{project.title}</h3>
+        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{project.title}</h3>
 
-        <p className="text-sm text-zinc-600 leading-relaxed">
+        <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
           {project.description}
         </p>
 
@@ -60,8 +60,8 @@ export function ProjectCard({ project }: Props) {
               key={tech}
               className="
                 text-xs
-                bg-zinc-100
-                text-zinc-700
+                bg-zinc-100 dark:bg-zinc-800
+                text-zinc-700 dark:text-zinc-300
                 px-2.5
                 py-1
                 rounded-full
@@ -128,9 +128,9 @@ export function ProjectCard({ project }: Props) {
                 py-2
                 rounded-lg
                 border
-                border-zinc-300
-                text-zinc-700
-                hover:bg-zinc-100
+                border-zinc-300 dark:border-zinc-600
+                text-zinc-700 dark:text-zinc-300
+                hover:bg-zinc-100 dark:hover:bg-zinc-800
                 transition
               "
             >

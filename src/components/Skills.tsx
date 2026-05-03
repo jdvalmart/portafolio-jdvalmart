@@ -49,7 +49,7 @@ export const skillGroups: SkillGroupData[] = [
 export const Skills = () => {
   return (
     <section id="skills" className="max-w-5xl mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">Skills</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900 dark:text-zinc-100">Skills</h2>
 
       <div className="space-y-10">
         {skillGroups.map((group) => (
@@ -66,7 +66,7 @@ interface SkillGroupProps {
 
 const SkillGroup = ({ group }: SkillGroupProps) => (
   <div>
-    <h3 className="text-xl font-semibold mb-4">{group.title}</h3>
+    <h3 className="text-xl font-semibold mb-4 text-zinc-800 dark:text-zinc-200">{group.title}</h3>
     <div className="flex flex-wrap gap-3">
       {group.skills.map((skill) => (
         <span

@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
+
+const ChatBot = lazy(() => import("./ChatBot"));
 
 type LayoutProps = {
   children: ReactNode;
@@ -23,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 relative bg-white/80 backdrop-blur border-b border-zinc-200">
+      <header className="sticky top-0 z-50 relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
@@ -33,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
               loading="lazy"
               className="w-10 h-10 rounded-full"
             />
-            <span className="text-xl font-semibold text-zinc-900">
+            <span className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
               Jdvalmart
             </span>
           </Link>
@@ -75,7 +77,7 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
         {/* Menú móvil desplegable */}
         {open && (
-          <nav className="md:hidden absolute right-6 top-full mt-2 bg-white/95 backdrop-blur border-b border-zinc-200 shadow rounded-lg">
+          <nav className="md:hidden absolute right-6 top-full mt-2 bg-white/95 dark:bg-zinc-900/95 backdrop-blur border border-zinc-200 dark:border-zinc-800 shadow rounded-lg">
             <div className="flex flex-col gap-4 px-6 py-4 text-sm font-medium">
               {["/", "/projects", "/about", "/contact"].map((path, i) => {
                 const labels = ["Home", "Projects", "About Me", "Contact"];
@@ -148,6 +150,11 @@ const Layout = ({ children }: LayoutProps) => {
           ↑
         </button>
       )}
+
+      {/* Global ChatBot widget */}
+      <Suspense fallback={null}>
+        <ChatBot />
+      </Suspense>
     </div>
   );
 };

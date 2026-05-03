@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-bold text-zinc-800 text-center mb-6">
+      <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 text-center mb-6">
         Projects
       </h2>
       <p className="text-lg text-zinc-600 dark:text-zinc-400 text-center mb-10">
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
                 filter === cat
                   ? "bg-teal-600 text-white"
-                  : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
+                  : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
               }`}
             >
               {labels[cat]}
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
 
       {/* Projects grid with scroll reveal */}
       <div
-        ref={ref as React.RefObject<HTMLDivElement>}
+        ref={ref}
         className={`transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
