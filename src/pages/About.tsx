@@ -3,14 +3,16 @@ import { Skills } from "../components/Skills";
 import { Timeline } from "../components/Timeline";
 import { CertBadges } from "../components/CertBadges";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useT } from "../i18n/LanguageContext";
 
 const About: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useT();
   return (
     <>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6" aria-label="Professional profile">
         <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">
-          About Me
+          {t.about.title}
         </h2>
 
         <div
@@ -21,23 +23,9 @@ const About: React.FC = () => {
               : "opacity-0 translate-y-8"
           } transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
         >
-          <p>
-            I'm a{" "}
-            <strong className="text-zinc-800 dark:text-zinc-200">Software Engineer</strong>.
-            I build complete web applications with React, TypeScript, FastAPI,
-            and PostgreSQL, integrating machine learning and NLP. My background
-            monitoring critical systems taught me to develop with operational
-            discipline and zero margin for error.
-          </p>
-
-          <p>
-            My AI training (MinTIC) covers the full machine learning lifecycle
-            — from data preparation to model deployment as REST APIs — and
-            integrates deep learning (MLP, CNN, LSTM),{" "}
-            <strong className="text-teal-600 dark:text-teal-400">NLP</strong>,
-            and MLOps. I automate processes with Python and SQL, documenting
-            every step.
-          </p>
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+          <p>{t.about.p3}</p>
         </div>
       </section>
 
@@ -54,15 +42,12 @@ const About: React.FC = () => {
       {/* Professional Philosophy */}
       <section className="max-w-5xl mx-auto px-6 mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-zinc-900 dark:text-zinc-100">
-          Philosophy
+          {t.about.philosophy}
         </h2>
         <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 bg-teal-50 dark:bg-teal-950 rounded-r-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
-          <p className="text-lg italic">
-            "I come from an environment where systems can't fail. That defines
-            how I build software."
-          </p>
+          <p className="text-lg italic">{t.about.quote}</p>
           <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic">
-            — Juan David Valencia
+            {t.about.quoteAuthor}
           </p>
         </blockquote>
       </section>
@@ -70,14 +55,14 @@ const About: React.FC = () => {
       {/* Current Goals */}
       <section className="max-w-5xl mx-auto px-6 mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-zinc-900 dark:text-zinc-100">
-          Current Goals
+          {t.about.goals}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { icon: "🚀", text: "Deploy a real AI project with an NLP API" },
-            { icon: "🐳", text: "Master MLOps: model deployment with Docker + FastAPI" },
-            { icon: "🧪", text: "Add testing coverage to all projects" },
-            { icon: "☁️", text: "Cloud certification (AWS/GCP)" },
+            { icon: "🚀", text: t.about.goal1 },
+            { icon: "🐳", text: t.about.goal2 },
+            { icon: "🧪", text: t.about.goal3 },
+            { icon: "☁️", text: t.about.goal4 },
           ].map((goal) => (
             <div
               key={goal.text}

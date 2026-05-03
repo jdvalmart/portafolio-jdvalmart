@@ -38,7 +38,7 @@ const typedKnowledge = knowledge as unknown as KnowledgeData;
  * Look up a fallback response by matching the query against pattern arrays.
  * Returns the first matching response, or a default message if nothing matches.
  */
-function findFallbackResponse(query: string): string {
+function findFallbackResponse(query: string, defaultResponse: string): string {
   const lowerQuery = query.toLowerCase();
   const entries = typedKnowledge.fallbackResponses;
 
@@ -51,7 +51,12 @@ function findFallbackResponse(query: string): string {
     }
   }
 
-  return "Interesting question. I don't have specific information about that, but I can tell you about Juan David's projects, skills, and experience. What would you like to know? 😊";
+  return defaultResponse;
+}
+
+interface UseChatBotOptions {
+  welcomeMessage?: string;
+  fallbackMessage?: string;
 }
 
 /**
@@ -66,12 +71,16 @@ function findFallbackResponse(query: string): string {
  * 6. On success: adds the assistant response to messages
  * 7. On failure: falls back to a static response from the knowledge base
  */
-export function useChatBot(): UseChatBotReturn {
+export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
+  const {
+    welcomeMessage = "Hello! I'm Juan David's virtual assistant. I can tell you about his skills, projects, experience, and education. How can I help you? \u{1F60A}",
+    fallbackMessage = "Interesting question. I don't have specific information about that, but I can tell you about Juan David's projects, skills, and experience. What would you like to know? \u{1F60A}",
+  } = options ?? {};
+
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content:
-        "Hello! I'm Juan David's virtual assistant. I can tell you about his skills, projects, experience, and education. How can I help you? 😊",
+      content: welcomeMessage,
       timestamp: Date.now(),
     },
   ]);
@@ -123,7 +132,7 @@ export function useChatBot(): UseChatBotReturn {
         setMessages((prev) => [...prev, assistantMessage]);
       } else {
         // 7 fallback) Use static fallback response
-        const fallbackResponse = findFallbackResponse(query);
+        const fallbackResponse = findFallbackResponse(query, fallbackMessage);
         const assistantMessage: Message = {
           role: "assistant",
           content: fallbackResponse,
@@ -137,7 +146,7 @@ export function useChatBot(): UseChatBotReturn {
         err instanceof Error ? err.message : "An unexpected error occurred.";
       setError(message);
       // Still provide a fallback response on error
-      const fallbackResponse = findFallbackResponse(query);
+      const fallbackResponse = findFallbackResponse(query, fallbackMessage);
       const assistantMessage: Message = {
         role: "assistant",
         content: fallbackResponse,
@@ -147,7 +156,7 @@ export function useChatBot(): UseChatBotReturn {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [fallbackMessage]);
 
   return { messages, isLoading, error, sendMessage };
 }

@@ -1,6 +1,7 @@
 import type { Project } from "../data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useT } from "../i18n/LanguageContext";
 
 interface FeaturedProjectsProps {
   projects: Project[];
@@ -8,6 +9,7 @@ interface FeaturedProjectsProps {
 
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useT();
   const featured = projects.slice(0, 3);
 
   return (
@@ -21,7 +23,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             dark:text-zinc-100
           "
         >
-          Featured Projects
+          {t.featured.title}
         </h2>
         <a
           href="/projects"
@@ -33,7 +35,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             transition-colors duration-200
           "
         >
-          View All
+          {t.featured.viewAll}
           <span
             className="
               inline-block

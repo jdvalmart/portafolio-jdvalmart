@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
+import { useT } from "../i18n/LanguageContext";
 
 const ChatBot = lazy(() => import("./ChatBot"));
 
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
   const [open, setOpen] = useState(false);
   const { isDark, toggle } = useDarkMode();
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const { lang, setLang, t } = useT();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:outline-none"
       >
-        Skip to content
+        {t.skipToContent}
       </a>
 
       {/* Header */}
@@ -69,7 +71,7 @@ const Layout = ({ children }: LayoutProps) => {
             <button
               onClick={toggle}
               className="md:hidden p-2 text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={isDark ? t.darkMode.light : t.darkMode.dark}
             >
               {isDark ? (
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,10 +103,10 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
             {[
-              { path: "/", label: "Home" },
-              { path: "/projects", label: "Projects" },
-              { path: "/about", label: "About" },
-              { path: "/contact", label: "Contact" },
+              { path: "/", label: t.nav.home },
+              { path: "/projects", label: t.nav.projects },
+              { path: "/about", label: t.nav.about },
+              { path: "/contact", label: t.nav.contact },
             ].map(({ path, label }) => (
               <NavLink
                 key={path}
@@ -120,11 +122,37 @@ const Layout = ({ children }: LayoutProps) => {
                 {label}
               </NavLink>
             ))}
+            {/* EN | ES language toggle */}
+            <div className="flex items-center gap-0.5 ml-2 text-xs font-medium">
+              <button
+                onClick={() => setLang("en")}
+                className={`px-2 py-1 rounded ${
+                  lang === "en"
+                    ? "text-teal-600 bg-teal-50 dark:bg-teal-950"
+                    : "text-zinc-400 hover:text-teal-600"
+                }`}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <span className="text-zinc-300 dark:text-zinc-600 select-none">|</span>
+              <button
+                onClick={() => setLang("es")}
+                className={`px-2 py-1 rounded ${
+                  lang === "es"
+                    ? "text-teal-600 bg-teal-50 dark:bg-teal-950"
+                    : "text-zinc-400 hover:text-teal-600"
+                }`}
+                aria-label="Cambiar a español"
+              >
+                ES
+              </button>
+            </div>
             {/* Dark mode toggle — desktop, last item in nav bar */}
             <button
               onClick={toggle}
               className="ml-1 p-2 text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={isDark ? t.darkMode.light : t.darkMode.dark}
             >
               <svg className="w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 {isDark ? (
@@ -152,10 +180,10 @@ const Layout = ({ children }: LayoutProps) => {
           <nav className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md">
             <div className="flex flex-col gap-1 px-4 py-3 text-sm font-medium">
               {[
-                { path: "/", label: "Home" },
-                { path: "/projects", label: "Projects" },
-                { path: "/about", label: "About" },
-                { path: "/contact", label: "Contact" },
+                { path: "/", label: t.nav.home },
+                { path: "/projects", label: t.nav.projects },
+                { path: "/about", label: t.nav.about },
+                { path: "/contact", label: t.nav.contact },
               ].map(({ path, label }) => (
                 <NavLink
                   key={path}
@@ -188,7 +216,7 @@ const Layout = ({ children }: LayoutProps) => {
             <p>© 2026 Juan David Valencia</p>
 
             {/* Center: Built with */}
-            <p>Built with React · TypeScript · Tailwind</p>
+            <p>{t.footer.builtWith}</p>
 
             {/* Right: Social links as text */}
             <div className="flex items-center gap-4">
@@ -235,7 +263,7 @@ const Layout = ({ children }: LayoutProps) => {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed bottom-6 right-6 z-40 bg-teal-600 text-white rounded-full w-11 h-11 shadow-lg hover:bg-teal-700 transition flex items-center justify-center"
-          aria-label="Back to top"
+          aria-label={t.backToTop}
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />

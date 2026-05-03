@@ -1,12 +1,18 @@
-import type { TimelineEntry as TimelineEntryType } from "../data/timeline";
 import { timeline } from "../data/timeline";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useT } from "../i18n/LanguageContext";
+
+interface TimelineEntryTranslated {
+  year: number;
+  title: string;
+  description: string;
+}
 
 function TimelineItem({
   entry,
   isLast,
 }: {
-  entry: TimelineEntryType;
+  entry: TimelineEntryTranslated;
   isLast: boolean;
 }) {
   const { ref, isVisible } = useScrollReveal();
@@ -73,6 +79,13 @@ function TimelineItem({
 }
 
 export function Timeline() {
+  const { t } = useT();
+  const entries: TimelineEntryTranslated[] = timeline.map((entry, index) => ({
+    year: entry.year,
+    title: t.timeline.entries[index]?.title ?? entry.title,
+    description: t.timeline.entries[index]?.desc ?? entry.description,
+  }));
+
   return (
     <section className="py-16 px-4 max-w-3xl mx-auto">
       <h2
@@ -81,11 +94,11 @@ export function Timeline() {
           text-zinc-900 dark:text-zinc-100
         "
       >
-        Experience Timeline
+        {t.timeline.title}
       </h2>
 
       <div className="relative">
-        {timeline.map((entry, index) => (
+        {entries.map((entry, index) => (
           <TimelineItem
             key={entry.year}
             entry={entry}

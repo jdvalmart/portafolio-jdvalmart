@@ -1,4 +1,7 @@
+import { useT } from "../i18n/LanguageContext";
+
 export const Hero = () => {
+  const { t } = useT();
   return (
     <section className="relative min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden bg-[linear-gradient(to_bottom_right,#f0fdfa,#ecfeff)] dark:bg-[linear-gradient(to_bottom_right,#0f172a,#042f2e)]">
       {/* CSS grid pattern overlay */}
@@ -9,17 +12,15 @@ export const Hero = () => {
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
-            Hi, I'm Juan David
+            {t.hero.greeting}
             <br />
             <span className="text-teal-600 dark:text-teal-400">
-              AI Engineer & ML Engineer
+              {t.hero.role}
             </span>
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            Software Engineer specialized in AI, NLP &amp; Full-Stack
-            development. I build complete applications — from ML pipelines to
-            production APIs.
+            {t.hero.subtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -27,14 +28,14 @@ export const Hero = () => {
               href="/projects"
               className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition"
             >
-              Projects
+              {t.hero.projectsBtn}
             </a>
 
             <a
               href="/about"
               className="px-6 py-3 border border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-teal-900/20 transition"
             >
-              About Me
+              {t.hero.aboutBtn}
             </a>
             <a
               href="/cv/"
@@ -42,7 +43,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
             >
-              download CV
+              {t.hero.cvBtn}
             </a>
           </div>
         </div>

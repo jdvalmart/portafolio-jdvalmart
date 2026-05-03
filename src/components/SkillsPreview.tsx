@@ -1,6 +1,7 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { skillGroups } from "./Skills";
 import type { SkillLevel } from "./Skills";
+import { useT } from "../i18n/LanguageContext";
 
 /**
  * Extracts the top N skills (by level) across all skill groups.
@@ -49,6 +50,7 @@ function SkillBar({ skill, animate }: { skill: SkillLevel; animate: boolean }) {
 
 export function SkillsPreview() {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useT();
   const topSkills = getTopSkills(6);
 
   return (
@@ -59,7 +61,7 @@ export function SkillsPreview() {
           text-zinc-900 dark:text-zinc-100
         "
       >
-        Core Skills
+        {t.coreSkills}
       </h2>
 
       <div

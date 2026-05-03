@@ -6,16 +6,14 @@ import type { Stat } from "../components/StatsBar";
 import { FeaturedProjects } from "../components/FeaturedProjects";
 import { SkillsPreview } from "../components/SkillsPreview";
 import { projects } from "../data/projects";
-
-const stats: Stat[] = [
-  { label: "Years Experience", value: 4, suffix: "+" },
-  { label: "AI Projects", value: 4 },
-  { label: "ML Labs", value: 20, suffix: "+" },
-  { label: "Bootcamp IA", value: 20, suffix: " weeks" },
-];
+import { useT } from "../i18n/LanguageContext";
 
 const Home: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useT();
+
+  const stats: Stat[] = t.home.stats as unknown as Stat[];
+
   return (
     <>
       <div
@@ -54,24 +52,23 @@ const Home: React.FC = () => {
       <section className="py-20 bg-teal-600 dark:bg-teal-800" aria-label="Call to action">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            Have an AI project in mind?
+            {t.home.ctaTitle}
           </h2>
           <p className="text-teal-100 text-lg mb-8">
-            I build complete solutions: from the ML model to the API and the
-            interface. Let's talk about how I can help you.
+            {t.home.ctaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
               className="px-8 py-3 bg-white text-teal-700 rounded-lg font-semibold hover:bg-teal-50 transition"
             >
-              Contact Me
+              {t.home.ctaContact}
             </a>
             <a
               href="/projects"
               className="px-8 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition"
             >
-              View Projects
+              {t.home.ctaProjects}
             </a>
           </div>
         </div>

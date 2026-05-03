@@ -1,10 +1,12 @@
 import type { Project } from "../data/projects";
+import { useT } from "../i18n/LanguageContext";
 
 interface Props {
   project: Project;
 }
 
 export function ProjectCard({ project }: Props) {
+  const { t } = useT();
 
   return (
     <article
@@ -138,17 +140,17 @@ export function ProjectCard({ project }: Props) {
           <div className="flex flex-wrap gap-2">
             {project.metrics.accuracy !== undefined && (
               <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
-                🎯 {project.metrics.accuracy}% accuracy
+                {"\u{1F3AF}"} {project.metrics.accuracy}% {t.projectCard.accuracy}
               </span>
             )}
             {project.metrics.labCount !== undefined && (
               <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
-                🧪 {project.metrics.labCount}+ labs
+                {"\u{1F9EA}"} {project.metrics.labCount}+ {t.projectCard.labs}
               </span>
             )}
             {project.metrics.booksManaged !== undefined && (
               <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
-                📚 {project.metrics.booksManaged} books
+                {"\u{1F4DA}"} {project.metrics.booksManaged} {t.projectCard.books}
               </span>
             )}
           </div>
@@ -173,7 +175,7 @@ export function ProjectCard({ project }: Props) {
                 transition
               "
             >
-              View Demo
+              {t.projectCard.viewDemo}
             </a>
           )}
 
@@ -195,7 +197,7 @@ export function ProjectCard({ project }: Props) {
                 transition
               "
             >
-              Code Repository
+              {t.projectCard.codeRepo}
             </a>
           )}
         </div>

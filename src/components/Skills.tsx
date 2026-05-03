@@ -46,10 +46,13 @@ export const skillGroups: SkillGroupData[] = [
   },
 ];
 
+import { useT } from "../i18n/LanguageContext";
+
 export const Skills = () => {
+  const { t } = useT();
   return (
     <section id="skills" className="max-w-5xl mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900 dark:text-zinc-100">Skills</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900 dark:text-zinc-100">{t.skills.title}</h2>
 
       <div className="space-y-10">
         {skillGroups.map((group) => (

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback, type KeyboardEvent } from "react";
 import { useChatBot } from "../hooks/useChatBot";
 import type { Message } from "../hooks/useChatBot";
+import { useT } from "../i18n/LanguageContext";
 
 /**
  * Typing indicator — three animated dots.
@@ -57,7 +58,11 @@ function ChatBubble({ message }: { message: Message }) {
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const { messages, isLoading, error, sendMessage } = useChatBot();
+  const { t } = useT();
+  const { messages, isLoading, error, sendMessage } = useChatBot({
+    welcomeMessage: t.chatbot.welcome,
+    fallbackMessage: t.chatbot.fallback,
+  });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -101,7 +106,7 @@ export default function ChatBot() {
       {/* FAB Toggle Button */}
       <button
         onClick={togglePanel}
-        aria-label={isOpen ? "Close chat" : "Open chat"}
+        aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
         className={`
           fixed bottom-6 left-6 z-50
           w-14 h-14 rounded-full
@@ -160,12 +165,12 @@ export default function ChatBot() {
                 text-zinc-800 dark:text-zinc-200
               "
             >
-              AI Assistant
+              {t.chatbot.assistant}
             </h3>
           </div>
           <button
             onClick={togglePanel}
-            aria-label="Close chat"
+            aria-label={t.chatbot.closeChat}
             className="
               w-7 h-7 flex items-center justify-center rounded-lg
               text-zinc-400 hover:text-zinc-600
@@ -238,7 +243,7 @@ export default function ChatBot() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Ask me anything..."
+            placeholder={t.chatbot.placeholder}
             disabled={isLoading}
             className="
               flex-1 px-3 py-2
@@ -255,7 +260,7 @@ export default function ChatBot() {
           <button
             onClick={handleSend}
             disabled={!input.trim() || isLoading}
-            aria-label="Send message"
+            aria-label={t.chatbot.sendMessage}
             className="
               w-9 h-9 flex items-center justify-center
               rounded-xl

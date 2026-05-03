@@ -1,8 +1,14 @@
-import type { Certification } from "../data/certifications";
 import { certifications } from "../data/certifications";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { useT } from "../i18n/LanguageContext";
 
-function CertBadge({ cert, animate }: { cert: Certification; animate: boolean }) {
+interface CertBadgeTranslated {
+  name: string;
+  issuer: string;
+  icon: string;
+}
+
+function CertBadge({ cert, animate }: { cert: CertBadgeTranslated; animate: boolean }) {
   return (
     <div
       className={`
@@ -53,6 +59,13 @@ function CertBadge({ cert, animate }: { cert: Certification; animate: boolean })
 
 export function CertBadges() {
   const { ref, isVisible } = useScrollReveal();
+  const { t } = useT();
+
+  const translatedCerts: CertBadgeTranslated[] = certifications.map((cert, index) => ({
+    name: t.certs.entries[index]?.name ?? cert.name,
+    issuer: t.certs.entries[index]?.issuer ?? cert.issuer,
+    icon: cert.icon,
+  }));
 
   return (
     <section className="py-16 px-4 max-w-3xl mx-auto">
@@ -62,14 +75,14 @@ export function CertBadges() {
           text-zinc-900 dark:text-zinc-100
         "
       >
-        Certifications
+        {t.certs.title}
       </h2>
 
       <div
         ref={ref}
         className="grid grid-cols-2 sm:grid-cols-4 gap-4"
       >
-        {certifications.map((cert) => (
+        {translatedCerts.map((cert) => (
           <CertBadge
             key={cert.name}
             cert={cert}
