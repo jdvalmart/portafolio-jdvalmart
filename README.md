@@ -2,10 +2,10 @@
 
 **Juan David Valencia** — AI Engineer & ML Engineer specializing in NLP, Transformers, and interpretable AI.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com/sites/portafoliojdvm)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com/sites/jdvalmartdev)
 [![Tests](https://img.shields.io/badge/tests-18%2F18-brightgreen)]()
 
-🔗 **[Live Demo](https://portafoliojdvm.netlify.app/)**
+🔗 **[Live Demo](https://jdvalmartdev.netlify.app/)**
 
 ---
 
