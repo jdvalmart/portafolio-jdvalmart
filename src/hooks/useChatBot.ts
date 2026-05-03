@@ -57,6 +57,7 @@ function findFallbackResponse(query: string, defaultResponse: string): string {
 interface UseChatBotOptions {
   welcomeMessage?: string;
   fallbackMessage?: string;
+  lang?: "en" | "es";
 }
 
 /**
@@ -75,6 +76,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
   const {
     welcomeMessage = "Hello! I'm Juan David's virtual assistant. I can tell you about his skills, projects, experience, and education. How can I help you? \u{1F60A}",
     fallbackMessage = "Interesting question. I don't have specific information about that, but I can tell you about Juan David's projects, skills, and experience. What would you like to know? \u{1F60A}",
+    lang = "en",
   } = options ?? {};
 
   const [messages, setMessages] = useState<Message[]>([
@@ -120,7 +122,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
           : "No specific context found. Provide a general helpful response about Juan David's portfolio.";
 
       // 5) & 6) Call HF API
-      const apiResponse = await generateResponse(promptContext, query);
+      const apiResponse = await generateResponse(promptContext, query, lang);
 
       if (apiResponse) {
         // 7) Add assistant response from API

@@ -116,11 +116,17 @@ const HF_API_URL =
  */
 export async function generateResponse(
   context: string,
-  query: string
+  query: string,
+  lang: "en" | "es" = "en"
 ): Promise<string | null> {
   const apiKey = import.meta.env.VITE_HF_API_KEY || "";
 
-  const prompt = `<s>[INST] You are Juan David Valencia's portfolio assistant. Answer questions using ONLY the context provided below. If the context does not contain the answer, say "I don't have that information, but feel free to ask me about Juan David's skills, projects, experience, or education."
+  const isSpanish = lang === "es";
+  const systemPrompt = isSpanish
+    ? `Eres el asistente del portafolio de Juan David Valencia. Responde en español usando SOLO el contexto proporcionado. Si el contexto no contiene la respuesta, di "No tengo esa información, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educación de Juan David."`
+    : `You are Juan David Valencia's portfolio assistant. Answer questions using ONLY the context provided below. If the context does not contain the answer, say "I don't have that information, but feel free to ask me about Juan David's skills, projects, experience, or education."`;
+
+  const prompt = `<s>[INST] ${systemPrompt}
 
 Context:
 ${context}

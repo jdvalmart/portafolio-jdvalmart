@@ -58,10 +58,11 @@ function ChatBubble({ message }: { message: Message }) {
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const { t } = useT();
+  const { t, lang } = useT();
   const { messages, isLoading, error, sendMessage } = useChatBot({
     welcomeMessage: t.chatbot.welcome,
     fallbackMessage: t.chatbot.fallback,
+    lang,
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
