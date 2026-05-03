@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#042f2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.08">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#14b8a6"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#grid)"/>
+  </g>
+
+  <!-- Central content -->
+  <g transform="translate(600, 280)">
+    <!-- Pulpo logo -->
+    <g transform="translate(-250, 0)">
+      <ellipse cx="0" cy="-32" rx="36" ry="30" fill="#0d9488"/>
+      <circle cx="-14" cy="-40" r="5.2" fill="white"/>
+      <circle cx="14" cy="-40" r="5.2" fill="white"/>
+      <path d="M-32 -6 Q-40 24 -32 40" stroke="#0d9488" stroke-width="8.8" stroke-linecap="round" fill="none"/>
+      <path d="M-18 -4 Q-22 28 -18 48" stroke="#0d9488" stroke-width="8.8" stroke-linecap="round" fill="none"/>
+      <path d="M0 -2 Q0 36 0 52" stroke="#0d9488" stroke-width="8.8" stroke-linecap="round" fill="none"/>
+      <path d="M18 -4 Q22 28 18 48" stroke="#0d9488" stroke-width="8.8" stroke-linecap="round" fill="none"/>
+      <path d="M32 -6 Q40 24 32 40" stroke="#0d9488" stroke-width="8.8" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- Text -->
+    <text x="0" y="-10" text-anchor="middle" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="white">jdvalmart</text>
+    <text x="0" y="45" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="500" fill="#14b8a6">AI Engineer &amp; ML Engineer</text>
+    <text x="0" y="85" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#94a3b8">NLP · Transformers · XAI · Full-Stack</text>
+  </g>
+</svg>
