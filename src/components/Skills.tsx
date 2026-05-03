@@ -1,14 +1,14 @@
-interface SkillLevel {
+export interface SkillLevel {
   name: string;
   level: number;
 }
 
-interface SkillGroupData {
+export interface SkillGroupData {
   title: string;
   skills: SkillLevel[];
 }
 
-const skillGroups: SkillGroupData[] = [
+export const skillGroups: SkillGroupData[] = [
   {
     title: "AI & Machine Learning",
     skills: [
