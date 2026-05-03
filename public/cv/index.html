@@ -3,138 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan David Valencia — CV</title>
+  <title>Juan David Valencia — Software Engineer CV</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.55;
-      color: #1e293b;
-      max-width: 800px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #000;
+      max-width: 750px;
       margin: 0 auto;
-      padding: 32px 40px;
+      padding: 28px 36px;
     }
-    h1 { font-size: 22pt; font-weight: 800; color: #0f172a; margin-bottom: 2px; }
-    h2 { font-size: 12pt; font-weight: 700; color: #0d9488; margin-top: 22px; margin-bottom: 8px; border-bottom: 1.5px solid #ccfbf1; padding-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-    h3 { font-size: 10.5pt; font-weight: 700; color: #0f172a; margin-top: 10px; }
-    .subtitle { font-size: 10.5pt; color: #0d9488; font-weight: 600; margin-bottom: 4px; }
-    .contact { font-size: 9pt; color: #64748b; margin-bottom: 18px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
-    .contact a { color: #0d9488; text-decoration: none; }
-    p { margin-bottom: 6px; }
-    ul { margin: 4px 0 10px 16px; }
-    li { margin-bottom: 2px; font-size: 10pt; }
-    .role { font-weight: 600; color: #0f172a; }
-    .date { color: #64748b; font-size: 9.5pt; }
-    .skills { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 4px; }
-    .skill { font-size: 9pt; color: #0f172a; }
-    .skill strong { color: #0d9488; }
-    .project { margin-bottom: 10px; }
-    .project-title { font-weight: 600; }
-    .project-tech { font-size: 9pt; color: #64748b; }
-    .cert-grid { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-    .cert { font-size: 9.5pt; color: #334155; }
-    hr { border: none; border-top: 1px solid #e2e8f0; margin: 16px 0; }
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact {
+      font-size: 10pt;
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 20px;
+    }
+    .contact a { color: #000; text-decoration: none; }
+    p { margin-bottom: 6px; text-align: justify; }
+    ul { margin: 4px 0 10px 18px; }
+    li { margin-bottom: 3px; font-size: 10.5pt; }
+    .job-header { margin-top: 10px; }
+    .job-title { font-weight: 700; font-size: 11pt; }
+    .job-company { font-weight: 700; }
+    .job-date { float: right; font-weight: 400; }
+    .project { margin-bottom: 8px; }
+    .project-name { font-weight: 700; }
+    .project-tech { font-size: 10pt; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 2px 16px; }
+    .skill-cat { font-size: 10.5pt; }
+    .skill-cat strong { font-weight: 700; }
+    .cert-list { font-size: 10.5pt; }
+    hr { display: none; }
     @media print {
-      body { padding: 20px 30px; }
-      h2 { break-after: avoid; }
-      ul { break-inside: avoid; }
+      body { padding: 18px 28px; }
+      h2 { break-after: avoid; page-break-after: avoid; }
+      ul { break-inside: avoid; page-break-inside: avoid; }
     }
-    .badge { display: inline-block; background: #f0fdfa; color: #0d9488; font-size: 8.5pt; padding: 1px 7px; border-radius: 3px; margin-right: 3px; font-weight: 600; }
   </style>
 </head>
 <body>
 
-<h1>Juan David Valencia Martínez</h1>
-<div class="subtitle">Software Engineer — AI, NLP &amp; Full-Stack Development</div>
+<h1>Juan David Valencia Martinez</h1>
 <div class="contact">
-  <span>📧 juanvalencia9411@outlook.com</span>
-  <span>📞 +57 316 3104571</span>
+  <span>juanvalencia9411@outlook.com</span>
+  <span>+57 316 3104571</span>
   <span><a href="https://github.com/jdvalmart">github.com/jdvalmart</a></span>
   <span><a href="https://linkedin.com/in/jdvalmart">linkedin.com/in/jdvalmart</a></span>
   <span><a href="https://jdvalmart.dev">jdvalmart.dev</a></span>
 </div>
 
-<h2>Profile</h2>
-<p>Software Engineer. I build complete web applications with React, TypeScript, FastAPI, and PostgreSQL, integrating machine learning and NLP. My background monitoring critical systems taught me to develop with operational discipline and zero margin for error.</p>
-<p>My AI training (MinTIC) covers the full machine learning lifecycle — from data preparation to model deployment as REST APIs — and integrates deep learning (MLP, CNN, LSTM), NLP, and MLOps. I automate processes with Python and SQL, documenting every step.</p>
+<h2>Professional Summary</h2>
+<p>
+Software Engineer with 4 years of professional experience and advanced training in Artificial Intelligence, Machine Learning, and Natural Language Processing. Skilled in building full-stack web applications with React, TypeScript, FastAPI, NestJS, and PostgreSQL, and deploying machine learning models as REST APIs. Experienced in the complete ML lifecycle: data preparation, model training, validation, and production deployment. Background in critical systems monitoring developed strong operational discipline and automation skills with Python and SQL. Available for on-site, remote, or hybrid work with willingness to relocate.
+</p>
 
 <h2>Technical Skills</h2>
-<div class="skills">
-  <span class="skill"><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL</span>
-  <span class="skill"><strong>Frontend:</strong> React, Vue.js, Tailwind CSS</span>
-  <span class="skill"><strong>Backend:</strong> FastAPI, NestJS, Node.js, Express</span>
-  <span class="skill"><strong>Databases:</strong> PostgreSQL, MongoDB</span>
-  <span class="skill"><strong>AI/ML:</strong> Scikit-learn, TensorFlow/Keras, Transformers, HuggingFace</span>
-  <span class="skill"><strong>NLP:</strong> NLTK, spaCy, TF-IDF, sentiment analysis</span>
-  <span class="skill"><strong>Deep Learning:</strong> MLP, CNN, LSTM</span>
-  <span class="skill"><strong>XAI:</strong> LIME, SHAP, Grad-CAM</span>
-  <span class="skill"><strong>Data:</strong> Pandas, NumPy, Matplotlib, Seaborn</span>
-  <span class="skill"><strong>DevOps:</strong> Docker, Git/GitHub, Railway, Netlify, MLOps basics</span>
+<div class="skills-grid">
+  <span class="skill-cat"><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL</span>
+  <span class="skill-cat"><strong>Frontend:</strong> React, Vue.js, HTML5, CSS3, Tailwind CSS</span>
+  <span class="skill-cat"><strong>Backend:</strong> FastAPI, NestJS, Node.js, Express.js, REST APIs</span>
+  <span class="skill-cat"><strong>Databases:</strong> PostgreSQL, MongoDB</span>
+  <span class="skill-cat"><strong>Machine Learning:</strong> Scikit-learn, TensorFlow, Keras, Classification, Regression, Clustering</span>
+  <span class="skill-cat"><strong>Deep Learning:</strong> MLP, CNN, LSTM, Neural Networks</span>
+  <span class="skill-cat"><strong>NLP:</strong> Transformers, HuggingFace, NLTK, spaCy, TF-IDF, Sentiment Analysis, NER</span>
+  <span class="skill-cat"><strong>XAI:</strong> LIME, SHAP, Grad-CAM</span>
+  <span class="skill-cat"><strong>Data:</strong> Pandas, NumPy, Matplotlib, Seaborn, Jupyter</span>
+  <span class="skill-cat"><strong>DevOps &amp; Cloud:</strong> Docker, Git, GitHub, Railway, Netlify, MLOps fundamentals, AWS/GCP/Azure basics</span>
+  <span class="skill-cat"><strong>Methodologies:</strong> Agile, Scrum, Kanban</span>
 </div>
 
-<h2>Experience</h2>
+<h2>Professional Experience</h2>
 
-<h3>Technology Media Operator <span class="date">— 2021 – Present (4 years)</span></h3>
+<div class="job-header">
+  <span class="job-title">Technology Media Operator</span>
+  <span class="job-date">2021 – Present (4 years)</span>
+</div>
 <ul>
-  <li>Monitored critical security systems (CCTV, alarms, access control) for 200+ users with 99% availability.</li>
-  <li>Automated inventory management with Python and SQL, reducing manual work by 30%.</li>
-  <li>Documented processes rigorously and managed incident response in real time.</li>
+  <li>Monitored critical electronic security systems (CCTV, alarms, access control) for 200+ users, maintaining 99% system availability.</li>
+  <li>Developed Python and SQL automation scripts for inventory management, reducing manual processing time by 30%.</li>
+  <li>Documented operational processes and managed real-time incident response and escalation procedures.</li>
+  <li>Maintained and configured technological infrastructure across multiple sites.</li>
 </ul>
 
-<h3>Full-Stack Developer Internship <span class="date">— SENA, 2022</span></h3>
+<div class="job-header">
+  <span class="job-title">Full-Stack Developer Internship</span>
+  <span class="job-date">SENA, 2022</span>
+</div>
 <ul>
-  <li>Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel.</li>
-  <li>Managed MySQL databases and worked in agile teams using Scrum.</li>
+  <li>Developed frontend interfaces using Vue.js and integrated backend APIs built with PHP and Laravel.</li>
+  <li>Managed MySQL databases and performed JSON debugging and functional testing.</li>
+  <li>Collaborated in an agile development team following Scrum methodology.</li>
 </ul>
 
 <h2>Projects</h2>
 
 <div class="project">
-  <div class="project-title">Pequelectores — Children's Book Recommendation System <span class="badge">AI &amp; ML</span></div>
-  <div class="project-tech">React · TypeScript · FastAPI · Python · PostgreSQL · scikit-learn · Docker · Railway · Netlify</div>
-  <p>TF-IDF based recommendation engine with reading streaks, badge gamification, and JWT parent authentication. Full test coverage on frontend and backend.</p>
+  <span class="project-name">Pequelectores — Children's Book Recommendation System</span>
+  <div class="project-tech">React, TypeScript, FastAPI, Python, PostgreSQL, scikit-learn, Docker, Railway, Netlify</div>
+  <p>AI-powered book recommendation engine using TF-IDF for children aged 6-14. Features reading streaks, badge gamification, and JWT parent authentication. Full test coverage on both frontend and backend. Deployed on Netlify and Railway.</p>
 </div>
 
 <div class="project">
-  <div class="project-title">XAI CIFAR-10 — Explainable CNN Classifier <span class="badge">AI &amp; ML</span></div>
-  <div class="project-tech">Python · TensorFlow · LIME · SHAP · Grad-CAM · NumPy</div>
-  <p>CNN image classifier achieving 87.14% accuracy with interpretability overlays using three XAI techniques.</p>
+  <span class="project-name">XAI CIFAR-10 — Explainable CNN Image Classifier</span>
+  <div class="project-tech">Python, TensorFlow, LIME, SHAP, Grad-CAM, NumPy</div>
+  <p>Convolutional Neural Network achieving 87.14% accuracy on CIFAR-10 dataset. Implemented three explainability techniques (LIME, SHAP, Grad-CAM) for model interpretability and transparency.</p>
 </div>
 
 <div class="project">
-  <div class="project-title">NLP Labs — 20+ Hands-on Laboratories <span class="badge">AI &amp; ML</span></div>
-  <div class="project-tech">Python · NLTK · spaCy · Transformers · pandas</div>
-  <p>Labs covering sentiment analysis, Named Entity Recognition (NER), and text classification with modern NLP tools.</p>
+  <span class="project-name">NLP Labs — 20+ Natural Language Processing Laboratories</span>
+  <div class="project-tech">Python, NLTK, spaCy, Transformers, HuggingFace, pandas</div>
+  <p>Comprehensive collection of hands-on NLP labs covering sentiment analysis, Named Entity Recognition (NER), text classification, tokenization, and language model fine-tuning.</p>
 </div>
 
 <div class="project">
-  <div class="project-title">Book Tracker — Full-Stack Library Manager <span class="badge">Full Stack</span></div>
-  <div class="project-tech">React · TypeScript · FastAPI · PostgreSQL · Docker · Railway · Netlify</div>
-  <p>CRUD application with documented REST API and Docker Compose containerization.</p>
+  <span class="project-name">Book Tracker — Full-Stack Library Management Application</span>
+  <div class="project-tech">React, TypeScript, FastAPI, PostgreSQL, Docker, Railway, Netlify</div>
+  <p>CRUD application with documented REST API, persistent PostgreSQL storage, and Docker Compose containerization. Deployed with CI/CD pipeline.</p>
 </div>
 
 <div class="project">
-  <div class="project-title">Blog Backend API <span class="badge">Full Stack</span></div>
-  <div class="project-tech">NestJS · TypeScript · PostgreSQL · Docker</div>
-  <p>Modular REST API with JWT authentication for post management.</p>
+  <span class="project-name">Blog Backend API — Modular REST API</span>
+  <div class="project-tech">NestJS, TypeScript, Node.js, PostgreSQL, Docker</div>
+  <p>RESTful API for blog post management with modular architecture, JWT authentication, and containerized deployment.</p>
 </div>
 
 <h2>Education</h2>
-<p><strong>Software Engineering</strong> — Politécnico Grancolombiano (2026)</p>
-<p><strong>Software Analysis &amp; Development</strong> — SENA (2020 – 2022)</p>
-<p><strong>AI Bootcamp (Basic + Intermediate)</strong> — Talento Tech, MinTIC (2025 – 2026)</p>
+<p><strong>Bachelor of Software Engineering</strong> — Politecnico Grancolombiano (2026)</p>
+<p><strong>Associate Degree in Software Analysis and Development</strong> — SENA (2020 – 2022)</p>
+<p><strong>Artificial Intelligence Bootcamp — Basic and Intermediate Levels</strong> — Talento Tech, MinTIC (2025 – 2026)</p>
+<ul>
+  <li>Basic (10 weeks): Supervised and unsupervised Machine Learning, NLP, Big Data, Chatbots, data preparation, metrics, model deployment.</li>
+  <li>Intermediate (10 weeks): Deep Learning (MLP, CNN, RNN/LSTM), XAI, MLOps, Cloud, Big Data (Spark, Hadoop).</li>
+  <li>Completed 20+ documented hands-on laboratories.</li>
+</ul>
 
 <h2>Certifications</h2>
-<div class="cert-grid">
-  <span class="cert">Python</span> · <span class="cert">TensorFlow</span> · <span class="cert">FastAPI</span> · <span class="cert">PostgreSQL</span> ·
-  <span class="cert">Docker</span> · <span class="cert">Git &amp; GitHub</span> · <span class="cert">React</span> ·
-  <span class="cert">TypeScript</span> · <span class="cert">Machine Learning</span> ·
-  <span class="cert">Deep Learning</span> · <span class="cert">Scikit-learn</span>
-</div>
+<p class="cert-list">Python | TensorFlow | Scikit-learn | FastAPI | PostgreSQL | Docker | Git &amp; GitHub | React | TypeScript | Machine Learning (Talento Tech) | Deep Learning (Talento Tech)</p>
 
 <h2>Languages</h2>
-<p>Spanish: Native &nbsp;|&nbsp; English: Intermediate (technical reading and basic professional communication)</p>
+<p>Spanish: Native | English: Intermediate (technical documentation and basic professional communication)</p>
 
 </body>
 </html>
