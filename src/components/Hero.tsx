@@ -17,8 +17,8 @@ export const Hero = () => {
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            Software Engineer specializing in NLP &amp; interpretable AI. I build
-            complete applications — from ML pipelines to production APIs —
+            From security tech operations to AI Engineer. I build complete
+            applications — from ML pipelines to production APIs —
             integrating machine learning to solve real-world problems.
           </p>
 
