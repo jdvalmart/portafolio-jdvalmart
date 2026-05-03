@@ -6,6 +6,12 @@ export interface Project {
   techs: string[];
   liveUrl?: string;
   repoUrl?: string;
+  category: "ai-ml" | "full-stack";
+  metrics?: {
+    accuracy?: number;
+    labCount?: number;
+    booksManaged?: number;
+  };
 }
 
 export const projects: Project[] = [
@@ -28,6 +34,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://pequeletores.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/pequeletores",
+    category: "ai-ml",
   },
   {
     id: 2,
@@ -37,6 +44,10 @@ export const projects: Project[] = [
     image: "/xai.png",
     techs: ["Python", "TensorFlow", "LIME", "SHAP", "Grad-CAM", "NumPy"],
     repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
+    category: "ai-ml",
+    metrics: {
+      accuracy: 87.14,
+    },
   },
   {
     id: 3,
@@ -46,6 +57,10 @@ export const projects: Project[] = [
     image: "/nlp.png",
     techs: ["Python", "NLTK", "spaCy", "transformers", "pandas"],
     repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
+    category: "ai-ml",
+    metrics: {
+      labCount: 20,
+    },
   },
   {
     id: 4,
@@ -64,5 +79,6 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://book-tracker1.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/book-tracker",
+    category: "full-stack",
   },
 ];
