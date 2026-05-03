@@ -46,7 +46,7 @@ export const translations = {
         "Available for remote, hybrid or on-site work. Open to relocation anywhere in Colombia.",
       philosophy: "Philosophy",
       quote:
-        "\"I come from an environment where systems can't fail. That defines how I build software.\"",
+        "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Current Goals",
       goal1: "Deploy a real AI project with an NLP API",
@@ -202,7 +202,7 @@ export const translations = {
         "Disponible para trabajo presencial, remoto o h\u00edbrido. Abierto a reubicaci\u00f3n en cualquier ciudad de Colombia.",
       philosophy: "Filosof\u00eda",
       quote:
-        "\"Vengo de un entorno donde los sistemas no pueden fallar. Eso define c\u00f3mo construyo software.\"",
+        "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escal\u00f3n a la vez.\"",
       quoteAuthor: "\u2014 Juan David Valencia",
       goals: "Objetivos Actuales",
       goal1: "Crear proyecto AI real desplegado (NLP API)",
