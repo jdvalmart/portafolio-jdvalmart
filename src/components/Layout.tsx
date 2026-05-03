@@ -24,6 +24,14 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950">
+      {/* Skip to content — accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        Skip to content
+      </a>
+
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-200/60 dark:border-zinc-800/60">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
@@ -170,7 +178,7 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
 
       {/* Main */}
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1">{children}</main>
 
       {/* Footer — compact single row */}
       <footer className="bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">

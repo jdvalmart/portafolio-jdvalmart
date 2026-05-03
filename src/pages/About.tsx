@@ -8,7 +8,7 @@ const About: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
   return (
     <>
-      <section id="about" className="max-w-5xl mx-auto py-20 px-6">
+      <section id="about" className="max-w-5xl mx-auto py-20 px-6" aria-label="Professional profile">
         <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">
           About Me
         </h2>

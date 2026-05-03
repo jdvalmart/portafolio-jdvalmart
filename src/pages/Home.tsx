@@ -30,28 +30,28 @@ const Home: React.FC = () => {
       </div>
 
       {/* Stats Bar */}
-      <section className="py-12">
+      <section className="py-12" aria-label="Key statistics">
         <div className="max-w-5xl mx-auto px-6">
           <StatsBar stats={stats} />
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 bg-zinc-50 dark:bg-zinc-900">
+      <section className="py-16 bg-zinc-50 dark:bg-zinc-900" aria-label="Featured projects preview">
         <div className="max-w-6xl mx-auto px-6">
           <FeaturedProjects projects={projects} />
         </div>
       </section>
 
       {/* Skills Preview */}
-      <section className="py-16">
+      <section className="py-16" aria-label="Core skills overview">
         <div className="max-w-5xl mx-auto px-6">
           <SkillsPreview />
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-teal-600 dark:bg-teal-800">
+      <section className="py-20 bg-teal-600 dark:bg-teal-800" aria-label="Call to action">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Have an AI project in mind?
