@@ -27,7 +27,7 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactForm) => {
+  const onSubmit = async (_data: ContactForm) => {
     setStatus("loading");
     // Simulate submission delay for UX feedback
     await new Promise((resolve) => setTimeout(resolve, 800));
