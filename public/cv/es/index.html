@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan David Valencia — CV Ingeniero de Software</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 1.5; color: #000; max-width: 750px; margin: 0 auto; padding: 28px 36px; }
+    h1 { font-size: 20pt; font-weight: 700; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; }
+    h2 { font-size: 12pt; font-weight: 700; margin-top: 18px; margin-bottom: 6px; border-bottom: 1.5px solid #000; padding-bottom: 3px; text-transform: uppercase; letter-spacing: 1px; }
+    .contact { font-size: 10pt; margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 3px 20px; }
+    .contact a { color: #000; text-decoration: none; }
+    p { margin-bottom: 6px; text-align: justify; }
+    ul { margin: 4px 0 10px 18px; }
+    li { margin-bottom: 3px; font-size: 10.5pt; }
+    .job-header { margin-top: 10px; }
+    .job-title { font-weight: 700; font-size: 11pt; }
+    .job-date { float: right; font-weight: 400; }
+    .project { margin-bottom: 8px; }
+    .project-name { font-weight: 700; }
+    .project-tech { font-size: 10pt; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 2px 16px; }
+    .skill-cat { font-size: 10.5pt; }
+    .skill-cat strong { font-weight: 700; }
+    .cert-list { font-size: 10.5pt; }
+    .download-btn { display: inline-block; padding: 8px 20px; background: #0d9488; color: #fff; border: none; border-radius: 6px; font-size: 11pt; font-weight: 600; cursor: pointer; font-family: Arial, Helvetica, sans-serif; }
+    .download-btn:hover { background: #0f766e; }
+    @media print {
+      body { padding: 18px 28px; }
+      h2 { break-after: avoid; page-break-after: avoid; }
+      ul { break-inside: avoid; page-break-inside: avoid; }
+      .no-print { display: none; }
+    }
+    .no-print { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="no-print" style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+  <button class="download-btn" onclick="window.print()">Descargar como PDF</button>
+  <span style="font-size:10pt;color:#64748b;">Elige "Guardar como PDF" como impresora</span>
+  <span style="margin-left:auto;font-size:10pt;">
+    <a href="/cv/" style="color:#64748b;text-decoration:none;">EN</a>
+    &nbsp;|&nbsp;
+    <strong style="color:#0d9488;">ES</strong>
+  </span>
+</div>
+
+<h1>Juan David Valencia Martinez</h1>
+<div class="contact">
+  <span>juanvalencia9411@outlook.com</span>
+  <span>+57 316 3104571</span>
+  <span><a href="https://github.com/jdvalmart">github.com/jdvalmart</a></span>
+  <span><a href="https://linkedin.com/in/jdvalmart">linkedin.com/in/jdvalmart</a></span>
+  <span><a href="https://jdvalmartdev.netlify.app">jdvalmartdev.netlify.app</a></span>
+</div>
+
+<h2>Perfil Profesional</h2>
+<p>
+Ingeniero de Software. Construyo aplicaciones web completas con React, TypeScript, FastAPI y PostgreSQL, integrando machine learning y NLP. Mi experiencia previa monitoreando sistemas críticos me enseñó a desarrollar con disciplina operativa y cero margen de error.
+</p>
+<p>
+Mi formación en Inteligencia Artificial (MinTIC) cubre el ciclo completo de machine learning — desde la preparación de datos hasta el despliegue de modelos como API REST — e integra deep learning (MLP, CNN, LSTM), NLP y MLOps. Automatizo procesos con Python y SQL, documentando cada paso. Disponible para trabajo presencial, remoto o híbrido. Abierto a reubicación en cualquier ciudad de Colombia.
+</p>
+
+<h2>Habilidades Técnicas</h2>
+<div class="skills-grid">
+  <span class="skill-cat"><strong>Lenguajes:</strong> Python, JavaScript, TypeScript, SQL</span>
+  <span class="skill-cat"><strong>Frontend:</strong> React, Vue.js, HTML5, CSS3, Tailwind CSS</span>
+  <span class="skill-cat"><strong>Backend:</strong> FastAPI, NestJS, Node.js, Express.js, APIs REST</span>
+  <span class="skill-cat"><strong>Bases de datos:</strong> PostgreSQL, MongoDB</span>
+  <span class="skill-cat"><strong>Machine Learning:</strong> Scikit-learn, TensorFlow, Keras, Clasificación, Regresión, Clustering</span>
+  <span class="skill-cat"><strong>Deep Learning:</strong> MLP, CNN, LSTM, Redes Neuronales</span>
+  <span class="skill-cat"><strong>NLP:</strong> Transformers, HuggingFace, NLTK, spaCy, TF-IDF, Análisis de Sentimiento, NER</span>
+  <span class="skill-cat"><strong>XAI:</strong> LIME, SHAP, Grad-CAM</span>
+  <span class="skill-cat"><strong>Datos:</strong> Pandas, NumPy, Matplotlib, Seaborn, Jupyter</span>
+  <span class="skill-cat"><strong>DevOps y Cloud:</strong> Docker, Git, GitHub, Railway, Netlify, fundamentos MLOps, bases AWS/GCP/Azure</span>
+  <span class="skill-cat"><strong>Metodologías:</strong> Ágiles, Scrum, Kanban</span>
+</div>
+
+<h2>Experiencia Profesional</h2>
+
+<div class="job-header">
+  <span class="job-title">Operador de Medios Tecnológicos</span>
+  <span class="job-date">2021 – Presente (4 años)</span>
+</div>
+<ul>
+  <li>Monitoreo de sistemas electrónicos de seguridad (CCTV, alarmas, control de acceso) para más de 200 usuarios con 99% de disponibilidad.</li>
+  <li>Desarrollo de scripts de automatización en Python y SQL para la gestión de inventario, reduciendo un 30% los tiempos manuales.</li>
+  <li>Documentación de procesos operativos y gestión de respuesta a incidentes en tiempo real.</li>
+  <li>Mantenimiento y configuración de infraestructura tecnológica en múltiples sedes.</li>
+</ul>
+
+<div class="job-header">
+  <span class="job-title">Practicante de Desarrollo Full-Stack</span>
+  <span class="job-date">SENA, 2022</span>
+</div>
+<ul>
+  <li>Desarrollo de interfaces frontend con Vue.js e integración de APIs backend construidas con PHP y Laravel.</li>
+  <li>Gestión de bases de datos MySQL, depuración de JSON y pruebas funcionales.</li>
+  <li>Colaboración en equipo de desarrollo ágil bajo metodología Scrum.</li>
+</ul>
+
+<h2>Proyectos</h2>
+
+<div class="project">
+  <span class="project-name">Pequelectores — Sistema de Recomendación de Libros Infantiles</span>
+  <div class="project-tech">React, TypeScript, FastAPI, Python, PostgreSQL, scikit-learn, Docker, Railway, Netlify</div>
+  <p>Motor de recomendación con IA usando TF-IDF para niños de 6 a 14 años. Incluye rachas de lectura, gamificación con insignias y autenticación JWT para padres. Cobertura completa de pruebas en frontend y backend.</p>
+</div>
+
+<div class="project">
+  <span class="project-name">XAI CIFAR-10 — Clasificador CNN Explicable</span>
+  <div class="project-tech">Python, TensorFlow, LIME, SHAP, Grad-CAM, NumPy</div>
+  <p>Red Neuronal Convolucional con 87.14% de precisión en el dataset CIFAR-10. Implementa tres técnicas de explicabilidad (LIME, SHAP, Grad-CAM) para transparencia e interpretabilidad del modelo.</p>
+</div>
+
+<div class="project">
+  <span class="project-name">NLP Labs — 20+ Laboratorios de Procesamiento de Lenguaje Natural</span>
+  <div class="project-tech">Python, NLTK, spaCy, Transformers, HuggingFace, pandas</div>
+  <p>Colección de laboratorios prácticos de NLP: análisis de sentimiento, reconocimiento de entidades (NER), clasificación de texto, tokenización y fine-tuning de modelos de lenguaje.</p>
+</div>
+
+<div class="project">
+  <span class="project-name">Book Tracker — Aplicación Full-Stack de Gestión de Biblioteca</span>
+  <div class="project-tech">React, TypeScript, FastAPI, PostgreSQL, Docker, Railway, Netlify</div>
+  <p>Aplicación CRUD con API REST documentada, persistencia en PostgreSQL y contenerización con Docker Compose. Desplegada con pipeline CI/CD.</p>
+</div>
+
+<div class="project">
+  <span class="project-name">Blog Backend API — API REST Modular</span>
+  <div class="project-tech">NestJS, TypeScript, Node.js, PostgreSQL, Docker</div>
+  <p>API RESTful para gestión de publicaciones con arquitectura modular, autenticación JWT y despliegue en contenedores.</p>
+</div>
+
+<h2>Educación</h2>
+<p><strong>Ingeniería de Software</strong> — Politécnico Grancolombiano (2026)</p>
+<p><strong>Tecnólogo en Análisis y Desarrollo de Software</strong> — SENA (2020 – 2022)</p>
+<p><strong>Bootcamp de Inteligencia Artificial — Niveles Básico e Intermedio</strong> — Talento Tech, MinTIC (2025 – 2026)</p>
+<ul>
+  <li>Básico (10 semanas): Machine Learning supervisado y no supervisado, NLP, Big Data, Chatbots, preparación de datos, métricas, despliegue de modelos.</li>
+  <li>Intermedio (10 semanas): Deep Learning (MLP, CNN, RNN/LSTM), XAI, MLOps, Cloud, Big Data (Spark, Hadoop).</li>
+  <li>20+ laboratorios prácticos documentados.</li>
+</ul>
+
+<h2>Certificaciones</h2>
+<p class="cert-list">Python | TensorFlow | Scikit-learn | FastAPI | PostgreSQL | Docker | Git & GitHub | React | TypeScript | Machine Learning (Talento Tech) | Deep Learning (Talento Tech)</p>
+
+<h2>Idiomas</h2>
+<p>Español: Nativo | Inglés: Intermedio (documentación técnica y comunicación profesional básica)</p>
+
+</body>
+</html>
