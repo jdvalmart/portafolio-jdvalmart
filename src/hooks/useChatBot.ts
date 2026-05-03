@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { searchChunks, generateResponse } from "../services/rag";
 import type { KnowledgeChunk } from "../services/rag";
 // Static knowledge base and fallback responses
@@ -79,15 +79,20 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
     lang = "en",
   } = options ?? {};
 
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: welcomeMessage,
-      timestamp: Date.now(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Update welcome message when language or text changes
+  useEffect(() => {
+    setMessages([
+      {
+        role: "assistant",
+        content: welcomeMessage,
+        timestamp: Date.now(),
+      },
+    ]);
+  }, [welcomeMessage]);
 
   const sendMessage = useCallback(async (query: string) => {
     // 1) Add user message
@@ -158,7 +163,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
     } finally {
       setIsLoading(false);
     }
-  }, [fallbackMessage]);
+  }, [fallbackMessage, lang]);
 
   return { messages, isLoading, error, sendMessage };
 }
