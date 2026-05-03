@@ -37,8 +37,8 @@ export const Hero = () => {
               About Me
             </a>
             <a
-              href="/cv/JuanDavidValencia_FullStackDeveloper_CV_Eng.pdf"
-              download="/cv/JuanDavidValencia_FullStackDeveloper_CV_Eng.pdf"
+              href="/cv/"
+              target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
             >
