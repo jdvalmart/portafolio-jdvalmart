@@ -55,14 +55,35 @@
     .skill-cat strong { font-weight: 700; }
     .cert-list { font-size: 10.5pt; }
     hr { display: none; }
+    .download-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 20px;
+      background: #0d9488;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 11pt;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .download-btn:hover { background: #0f766e; }
     @media print {
       body { padding: 18px 28px; }
       h2 { break-after: avoid; page-break-after: avoid; }
       ul { break-inside: avoid; page-break-inside: avoid; }
+      .no-print { display: none; }
     }
+    .no-print { margin-bottom: 12px; }
   </style>
 </head>
 <body>
+
+<div class="no-print">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+  <span style="font-size:10pt;color:#64748b;margin-left:10px;">Select "Save as PDF" as printer</span>
+</div>
 
 <h1>Juan David Valencia Martinez</h1>
 <div class="contact">
