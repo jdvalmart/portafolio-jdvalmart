@@ -5,7 +5,7 @@ import type { Stat } from '../StatsBar'
 
 describe('StatsBar', () => {
   const mockStats: Stat[] = [
-    { label: 'Years Experience', value: 4, suffix: '+' },
+    { label: 'Years Experience', value: 5, suffix: '+' },
     { label: 'AI Projects', value: 4 },
     { label: 'ML Labs', value: 20, suffix: '+' },
     { label: 'Bootcamp IA', value: 20, suffix: ' weeks' },
