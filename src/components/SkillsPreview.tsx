@@ -12,38 +12,25 @@ function getTopSkills(n: number): SkillLevel[] {
   return sorted.slice(0, n);
 }
 
-function SkillBar({ skill, animate }: { skill: SkillLevel; animate: boolean }) {
+function SkillCard({ skill, animate }: { skill: SkillLevel; animate: boolean }) {
   const widthPercent = skill.level * 10; // level 1-10 → 10%-100%
 
   return (
-    <div className="flex items-center gap-3">
-      <span
-        className="
-          w-28 sm:w-32 text-sm font-medium
-          text-zinc-700 dark:text-zinc-300
-          whitespace-nowrap
-        "
-      >
-        {skill.name}
-      </span>
-      <div className="flex-1 h-2.5 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden">
+    <div className="p-4 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+          {skill.name}
+        </span>
+        <span className="text-xs font-bold text-teal-600 dark:text-teal-400 tabular-nums">
+          {skill.level}/10
+        </span>
+      </div>
+      <div className="h-2 bg-zinc-100 dark:bg-zinc-700 rounded-full overflow-hidden">
         <div
-          className="
-            h-full bg-teal-600 dark:bg-teal-500 rounded-full
-            transition-all duration-1000 ease-out
-          "
+          className="h-full bg-teal-600 dark:bg-teal-500 rounded-full transition-all duration-1000 ease-out"
           style={{ width: animate ? `${widthPercent}%` : "0%" }}
         />
       </div>
-      <span
-        className="
-          w-8 text-xs font-semibold text-right
-          text-zinc-500 dark:text-zinc-400
-          tabular-nums
-        "
-      >
-        {skill.level}/10
-      </span>
     </div>
   );
 }
@@ -66,10 +53,10 @@ export function SkillsPreview() {
 
       <div
         ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
       >
         {topSkills.map((skill) => (
-          <SkillBar key={skill.name} skill={skill} animate={isVisible} />
+          <SkillCard key={skill.name} skill={skill} animate={isVisible} />
         ))}
       </div>
     </section>
