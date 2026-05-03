@@ -51,6 +51,7 @@ export const Hero = () => {
           <img
             src="/lanzamiento.gif"
             alt="AI & ML Engineering illustration"
+            loading="lazy"
             className="w-80"
           />
         </div>

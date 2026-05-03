@@ -32,6 +32,7 @@ export function ProjectCard({ project }: Props) {
             <img
               src={project.image}
               alt={project.title}
+              loading="lazy"
               className="
                 max-h-32
                 object-contain

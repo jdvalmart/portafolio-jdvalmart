@@ -1,4 +1,5 @@
 import React from "react";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import { Hero } from "../components/Hero";
 import { StatsBar } from "../components/StatsBar";
 import type { Stat } from "../components/StatsBar";
@@ -14,9 +15,15 @@ const stats: Stat[] = [
 ];
 
 const Home: React.FC = () => {
+  const { ref, isVisible } = useScrollReveal();
   return (
     <>
-      <Hero />
+      <div
+        ref={ref}
+        className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700`}
+      >
+        <Hero />
+      </div>
 
       {/* Stats Bar */}
       <section className="py-12">

@@ -30,6 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
             <img
               src="/pulpo.gif"
               alt="Logo Jdvalmart"
+              loading="lazy"
               className="w-10 h-10 rounded-full"
             />
             <span className="text-xl font-semibold text-zinc-900">

@@ -2,13 +2,18 @@ import React from "react";
 import { Skills } from "../components/Skills";
 import { Timeline } from "../components/Timeline";
 import { CertBadges } from "../components/CertBadges";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const About: React.FC = () => {
+  const { ref, isVisible } = useScrollReveal();
   return (
     <>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold mb-10 text-center">About Me</h2>
-        <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <div
+          ref={ref}
+          className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
+        >
           <p>
             AI Engineer & ML Engineer with a focus on NLP and interpretable AI.
             I build machine learning pipelines, train models with transformers,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -16,6 +17,7 @@ const Contact = () => {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const { ref, isVisible } = useScrollReveal();
 
   const {
     register,
@@ -53,6 +55,10 @@ const Contact = () => {
       </p>
 
       {/* Form */}
+      <div
+        ref={ref}
+        className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700`}
+      >
       {status === "success" ? (
         <div className="max-w-lg mx-auto text-center py-10">
           <p className="text-lg text-green-600 font-medium">
@@ -168,6 +174,7 @@ const Contact = () => {
           </button>
         </form>
       )}
+      </div>
 
       {/* Social Links */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
