@@ -48,8 +48,10 @@ const Layout = ({ children }: LayoutProps) => {
               <path d="M22.5 17 Q 23.5 25 22.5 30" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
               <path d="M26 16.5 Q 28 24 26 28" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
-            <span className="text-lg font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
-              jdvalmart
+            <span className="text-lg font-extrabold tracking-tighter">
+              <span className="text-teal-600 dark:text-teal-400">jd</span>
+              <span className="text-zinc-800 dark:text-zinc-200">val</span>
+              <span className="text-teal-600 dark:text-teal-400">mart</span>
             </span>
           </Link>
 

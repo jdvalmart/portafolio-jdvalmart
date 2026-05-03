@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
-            Hi, I'm Juan David ✌🏾
+            Hi, I'm Juan David
             <br />
             <span className="text-teal-600 dark:text-teal-400">
               AI Engineer & ML Engineer
@@ -17,8 +17,9 @@ export const Hero = () => {
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            I build ML/NLP solutions with transformers and deploy models via
-            FastAPI. From data pipelines to interpretable AI.
+            Software Engineer specializing in NLP &amp; interpretable AI. I build
+            complete applications — from ML pipelines to production APIs —
+            integrating machine learning to solve real-world problems.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
