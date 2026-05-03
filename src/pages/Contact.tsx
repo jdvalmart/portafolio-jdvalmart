@@ -29,20 +29,9 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactForm) => {
     setStatus("loading");
-    try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+    // Simulate submission delay for UX feedback
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    setStatus("success");
   };
 
   return (
@@ -60,9 +49,19 @@ const Contact = () => {
         className={`${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700`}
       >
       {status === "success" ? (
-        <div className="max-w-lg mx-auto text-center py-10">
-          <p className="text-lg text-green-600 font-medium">
-            ✅ Message sent successfully! I'll get back to you soon.
+         <div className="max-w-lg mx-auto text-center py-10">
+          <div className="text-5xl mb-4">📬</div>
+          <p className="text-lg text-teal-700 dark:text-teal-300 font-semibold mb-2">
+            Thanks for reaching out!
+          </p>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            This is a demo portfolio — send me a direct email at{" "}
+            <a
+              href="mailto:juanvalencia9411@outlook.com"
+              className="text-teal-600 dark:text-teal-400 font-medium hover:underline"
+            >
+              juanvalencia9411@outlook.com
+            </a>
           </p>
         </div>
       ) : (

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Project } from "../data/projects";
 
 interface Props {
@@ -6,7 +5,6 @@ interface Props {
 }
 
 export function ProjectCard({ project }: Props) {
-  const [imgError, setImgError] = useState(false);
 
   return (
     <article
@@ -81,40 +79,30 @@ export function ProjectCard({ project }: Props) {
             <text x="180" y="22" textAnchor="middle" className="fill-white" fontSize="6" fontWeight="bold">NLP</text>
           </svg>
         ) : project.id === 4 ? (
-          /* Book-Tracker — try image first, fallback to bookshelf SVG */
-          imgError ? (
-            <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Book-Tracker illustration">
-              <rect x="20" y="75" width="160" height="5" rx="2.5" className="fill-teal-600/80" />
-              <rect x="30" y="78" width="4" height="10" className="fill-teal-600/50" />
-              <rect x="166" y="78" width="4" height="10" className="fill-teal-600/50" />
-              <rect x="30" y="35" width="16" height="42" rx="2" className="fill-teal-500/80" />
-              <rect x="33" y="40" width="10" height="2" rx="1" className="fill-white/40" />
-              <rect x="33" y="46" width="10" height="2" rx="1" className="fill-white/30" />
-              <rect x="50" y="25" width="14" height="52" rx="2" className="fill-amber-400/80" />
-              <rect x="53" y="32" width="8" height="2" rx="1" className="fill-white/40" />
-              <rect x="68" y="20" width="18" height="57" rx="2" className="fill-cyan-400/80" />
-              <rect x="72" y="28" width="10" height="2" rx="1" className="fill-white/50" />
-              <rect x="72" y="34" width="10" height="2" rx="1" className="fill-white/30" />
-              <rect x="90" y="30" width="15" height="47" rx="2" className="fill-zinc-400/80" />
-              <rect x="93" y="38" width="9" height="2" rx="1" className="fill-white/40" />
-              <rect x="93" y="44" width="9" height="2" rx="1" className="fill-white/30" />
-              <rect x="110" y="24" width="14" height="53" rx="2" className="fill-teal-300/80" />
-              <rect x="113" y="32" width="8" height="2" rx="1" className="fill-white/50" />
-              <rect x="113" y="38" width="8" height="2" rx="1" className="fill-white/30" />
-              <rect x="128" y="32" width="16" height="45" rx="2" className="fill-amber-500/80" />
-              <rect x="131" y="40" width="10" height="2" rx="1" className="fill-white/40" />
-              <circle cx="170" cy="15" r="14" className="fill-teal-600" />
-              <polyline points="163,15 168,20 177,10" className="stroke-white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-            </svg>
-          ) : (
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              className="max-h-36 object-contain transition-transform duration-300 group-hover:scale-105"
-              onError={() => setImgError(true)}
-            />
-          )
+          /* Book-Tracker — library management bookshelf */
+          <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Book-Tracker illustration">
+            <rect x="20" y="75" width="160" height="5" rx="2.5" className="fill-teal-600/80" />
+            <rect x="30" y="78" width="4" height="10" className="fill-teal-600/50" />
+            <rect x="166" y="78" width="4" height="10" className="fill-teal-600/50" />
+            <rect x="30" y="35" width="16" height="42" rx="2" className="fill-teal-500/80" />
+            <rect x="33" y="40" width="10" height="2" rx="1" className="fill-white/40" />
+            <rect x="33" y="46" width="10" height="2" rx="1" className="fill-white/30" />
+            <rect x="50" y="25" width="14" height="52" rx="2" className="fill-amber-400/80" />
+            <rect x="53" y="32" width="8" height="2" rx="1" className="fill-white/40" />
+            <rect x="68" y="20" width="18" height="57" rx="2" className="fill-cyan-400/80" />
+            <rect x="72" y="28" width="10" height="2" rx="1" className="fill-white/50" />
+            <rect x="72" y="34" width="10" height="2" rx="1" className="fill-white/30" />
+            <rect x="90" y="30" width="15" height="47" rx="2" className="fill-zinc-400/80" />
+            <rect x="93" y="38" width="9" height="2" rx="1" className="fill-white/40" />
+            <rect x="93" y="44" width="9" height="2" rx="1" className="fill-white/30" />
+            <rect x="110" y="24" width="14" height="53" rx="2" className="fill-teal-300/80" />
+            <rect x="113" y="32" width="8" height="2" rx="1" className="fill-white/50" />
+            <rect x="113" y="38" width="8" height="2" rx="1" className="fill-white/30" />
+            <rect x="128" y="32" width="16" height="45" rx="2" className="fill-amber-500/80" />
+            <rect x="131" y="40" width="10" height="2" rx="1" className="fill-white/40" />
+            <circle cx="170" cy="15" r="14" className="fill-teal-600" />
+            <polyline points="163,15 168,20 177,10" className="stroke-white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          </svg>
         ) : null}
       </div>
 

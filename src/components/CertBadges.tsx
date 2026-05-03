@@ -21,10 +21,11 @@ function CertBadge({ cert, animate }: { cert: Certification; animate: boolean })
     >
       <span
         className="
-          w-12 h-12 rounded-full
+          w-14 h-14 rounded-xl
           bg-teal-600 dark:bg-teal-500
-          text-white text-sm font-bold
+          text-white text-lg font-extrabold
           flex items-center justify-center
+          shadow-sm
         "
         aria-label={cert.name}
       >
