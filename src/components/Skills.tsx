@@ -20,7 +20,7 @@ export const skillGroups: SkillGroupData[] = [
     ],
   },
   {
-    title: "Supporting Skills",
+    title: "Backend & Data",
     skills: [
       { name: "Python", level: 7 },
       { name: "FastAPI", level: 6 },
@@ -48,39 +48,40 @@ export const skillGroups: SkillGroupData[] = [
 
 import { useT } from "../i18n/LanguageContext";
 
-function SkillBadge({ skill }: { skill: SkillLevel }) {
-  const icon = skill.name.substring(0, 2).toUpperCase();
-  return (
-    <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-teal-50 dark:bg-teal-950 border border-teal-100 dark:border-teal-900 text-center">
-      <span
-        className="w-14 h-14 rounded-xl bg-teal-600 dark:bg-teal-500 text-white text-lg font-extrabold flex items-center justify-center shadow-sm"
-        aria-label={skill.name}
-      >
-        {icon}
-      </span>
-      <span className="text-sm font-semibold leading-tight text-zinc-800 dark:text-zinc-200">
-        {skill.name}
-      </span>
-      <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
-        {skill.level}/10
-      </span>
-    </div>
-  );
-}
-
 export const Skills = () => {
   const { t } = useT();
-  const allSkills = skillGroups.flatMap((g) => g.skills);
 
   return (
-    <section id="skills" className="max-w-5xl mx-auto px-6 pb-20">
+    <section id="skills" className="max-w-2xl mx-auto px-6 pb-20">
       <h2 className="text-3xl font-bold text-center mb-10 text-zinc-900 dark:text-zinc-100">
         {t.skills.title}
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {allSkills.map((skill) => (
-          <SkillBadge key={skill.name} skill={skill} />
+      <div className="space-y-8">
+        {skillGroups.map((group) => (
+          <div key={group.title}>
+            <h3 className="text-sm font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wide mb-3">
+              {group.title}
+            </h3>
+            <div className="space-y-2">
+              {group.skills.map((skill) => (
+                <div key={skill.name} className="flex items-center gap-3">
+                  <span className="w-28 text-sm text-zinc-600 dark:text-zinc-400 truncate">
+                    {skill.name}
+                  </span>
+                  <div className="flex-1 h-2 bg-zinc-100 dark:bg-zinc-700 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-teal-500 dark:bg-teal-400 rounded-full"
+                      style={{ width: `${skill.level * 10}%` }}
+                    />
+                  </div>
+                  <span className="w-7 text-xs text-right text-zinc-400 dark:text-zinc-500 tabular-nums">
+                    {skill.level}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
