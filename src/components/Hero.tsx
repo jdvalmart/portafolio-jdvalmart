@@ -1,7 +1,12 @@
 export const Hero = () => {
   return (
-    <section className="min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden bg-[linear-gradient(to_bottom_right,#f0fdfa,#ecfeff)] dark:bg-[linear-gradient(to_bottom_right,#0f172a,#042f2e)]">
+      {/* CSS grid pattern overlay */}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,theme(colors.teal.300/15)_1px,transparent_0)] bg-[size:24px_24px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
             Hi, I'm Juan David ✌🏾
@@ -45,7 +50,7 @@ export const Hero = () => {
         <div className="hidden md:flex justify-center">
           <img
             src="/lanzamiento.gif"
-            alt="Ilustración desarrollo web"
+            alt="AI & ML Engineering illustration"
             className="w-80"
           />
         </div>

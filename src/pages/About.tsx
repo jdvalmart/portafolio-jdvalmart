@@ -1,5 +1,7 @@
 import React from "react";
 import { Skills } from "../components/Skills";
+import { Timeline } from "../components/Timeline";
+import { CertBadges } from "../components/CertBadges";
 
 const About: React.FC = () => {
   return (
@@ -28,6 +30,26 @@ const About: React.FC = () => {
           </p>
         </div>
       </section>
+
+      {/* Timeline */}
+      <section className="mb-16">
+        <Timeline />
+      </section>
+
+      {/* Certifications */}
+      <section className="mb-16">
+        <CertBadges />
+      </section>
+
+      {/* Professional Philosophy */}
+      <section className="max-w-5xl mx-auto px-6 mb-16">
+        <blockquote className="border-l-4 border-teal-600 pl-6 py-4 my-8 bg-teal-50 rounded-r-lg italic text-zinc-700">
+          "My professional philosophy: I'm not a developer who just codes — I
+          build complete applications integrating machine learning models to
+          solve real-world problems."
+        </blockquote>
+      </section>
+
       <Skills />
     </>
   );

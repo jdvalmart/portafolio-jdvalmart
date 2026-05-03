@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 type LayoutProps = {
   children: ReactNode;
@@ -8,6 +9,16 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   const [open, setOpen] = useState(false);
+  const { isDark, toggle } = useDarkMode();
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -25,12 +36,22 @@ const Layout = ({ children }: LayoutProps) => {
               Jdvalmart
             </span>
           </Link>
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl text-zinc-800"
-          >
-            ☰
-          </button>
+          {/* Dark mode toggle + mobile hamburger */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggle}
+              className="text-xl p-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {isDark ? "☀️" : "🌙"}
+            </button>
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden text-2xl text-zinc-800"
+            >
+              ☰
+            </button>
+          </div>
           {/* Navigation  desktop*/}
           <nav className="hidden md:flex gap-6 text-sm font-medium">
             {["/", "/projects", "/about", "/contact"].map((path, i) => {
@@ -115,6 +136,17 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </footer>
+
+      {/* Back to Top button */}
+      {showBackToTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 z-40 bg-teal-600 text-white rounded-full w-12 h-12 shadow-lg hover:bg-teal-700 transition flex items-center justify-center"
+          aria-label="Back to top"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 };

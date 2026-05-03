@@ -71,6 +71,27 @@ export function ProjectCard({ project }: Props) {
           ))}
         </div>
 
+        {/* Metrics badges */}
+        {project.metrics && (
+          <div className="flex flex-wrap gap-2">
+            {project.metrics.accuracy !== undefined && (
+              <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
+                🎯 {project.metrics.accuracy}% accuracy
+              </span>
+            )}
+            {project.metrics.labCount !== undefined && (
+              <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
+                🧪 {project.metrics.labCount}+ labs
+              </span>
+            )}
+            {project.metrics.booksManaged !== undefined && (
+              <span className="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
+                📚 {project.metrics.booksManaged} books
+              </span>
+            )}
+          </div>
+        )}
+
         {/* Acciones */}
         <div className="flex gap-3 pt-2">
           {project.liveUrl && (
