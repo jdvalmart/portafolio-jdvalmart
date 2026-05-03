@@ -22,50 +22,32 @@ const About: React.FC = () => {
           } transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
         >
           <p>
-            I didn't come from a traditional software development background.
-            My story starts with{" "}
+            I'm a{" "}
+            <strong className="text-zinc-800 dark:text-zinc-200">Software Engineer</strong>{" "}
+            with 4 years of experience as a Technology Media Operator and
+            professional practice in Full-Stack development.
+          </p>
+
+          <p>
+            I combine web application development with{" "}
             <strong className="text-zinc-800 dark:text-zinc-200">
-              4 years in security technology operations
-            </strong>
-            : monitoring critical systems (CCTV, alarms, access control) with
-            99% availability and managing infrastructure for 200+ users.
-          </p>
-
-          <p>
-            It was in that environment — between monitoring shifts and incident
-            response — that I discovered the power of automation. I started
-            writing{" "}
-            <strong className="text-teal-600 dark:text-teal-400">
-              Python and SQL scripts
+              React, TypeScript, FastAPI, NestJS, and PostgreSQL
             </strong>{" "}
-            to optimize inventory management (reducing manual work by 30%),
-            and that sparked a passion that led me to study Software
-            Engineering and specialize in{" "}
-            <strong className="text-teal-600 dark:text-teal-400">
-              Artificial Intelligence
-            </strong>{" "}
-            through MinTIC's 20-week AI Bootcamp.
+            with advanced AI training (MinTIC, 20 weeks). I handle the full
+            machine learning lifecycle — from data preparation to model
+            deployment as REST APIs — and integrate deep learning fundamentals
+            (MLP, CNN, LSTM),{" "}
+            <strong className="text-teal-600 dark:text-teal-400">NLP</strong>,
+            and MLOps.
           </p>
 
           <p>
-            Today I combine that operational rigor — documenting processes,
-            thinking about system availability, reacting to failures — with
-            building complete web applications and machine learning pipelines.
-            My experience spans from inventory automation with Python and SQL,
-            to building recommendation systems with TF-IDF, CNN classifiers
-            with XAI explainability, and advanced NLP laboratories with
-            Transformers and HuggingFace.
-          </p>
-
-          <p>
-            I'm currently building real-world AI projects deployed in
-            production, combining FastAPI for model serving, React for
-            interfaces, and Docker for containerization. My focus is on making
-            AI{" "}
-            <strong className="text-teal-600 dark:text-teal-400">
-              accessible, interpretable, and useful
+            My experience monitoring critical systems taught me{" "}
+            <strong className="text-zinc-800 dark:text-zinc-200">
+              operational discipline
             </strong>
-            .
+            , incident response capability, and how to automate processes with
+            Python and SQL.
           </p>
         </div>
       </section>
@@ -87,8 +69,8 @@ const About: React.FC = () => {
         </h2>
         <blockquote className="border-l-4 border-teal-600 dark:border-teal-400 pl-6 py-4 bg-teal-50 dark:bg-teal-950 rounded-r-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
           <p className="text-lg italic">
-            "My path didn't start with code — it started in a monitoring
-            center. And from there, I keep building."
+            "I come from an environment where systems can't fail. That defines
+            how I build software."
           </p>
           <p className="mt-3 text-sm font-medium text-teal-600 dark:text-teal-400 not-italic">
             — Juan David Valencia

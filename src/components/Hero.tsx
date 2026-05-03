@@ -17,9 +17,9 @@ export const Hero = () => {
           </h1>
 
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            From security tech operations to AI Engineer. I build complete
-            applications — from ML pipelines to production APIs —
-            integrating machine learning to solve real-world problems.
+            Software Engineer specialized in AI, NLP &amp; Full-Stack
+            development. I build complete applications — from ML pipelines to
+            production APIs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
