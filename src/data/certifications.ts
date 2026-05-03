@@ -23,6 +23,6 @@ export const certifications: Certification[] = [
   {
     name: "React Development",
     issuer: "React",
-    icon: "⚛",
+    icon: "RE",
   },
 ];

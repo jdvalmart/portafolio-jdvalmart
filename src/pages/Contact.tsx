@@ -27,10 +27,13 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (_data: ContactForm) => {
+  const onSubmit = async (data: ContactForm) => {
     setStatus("loading");
-    // Simulate submission delay for UX feedback
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    const subject = encodeURIComponent(data.subject);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
+    );
+    window.location.href = `mailto:juanvalencia9411@outlook.com?subject=${subject}&body=${body}`;
     setStatus("success");
   };
 
