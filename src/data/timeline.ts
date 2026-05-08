@@ -33,7 +33,7 @@ export const timeline: TimelineEntry[] = [
     year: 2025,
     title: "Diploma in Computer Science",
     description:
-      "Advanced algorithms in Python and software architecture. Design patterns and system design.",
+      "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis.",
   },
   {
     year: 2026,

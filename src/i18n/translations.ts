@@ -112,7 +112,7 @@ export const translations = {
         },
         {
           title: "Diploma in Computer Science",
-          desc: "Advanced algorithms in Python and software architecture. Design patterns and system design.",
+          desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis.",
         },
         {
           title: "Software Engineer — AI & Full-Stack",
@@ -272,7 +272,7 @@ export const translations = {
         },
         {
           title: "Diplomado en Ciencias de la Computación",
-          desc: "Algoritmia avanzada en Python y arquitectura de software.",
+          desc: "Arquitectura de software (SOA, JEE, .NET), algoritmia avanzada (teor\u00eda de grafos, b\u00fasqueda en texto, estructuras de datos) y an\u00e1lisis de complejidad.",
         },
         {
           title: "Ingeniero de Software — IA & Full-Stack",
