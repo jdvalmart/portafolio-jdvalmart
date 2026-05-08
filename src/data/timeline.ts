@@ -30,6 +30,12 @@ export const timeline: TimelineEntry[] = [
       "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. Built projects with TensorFlow, HuggingFace, and deployed models as APIs. 20+ labs completed.",
   },
   {
+    year: 2025,
+    title: "Diploma in Computer Science",
+    description:
+      "Advanced algorithms in Python and software architecture. Design patterns and system design.",
+  },
+  {
     year: 2026,
     title: "Software Engineer — AI & Full-Stack",
     description:

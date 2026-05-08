@@ -111,6 +111,10 @@ export const translations = {
           desc: "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. Built projects with TensorFlow, HuggingFace, and deployed models as APIs. 20+ labs completed.",
         },
         {
+          title: "Diploma in Computer Science",
+          desc: "Advanced algorithms in Python and software architecture. Design patterns and system design.",
+        },
+        {
           title: "Software Engineer — AI & Full-Stack",
           desc: "Graduated in Software Engineering. Building real AI projects: TF-IDF recommendation systems, CNN classifiers with XAI explainability, and NLP labs. Full-stack development with React, FastAPI, and PostgreSQL.",
         },
@@ -265,6 +269,10 @@ export const translations = {
         {
           title: "Bootcamp IA — MinTIC",
           desc: "20 semanas intensivas con Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. Constru\u00ed proyectos con TensorFlow, HuggingFace y desplegu\u00e9 modelos como APIs. M\u00e1s de 20 laboratorios completados.",
+        },
+        {
+          title: "Diplomado en Ciencias de la Computación",
+          desc: "Algoritmia avanzada en Python y arquitectura de software.",
         },
         {
           title: "Ingeniero de Software — IA & Full-Stack",
