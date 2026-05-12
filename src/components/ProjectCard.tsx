@@ -42,45 +42,45 @@ export function ProjectCard({ project }: Props) {
             <polygon points="162,70 163,74 167,74 164,76 165,80 162,78 159,80 160,76 157,74 161,74" className="fill-amber-300/60" />
           </svg>
         ) : project.id === 2 ? (
-          /* XAI CIFAR-10 — CNN explainability with overlay regions */
-          <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="XAI CIFAR-10 illustration">
-            <circle cx="70" cy="30" r="7" className="fill-teal-400/40" />
-            <circle cx="130" cy="30" r="7" className="fill-teal-400/40" />
-            <circle cx="50" cy="60" r="8" className="fill-teal-500/50" />
-            <circle cx="100" cy="40" r="10" className="fill-teal-600/60" />
-            <circle cx="150" cy="60" r="8" className="fill-teal-500/50" />
-            <circle cx="70" cy="85" r="7" className="fill-teal-400/40" />
-            <circle cx="130" cy="85" r="7" className="fill-teal-400/40" />
-            <line x1="77" y1="30" x2="93" y2="40" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="107" y1="40" x2="123" y2="30" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="58" y1="60" x2="90" y2="45" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="110" y1="45" x2="142" y2="60" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="58" y1="65" x2="63" y2="80" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="142" y1="65" x2="137" y2="80" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="77" y1="85" x2="93" y2="55" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <line x1="123" y1="85" x2="107" y2="55" className="stroke-teal-300/40" strokeWidth="1.5" />
-            <circle cx="100" cy="40" r="14" className="fill-cyan-400/20 stroke-cyan-400/60" strokeWidth="1" strokeDasharray="3 2" />
-            <circle cx="150" cy="60" r="12" className="fill-cyan-400/15 stroke-cyan-400/50" strokeWidth="1" strokeDasharray="3 2" />
-            <circle cx="50" cy="60" r="11" className="fill-cyan-400/20 stroke-cyan-400/50" strokeWidth="1" strokeDasharray="3 2" />
-            <circle cx="130" cy="85" r="10" className="fill-cyan-400/15 stroke-cyan-400/40" strokeWidth="1" strokeDasharray="3 2" />
+          /* Bootcamp IA — neural network with data flow and multiple layers */
+          <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bootcamp IA illustration">
+            {/* Layer 1 */}
+            <circle cx="30" cy="30" r="5" className="fill-teal-400/50" />
+            <circle cx="30" cy="55" r="5" className="fill-teal-400/50" />
+            <circle cx="30" cy="80" r="5" className="fill-teal-400/50" />
+            {/* Layer 2 */}
+            <circle cx="85" cy="20" r="6" className="fill-teal-500/60" />
+            <circle cx="85" cy="42" r="7" className="fill-teal-600/70" />
+            <circle cx="85" cy="65" r="6" className="fill-teal-500/60" />
+            <circle cx="85" cy="88" r="5" className="fill-teal-400/50" />
+            {/* Layer 3 */}
+            <circle cx="140" cy="25" r="5" className="fill-teal-400/50" />
+            <circle cx="140" cy="55" r="6" className="fill-teal-500/60" />
+            <circle cx="140" cy="85" r="5" className="fill-teal-400/50" />
+            {/* Connections L1→L2 */}
+            <line x1="35" y1="30" x2="79" y2="22" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="35" y1="30" x2="79" y2="42" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="35" y1="55" x2="79" y2="42" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="35" y1="55" x2="79" y2="65" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="35" y1="80" x2="79" y2="65" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="35" y1="80" x2="79" y2="88" className="stroke-teal-300/30" strokeWidth="1" />
+            {/* Connections L2→L3 */}
+            <line x1="92" y1="42" x2="134" y2="25" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="92" y1="42" x2="134" y2="55" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="92" y1="65" x2="134" y2="55" className="stroke-teal-300/30" strokeWidth="1" />
+            <line x1="92" y1="65" x2="134" y2="85" className="stroke-teal-300/30" strokeWidth="1" />
+            {/* XAI overlays */}
+            <circle cx="85" cy="42" r="11" className="fill-cyan-400/15 stroke-cyan-400/50" strokeWidth="1" strokeDasharray="3 2" />
+            <circle cx="140" cy="55" r="10" className="fill-cyan-400/10 stroke-cyan-400/40" strokeWidth="1" strokeDasharray="3 2" />
+            {/* Data badges */}
+            <rect x="155" y="12" width="28" height="10" rx="3" className="fill-amber-400/60" />
+            <text x="169" y="19" textAnchor="middle" className="fill-white" fontSize="6" fontWeight="bold">ML</text>
+            <rect x="155" y="50" width="28" height="10" rx="3" className="fill-teal-300/60" />
+            <text x="169" y="57" textAnchor="middle" className="fill-white" fontSize="5" fontWeight="bold">DL</text>
+            <rect x="155" y="80" width="28" height="10" rx="3" className="fill-cyan-300/60" />
+            <text x="169" y="87" textAnchor="middle" className="fill-white" fontSize="5" fontWeight="bold">NLP</text>
           </svg>
         ) : project.id === 3 ? (
-          /* NLP Labs — Document with magnifying glass and language tags */
-          <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NLP Labs illustration">
-            <rect x="30" y="15" width="100" height="90" rx="6" className="fill-teal-500/10 stroke-teal-500" strokeWidth="1.5" />
-            <rect x="40" y="28" width="60" height="3" rx="1.5" className="fill-teal-400/40" />
-            <rect x="40" y="38" width="80" height="3" rx="1.5" className="fill-teal-400/30" />
-            <rect x="40" y="48" width="45" height="3" rx="1.5" className="fill-teal-400/25" />
-            <rect x="40" y="58" width="70" height="3" rx="1.5" className="fill-teal-400/30" />
-            <rect x="40" y="68" width="55" height="3" rx="1.5" className="fill-teal-400/20" />
-            <circle cx="155" cy="55" r="18" className="fill-teal-300/10 stroke-teal-500" strokeWidth="2" />
-            <line x1="168" y1="68" x2="180" y2="80" className="stroke-teal-500" strokeWidth="2.5" strokeLinecap="round" />
-            <rect x="138" y="78" width="28" height="10" rx="3" className="fill-amber-400/60" />
-            <text x="152" y="86" textAnchor="middle" className="fill-white" fontSize="7" fontWeight="bold">ES</text>
-            <rect x="165" y="15" width="30" height="10" rx="3" className="fill-teal-300/60" />
-            <text x="180" y="22" textAnchor="middle" className="fill-white" fontSize="6" fontWeight="bold">NLP</text>
-          </svg>
-        ) : project.id === 4 ? (
           /* Book-Tracker — library management bookshelf */
           <svg viewBox="0 0 200 120" className="w-44 h-24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Book-Tracker illustration">
             <rect x="20" y="75" width="160" height="5" rx="2.5" className="fill-teal-600/80" />

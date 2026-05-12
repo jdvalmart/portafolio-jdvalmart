@@ -18,8 +18,8 @@ export const translations = {
     home: {
       stats: [
         { label: "Years Experience", value: 5, suffix: "+" },
-        { label: "AI Projects", value: 4 },
-        { label: "ML Labs", value: 20, suffix: "+" },
+        { label: "AI Projects", value: 3 },
+        { label: "ML Labs", value: 33, suffix: "+" },
         { label: "Bootcamp IA", value: 20, suffix: " weeks" },
       ],
       ctaTitle: "Have an AI project in mind?",
@@ -178,8 +178,8 @@ export const translations = {
     home: {
       stats: [
         { label: "A\u00f1os de Experiencia", value: 5, suffix: "+" },
-        { label: "Proyectos IA", value: 4 },
-        { label: "Labs ML", value: 20, suffix: "+" },
+        { label: "Proyectos IA", value: 3 },
+        { label: "Labs ML", value: 33, suffix: "+" },
         { label: "Bootcamp IA", value: 20, suffix: " semanas" },
       ],
       ctaTitle: "\u00bfTienes un proyecto de IA en mente?",

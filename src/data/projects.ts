@@ -38,32 +38,32 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "XAI CIFAR-10",
+    title: "Bootcamp IA — MinTIC",
     description:
-      "CNN image classifier for CIFAR-10 with XAI explanations using LIME, SHAP, and Grad-CAM. Achieved 87.14% accuracy with interpretability overlays.",
+      "33 hands-on labs across ML, Deep Learning, NLP, Big Data, and distributed systems. Covers scikit-learn, TensorFlow (CNN 87.14%, RNN/LSTM, GANs), XAI (LIME, SHAP, Grad-CAM), Transformers, HuggingFace, Spark, Kafka, Docker. Learning repository — applying AI concepts, not production deployment.",
     image: "/xai.png",
-    techs: ["Python", "TensorFlow", "LIME", "SHAP", "Grad-CAM", "NumPy"],
-    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning/blob/main/nivel_intermedio/Laboratorio_5_Redes_neuronales_convolucionales.ipynb",
+    techs: [
+      "Python",
+      "TensorFlow",
+      "scikit-learn",
+      "HuggingFace",
+      "NLTK",
+      "spaCy",
+      "LIME",
+      "SHAP",
+      "Grad-CAM",
+      "Spark",
+      "Docker",
+    ],
+    repoUrl: "https://github.com/jdvalmart/bootcamp-ia-mintic",
     category: "ai-ml",
     metrics: {
+      labCount: 33,
       accuracy: 87.14,
     },
   },
   {
     id: 3,
-    title: "NLP Labs",
-    description:
-      "Hands-on labs covering sentiment analysis, Named Entity Recognition (NER), and text classification using NLTK, spaCy, and transformers.",
-    image: "/nlp.png",
-    techs: ["Python", "NLTK", "spaCy", "transformers", "pandas"],
-    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning/tree/main/nivel_intermedio",
-    category: "ai-ml",
-    metrics: {
-      labCount: 20,
-    },
-  },
-  {
-    id: 4,
     title: "Book-Tracker",
     description:
       "Full Stack application to manage books and personal reading progress.",
