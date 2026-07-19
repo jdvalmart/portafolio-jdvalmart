@@ -1,6 +1,7 @@
 [build]
   command = "bun run build"
   publish = "dist"
+  base = "frontend"
 
 [[redirects]]
   from = "/cv/*"

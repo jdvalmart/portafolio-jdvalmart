@@ -1,4 +1,4 @@
-import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Skills } from "../components/Skills";
 import { Timeline } from "../components/Timeline";
 import { CertBadges } from "../components/CertBadges";
@@ -10,6 +10,10 @@ const About: React.FC = () => {
   const { t } = useT();
   return (
     <>
+      <Helmet>
+        <title>About — Juan David Valencia | AI Engineer</title>
+        <meta name="description" content="About Juan David Valencia — AI Engineer & ML Engineer with 5+ years experience in Python, TensorFlow, NLP, and Full-Stack development." />
+      </Helmet>
       <section id="about" className="max-w-5xl mx-auto py-20 px-6" aria-label="Professional profile">
         <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">
           {t.about.title}

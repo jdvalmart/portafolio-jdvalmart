@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useT } from "../i18n/LanguageContext";
 
 export const Hero = () => {
@@ -31,20 +32,18 @@ export const Hero = () => {
               {t.hero.projectsBtn}
             </a>
 
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="px-6 py-3 border border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-teal-900/20 transition"
             >
               {t.hero.aboutBtn}
-            </a>
-            <a
-              href="/cv/"
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              to="/cv"
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
             >
               {t.hero.cvBtn}
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { Hero } from "../components/Hero";
 import { StatsBar } from "../components/StatsBar";
@@ -16,6 +16,10 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Jdvalmart — AI Engineer Portfolio</title>
+        <meta name="description" content="Juan David Valencia — AI Engineer & ML Engineer. NLP, Transformers, XAI, and Full-Stack development with React, FastAPI, TensorFlow, and Python." />
+      </Helmet>
       <div
         ref={ref}
         className={`${

@@ -39,22 +39,18 @@ describe('searchChunks', () => {
     {
       id: '1',
       content: 'Juan David is an AI Engineer specializing in NLP and Transformers',
-      embedding: [],
     },
     {
       id: '2',
       content: 'He completed a 20-week Bootcamp IA with MINTIC',
-      embedding: [],
     },
     {
       id: '3',
       content: 'He built Pequelectores, a children reading tracker with FastAPI',
-      embedding: [],
     },
     {
       id: '4',
       content: 'Python and TypeScript are his primary programming languages',
-      embedding: [],
     },
   ]
 
@@ -72,7 +68,6 @@ describe('searchChunks', () => {
 
   it('returns multiple chunks for broad query', () => {
     const results = searchChunks('AI Engineer', chunks)
-    // "AI" matches chunk 1 content, "Engineer" matches chunk 1
     expect(results.length).toBeGreaterThanOrEqual(1)
     expect(results[0].id).toBe('1')
   })

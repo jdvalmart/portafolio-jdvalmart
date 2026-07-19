@@ -1,0 +1,348 @@
+{
+  "chunks": [
+    {
+      "content": "Juan David Valencia is a Software Engineer who combines Full-Stack development with AI expertise. He has 5 years of experience as a Technology Media Operator and professional practice in Full-Stack development. He handles the full machine learning lifecycle — from data preparation to model deployment as REST APIs — using React, TypeScript, FastAPI, NestJS, PostgreSQL, and Python. He completed MinTIC's 20-week AI Bootcamp in NLP, Deep Learning, and MLOps.",
+      "id": "profile-01"
+    },
+    {
+      "content": "His professional philosophy is: 'There is no elevator to what is worth it. You climb the stairs, one step at a time.' He believes in fundamentals-first learning and building solid foundations before adopting frameworks.",
+      "id": "profile-02"
+    },
+    {
+      "content": "Juan David's core tech stack includes: React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL, and Docker. He follows Clean Architecture and Hexagonal Architecture patterns for scalable applications.",
+      "id": "skills-01"
+    },
+    {
+      "content": "In AI/ML, he works with Python, TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, and Grad-CAM. He specializes in NLP (sentiment analysis, NER, text classification) and XAI (model interpretability).",
+      "id": "skills-02"
+    },
+    {
+      "content": "Pequelectores is a book recommendation system for children aged 6-14. It uses AI-powered TF-IDF recommendations, reading streaks, badge gamification, and JWT parent authentication. Built with React, TypeScript, FastAPI, Python, PostgreSQL, scikit-learn, and Docker. Deployed on Netlify and Railway.",
+      "id": "project-01"
+    },
+    {
+      "content": "Bootcamp IA — MinTIC is Juan David's AI learning repository with 33 hands-on labs across Basic and Intermediate levels. It covers Machine Learning with scikit-learn, Deep Learning with TensorFlow (CNN at 87.14%, RNN/LSTM, GANs), NLP with Transformers and HuggingFace, XAI with LIME, SHAP, and Grad-CAM, Big Data with Spark and Hadoop, and distributed systems with Kafka. The repo includes 20+ documented labs showing the full ML lifecycle from data preparation to model deployment.",
+      "id": "project-bootcamp"
+    },
+    {
+      "content": "Book-Tracker is a full-stack application for managing personal book collections and tracking reading progress. Built with React, TypeScript, Tailwind CSS, FastAPI, PostgreSQL, and Docker. Deployed on Netlify and Railway.",
+      "id": "project-04"
+    },
+    {
+      "content": "Juan David started his career in 2021 as a Technology Media Operator, where he automated inventory management with Python and SQL scripts. He also configured and maintained computer labs for organizations.",
+      "id": "experience-01"
+    },
+    {
+      "content": "In 2022, he completed his SENA internship as a Full-Stack Developer, building Vue.js frontends and PHP/Laravel backends with MySQL databases. He worked in agile teams using Scrum methodology.",
+      "id": "experience-02"
+    },
+    {
+      "content": "In 2025, he completed the MinTIC Artificial Intelligence Bootcamp — 20 intensive weeks covering Machine Learning, NLP, Deep Learning, XAI, and MLOps. He worked on real projects using TensorFlow, HuggingFace, and modern AI pipelines.",
+      "id": "experience-03"
+    },
+    {
+      "content": "As of 2026, he works as an AI Engineer & ML Engineer, developing real-world AI projects including recommendation systems with TF-IDF, CNN classifiers with XAI explainability, and advanced NLP laboratories. He combines full-stack development with AI expertise for end-to-end solutions.",
+      "id": "experience-04"
+    },
+    {
+      "content": "Juan David holds a Diploma in Computer Science (2025) from Politecnico Grancolombiano. It covers software architecture (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and computational complexity.",
+      "id": "diploma-01"
+    },
+    {
+      "content": "Juan David studied at Politecnico Grancolombiano and SENA in Colombia. He earned a Diploma in Computer Science (2025) covering software architecture, advanced algorithms, and computational complexity. He also completed the MinTIC AI Bootcamp — 20 weeks of Machine Learning, Deep Learning, NLP, XAI, and MLOps.",
+      "id": "education-01"
+    },
+    {
+      "content": "Juan David holds certifications in: MinTIC Artificial Intelligence Bootcamp (2025), TensorFlow Developer, FastAPI Professional, and React Development. These certifications validate his expertise across AI/ML frameworks and modern web development technologies.",
+      "id": "certifications-01"
+    },
+    {
+      "content": "You can contact Juan David through the contact form on this website, or connect with him on LinkedIn. He is based in Palmira, Colombia and is open to AI/ML engineering opportunities, full-stack development projects, and collaborations.",
+      "id": "contact-01"
+    }
+  ],
+  "fallbackResponses": {
+    "en": [
+      {
+        "response": "Hello! I'm Juan David's AI assistant. I can tell you about his skills, projects, experience, and education. What can I help you with?",
+        "patterns": [
+          "hola",
+          "hi",
+          "hello",
+          "hey",
+          "buenas",
+          "buenos días",
+          "buenas tardes"
+        ]
+      },
+      {
+        "response": "I'm ready to help! Ask me about Juan David's projects, tech stack, or AI experience.",
+        "patterns": [
+          "cómo estás",
+          "como estas",
+          "how are you",
+          "qué tal"
+        ]
+      },
+      {
+        "response": "Juan David works with React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL, and Docker. In AI/ML he uses TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, and XAI techniques like LIME, SHAP, and Grad-CAM.",
+        "patterns": [
+          "skills",
+          "habilidades",
+          "tecnologías",
+          "stack",
+          "tech stack",
+          "qué sabes hacer",
+          "que sabes hacer"
+        ]
+      },
+      {
+        "response": "Juan David has 3 main projects: Pequelectores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one would you like to know more about?",
+        "patterns": [
+          "proyectos",
+          "projects",
+          "portafolio",
+          "portfolio",
+          "qué has hecho",
+          "que has hecho"
+        ]
+      },
+      {
+        "response": "Juan David has 5+ years of experience. He started as a Technology Media Operator automating with Python. In 2022 he interned as a Full-Stack Developer at SENA. In 2025 he completed MinTIC's AI Bootcamp. He now works as an AI Engineer & ML Engineer.",
+        "patterns": [
+          "experiencia",
+          "experience",
+          "trayectoria",
+          "carrera",
+          "career"
+        ]
+      },
+      {
+        "response": "Juan David studied at Politecnico Grancolombiano and SENA. He completed the MinTIC AI Bootcamp in 2025 — 20 weeks covering Machine Learning, NLP, Deep Learning, XAI, and MLOps. He holds a Diploma in Computer Science and certifications in TensorFlow, FastAPI, and React.",
+        "patterns": [
+          "educación",
+          "education",
+          "estudios",
+          "formación",
+          "formacion",
+          "bootcamp"
+        ]
+      },
+      {
+        "response": "You can contact Juan David through the contact form on this site, or connect on LinkedIn. He's open to AI/ML engineering opportunities, full-stack development, and collaborations.",
+        "patterns": [
+          "contacto",
+          "contact",
+          "linkedin",
+          "email",
+          "contratar",
+          "hire"
+        ]
+      },
+      {
+        "response": "Juan David's professional philosophy: 'There is no elevator to what's worth it. You climb the stairs, one step at a time.' He believes in fundamentals-first learning and building solid foundations before frameworks.",
+        "patterns": [
+          "filosofía",
+          "filosofia",
+          "philosophy",
+          "pensamiento",
+          "enfoque"
+        ]
+      },
+      {
+        "response": "Pequelectores is a book recommendation system for children aged 6-14. It uses TF-IDF AI recommendations, reading streaks, badge gamification, and JWT parent auth. Built with React, FastAPI, Python, PostgreSQL, scikit-learn, and Docker.",
+        "patterns": [
+          "pequelectores",
+          "recomendador",
+          "libros",
+          "niños"
+        ]
+      },
+      {
+        "response": "Bootcamp IA — MinTIC is a repository with 33 labs covering ML, Deep Learning (CNN 87.14%, RNN/LSTM, GANs), NLP, XAI (LIME, SHAP, Grad-CAM), Big Data (Spark, Hadoop), and distributed systems (Kafka). It documents the full ML lifecycle.",
+        "patterns": [
+          "bootcamp ia",
+          "minitic",
+          "mintic",
+          "labs",
+          "laboratorios",
+          "deep learning",
+          "machine learning"
+        ]
+      },
+      {
+        "response": "The NLP section of Bootcamp IA covers sentiment analysis, Named Entity Recognition (NER), text classification, tokenization, and fine-tuning with NLTK, spaCy, and HuggingFace Transformers. Part of 33 total labs.",
+        "patterns": [
+          "nlp labs",
+          "nlp",
+          "sentiment",
+          "ner",
+          "spacy",
+          "natural language",
+          "text classification",
+          "procesamiento de lenguaje"
+        ]
+      },
+      {
+        "response": "Juan David holds a Diploma in Computer Science (2025) from Politecnico Grancolombiano covering software architecture (SOA, JEE, .NET), advanced algorithms (graph theory, text search), and computational complexity.",
+        "patterns": [
+          "diploma",
+          "diplomado",
+          "computer science",
+          "ciencias de la computacion",
+          "arquitectura de software",
+          "algoritmia"
+        ]
+      },
+      {
+        "response": "Book-Tracker is a full-stack app for managing personal book collections and tracking reading progress. Built with React, TypeScript, Tailwind, FastAPI, PostgreSQL, and Docker. Deployed on Netlify and Railway.",
+        "patterns": [
+          "book tracker",
+          "book-tracker",
+          "biblioteca"
+        ]
+      }
+    ],
+    "es": [
+      {
+        "response": "¡Hola! Soy el asistente virtual de Juan David. Puedo hablarte sobre sus habilidades, proyectos, experiencia y formación. ¿En qué puedo ayudarte?",
+        "patterns": [
+          "hola",
+          "hi",
+          "hello",
+          "hey",
+          "buenas",
+          "buenos días",
+          "buenas tardes"
+        ]
+      },
+      {
+        "response": "¡Estoy listo para ayudarte! Pregúntame sobre los proyectos de Juan David, su stack tecnológico o su experiencia en IA.",
+        "patterns": [
+          "cómo estás",
+          "como estas",
+          "how are you",
+          "qué tal"
+        ]
+      },
+      {
+        "response": "Juan David maneja React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL y Docker. En IA/ML trabaja con TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, y técnicas de XAI como LIME, SHAP y Grad-CAM.",
+        "patterns": [
+          "skills",
+          "habilidades",
+          "tecnologías",
+          "stack",
+          "tech stack",
+          "qué sabes hacer",
+          "que sabes hacer"
+        ]
+      },
+      {
+        "response": "Juan David tiene 3 proyectos principales: Pequelectores (recomendador de libros con IA para niños), Bootcamp IA (33 laboratorios de ML con XAI), y Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa más?",
+        "patterns": [
+          "proyectos",
+          "projects",
+          "portafolio",
+          "portfolio",
+          "qué has hecho",
+          "que has hecho"
+        ]
+      },
+      {
+        "response": "Juan David tiene más de 5 años de experiencia. Empezó como Operador de Medios Tecnológicos automatizando con Python. En 2022 hizo prácticas en SENA como Full-Stack Developer. En 2025 completó el Bootcamp IA de MinTIC. Actualmente trabaja como AI Engineer & ML Engineer.",
+        "patterns": [
+          "experiencia",
+          "experience",
+          "trayectoria",
+          "carrera",
+          "career"
+        ]
+      },
+      {
+        "response": "Juan David estudió en el Politécnico Grancolombiano y el SENA. Completó el Bootcamp de IA de MinTIC en 2025 — 20 semanas de Machine Learning, NLP, Deep Learning, XAI y MLOps. Tiene un Diplomado en Ciencias de la Computación y certificaciones en TensorFlow, FastAPI y React.",
+        "patterns": [
+          "educación",
+          "education",
+          "estudios",
+          "formación",
+          "formacion",
+          "bootcamp"
+        ]
+      },
+      {
+        "response": "Puedes contactar a Juan David a través del formulario en este sitio, o en LinkedIn. Está abierto a oportunidades de AI/ML, desarrollo full-stack y colaboraciones.",
+        "patterns": [
+          "contacto",
+          "contact",
+          "linkedin",
+          "email",
+          "contratar",
+          "hire"
+        ]
+      },
+      {
+        "response": "La filosofía de Juan David: 'No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalón a la vez.' Cree en aprender fundamentos primero y construir bases sólidas antes de adoptar frameworks.",
+        "patterns": [
+          "filosofía",
+          "filosofia",
+          "philosophy",
+          "pensamiento",
+          "enfoque"
+        ]
+      },
+      {
+        "response": "Pequelectores es un sistema de recomendación de libros para niños de 6-14 años. Usa recomendaciones con TF-IDF, rachas de lectura, gamificación con insignias y autenticación JWT para padres. Construido con React, FastAPI, Python, PostgreSQL, scikit-learn y Docker.",
+        "patterns": [
+          "pequelectores",
+          "recomendador",
+          "libros",
+          "niños"
+        ]
+      },
+      {
+        "response": "Bootcamp IA — MinTIC es un repositorio con 33 laboratorios que cubren ML, Deep Learning (CNN 87.14%, RNN/LSTM, GANs), NLP, XAI (LIME, SHAP, Grad-CAM), Big Data (Spark, Hadoop) y sistemas distribuidos (Kafka). Documenta el ciclo completo de ML.",
+        "patterns": [
+          "bootcamp ia",
+          "minitic",
+          "mintic",
+          "labs",
+          "laboratorios",
+          "deep learning",
+          "machine learning"
+        ]
+      },
+      {
+        "response": "La sección de NLP del Bootcamp IA cubre análisis de sentimiento, Named Entity Recognition (NER), clasificación de texto, tokenización y fine-tuning con NLTK, spaCy y HuggingFace Transformers. Parte de 33 laboratorios.",
+        "patterns": [
+          "nlp labs",
+          "nlp",
+          "sentiment",
+          "ner",
+          "spacy",
+          "natural language",
+          "text classification",
+          "procesamiento de lenguaje"
+        ]
+      },
+      {
+        "response": "Juan David tiene un Diplomado en Ciencias de la Computación (2025) del Politécnico Grancolombiano que cubre arquitectura de software (SOA, JEE, .NET), algoritmia avanzada (teoría de grafos, búsqueda en texto) y complejidad computacional.",
+        "patterns": [
+          "diploma",
+          "diplomado",
+          "computer science",
+          "ciencias de la computacion",
+          "arquitectura de software",
+          "algoritmia"
+        ]
+      },
+      {
+        "response": "Book-Tracker es una app full-stack para gestionar colecciones de libros y seguir el progreso de lectura. Construida con React, TypeScript, Tailwind, FastAPI, PostgreSQL y Docker. Desplegada en Netlify y Railway.",
+        "patterns": [
+          "book tracker",
+          "book-tracker",
+          "biblioteca"
+        ]
+      }
+    ]
+  }
+}

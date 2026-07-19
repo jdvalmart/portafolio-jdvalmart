@@ -107,8 +107,9 @@ export default function ChatBot() {
       {/* FAB Toggle Button */}
       <button
         onClick={togglePanel}
-        aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
-        className={`
+          aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
+          aria-expanded={isOpen}
+          className={`
           fixed bottom-6 left-6 z-50
           w-14 h-14 rounded-full
           bg-teal-600 hover:bg-teal-700
@@ -204,6 +205,9 @@ export default function ChatBot() {
             px-4 py-4
             flex flex-col gap-3
           "
+          role="log"
+          aria-live="polite"
+          aria-label={t.chatbot.assistant}
         >
           {messages.map((msg, i) => (
             <ChatBubble key={`${msg.role}-${msg.timestamp}-${i}`} message={msg} />

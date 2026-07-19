@@ -1,19 +1,8 @@
-/**
- * KnowledgeChunk type matching the chatbot-knowledge.json structure.
- * Embeddings are pre-computed float arrays; in the current implementation
- * they are sparse placeholder values. Real embeddings will be generated
- * at build time (see chatbot-knowledge.json task 1.6).
- */
 export interface KnowledgeChunk {
   id: string;
   content: string;
-  embedding: number[];
 }
 
-/**
- * Compute the cosine similarity between two vectors.
- * Returns a value between -1 and 1, where 1 means identical direction.
- */
 export function cosineSimilarity(a: number[], b: number[]): number {
   if (a.length !== b.length) {
     throw new Error(
@@ -36,11 +25,6 @@ export function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / magnitude;
 }
 
-/**
- * Score how many keywords from the query overlap with the chunk content.
- * Used as a lightweight fallback when real embeddings are not available.
- * Returns a score: number of matching keywords (case-insensitive).
- */
 function keywordScore(query: string, chunkContent: string): number {
   const queryWords = query
     .toLowerCase()
@@ -58,40 +42,10 @@ function keywordScore(query: string, chunkContent: string): number {
   return score;
 }
 
-/**
- * Search for the top-3 knowledge chunks most relevant to the query.
- * Uses keyword overlap as the primary search method.
- *
- * TODO: Replace keyword matching with real embedding-based search
- * once sentence-transformers embeddings are generated at build time.
- * The cosineSimilarity function above will be used with real embeddings
- * from chatbot-knowledge.json.
- */
 export function searchChunks(
   query: string,
   chunks: KnowledgeChunk[]
 ): KnowledgeChunk[] {
-  // Attempt embedding-based search first (if embeddings seem valid)
-  const hasRealEmbeddings = chunks.some(
-    (c) =>
-      Array.isArray(c.embedding) &&
-      c.embedding.length > 0 &&
-      c.embedding.some((v) => v !== 0)
-  );
-
-  if (hasRealEmbeddings) {
-    // When real embeddings are generated, use cosine similarity
-    const scored = chunks.map((chunk) => ({
-      chunk,
-      score: 0, // placeholder — real embedding similarity will go here
-    }));
-    return scored
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map((s) => s.chunk);
-  }
-
-  // Fallback: keyword-based scoring
   const scored = chunks.map((chunk) => ({
     chunk,
     score: keywordScore(query, chunk.content),
@@ -107,13 +61,6 @@ export function searchChunks(
 const HF_API_URL =
   "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
-/**
- * Call the HuggingFace Inference API to generate a response.
- *
- * @param context - Retrieved knowledge chunks as a combined string
- * @param query - The user's original question
- * @returns The generated text, or null on any error (rate limit, server error, network failure)
- */
 export async function generateResponse(
   context: string,
   query: string,
@@ -123,7 +70,7 @@ export async function generateResponse(
 
   const isSpanish = lang === "es";
   const systemPrompt = isSpanish
-    ? `Eres el asistente del portafolio de Juan David Valencia. Responde en español usando SOLO el contexto proporcionado. Si el contexto no contiene la respuesta, di "No tengo esa información, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educación de Juan David."`
+    ? `Eres el asistente del portafolio de Juan David Valencia. Responde en español usando SOLO el contexto proporcionado. Si el contexto no contiene la respuesta, di "No tengo esa informacion, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educacion de Juan David."`
     : `You are Juan David Valencia's portfolio assistant. Answer questions using ONLY the context provided below. If the context does not contain the answer, say "I don't have that information, but feel free to ask me about Juan David's skills, projects, experience, or education."`;
 
   const prompt = `<s>[INST] ${systemPrompt}
@@ -151,13 +98,11 @@ Question: ${query} [/INST]`;
       }),
     });
 
-    // Handle rate limiting (429)
     if (response.status === 429) {
       console.warn("HF API rate limited (429). Falling back to static responses.");
       return null;
     }
 
-    // Handle server errors (5xx)
     if (!response.ok) {
       console.warn(`HF API returned ${response.status}. Falling back to static responses.`);
       return null;
@@ -165,7 +110,6 @@ Question: ${query} [/INST]`;
 
     const data: unknown = await response.json();
 
-    // HF API returns either [{ generated_text: "..." }] or an error object
     if (
       Array.isArray(data) &&
       data.length > 0 &&

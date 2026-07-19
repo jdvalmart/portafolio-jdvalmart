@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { useScrollReveal } from "../hooks/useScrollReveal";
@@ -22,6 +23,10 @@ const Projects: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-16 px-4">
+      <Helmet>
+        <title>Projects — Juan David Valencia | AI Engineer</title>
+        <meta name="description" content="Juan David Valencia's projects in Machine Learning, NLP, and Full Stack development." />
+      </Helmet>
       <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 text-center mb-6">
         {t.projects.title}
       </h2>
