@@ -35,14 +35,25 @@ def _cache_key(query: str, lang: str) -> str:
 
 
 def init_rag() -> None:
-    """Call once at startup to load model and populate vector store."""
+    """Call once at startup to populate vector store with real embeddings."""
     if is_initialized():
         return
 
     chunks = load_chunks()
     contents = [c["content"] for c in chunks]
+
+    import logging
+    logger = logging.getLogger(__name__)
+
+    logger.info("Generating embeddings via HF API...")
     embeddings = embed_texts(contents)
+
+    if embeddings is None or len(embeddings) != len(chunks):
+        logger.warning("Embedding generation failed, retrying on next request")
+        return
+
     initialize_store(chunks, embeddings)
+    logger.info(f"Vector store ready with {len(chunks)} chunks")
 
 
 def search_context(
