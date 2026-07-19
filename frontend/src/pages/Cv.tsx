@@ -33,9 +33,9 @@ const CvPage = () => {
           <div>
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Summary</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Software Engineer specialized in AI, NLP, and Full-Stack development. 5+ years of experience combining
-              machine learning expertise with production-ready web applications. Skilled in the full ML lifecycle — from
-              data preparation to model deployment as REST APIs — using Python, TensorFlow, HuggingFace, FastAPI,
+              AI Developer at Trajectory Inc. with 5+ years of experience combining
+              machine learning expertise with production-ready engineering. Skilled in the full ML lifecycle — from
+              data preparation to model deployment as REST APIs — using Python, FastAPI, LLMs,
               React, TypeScript, and PostgreSQL.
             </p>
           </div>
@@ -76,13 +76,13 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Experience</h3>
             <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">AI Engineer & ML Engineer</p>
-                <p className="text-xs text-zinc-400">2026 — Present</p>
-                <p>Building real AI projects: TF-IDF recommendation systems, CNN classifiers with XAI explainability, NLP laboratories. Full-stack development with React, FastAPI, PostgreSQL.</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">AI Developer — Trajectory Inc.</p>
+                <p className="text-xs text-zinc-400">Jun 2025 — Present</p>
+                <p>Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs with LLMs, embeddings, and modern AI infrastructure.</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">AI Bootcamp — MinTIC</p>
-                <p className="text-xs text-zinc-400">2025</p>
+                <p className="text-xs text-zinc-400">Jan — Apr 2025</p>
                 <p>20 intensive weeks covering ML, Deep Learning, NLP, XAI, and MLOps. 33+ labs completed.</p>
               </div>
               <div>

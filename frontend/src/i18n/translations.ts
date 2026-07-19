@@ -8,19 +8,19 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm Juan David",
-      role: "AI Engineer & ML Engineer",
+      role: "AI Developer at Trajectory Inc.",
       subtitle:
-        "Software Engineer specialized in AI, NLP & Full-Stack development. I build complete applications \u2014 from ML pipelines to production APIs.",
+        "Software Engineer specialized in AI, NLP & Full-Stack development. I build complete applications — from ML pipelines to production APIs.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
-      cvBtn: "download CV",
+      cvBtn: "Download CV",
     },
     home: {
       stats: [
         { label: "Years Experience", value: 5, suffix: "+" },
         { label: "AI Projects", value: 3 },
         { label: "ML Labs", value: 33, suffix: "+" },
-        { label: "Bootcamp IA", value: 20, suffix: " weeks" },
+        { label: "Currently at", value: 0, suffix: "Trajectory" },
       ],
       ctaTitle: "Have an AI project in mind?",
       ctaSubtitle:
@@ -39,19 +39,19 @@ export const translations = {
     about: {
       title: "About Me",
       p1:
-        "I'm a Software Engineer. I build complete web applications with React, TypeScript, FastAPI, and PostgreSQL, integrating machine learning and NLP. My background monitoring critical systems taught me to develop with operational discipline and zero margin for error.",
+        "I'm an AI Developer at Trajectory Inc., building production AI solutions for enterprise clients. My work spans the full ML lifecycle — from data preparation and model training to deployment as scalable REST APIs. I combine deep technical knowledge in NLP, Transformers, and XAI with full-stack engineering to deliver end-to-end AI products.",
       p2:
-        "My AI training (MinTIC) covers the full machine learning lifecycle — from data preparation to model deployment as REST APIs — and integrates deep learning (MLP, CNN, LSTM), NLP, and MLOps. I automate processes with Python and SQL, documenting every step.",
+        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 33 hands-on labs. I work daily with Python, FastAPI, React, TypeScript, PostgreSQL, Docker, and modern LLM tooling.",
       p3:
-        "Available for remote, hybrid or on-site work. Open to relocation anywhere in Colombia.",
+        "Based in Palmira, Colombia. Working remotely with Trajectory Inc. since June 2025.",
       philosophy: "Philosophy",
       quote:
         "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Current Goals",
-      goal1: "Deploy a real AI project with an NLP API",
-      goal2: "Master MLOps: model deployment with Docker + FastAPI",
-      goal3: "Add testing coverage to all projects",
+      goal1: "Master LLM orchestration and agent-based architectures",
+      goal2: "Contribute to production AI systems at scale",
+      goal3: "Build and deploy a personal AI SaaS product",
       goal4: "Cloud certification (AWS/GCP)",
     },
     contact: {
@@ -108,15 +108,15 @@ export const translations = {
         },
         {
           title: "AI Bootcamp — MinTIC",
-          desc: "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. Built projects with TensorFlow, HuggingFace, and deployed models as APIs. 20+ labs completed.",
+          desc: "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. 33 labs completed with TensorFlow, HuggingFace, and model deployment as APIs.",
         },
         {
           title: "Diploma in Computer Science",
-          desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis.",
+          desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politecnico Grancolombiano.",
         },
         {
-          title: "Software Engineer — AI & Full-Stack",
-          desc: "Graduated in Software Engineering. Building real AI projects: TF-IDF recommendation systems, CNN classifiers with XAI explainability, and NLP labs. Full-stack development with React, FastAPI, and PostgreSQL.",
+          title: "AI Developer — Trajectory Inc.",
+          desc: "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative remote team.",
         },
       ],
     },
@@ -124,13 +124,13 @@ export const translations = {
       title: "Certifications",
       entries: [
         { name: "AI Bootcamp", issuer: "MinTIC" },
-        { name: "TensorFlow Developer", issuer: "TensorFlow" },
-        { name: "FastAPI Professional", issuer: "FastAPI" },
-        { name: "React Development", issuer: "React" },
+        { name: "Diploma in C.S.", issuer: "Politécnico" },
+        { name: "Software Dev.", issuer: "SENA" },
+        { name: "English B1", issuer: "SENA" },
       ],
     },
     footer: {
-      builtWith: "Built with React \u00b7 TypeScript \u00b7 Tailwind",
+      builtWith: "Built with React · TypeScript · Tailwind",
       rights: "All rights reserved.",
     },
     chatbot: {
@@ -164,29 +164,29 @@ export const translations = {
     nav: {
       home: "Inicio",
       projects: "Proyectos",
-      about: "Sobre m\u00ed",
+      about: "Sobre mi",
       contact: "Contacto",
     },
     hero: {
       greeting: "Hola, soy Juan David",
-      role: "Ingeniero IA & ML Engineer",
+      role: "AI Developer en Trajectory Inc.",
       subtitle:
-        "Ingeniero de Software especializado en IA, NLP y desarrollo Full-Stack. Construyo aplicaciones completas \u2014 desde pipelines de ML hasta APIs en producci\u00f3n.",
+        "Ingeniero de Software especializado en IA, NLP y desarrollo Full-Stack. Construyo aplicaciones completas — desde pipelines de ML hasta APIs en produccion.",
       projectsBtn: "Proyectos",
-      aboutBtn: "Sobre m\u00ed",
-      cvBtn: "descargar CV",
+      aboutBtn: "Sobre mi",
+      cvBtn: "Descargar CV",
     },
     home: {
       stats: [
-        { label: "A\u00f1os de Experiencia", value: 5, suffix: "+" },
+        { label: "Años de Experiencia", value: 5, suffix: "+" },
         { label: "Proyectos IA", value: 3 },
         { label: "Labs ML", value: 33, suffix: "+" },
-        { label: "Bootcamp IA", value: 20, suffix: " semanas" },
+        { label: "Actualmente en", value: 0, suffix: "Trajectory" },
       ],
-      ctaTitle: "\u00bfTienes un proyecto de IA en mente?",
+      ctaTitle: "¿Tienes un proyecto de IA en mente?",
       ctaSubtitle:
-        "Construyo soluciones completas: desde el modelo ML hasta la API y la interfaz. Hablemos de c\u00f3mo puedo ayudarte.",
-      ctaContact: "Cont\u00e1ctame",
+        "Construyo soluciones completas: desde el modelo ML hasta la API y la interfaz. Hablemos de como puedo ayudarte.",
+      ctaContact: "Contactame",
       ctaProjects: "Ver Proyectos",
     },
     projects: {
@@ -195,51 +195,51 @@ export const translations = {
       all: "Todos",
       aiMl: "IA & ML",
       fullStack: "Full Stack",
-      noProjects: "No se encontraron proyectos para esta categor\u00eda.",
+      noProjects: "No se encontraron proyectos para esta categoria.",
     },
     about: {
-      title: "Sobre m\u00ed",
+      title: "Sobre mi",
       p1:
-        "Soy Ingeniero de Software. Construyo aplicaciones web completas con React, TypeScript, FastAPI y PostgreSQL, integrando machine learning y NLP. Mi experiencia previa monitoreando sistemas cr\u00edticos me ense\u00f1\u00f3 a desarrollar con disciplina operativa y cero margen de error.",
+        "Soy AI Developer en Trajectory Inc., construyendo soluciones de IA en produccion para clientes empresariales. Mi trabajo abarca el ciclo completo de ML — desde la preparacion de datos y entrenamiento de modelos hasta el despliegue como APIs REST escalables. Combino conocimiento profundo en NLP, Transformers y XAI con ingenieria full-stack para entregar productos de IA de principio a fin.",
       p2:
-        "Mi formaci\u00f3n en Inteligencia Artificial (MinTIC) cubre el ciclo completo de machine learning \u2014 desde la preparaci\u00f3n de datos hasta el despliegue de modelos como API REST \u2014 e integra deep learning (MLP, CNN, LSTM), NLP y MLOps. Automatizo procesos con Python y SQL, documentando cada paso.",
+        "Mi formacion en IA (MinTIC) cubrio el pipeline completo de machine learning — preparacion de datos, entrenamiento, evaluacion, interpretabilidad y MLOps — a traves de 33 laboratorios practicos. Trabajo diariamente con Python, FastAPI, React, TypeScript, PostgreSQL, Docker y herramientas modernas de LLM.",
       p3:
-        "Disponible para trabajo presencial, remoto o h\u00edbrido. Abierto a reubicaci\u00f3n en cualquier ciudad de Colombia.",
-      philosophy: "Filosof\u00eda",
+        "Radicado en Palmira, Colombia. Trabajando remotamente con Trajectory Inc. desde junio de 2025.",
+      philosophy: "Filosofia",
       quote:
-        "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escal\u00f3n a la vez.\"",
-      quoteAuthor: "\u2014 Juan David Valencia",
+        "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalon a la vez.\"",
+      quoteAuthor: "— Juan David Valencia",
       goals: "Objetivos Actuales",
-      goal1: "Crear proyecto AI real desplegado (NLP API)",
-      goal2: "MLOps: deploy de modelos con Docker + FastAPI",
-      goal3: "Testing en todos los proyectos",
-      goal4: "Certificaci\u00f3n cloud (AWS/GCP)",
+      goal1: "Dominar orquestacion de LLMs y arquitecturas basadas en agentes",
+      goal2: "Contribuir a sistemas de IA en produccion a escala",
+      goal3: "Construir y desplegar un producto SaaS personal de IA",
+      goal4: "Certificacion cloud (AWS/GCP)",
     },
     contact: {
       title: "Contacto",
       intro:
-        "Si tienes una oportunidad, una idea o simplemente quieres contactarme, estar\u00e9 encantado de hablar contigo.",
+        "Si tienes una oportunidad, una idea o simplemente quieres contactarme, estare encantado de hablar contigo.",
       nameLabel: "Nombre",
       emailLabel: "Correo",
       subjectLabel: "Asunto",
       messageLabel: "Mensaje",
       namePlaceholder: "Tu nombre",
       emailPlaceholder: "tu@correo.com",
-      subjectPlaceholder: "\u00bfDe qu\u00e9 se trata?",
+      subjectPlaceholder: "¿De que se trata?",
       messagePlaceholder: "Tu mensaje...",
       submit: "Enviar Mensaje",
       sending: "Enviando...",
-      successTitle: "\u00a1Gracias por contactarme!",
-      successText: "Este es un portafolio demo \u2014 env\u00edame un correo directo a",
+      successTitle: "¡Gracias por contactarme!",
+      successText: "Este es un portafolio demo — enviame un correo directo a",
       errorText:
-        "Algo sali\u00f3 mal. Intenta de nuevo o env\u00eda un correo directamente.",
+        "Algo salio mal. Intenta de nuevo o envia un correo directamente.",
       sendEmail: "Enviar Correo",
       linkedIn: "LinkedIn",
       huggingFace: "HuggingFace",
       gitHub: "GitHub",
       validation: {
         name: "El nombre debe tener al menos 2 caracteres",
-        email: "Ingresa un correo v\u00e1lido",
+        email: "Ingresa un correo valido",
         subject: "El asunto debe tener al menos 3 caracteres",
         message: "El mensaje debe tener al menos 10 caracteres",
       },
@@ -253,31 +253,31 @@ export const translations = {
     },
     coreSkills: "Habilidades Principales",
     timeline: {
-      title: "L\u00ednea de Experiencia",
+      title: "Linea de Experiencia",
       entries: [
         {
-          title: "Inici\u00e9 estudios de tecnolog\u00eda (SENA)",
-          desc: "Comenc\u00e9 el programa de An\u00e1lisis y Desarrollo de Software mientras trabajaba tiempo completo. Primer contacto con programaci\u00f3n, bases de datos y dise\u00f1o de software.",
+          title: "Inicie estudios de tecnologia (SENA)",
+          desc: "Comencé el programa de Analisis y Desarrollo de Software mientras trabajaba tiempo completo. Primer contacto con programacion, bases de datos y diseno de software.",
         },
         {
-          title: "Operador de Medios Tecnol\u00f3gicos",
-          desc: "Monitore\u00e9 sistemas de seguridad cr\u00edticos para m\u00e1s de 200 usuarios con 99% de disponibilidad. Descubr\u00ed la automatizaci\u00f3n escribiendo scripts en Python y SQL para optimizar el inventario — reduciendo el trabajo manual en un 30%.",
+          title: "Operador de Medios Tecnologicos",
+          desc: "Monitoree sistemas de seguridad criticos para mas de 200 usuarios con 99% de disponibilidad. Descubri la automatizacion escribiendo scripts en Python y SQL para optimizar el inventario — reduciendo el trabajo manual en un 30%.",
         },
         {
-          title: "Pr\u00e1cticas como Desarrollador Full-Stack (SENA)",
-          desc: "Constru\u00ed interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Administr\u00e9 bases de datos MySQL. Primera experiencia en equipos \u00e1giles con Scrum.",
+          title: "Practicas como Desarrollador Full-Stack (SENA)",
+          desc: "Construi interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Administre bases de datos MySQL. Primera experiencia en equipos agiles con Scrum.",
         },
         {
           title: "Bootcamp IA — MinTIC",
-          desc: "20 semanas intensivas con Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. Constru\u00ed proyectos con TensorFlow, HuggingFace y desplegu\u00e9 modelos como APIs. M\u00e1s de 20 laboratorios completados.",
+          desc: "20 semanas intensivas con Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. 33 laboratorios completados con TensorFlow, HuggingFace y despliegue de modelos como APIs.",
         },
         {
-          title: "Diplomado en Ciencias de la Computación",
-          desc: "Arquitectura de software (SOA, JEE, .NET), algoritmia avanzada (teor\u00eda de grafos, b\u00fasqueda en texto, estructuras de datos) y an\u00e1lisis de complejidad.",
+          title: "Diplomado en Ciencias de la Computacion",
+          desc: "Arquitectura de software (SOA, JEE, .NET), algoritmia avanzada (teoria de grafos, busqueda en texto, estructuras de datos) y analisis de complejidad en el Politecnico Grancolombiano.",
         },
         {
-          title: "Ingeniero de Software — IA & Full-Stack",
-          desc: "Graduado en Ingenier\u00eda de Software. Construyendo proyectos reales de IA: sistemas de recomendaci\u00f3n TF-IDF, clasificadores CNN con explicabilidad XAI y laboratorios de NLP. Desarrollo full-stack con React, FastAPI y PostgreSQL.",
+          title: "AI Developer — Trajectory Inc.",
+          desc: "Desarrollando soluciones de IA para clientes empresariales. Construyendo pipelines de ML en produccion, sistemas de NLP y APIs escalables. Trabajando con LLMs, embeddings e infraestructura moderna de IA en un equipo remoto colaborativo.",
         },
       ],
     },
@@ -285,25 +285,25 @@ export const translations = {
       title: "Certificaciones",
       entries: [
         { name: "Bootcamp IA", issuer: "MinTIC" },
-        { name: "Desarrollador TensorFlow", issuer: "TensorFlow" },
-        { name: "Profesional FastAPI", issuer: "FastAPI" },
-        { name: "Desarrollo React", issuer: "React" },
+        { name: "Diplomado en C.C.", issuer: "Politécnico" },
+        { name: "Desarrollo Soft.", issuer: "SENA" },
+        { name: "Ingles B1", issuer: "SENA" },
       ],
     },
     footer: {
-      builtWith: "Construido con React \u00b7 TypeScript \u00b7 Tailwind",
+      builtWith: "Construido con React · TypeScript · Tailwind",
       rights: "Todos los derechos reservados.",
     },
     chatbot: {
       welcome:
-        "\u00a1Hola! Soy el asistente virtual de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y educaci\u00f3n. \u00bfEn qu\u00e9 puedo ayudarte? \u{1F60A}",
+        "¡Hola! Soy el asistente virtual de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y educacion. ¿En que puedo ayudarte? \u{1F60A}",
       assistant: "Asistente IA",
-      placeholder: "Preg\u00fantame lo que quieras...",
+      placeholder: "Preguntame lo que quieras...",
       sendMessage: "Enviar mensaje",
       closeChat: "Cerrar chat",
       openChat: "Abrir chat",
       fallback:
-        "Pregunta interesante. No tengo informaci\u00f3n espec\u00edfica sobre eso, pero puedo contarte sobre los proyectos, habilidades y experiencia de Juan David. \u00bfQu\u00e9 te gustar\u00eda saber? \u{1F60A}",
+        "Pregunta interesante. No tengo informacion especifica sobre eso, pero puedo contarte sobre los proyectos, habilidades y experiencia de Juan David. ¿Que te gustaria saber? \u{1F60A}",
     },
     darkMode: {
       light: "Cambiar a modo claro",
@@ -314,7 +314,7 @@ export const translations = {
     projectCard: {
       viewDemo: "Ver Demo",
       codeRepo: "Repositorio",
-      accuracy: "precisi\u00f3n",
+      accuracy: "precision",
       labs: "labs",
       books: "libros",
       details: "Detalles",

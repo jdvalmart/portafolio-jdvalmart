@@ -1,5 +1,6 @@
 export interface TimelineEntry {
   year: number;
+  month?: string;
   title: string;
   description: string;
 }
@@ -25,20 +26,23 @@ export const timeline: TimelineEntry[] = [
   },
   {
     year: 2025,
+    month: "Jan — Apr",
     title: "AI Bootcamp — MinTIC",
     description:
-      "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. Built projects with TensorFlow, HuggingFace, and deployed models as APIs. 20+ labs completed.",
+      "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. 33 labs completed with TensorFlow, HuggingFace, and model deployment as APIs.",
   },
   {
     year: 2025,
+    month: "Apr — Jun",
     title: "Diploma in Computer Science",
     description:
-      "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis.",
+      "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politecnico Grancolombiano.",
   },
   {
-    year: 2026,
-    title: "Software Engineer — AI & Full-Stack",
+    year: 2025,
+    month: "Jun — Present",
+    title: "AI Developer — Trajectory Inc.",
     description:
-      "Graduated in Software Engineering. Building real AI projects: TF-IDF recommendation systems, CNN classifiers with XAI explainability, and NLP labs. Full-stack development with React, FastAPI, and PostgreSQL.",
+      "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative remote team.",
   },
 ];

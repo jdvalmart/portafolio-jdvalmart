@@ -4,6 +4,7 @@ import { useT } from "../i18n/LanguageContext";
 
 interface TimelineEntryTranslated {
   year: number;
+  month?: string;
   title: string;
   description: string;
 }
@@ -26,12 +27,10 @@ function TimelineItem({
         ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}
       `}
     >
-      {/* Connecting line */}
       {!isLast && (
         <div className="absolute left-[7px] top-8 bottom-0 w-0.5 bg-teal-200 dark:bg-teal-800" />
       )}
 
-      {/* Dot indicator */}
       <div
         className="
           absolute left-0 top-1.5
@@ -42,7 +41,6 @@ function TimelineItem({
         "
       />
 
-      {/* Year badge */}
       <span
         className="
           inline-block mb-2 px-3 py-0.5
@@ -52,10 +50,9 @@ function TimelineItem({
           rounded-full
         "
       >
-        {entry.year}
+        {entry.year}{entry.month ? ` · ${entry.month}` : ""}
       </span>
 
-      {/* Title */}
       <h3
         className="
           text-lg font-bold mb-1.5
@@ -65,7 +62,6 @@ function TimelineItem({
         {entry.title}
       </h3>
 
-      {/* Description */}
       <p
         className="
           text-sm leading-relaxed
@@ -82,6 +78,7 @@ export function Timeline() {
   const { t } = useT();
   const entries: TimelineEntryTranslated[] = timeline.map((entry, index) => ({
     year: entry.year,
+    month: entry.month,
     title: t.timeline.entries[index]?.title ?? entry.title,
     description: t.timeline.entries[index]?.desc ?? entry.description,
   }));

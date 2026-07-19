@@ -12,13 +12,16 @@ const Home: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
   const { t } = useT();
 
-  const stats: Stat[] = t.home.stats as unknown as Stat[];
+  const rawStats = t.home.stats as unknown as Stat[];
+  const stats: Stat[] = rawStats.map((s, i) =>
+    i === 3 ? { ...s, isLabel: true } : s
+  );
 
   return (
     <>
       <Helmet>
-        <title>Jdvalmart — AI Engineer Portfolio</title>
-        <meta name="description" content="Juan David Valencia — AI Engineer & ML Engineer. NLP, Transformers, XAI, and Full-Stack development with React, FastAPI, TensorFlow, and Python." />
+        <title>Juan David Valencia — AI Developer | Portfolio</title>
+        <meta name="description" content="Juan David Valencia — AI Developer at Trajectory Inc. NLP, Transformers, LLMs, and Full-Stack development." />
       </Helmet>
       <div
         ref={ref}

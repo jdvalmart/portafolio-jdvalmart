@@ -5,6 +5,7 @@ export interface Stat {
   label: string;
   value: number;
   suffix?: string;
+  isLabel?: boolean;
 }
 
 interface StatsBarProps {
@@ -70,16 +71,28 @@ function StatCard({ stat, animate }: { stat: Stat; animate: boolean }) {
         dark:bg-zinc-800 dark:border-zinc-700 dark:shadow-zinc-900/50
       "
     >
-      <span
-        className="
-          text-3xl sm:text-4xl font-extrabold
-          text-teal-600
-          dark:text-teal-400
-          tabular-nums
-        "
-      >
-        <AnimatedCounter value={stat.value} suffix={stat.suffix} animate={animate} />
-      </span>
+      {stat.isLabel ? (
+        <span
+          className="
+            text-3xl sm:text-4xl font-extrabold
+            text-teal-600
+            dark:text-teal-400
+          "
+        >
+          {stat.suffix}
+        </span>
+      ) : (
+        <span
+          className="
+            text-3xl sm:text-4xl font-extrabold
+            text-teal-600
+            dark:text-teal-400
+            tabular-nums
+          "
+        >
+          <AnimatedCounter value={stat.value} suffix={stat.suffix} animate={animate} />
+        </span>
+      )}
       <span
         className="
           mt-1.5 text-sm font-medium

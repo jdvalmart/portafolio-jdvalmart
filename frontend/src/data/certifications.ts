@@ -11,18 +11,18 @@ export const certifications: Certification[] = [
     icon: "AI",
   },
   {
-    name: "TensorFlow Developer",
-    issuer: "TensorFlow",
-    icon: "TF",
+    name: "Diploma in C.S.",
+    issuer: "Politécnico",
+    icon: "CS",
   },
   {
-    name: "FastAPI Professional",
-    issuer: "FastAPI",
-    icon: "FA",
+    name: "Software Dev.",
+    issuer: "SENA",
+    icon: "SD",
   },
   {
-    name: "React Development",
-    issuer: "React",
-    icon: "RE",
+    name: "English B1",
+    issuer: "SENA",
+    icon: "EN",
   },
 ];
