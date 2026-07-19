@@ -2,7 +2,7 @@ services:
   - type: web
     name: jdvalmart-backend
     runtime: docker
-    repo: https://github.com/jdvalmart/jdvalmart-dev
+    repo: https://github.com/jdvalmart/portafolio-jdvalmart
     rootDir: backend
     plan: free
     healthCheckPath: /api/health
@@ -13,3 +13,4 @@ services:
         value: http://localhost:5173,https://jdvalmartdev.netlify.app
       - key: PORT
         value: "8000"
+
