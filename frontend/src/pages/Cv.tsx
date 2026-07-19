@@ -23,7 +23,7 @@ const CvPage = () => {
 
           {/* Contact */}
           <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-1">
-            <p>Palmira, Colombia</p>
+            <p>Bogotá, Colombia</p>
             <p>juanvalencia9411@outlook.com</p>
             <p>linkedin.com/in/jdvalmart</p>
             <p>github.com/jdvalmart</p>
@@ -76,7 +76,17 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Experience</h3>
             <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">AI Developer — Trajectory Inc.</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">
+                  AI Developer —{" "}
+                  <a
+                    href="https://www.trajectoryinc.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal-600 dark:text-teal-400 hover:underline"
+                  >
+                    Trajectory Inc.
+                  </a>
+                </p>
                 <p className="text-xs text-zinc-400">Jun 2025 — Present</p>
                 <p>Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs with LLMs, embeddings, and modern AI infrastructure.</p>
               </div>

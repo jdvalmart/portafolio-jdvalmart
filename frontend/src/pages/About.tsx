@@ -29,7 +29,17 @@ const About: React.FC = () => {
         >
           <p>{t.about.p1}</p>
           <p>{t.about.p2}</p>
-          <p>{t.about.p3}</p>
+          <p>
+            {t.about.p3}{" "}
+            <a
+              href="https://www.trajectoryinc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-600 dark:text-teal-400 font-medium hover:underline"
+            >
+              trajectoryinc.com
+            </a>
+          </p>
         </div>
       </section>
 

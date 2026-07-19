@@ -43,7 +43,7 @@ export const translations = {
       p2:
         "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 33 hands-on labs. I work daily with Python, FastAPI, React, TypeScript, PostgreSQL, Docker, and modern LLM tooling.",
       p3:
-        "Based in Palmira, Colombia. Working remotely with Trajectory Inc. since June 2025.",
+        "Based in Bogotá, Colombia. Working in-person at Trajectory Inc. since June 2025.",
       philosophy: "Philosophy",
       quote:
         "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
@@ -116,7 +116,7 @@ export const translations = {
         },
         {
           title: "AI Developer — Trajectory Inc.",
-          desc: "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative remote team.",
+          desc: "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in an in-person team in Bogotá.",
         },
       ],
     },
@@ -204,7 +204,7 @@ export const translations = {
       p2:
         "Mi formacion en IA (MinTIC) cubrio el pipeline completo de machine learning — preparacion de datos, entrenamiento, evaluacion, interpretabilidad y MLOps — a traves de 33 laboratorios practicos. Trabajo diariamente con Python, FastAPI, React, TypeScript, PostgreSQL, Docker y herramientas modernas de LLM.",
       p3:
-        "Radicado en Palmira, Colombia. Trabajando remotamente con Trajectory Inc. desde junio de 2025.",
+        "Radicado en Bogotá, Colombia. Trabajando presencialmente en Trajectory Inc. desde junio de 2025.",
       philosophy: "Filosofia",
       quote:
         "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalon a la vez.\"",
@@ -277,7 +277,7 @@ export const translations = {
         },
         {
           title: "AI Developer — Trajectory Inc.",
-          desc: "Desarrollando soluciones de IA para clientes empresariales. Construyendo pipelines de ML en produccion, sistemas de NLP y APIs escalables. Trabajando con LLMs, embeddings e infraestructura moderna de IA en un equipo remoto colaborativo.",
+          desc: "Desarrollando soluciones de IA para clientes empresariales. Construyendo pipelines de ML en produccion, sistemas de NLP y APIs escalables. Trabajando con LLMs, embeddings e infraestructura moderna de IA en un equipo presencial en Bogotá.",
         },
       ],
     },

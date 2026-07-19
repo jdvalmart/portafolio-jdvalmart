@@ -43,6 +43,6 @@ export const timeline: TimelineEntry[] = [
     month: "Jun — Present",
     title: "AI Developer — Trajectory Inc.",
     description:
-      "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative remote team.",
+      "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative in-person team in Bogotá.",
   },
 ];
