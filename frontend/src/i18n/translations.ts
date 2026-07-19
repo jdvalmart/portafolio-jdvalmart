@@ -10,7 +10,7 @@ export const translations = {
       greeting: "Hi, I'm Juan David",
       role: "AI Engineer & ML Engineer",
       subtitle:
-        "Software Engineer specialized in AI, NLP & Full-Stack development. I build complete applications — from ML pipelines to production APIs.",
+        "Software Engineer specialized in AI, NLP & Full-Stack development. I build complete applications \u2014 from ML pipelines to production APIs.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
       cvBtn: "download CV",
@@ -156,6 +156,7 @@ export const translations = {
       accuracy: "accuracy",
       labs: "labs",
       books: "books",
+      details: "Details",
     },
   },
 
@@ -168,9 +169,9 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy Juan David",
-      role: "Ingeniero de Software | Inteligencia Artificial",
+      role: "Ingeniero IA & ML Engineer",
       subtitle:
-        "Ingeniero de Software. Construyo aplicaciones web completas con React, TypeScript, FastAPI y PostgreSQL, integrando machine learning y NLP. Mi experiencia previa monitoreando sistemas cr\u00edticos me ense\u00f1\u00f3 a desarrollar con disciplina operativa y cero margen de error.",
+        "Ingeniero de Software especializado en IA, NLP y desarrollo Full-Stack. Construyo aplicaciones completas \u2014 desde pipelines de ML hasta APIs en producci\u00f3n.",
       projectsBtn: "Proyectos",
       aboutBtn: "Sobre m\u00ed",
       cvBtn: "descargar CV",
@@ -316,6 +317,7 @@ export const translations = {
       accuracy: "precisi\u00f3n",
       labs: "labs",
       books: "libros",
+      details: "Detalles",
     },
   },
 } as const;

@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { searchChunks, generateResponse } from "../services/rag";
+import { useCallback, useEffect, useState, useRef } from "react";
+import { searchChunks, generateResponse, generateResponseStream } from "../services/rag";
 import type { KnowledgeChunk } from "../services/rag";
 import knowledge from "../data/chatbot-knowledge.json";
 
@@ -26,6 +26,7 @@ interface ChatBotState {
   messages: Message[];
   isLoading: boolean;
   error: string | null;
+  streamingContent: string;
 }
 
 interface ChatBotActions {
@@ -35,6 +36,34 @@ interface ChatBotActions {
 type UseChatBotReturn = ChatBotState & ChatBotActions;
 
 const typedKnowledge = knowledge as unknown as KnowledgeData;
+const STORAGE_KEY = "chat_messages";
+
+function loadMessages(welcomeMessage: string): Message[] {
+  try {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const parsed = JSON.parse(stored) as Message[];
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch {
+    // corrupted storage, start fresh
+  }
+  return [
+    {
+      role: "assistant",
+      content: welcomeMessage,
+      timestamp: Date.now(),
+    },
+  ];
+}
+
+function persistMessages(messages: Message[]) {
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  } catch {
+    // storage full or unavailable, ignore
+  }
+}
 
 function findFallbackResponse(
   query: string,
@@ -71,18 +100,30 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
     lang = "en",
   } = options ?? {};
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(() => loadMessages(welcomeMessage));
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [streamingContent, setStreamingContent] = useState("");
+  const streamRef = useRef("");
+  const langRef = useRef(lang);
+
+  langRef.current = lang;
 
   useEffect(() => {
-    setMessages([
-      {
-        role: "assistant",
-        content: welcomeMessage,
-        timestamp: Date.now(),
-      },
-    ]);
+    persistMessages(messages);
+  }, [messages]);
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (!stored) {
+      setMessages([
+        {
+          role: "assistant",
+          content: welcomeMessage,
+          timestamp: Date.now(),
+        },
+      ]);
+    }
   }, [welcomeMessage]);
 
   const sendMessage = useCallback(
@@ -94,9 +135,29 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
       };
       setMessages((prev) => [...prev, userMessage]);
       setError(null);
+      setStreamingContent("");
+      streamRef.current = "";
       setIsLoading(true);
 
       try {
+        const streamed = await generateResponseStream(query, langRef.current, (token) => {
+          streamRef.current += token;
+          setStreamingContent(streamRef.current);
+        });
+
+        if (streamed) {
+          const assistantMessage: Message = {
+            role: "assistant",
+            content: streamed,
+            timestamp: Date.now(),
+          };
+          setMessages((prev) => [...prev, assistantMessage]);
+          setStreamingContent("");
+          streamRef.current = "";
+          setIsLoading(false);
+          return;
+        }
+
         const relevantChunks = searchChunks(query, typedKnowledge.chunks);
 
         const context = relevantChunks
@@ -108,7 +169,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
             ? context
             : "No specific context found. Provide a general helpful response about Juan David's portfolio.";
 
-        const apiResponse = await generateResponse(promptContext, query, lang);
+        const apiResponse = await generateResponse(promptContext, query, langRef.current);
 
         if (apiResponse) {
           const assistantMessage: Message = {
@@ -121,7 +182,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
           const fallbackResponse = findFallbackResponse(
             query,
             fallbackMessage,
-            lang
+            langRef.current
           );
           const assistantMessage: Message = {
             role: "assistant",
@@ -137,7 +198,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
         const fallbackResponse = findFallbackResponse(
           query,
           fallbackMessage,
-          lang
+          langRef.current
         );
         const assistantMessage: Message = {
           role: "assistant",
@@ -147,10 +208,12 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
         setMessages((prev) => [...prev, assistantMessage]);
       } finally {
         setIsLoading(false);
+        setStreamingContent("");
+        streamRef.current = "";
       }
     },
-    [fallbackMessage, lang]
+    [fallbackMessage]
   );
 
-  return { messages, isLoading, error, sendMessage };
+  return { messages, isLoading, error, sendMessage, streamingContent };
 }

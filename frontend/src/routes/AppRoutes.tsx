@@ -7,6 +7,7 @@ const Projects = lazy(() => import("../pages/Projects.tsx"));
 const About = lazy(() => import("../pages/About.tsx"));
 const Contact = lazy(() => import("../pages/Contact.tsx"));
 const Cv = lazy(() => import("../pages/Cv.tsx"));
+const ProjectDetail = lazy(() => import("../pages/ProjectDetail.tsx"));
 const ChatBot = lazy(() => import("../components/ChatBot"));
 
 const PageLoader = () => (
@@ -44,6 +45,14 @@ const AppRoutes: React.FC = () => {
             element={
               <Suspense fallback={<PageLoader />}>
                 <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/projects/:slug"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ProjectDetail />
               </Suspense>
             }
           />

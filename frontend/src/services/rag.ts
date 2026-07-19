@@ -68,6 +68,62 @@ function generateSessionId(): string {
 
 const API_URL = import.meta.env.VITE_API_URL || "";
 
+export async function generateResponseStream(
+  query: string,
+  lang: "en" | "es",
+  onToken: (token: string) => void,
+): Promise<string | null> {
+  if (!API_URL) return null;
+
+  try {
+    const sessionId = generateSessionId();
+    const response = await fetch(`${API_URL}/api/chat/stream`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query,
+        session_id: sessionId,
+        lang,
+      }),
+    });
+
+    if (!response.ok || !response.body) return null;
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let full = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      const chunk = decoder.decode(value, { stream: true });
+      const lines = chunk.split("\n");
+
+      for (const line of lines) {
+        if (!line.startsWith("data: ")) continue;
+        const data = line.slice(6);
+
+        if (data === "[DONE]") return full;
+
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.token) {
+            full += parsed.token;
+            onToken(parsed.token);
+          }
+        } catch {
+          // ignore malformed chunks
+        }
+      }
+    }
+
+    return full;
+  } catch {
+    return null;
+  }
+}
+
 const HF_API_URL =
   "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 

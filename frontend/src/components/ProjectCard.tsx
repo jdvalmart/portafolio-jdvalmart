@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import { useT } from "../i18n/LanguageContext";
 
@@ -179,6 +180,24 @@ export function ProjectCard({ project }: Props) {
             </a>
           )}
 
+          <Link
+            to={`/projects/${project.slug}`}
+            className="
+              text-sm
+              font-medium
+              px-4
+              py-2
+              rounded-lg
+              border
+              border-zinc-300 dark:border-zinc-600
+              text-zinc-700 dark:text-zinc-300
+              hover:bg-zinc-100 dark:hover:bg-zinc-800
+              transition
+            "
+          >
+            {t.projectCard.details}
+          </Link>
+
           {project.repoUrl && (
             <a
               href={project.repoUrl}
@@ -190,10 +209,8 @@ export function ProjectCard({ project }: Props) {
                 px-4
                 py-2
                 rounded-lg
-                border
-                border-zinc-300 dark:border-zinc-600
-                text-zinc-700 dark:text-zinc-300
-                hover:bg-zinc-100 dark:hover:bg-zinc-800
+                text-zinc-500 dark:text-zinc-400
+                hover:text-teal-600 dark:hover:text-teal-400
                 transition
               "
             >

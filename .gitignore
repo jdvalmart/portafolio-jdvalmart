@@ -42,3 +42,4 @@ logs
 *.sln
 *.sw?
 *:Zone.Identifier
+.atl/

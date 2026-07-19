@@ -1,4 +1,6 @@
+import json
 import httpx
+from fastapi.responses import StreamingResponse
 from src.config import settings
 
 LLM_URL = f"https://api-inference.huggingface.co/models/{settings.hf_model}"
@@ -86,3 +88,73 @@ async def chat_response(
 
     except Exception:
         return None
+
+
+async def chat_response_stream(
+    prompt: str,
+    hf_api_key: str | None = None,
+):
+    api_key = hf_api_key or settings.hf_api_key
+    if not api_key:
+        yield "data: [DONE]\n\n"
+        return
+
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            async with client.stream(
+                "POST",
+                LLM_URL,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "inputs": prompt,
+                    "parameters": {
+                        "max_new_tokens": 256,
+                        "temperature": 0.7,
+                        "top_p": 0.95,
+                        "return_full_text": False,
+                    },
+                },
+            ) as response:
+                if response.status_code == 429 or response.status_code >= 500:
+                    yield "data: [DONE]\n\n"
+                    return
+
+                buffer = ""
+                async for chunk in response.aiter_bytes():
+                    if not chunk:
+                        continue
+
+                    buffer += chunk.decode(errors="replace")
+
+                    while "\n" in buffer:
+                        line, buffer = buffer.split("\n", 1)
+                        line = line.strip()
+                        if not line:
+                            continue
+
+                        try:
+                            data = json.loads(line)
+                            token = data.get("token", {})
+                            text = token.get("text", "")
+                            if text:
+                                yield f"data: {json.dumps({'token': text})}\n\n"
+                        except json.JSONDecodeError:
+                            continue
+
+                if buffer.strip():
+                    try:
+                        data = json.loads(buffer)
+                        token = data.get("token", {})
+                        text = token.get("text", "")
+                        if text:
+                            yield f"data: {json.dumps({'token': text})}\n\n"
+                    except json.JSONDecodeError:
+                        pass
+
+                yield "data: [DONE]\n\n"
+
+    except Exception:
+        yield "data: [DONE]\n\n"

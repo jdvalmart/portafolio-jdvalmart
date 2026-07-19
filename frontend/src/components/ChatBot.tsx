@@ -59,7 +59,7 @@ export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const { t, lang } = useT();
-  const { messages, isLoading, error, sendMessage } = useChatBot({
+  const { messages, isLoading, error, sendMessage, streamingContent } = useChatBot({
     welcomeMessage: t.chatbot.welcome,
     fallbackMessage: t.chatbot.fallback,
     lang,
@@ -213,7 +213,13 @@ export default function ChatBot() {
             <ChatBubble key={`${msg.role}-${msg.timestamp}-${i}`} message={msg} />
           ))}
 
-          {isLoading && <TypingIndicator />}
+          {streamingContent && (
+            <div className="self-start max-w-[80%] px-4 py-2.5 text-sm leading-relaxed bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-2xl rounded-bl-sm">
+              {streamingContent}
+            </div>
+          )}
+
+          {isLoading && !streamingContent && <TypingIndicator />}
 
           {/* Error display */}
           {error && (

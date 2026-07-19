@@ -45,6 +45,50 @@ def init_rag() -> None:
     initialize_store(chunks, embeddings)
 
 
+def search_context(
+    query: str,
+    session_id: str,
+    lang: str = "en",
+    top_k: int = 3,
+) -> tuple[str, list[dict]]:
+    _prune_sessions()
+
+    query_embedding = embed_texts([query])[0]
+    results = search(query_embedding, top_k)
+    context = "\n\n".join(r["content"] for r in results) if results else ""
+
+    session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+
+    return context, session.get("history", [])
+
+
+def build_chat_prompt(
+    context: str,
+    history: list[dict],
+    query: str,
+    lang: str,
+) -> str:
+    return build_prompt(context, history, query, lang)
+
+
+def record_exchange(
+    query: str,
+    response: str,
+    session_id: str,
+    lang: str,
+) -> None:
+    if not response:
+        response = _fallback(query, lang)
+
+    session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+    session["history"].append({"role": "user", "content": query})
+    session["history"].append({"role": "assistant", "content": response})
+    if len(session["history"]) > MAX_HISTORY * 2:
+        session["history"] = session["history"][-MAX_HISTORY * 2:]
+    session["last_active"] = time.time()
+    SESSIONS[session_id] = session
+
+
 async def run_rag(
     query: str,
     session_id: str,
@@ -59,34 +103,20 @@ async def run_rag(
     if ck in CACHE:
         return CACHE[ck][0]
 
-    query_embedding = embed_texts([query])[0]
-    results = search(query_embedding, top_k)
-
-    context = "\n\n".join(r["content"] for r in results) if results else ""
-
-    session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
-    history = session.get("history", [])
-
+    context, history = search_context(query, session_id, lang, top_k)
     prompt = build_prompt(context, history, query, lang)
-
     response = await chat_response(prompt, hf_api_key=hf_api_key)
 
     if response is None:
         response = _fallback(query, lang)
 
-    session["history"].append({"role": "user", "content": query})
-    session["history"].append({"role": "assistant", "content": response})
-    if len(session["history"]) > MAX_HISTORY * 2:
-        session["history"] = session["history"][-MAX_HISTORY * 2:]
-    session["last_active"] = time.time()
-    SESSIONS[session_id] = session
-
+    record_exchange(query, response, session_id, lang)
     CACHE[ck] = (response, time.time())
 
     return response
 
 
-FALLBACK_EN: list[dict] = [
+FALLBACK_EN: list[tuple[list[str], str]] = [
     (["hello", "hi", "hey", "hola"], "Hello! I'm Juan David's AI assistant. I can tell you about his skills, projects, experience, and education. What can I help you with?"),
     (["projects", "proyectos"], "Juan David has 3 main projects: Pequelectores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one interests you?"),
     (["skills", "tech", "stack", "habilidades"], "Juan David works with React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. In AI/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
@@ -95,7 +125,7 @@ FALLBACK_EN: list[dict] = [
     (["contact", "contacto", "email", "hire"], "You can reach him through the contact form on this site, or at juanvalencia9411@outlook.com. He's open to AI/ML and full-stack opportunities."),
 ]
 
-FALLBACK_ES: list[dict] = [
+FALLBACK_ES: list[tuple[list[str], str]] = [
     (["hello", "hi", "hey", "hola"], "¡Hola! Soy el asistente IA de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y formación. ¿En qué puedo ayudarte?"),
     (["projects", "proyectos"], "Juan David tiene 3 proyectos: Pequelectores (recomendador de libros con IA para niños), Bootcamp IA (33 labs de ML con XAI), y Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa?"),
     (["skills", "tech", "stack", "habilidades"], "Juan David maneja React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. En IA/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
