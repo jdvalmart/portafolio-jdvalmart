@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
+    port: int = 8000
     hf_api_key: str = ""
     allowed_origins: str = "http://localhost:5173,https://jdvalmartdev.netlify.app"
     embedding_model: str = "all-MiniLM-L6-v2"
