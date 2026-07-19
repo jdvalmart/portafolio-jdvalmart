@@ -58,10 +58,55 @@ export function searchChunks(
     .map((s) => s.chunk);
 }
 
+function generateSessionId(): string {
+  const stored = sessionStorage.getItem("chat_session_id");
+  if (stored) return stored;
+  const id = crypto.randomUUID().replace(/-/g, "").slice(0, 12);
+  sessionStorage.setItem("chat_session_id", id);
+  return id;
+}
+
+const API_URL = import.meta.env.VITE_API_URL || "";
+
 const HF_API_URL =
   "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
+interface BackendChatResponse {
+  response: string;
+  session_id: string;
+}
+
 export async function generateResponse(
+  context: string,
+  query: string,
+  lang: "en" | "es" = "en"
+): Promise<string | null> {
+  if (API_URL) {
+    try {
+      const sessionId = generateSessionId();
+      const response = await fetch(`${API_URL}/api/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query,
+          session_id: sessionId,
+          lang,
+        }),
+      });
+
+      if (response.ok) {
+        const data: BackendChatResponse = await response.json();
+        return data.response;
+      }
+    } catch {
+      // Backend unavailable, fall through to direct HF API
+    }
+  }
+
+  return generateResponseDirect(context, query, lang);
+}
+
+async function generateResponseDirect(
   context: string,
   query: string,
   lang: "en" | "es" = "en"
