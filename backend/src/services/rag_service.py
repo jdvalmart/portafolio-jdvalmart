@@ -34,7 +34,7 @@ def _cache_key(query: str, lang: str) -> str:
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
-def init_rag() -> None:
+async def init_rag() -> None:
     """Call once at startup to populate vector store with real embeddings."""
     if is_initialized():
         return
@@ -46,7 +46,7 @@ def init_rag() -> None:
     logger = logging.getLogger(__name__)
 
     logger.info("Generating embeddings via HF API...")
-    embeddings = embed_texts(contents)
+    embeddings = await embed_texts(contents)
 
     if embeddings is None or len(embeddings) != len(chunks):
         logger.warning("Embedding generation failed, retrying on next request")
@@ -56,7 +56,7 @@ def init_rag() -> None:
     logger.info(f"Vector store ready with {len(chunks)} chunks")
 
 
-def search_context(
+async def search_context(
     query: str,
     session_id: str,
     lang: str = "en",
@@ -64,7 +64,7 @@ def search_context(
 ) -> tuple[str, list[dict]]:
     _prune_sessions()
 
-    query_embedding = embed_texts([query])[0]
+    query_embedding = (await embed_texts([query]))[0]
     results = search(query_embedding, top_k)
     context = "\n\n".join(r["content"] for r in results) if results else ""
 
@@ -114,7 +114,7 @@ async def run_rag(
     if ck in CACHE:
         return CACHE[ck][0]
 
-    context, history = search_context(query, session_id, lang, top_k)
+    context, history = await search_context(query, session_id, lang, top_k)
     prompt = build_prompt(context, history, query, lang)
     response = await chat_response(prompt, hf_api_key=hf_api_key)
 

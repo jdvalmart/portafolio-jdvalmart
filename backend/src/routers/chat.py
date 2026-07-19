@@ -38,7 +38,7 @@ async def chat(req: ChatRequest):
 @router.post("/stream")
 async def chat_stream(req: ChatRequest):
     try:
-        context, history = search_context(
+        context, history = await search_context(
             query=req.query.strip(),
             session_id=req.session_id,
             lang=req.lang,

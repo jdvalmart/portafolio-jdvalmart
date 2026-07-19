@@ -13,7 +13,7 @@ limiter = Limiter(key_func=get_remote_address, default_limits=[settings.rate_lim
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    init_rag()
+    await init_rag()
     yield
 
 

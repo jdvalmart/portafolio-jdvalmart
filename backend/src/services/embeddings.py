@@ -49,20 +49,10 @@ async def _hf_embed(texts: list[str]) -> list[list[float]] | None:
         return None
 
 
-def embed_texts(texts: list[str]) -> list[list[float]]:
-    import asyncio
-
-    try:
-        loop = asyncio.get_event_loop()
-        if loop.is_running():
-            import concurrent.futures
-            future = asyncio.ensure_future(_hf_embed(texts))
-            return loop.run_until_complete(asyncio.wait_for(future, timeout=65.0))
-        return loop.run_until_complete(_hf_embed(texts))
-    except RuntimeError:
-        return asyncio.run(_hf_embed(texts))
-    except Exception:
-        pass
+async def embed_texts(texts: list[str]) -> list[list[float]]:
+    result = await _hf_embed(texts)
+    if result is not None:
+        return result
 
     logger.warning("Using deterministic fallback embeddings")
     return _fallback_embeddings(texts)
