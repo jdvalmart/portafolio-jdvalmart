@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "id":  "profile-01",
         "content":  "Juan David Valencia is an AI Developer at Trajectory Inc. since June 2025, building production AI solutions for enterprise clients. He specializes in NLP, Transformers, LLMs, and full-stack development with React, TypeScript, FastAPI, PostgreSQL, and Python."
@@ -57,6 +57,6 @@
     },
     {
         "id":  "contact-01",
-        "content":  "You can contact Juan David through the contact form on this website, or connect with him on LinkedIn. He is based in Palmira, Colombia and is open to AI/ML engineering opportunities, full-stack development projects, and collaborations."
+        "content":  "You can contact Juan David through the contact form on this website, or connect with him on LinkedIn. He is based in BogotÃ¡, Colombia and works in-person at Trajectory Inc. He is open to AI/ML engineering opportunities, full-stack development projects, and collaborations."
     }
 ]

@@ -15,7 +15,7 @@ def get_model() -> SentenceTransformer:
 
 def load_chunks() -> list[dict]:
     path = Path(__file__).parent.parent / "data" / "chunks.json"
-    with open(path, encoding="utf-8") as f:
+    with open(path, encoding="utf-8-sig") as f:
         return json.load(f)
 
 
