@@ -1,6 +1,6 @@
 import hashlib
 import time
-from src.services.embeddings import embed_texts, load_chunks
+from src.services.embeddings import embed_texts, embed_texts_with_fallback, load_chunks
 from src.services.vector_store import (
     initialize_store,
     is_initialized,
@@ -47,8 +47,8 @@ async def init_rag() -> None:
     logger.info("Generating embeddings via HF API...")
     embeddings = await embed_texts(contents)
 
-    if embeddings is None or len(embeddings) != len(chunks):
-        logger.warning("Embedding generation failed, retrying on next request")
+    if embeddings is None:
+        logger.warning("HF embedding API unavailable, store will remain uninitialized")
         return
 
     initialize_store(chunks, embeddings)
@@ -63,13 +63,31 @@ async def search_context(
 ) -> tuple[str, list[dict]]:
     _prune_sessions()
 
-    query_embedding = (await embed_texts([query]))[0]
+    if not is_initialized():
+        chunks = load_chunks()
+        matched = _keyword_search(query, chunks, top_k)
+        context = "\n\n".join(matched) if matched else ""
+        session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+        return context, session.get("history", [])
+
+    query_embedding = (await embed_texts_with_fallback([query]))[0]
     results = search(query_embedding, top_k)
     context = "\n\n".join(r["content"] for r in results) if results else ""
 
     session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
-
     return context, session.get("history", [])
+
+
+def _keyword_search(query: str, chunks: list[dict], top_k: int = 3) -> list[str]:
+    lower = query.lower()
+    scored = []
+    for c in chunks:
+        content = c.get("content", "")
+        score = sum(1 for word in lower.split() if len(word) > 1 and word in content.lower())
+        if score > 0:
+            scored.append((score, content))
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [c for _, c in scored[:top_k]]
 
 
 def record_exchange(

@@ -53,8 +53,14 @@ async def embed_texts(texts: list[str]) -> list[list[float]]:
     result = await _hf_embed(texts)
     if result is not None:
         return result
+    return None
 
-    logger.warning("Using deterministic fallback embeddings")
+
+async def embed_texts_with_fallback(texts: list[str]) -> list[list[float]]:
+    result = await _hf_embed(texts)
+    if result is not None:
+        return result
+    logger.warning("HF API unavailable, using deterministic fallback")
     return _fallback_embeddings(texts)
 
 
