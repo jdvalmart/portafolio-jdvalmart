@@ -6,7 +6,7 @@ from src.services.vector_store import (
     is_initialized,
     search,
 )
-from src.services.llm_service import build_prompt, chat_response
+from src.services.llm_service import build_messages, chat_response
 
 SESSIONS: dict[str, dict] = {}
 CACHE: dict[str, tuple[str, float]] = {}
@@ -35,7 +35,6 @@ def _cache_key(query: str, lang: str) -> str:
 
 
 async def init_rag() -> None:
-    """Call once at startup to populate vector store with real embeddings."""
     if is_initialized():
         return
 
@@ -73,24 +72,12 @@ async def search_context(
     return context, session.get("history", [])
 
 
-def build_chat_prompt(
-    context: str,
-    history: list[dict],
-    query: str,
-    lang: str,
-) -> str:
-    return build_prompt(context, history, query, lang)
-
-
 def record_exchange(
     query: str,
     response: str,
     session_id: str,
     lang: str,
 ) -> None:
-    if not response:
-        response = _fallback(query, lang)
-
     session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
     session["history"].append({"role": "user", "content": query})
     session["history"].append({"role": "assistant", "content": response})
@@ -105,7 +92,6 @@ async def run_rag(
     session_id: str,
     lang: str = "en",
     top_k: int = 3,
-    hf_api_key: str | None = None,
 ) -> str:
     _prune_cache()
     _prune_sessions()
@@ -115,8 +101,8 @@ async def run_rag(
         return CACHE[ck][0]
 
     context, history = await search_context(query, session_id, lang, top_k)
-    prompt = build_prompt(context, history, query, lang)
-    response = await chat_response(prompt, hf_api_key=hf_api_key)
+    messages = build_messages(context, history, query, lang)
+    response = await chat_response(messages)
 
     if response is None:
         response = _fallback(query, lang)
@@ -128,21 +114,33 @@ async def run_rag(
 
 
 FALLBACK_EN: list[tuple[list[str], str]] = [
-    (["hello", "hi", "hey", "hola"], "Hello! I'm Juan David's AI assistant. I can tell you about his skills, projects, experience, and education. What can I help you with?"),
-    (["projects", "proyectos"], "Juan David has 3 main projects: Pequelectores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one interests you?"),
-    (["skills", "tech", "stack", "habilidades"], "Juan David works with React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. In AI/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
-    (["experience", "experiencia", "career"], "Juan David has 5+ years of experience. Technology Media Operator → Full-Stack Developer Intern → MinTIC AI Bootcamp → AI Engineer & ML Engineer."),
-    (["education", "educación", "studies"], "He studied at Politecnico Grancolombiano and SENA. Diploma in Computer Science (2025) and MinTIC AI Bootcamp graduate."),
-    (["contact", "contacto", "email", "hire"], "You can reach him through the contact form on this site, or at juanvalencia9411@outlook.com. He's open to AI/ML and full-stack opportunities."),
+    (["hello", "hi", "hey"], "Hello! I'm Juan David's AI assistant. I can tell you about his skills, projects, experience, and education. What can I help you with?"),
+    (["projects", "project", "built", "created", "made"], "Juan David has 3 main projects: Pequeletores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one interests you?"),
+    (["skills", "tech", "stack", "technologies", "know", "tools"], "Juan David works with React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. In AI/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
+    (["work", "job", "company", "trajectory", "employ", "trabaja", "donde"], "Juan David works as an AI Developer at Trajectory Inc. since June 2025. He is based in Bogota, Colombia, working in-person building production AI solutions for enterprise clients."),
+    (["experience", "career", "history", "background", "experiencia", "carrera"], "Juan David has 5+ years of experience. Technology Media Operator (Python automation) → Full-Stack Developer Intern (SENA) → MinTIC AI Bootcamp (20 weeks, 33 labs) → AI Developer at Trajectory Inc. (since June 2025, Bogota)."),
+    (["education", "study", "studied", "degree", "diploma", "bootcamp"], "He studied at Politecnico Grancolombiano and SENA. Diploma in Computer Science (2025). Completed MinTIC AI Bootcamp covering ML, Deep Learning, NLP, XAI, and MLOps."),
+    (["contact", "email", "hire", "reach", "linkedin"], "Contact him at juanvalencia9411@outlook.com or via the contact form on this site. He's open to AI/ML and full-stack opportunities."),
+    (["ai", "machine learning", "deep learning", "nlp", "xai", "ia", "inteligencia artificial"], "Juan David specializes in NLP, Transformers, and XAI. He works with LLMs, TensorFlow, scikit-learn, HuggingFace. Covers sentiment analysis, NER, text classification, and model interpretability with LIME, SHAP, and Grad-CAM."),
+    (["where", "location", "based", "live", "vive", "bogota", "colombia"], "Juan David is based in Bogota, Colombia. He works in-person at Trajectory Inc. since June 2025."),
+    (["pequelectores", "book", "children", "recommendation", "libros", "ninos"], "Pequelectores is a book recommendation system for children aged 6-14 using TF-IDF AI, reading streaks, badge gamification, and JWT auth. Built with React, FastAPI, Python, PostgreSQL, scikit-learn, and Docker."),
+    (["bootcamp", "mintic", "labs", "laboratories", "tensorflow", "cnn"], "Bootcamp IA - MinTIC has 33 hands-on labs: ML, Deep Learning (CNN 87.14%, RNN/LSTM, GANs), NLP with Transformers, XAI (LIME, SHAP, Grad-CAM), Big Data (Spark, Hadoop), distributed systems (Kafka)."),
+    (["philosophy", "belief", "approach", "filosofia"], "His philosophy: 'There is no elevator to what's worth it. You climb the stairs, one step at a time.' Fundamentals-first learning, building solid foundations before frameworks."),
 ]
 
 FALLBACK_ES: list[tuple[list[str], str]] = [
-    (["hello", "hi", "hey", "hola"], "¡Hola! Soy el asistente IA de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y formación. ¿En qué puedo ayudarte?"),
-    (["projects", "proyectos"], "Juan David tiene 3 proyectos: Pequelectores (recomendador de libros con IA para niños), Bootcamp IA (33 labs de ML con XAI), y Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa?"),
-    (["skills", "tech", "stack", "habilidades"], "Juan David maneja React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. En IA/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
-    (["experience", "experiencia", "career"], "Juan David tiene más de 5 años de experiencia. Operador de Medios Tecnológicos → Desarrollador Full-Stack → Bootcamp IA MinTIC → AI Engineer & ML Engineer."),
-    (["education", "educación", "studies"], "Estudió en el Politécnico Grancolombiano y el SENA. Diplomado en Ciencias de la Computación (2025) y graduado del Bootcamp IA de MinTIC."),
-    (["contact", "contacto", "email", "hire"], "Puedes contactarlo por el formulario en este sitio o en juanvalencia9411@outlook.com. Está abierto a oportunidades en AI/ML y desarrollo full-stack."),
+    (["hello", "hi", "hey", "hola", "buenas"], "¡Hola! Soy el asistente IA de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y formacion. ¿En que puedo ayudarte?"),
+    (["projects", "project", "proyectos", "built", "created", "creado", "hecho"], "Juan David tiene 3 proyectos: Pequeletores (recomendador de libros con IA para ninos), Bootcamp IA (33 labs de ML con XAI), y Book-Tracker (gestion de bibliotecas full-stack). ¿Cual te interesa?"),
+    (["skills", "tech", "stack", "tecnologias", "herramientas", "sabe", "maneja"], "Juan David maneja React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker. En IA/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, LIME, SHAP, Grad-CAM."),
+    (["work", "job", "trabajo", "trabaja", "company", "empresa", "trajectory", "donde", "empleo"], "Juan David trabaja como AI Developer en Trajectory Inc. desde junio de 2025. Esta en Bogota, Colombia, trabajando presencialmente construyendo soluciones de IA para clientes empresariales."),
+    (["experience", "experiencia", "career", "carrera", "history", "trayectoria", "background"], "Juan David tiene mas de 5 anos de experiencia. Operador de Medios Tecnologicos (Python) → Desarrollador Full-Stack (SENA) → Bootcamp IA MinTIC (20 semanas, 33 labs) → AI Developer en Trajectory Inc. (desde junio 2025, Bogota)."),
+    (["education", "educacion", "estudio", "estudios", "formacion", "degree", "diploma", "bootcamp"], "Estudio en el Politecnico Grancolombiano y el SENA. Diplomado en Ciencias de la Computacion (2025). Completo el Bootcamp IA de MinTIC cubriendo ML, Deep Learning, NLP, XAI y MLOps."),
+    (["contact", "contacto", "email", "hire", "contratar", "linkedin"], "Contactalo en juanvalencia9411@outlook.com o por el formulario en este sitio. Esta abierto a oportunidades en AI/ML y desarrollo full-stack."),
+    (["ai", "ia", "machine learning", "deep learning", "nlp", "xai", "inteligencia artificial"], "Juan David se especializa en NLP, Transformers y XAI. Trabaja con LLMs, TensorFlow, scikit-learn, HuggingFace. Cubre analisis de sentimiento, NER, clasificacion de texto e interpretabilidad con LIME, SHAP y Grad-CAM."),
+    (["where", "donde", "location", "ubicacion", "vive", "vives", "bogota", "colombia", "ciudad"], "Juan David vive en Bogota, Colombia. Trabaja presencialmente en Trajectory Inc. desde junio de 2025."),
+    (["pequelectores", "libros", "ninos", "recommendation", "recomendador", "lectura"], "Pequelectores es un sistema de recomendacion de libros para ninos de 6-14 usando TF-IDF, rachas de lectura, gamificacion con insignias y autenticacion JWT. Construido con React, FastAPI, Python, PostgreSQL, scikit-learn y Docker."),
+    (["bootcamp", "mintic", "labs", "laboratorios", "tensorflow", "cnn"], "Bootcamp IA - MinTIC tiene 33 laboratorios: ML, Deep Learning (CNN 87.14%, RNN/LSTM, GANs), NLP con Transformers, XAI (LIME, SHAP, Grad-CAM), Big Data (Spark, Hadoop), sistemas distribuidos (Kafka)."),
+    (["philosophy", "filosofia", "belief", "approach", "enfoque", "pensamiento"], "Su filosofia: 'No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalon a la vez.' Aprender fundamentos primero, construir bases solidas antes que frameworks."),
 ]
 
 
@@ -150,9 +148,9 @@ def _fallback(query: str, lang: str) -> str:
     lower = query.lower()
     entries = FALLBACK_ES if lang == "es" else FALLBACK_EN
     default = (
-        "I don't have specific information about that, but feel free to ask about Juan David's skills, projects, experience, or education."
+        "I don't have that specific information, but feel free to ask about Juan David's skills, projects, experience, or education."
         if lang == "en"
-        else "No tengo informacion especifica sobre eso, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educacion de Juan David."
+        else "No tengo esa informacion especifica, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educacion de Juan David."
     )
 
     for patterns, response in entries:

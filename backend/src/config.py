@@ -6,11 +6,12 @@ class Settings(BaseSettings):
 
     port: int = 8000
     hf_api_key: str = ""
+    groq_api_key: str = ""
     allowed_origins: str = "http://localhost:5173,https://jdvalmartdev.netlify.app"
     embedding_model: str = "all-MiniLM-L6-v2"
+    llm_model: str = "llama-3.1-8b-instant"
     chroma_persist_path: str = "./chroma_db"
     max_history_length: int = 10
-    hf_model: str = "mistralai/Mistral-7B-Instruct-v0.3"
     rate_limit: str = "20/minute"
 
     @property

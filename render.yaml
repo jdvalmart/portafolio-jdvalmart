@@ -9,6 +9,8 @@ services:
     envVars:
       - key: HF_API_KEY
         sync: false
+      - key: GROQ_API_KEY
+        sync: false
       - key: ALLOWED_ORIGINS
         value: http://localhost:5173,https://jdvalmartdev.netlify.app
       - key: PORT

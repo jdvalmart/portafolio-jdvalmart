@@ -1,9 +1,9 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 import uuid
-from src.services.rag_service import run_rag, search_context, build_chat_prompt
-from src.services.llm_service import chat_response_stream
+from src.services.rag_service import run_rag, search_context, record_exchange
+from src.services.llm_service import build_messages, chat_response_stream
 
 router = APIRouter(prefix="/api/chat", tags=["chat"])
 
@@ -43,11 +43,11 @@ async def chat_stream(req: ChatRequest):
             session_id=req.session_id,
             lang=req.lang,
         )
-        prompt = build_chat_prompt(context, history, req.query.strip(), req.lang)
+        messages = build_messages(context, history, req.query.strip(), req.lang)
 
         async def generate():
             full = ""
-            async for event in chat_response_stream(prompt):
+            async for event in chat_response_stream(messages):
                 yield event
                 if "data:" in event and "[DONE]" not in event:
                     try:
@@ -57,7 +57,6 @@ async def chat_stream(req: ChatRequest):
                     except Exception:
                         pass
                 elif "[DONE]" in event:
-                    from src.services.rag_service import record_exchange
                     record_exchange(
                         query=req.query.strip(),
                         response=full,
