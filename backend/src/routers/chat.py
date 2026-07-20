@@ -1,7 +1,9 @@
+import json
+import uuid
+
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
-import uuid
 from src.services.rag_service import run_rag, search_context, record_exchange
 from src.services.llm_service import build_messages, chat_response_stream
 
@@ -51,13 +53,12 @@ async def chat_stream(req: ChatRequest):
                 yield event
                 if "data:" in event and "[DONE]" not in event:
                     try:
-                        import json
                         token = json.loads(event.split("data: ")[1]).get("token", "")
                         full += token
-                    except Exception:
+                    except (json.JSONDecodeError, KeyError, IndexError):
                         pass
                 elif "[DONE]" in event:
-                    record_exchange(
+                    await record_exchange(
                         query=req.query.strip(),
                         response=full,
                         session_id=req.session_id,

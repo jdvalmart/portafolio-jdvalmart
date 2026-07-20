@@ -16,6 +16,7 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || "";
+const CONTACT_EMAIL = "juanvalencia9411@outlook.com";
 
 const Contact = () => {
   const { t, lang } = useT();
@@ -38,7 +39,7 @@ const Contact = () => {
       const body = encodeURIComponent(
         `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
       );
-      window.location.href = `mailto:juanvalencia9411@outlook.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
       setStatus("success");
       return;
     }
@@ -63,7 +64,7 @@ const Contact = () => {
     }
   };
 
-  const email = "juanvalencia9411@outlook.com";
+  const email = CONTACT_EMAIL;
 
   const getValidationMessage = (field: "name" | "email" | "subject" | "message") => {
     if (lang === "es") {

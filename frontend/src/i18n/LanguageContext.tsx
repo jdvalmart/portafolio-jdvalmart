@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 import { translations, type Lang } from "./translations";
 
 type T = (typeof translations)[Lang];
@@ -16,6 +16,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const stored = localStorage.getItem("lang");
     return stored === "es" ? "es" : "en";
   });
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const handleSetLang = (l: Lang) => {
     setLang(l);

@@ -1,4 +1,6 @@
+import asyncio
 import hashlib
+import logging
 import time
 from src.services.embeddings import embed_texts, embed_texts_with_fallback, load_chunks
 from src.services.vector_store import (
@@ -8,25 +10,31 @@ from src.services.vector_store import (
 )
 from src.services.llm_service import build_messages, chat_response
 
+logger = logging.getLogger(__name__)
+
 SESSIONS: dict[str, dict] = {}
 CACHE: dict[str, tuple[str, float]] = {}
 CACHE_TTL = 300
 SESSION_TTL = 1800
 MAX_HISTORY = 10
 
+_lock = asyncio.Lock()
 
-def _prune_cache() -> None:
+
+async def _prune_cache() -> None:
     now = time.time()
-    expired = [k for k, (_, ts) in CACHE.items() if now - ts > CACHE_TTL]
-    for k in expired:
-        del CACHE[k]
+    async with _lock:
+        expired = [k for k, (_, ts) in CACHE.items() if now - ts > CACHE_TTL]
+        for k in expired:
+            del CACHE[k]
 
 
-def _prune_sessions() -> None:
+async def _prune_sessions() -> None:
     now = time.time()
-    expired = [k for k, v in SESSIONS.items() if now - v["last_active"] > SESSION_TTL]
-    for k in expired:
-        del SESSIONS[k]
+    async with _lock:
+        expired = [k for k, v in SESSIONS.items() if now - v["last_active"] > SESSION_TTL]
+        for k in expired:
+            del SESSIONS[k]
 
 
 def _cache_key(query: str, lang: str) -> str:
@@ -41,9 +49,6 @@ async def init_rag() -> None:
     chunks = load_chunks()
     contents = [c["content"] for c in chunks]
 
-    import logging
-    logger = logging.getLogger(__name__)
-
     logger.info("Generating embeddings via HF API...")
     embeddings = await embed_texts(contents)
 
@@ -52,7 +57,7 @@ async def init_rag() -> None:
         return
 
     initialize_store(chunks, embeddings)
-    logger.info(f"Vector store ready with {len(chunks)} chunks")
+    logger.info("Vector store ready with %d chunks", len(chunks))
 
 
 async def search_context(
@@ -61,21 +66,23 @@ async def search_context(
     lang: str = "en",
     top_k: int = 3,
 ) -> tuple[str, list[dict]]:
-    _prune_sessions()
+    await _prune_sessions()
 
     if not is_initialized():
         chunks = load_chunks()
         matched = _keyword_search(query, chunks, top_k)
         context = "\n\n".join(matched) if matched else ""
-        session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
-        return context, session.get("history", [])
+        async with _lock:
+            session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+            return context, session.get("history", [])
 
     query_embedding = (await embed_texts_with_fallback([query]))[0]
     results = search(query_embedding, top_k)
     context = "\n\n".join(r["content"] for r in results) if results else ""
 
-    session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
-    return context, session.get("history", [])
+    async with _lock:
+        session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+        return context, session.get("history", [])
 
 
 def _keyword_search(query: str, chunks: list[dict], top_k: int = 3) -> list[str]:
@@ -90,19 +97,20 @@ def _keyword_search(query: str, chunks: list[dict], top_k: int = 3) -> list[str]
     return [c for _, c in scored[:top_k]]
 
 
-def record_exchange(
+async def record_exchange(
     query: str,
     response: str,
     session_id: str,
     lang: str,
 ) -> None:
-    session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
-    session["history"].append({"role": "user", "content": query})
-    session["history"].append({"role": "assistant", "content": response})
-    if len(session["history"]) > MAX_HISTORY * 2:
-        session["history"] = session["history"][-MAX_HISTORY * 2:]
-    session["last_active"] = time.time()
-    SESSIONS[session_id] = session
+    async with _lock:
+        session = SESSIONS.get(session_id, {"history": [], "last_active": 0})
+        session["history"].append({"role": "user", "content": query})
+        session["history"].append({"role": "assistant", "content": response})
+        if len(session["history"]) > MAX_HISTORY * 2:
+            session["history"] = session["history"][-MAX_HISTORY * 2:]
+        session["last_active"] = time.time()
+        SESSIONS[session_id] = session
 
 
 async def run_rag(
@@ -111,12 +119,13 @@ async def run_rag(
     lang: str = "en",
     top_k: int = 3,
 ) -> str:
-    _prune_cache()
-    _prune_sessions()
+    await _prune_cache()
+    await _prune_sessions()
 
     ck = _cache_key(query, lang)
-    if ck in CACHE:
-        return CACHE[ck][0]
+    async with _lock:
+        if ck in CACHE:
+            return CACHE[ck][0]
 
     context, history = await search_context(query, session_id, lang, top_k)
     messages = build_messages(context, history, query, lang)
@@ -125,8 +134,10 @@ async def run_rag(
     if response is None:
         response = _fallback(query, lang)
 
-    record_exchange(query, response, session_id, lang)
-    CACHE[ck] = (response, time.time())
+    await record_exchange(query, response, session_id, lang)
+
+    async with _lock:
+        CACHE[ck] = (response, time.time())
 
     return response
 
