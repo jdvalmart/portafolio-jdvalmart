@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { searchChunks, generateResponse, generateResponseStream } from "../services/rag";
 import type { KnowledgeChunk } from "../services/rag";
-import knowledge from "../data/chatbot-knowledge.json";
+import chunksData from "@shared/data/chunks.json";
+import fallbackData from "../data/fallback-responses.json";
 
 export interface Message {
   role: "user" | "assistant";
@@ -14,8 +15,7 @@ interface FallbackEntry {
   response: string;
 }
 
-interface KnowledgeData {
-  chunks: KnowledgeChunk[];
+interface FallbackData {
   fallbackResponses: {
     en: FallbackEntry[];
     es: FallbackEntry[];
@@ -35,7 +35,8 @@ interface ChatBotActions {
 
 type UseChatBotReturn = ChatBotState & ChatBotActions;
 
-const typedKnowledge = knowledge as unknown as KnowledgeData;
+const typedChunks = chunksData as KnowledgeChunk[];
+const typedFallback = fallbackData as unknown as FallbackData;
 const STORAGE_KEY = "chat_messages";
 
 function loadMessages(welcomeMessage: string): Message[] {
@@ -72,8 +73,8 @@ function findFallbackResponse(
 ): string {
   const lowerQuery = query.toLowerCase();
   const entries =
-    typedKnowledge.fallbackResponses[lang] ||
-    typedKnowledge.fallbackResponses.en;
+    typedFallback.fallbackResponses[lang] ||
+    typedFallback.fallbackResponses.en;
 
   for (const entry of entries) {
     const matched = entry.patterns.some((pattern) =>
@@ -158,7 +159,7 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
           return;
         }
 
-        const relevantChunks = searchChunks(query, typedKnowledge.chunks);
+        const relevantChunks = searchChunks(query, typedChunks);
 
         const context = relevantChunks
           .map((chunk) => chunk.content)

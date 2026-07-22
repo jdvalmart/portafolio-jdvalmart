@@ -7,10 +7,12 @@ from src.config import settings
 logger = logging.getLogger(__name__)
 HF_EMBED_URL = f"https://api-inference.huggingface.co/models/{settings.embedding_model}"
 
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+CHUNKS_PATH = PROJECT_ROOT / "shared" / "data" / "chunks.json"
+
 
 def load_chunks() -> list[dict]:
-    path = Path(__file__).parent.parent / "data" / "chunks.json"
-    with open(path, encoding="utf-8-sig") as f:
+    with open(CHUNKS_PATH, encoding="utf-8") as f:
         return json.load(f)
 
 
