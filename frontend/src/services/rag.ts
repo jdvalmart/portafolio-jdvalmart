@@ -66,18 +66,20 @@ function generateSessionId(): string {
   return id;
 }
 
-const API_URL = import.meta.env.VITE_API_URL || "";
+function getApiUrl(): string {
+  return import.meta.env.VITE_API_URL || "";
+}
 
 export async function generateResponseStream(
   query: string,
   lang: "en" | "es",
   onToken: (token: string) => void,
 ): Promise<string | null> {
-  if (!API_URL) return null;
+  if (!getApiUrl()) return null;
 
   try {
     const sessionId = generateSessionId();
-    const response = await fetch(`${API_URL}/api/chat/stream`, {
+    const response = await fetch(`${getApiUrl()}/api/chat/stream`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -124,23 +126,19 @@ export async function generateResponseStream(
   }
 }
 
-const HF_API_URL =
-  "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
-
 interface BackendChatResponse {
   response: string;
   session_id: string;
 }
 
 export async function generateResponse(
-  context: string,
   query: string,
   lang: "en" | "es" = "en"
 ): Promise<string | null> {
-  if (API_URL) {
+  if (getApiUrl()) {
     try {
       const sessionId = generateSessionId();
-      const response = await fetch(`${API_URL}/api/chat`, {
+      const response = await fetch(`${getApiUrl()}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -155,76 +153,9 @@ export async function generateResponse(
         return data.response;
       }
     } catch {
-      // Backend unavailable, fall through to direct HF API
+      // Backend unavailable, report failure so caller can use fallbacks
     }
   }
 
-  return generateResponseDirect(context, query, lang);
-}
-
-async function generateResponseDirect(
-  context: string,
-  query: string,
-  lang: "en" | "es" = "en"
-): Promise<string | null> {
-  const apiKey = import.meta.env.VITE_HF_API_KEY || "";
-
-  const isSpanish = lang === "es";
-  const systemPrompt = isSpanish
-    ? `Eres el asistente del portafolio de Juan David Valencia. Responde en español usando SOLO el contexto proporcionado. Si el contexto no contiene la respuesta, di "No tengo esa informacion, pero puedes preguntarme sobre las habilidades, proyectos, experiencia o educacion de Juan David."`
-    : `You are Juan David Valencia's portfolio assistant. Answer questions using ONLY the context provided below. If the context does not contain the answer, say "I don't have that information, but feel free to ask me about Juan David's skills, projects, experience, or education."`;
-
-  const prompt = `<s>[INST] ${systemPrompt}
-
-Context:
-${context}
-
-Question: ${query} [/INST]`;
-
-  try {
-    const response = await fetch(HF_API_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        inputs: prompt,
-        parameters: {
-          max_new_tokens: 256,
-          temperature: 0.7,
-          top_p: 0.95,
-          return_full_text: false,
-        },
-      }),
-    });
-
-    if (response.status === 429) {
-      console.warn("HF API rate limited (429). Falling back to static responses.");
-      return null;
-    }
-
-    if (!response.ok) {
-      console.warn(`HF API returned ${response.status}. Falling back to static responses.`);
-      return null;
-    }
-
-    const data: unknown = await response.json();
-
-    if (
-      Array.isArray(data) &&
-      data.length > 0 &&
-      typeof data[0] === "object" &&
-      data[0] !== null &&
-      "generated_text" in data[0]
-    ) {
-      return (data[0] as { generated_text: string }).generated_text.trim();
-    }
-
-    console.warn("Unexpected HF API response format:", data);
-    return null;
-  } catch (error) {
-    console.warn("HF API call failed:", error);
-    return null;
-  }
+  return null;
 }

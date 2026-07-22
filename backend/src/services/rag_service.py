@@ -1,6 +1,7 @@
 import asyncio
 import hashlib
 import logging
+import re
 import time
 from src.services.embeddings import embed_texts, embed_texts_with_fallback, load_chunks
 from src.services.vector_store import (
@@ -184,7 +185,7 @@ def _fallback(query: str, lang: str) -> str:
 
     for patterns, response in entries:
         for p in patterns:
-            if p in lower:
+            if re.search(r"\b" + re.escape(p) + r"\b", lower):
                 return response
 
     return default

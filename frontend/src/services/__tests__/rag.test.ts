@@ -85,42 +85,40 @@ describe('searchChunks', () => {
 })
 
 describe('generateResponse', () => {
-  it('returns generated text on successful API response', async () => {
-    const mockResponse = [{ generated_text: 'Hello! I am the portfolio assistant.' }]
+  beforeEach(() => {
+    vi.stubEnv('VITE_API_URL', 'http://localhost:8000')
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('returns response text on successful backend API response', async () => {
+    const mockResponse = { response: 'Hello! I am the portfolio assistant.', session_id: 'abc123' }
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
       json: () => Promise.resolve(mockResponse),
     })
 
-    const result = await generateResponse('Some context', 'Who are you?')
+    const result = await generateResponse('Who are you?')
     expect(result).toBe('Hello! I am the portfolio assistant.')
   })
 
-  it('returns null on 429 rate limit', async () => {
-    globalThis.fetch = vi.fn().mockResolvedValue({
-      ok: false,
-      status: 429,
-    })
-
-    const result = await generateResponse('Some context', 'Who are you?')
-    expect(result).toBeNull()
-  })
-
-  it('returns null on 5xx server error', async () => {
+  it('returns null when backend returns non-ok status', async () => {
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 503,
     })
 
-    const result = await generateResponse('Some context', 'Who are you?')
+    const result = await generateResponse('Who are you?')
     expect(result).toBeNull()
   })
 
   it('returns null on network error', async () => {
     globalThis.fetch = vi.fn().mockRejectedValue(new Error('Network failure'))
 
-    const result = await generateResponse('Some context', 'Who are you?')
+    const result = await generateResponse('Who are you?')
     expect(result).toBeNull()
   })
 })

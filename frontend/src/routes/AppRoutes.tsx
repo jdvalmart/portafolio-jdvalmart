@@ -1,6 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 import Home from "../pages/Home.tsx";
 
 const Projects = lazy(() => import("../pages/Projects.tsx"));
@@ -18,6 +19,32 @@ const PageLoader = () => (
   </div>
 );
 
+const RouteError = () => (
+  <div className="min-h-[60vh] flex items-center justify-center px-4">
+    <div className="text-center max-w-sm">
+      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+        This section encountered an error.
+      </p>
+      <button
+        onClick={() => window.location.reload()}
+        className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition"
+      >
+        Reload
+      </button>
+    </div>
+  </div>
+);
+
+function LazyRoute({ children }: { children: ReactNode }) {
+  return (
+    <ErrorBoundary fallback={<RouteError />}>
+      <Suspense fallback={<PageLoader />}>
+        {children}
+      </Suspense>
+    </ErrorBoundary>
+  );
+}
+
 const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
@@ -27,49 +54,49 @@ const AppRoutes: React.FC = () => {
           <Route
             path="/projects"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <Projects />
-              </Suspense>
+              </LazyRoute>
             }
           />
           <Route
             path="/about"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <About />
-              </Suspense>
+              </LazyRoute>
             }
           />
           <Route
             path="/contact"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <Contact />
-              </Suspense>
+              </LazyRoute>
             }
           />
           <Route
             path="/projects/:slug"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <ProjectDetail />
-              </Suspense>
+              </LazyRoute>
             }
           />
           <Route
             path="/cv"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <Cv />
-              </Suspense>
+              </LazyRoute>
             }
           />
           <Route
             path="/chat"
             element={
-              <Suspense fallback={<PageLoader />}>
+              <LazyRoute>
                 <ChatBot />
-              </Suspense>
+              </LazyRoute>
             }
           />
         </Routes>

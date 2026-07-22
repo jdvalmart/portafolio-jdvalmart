@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useState, useRef } from "react";
-import { searchChunks, generateResponse, generateResponseStream } from "../services/rag";
-import type { KnowledgeChunk } from "../services/rag";
-import chunksData from "@shared/data/chunks.json";
+import { generateResponse, generateResponseStream } from "../services/rag";
 import fallbackData from "../data/fallback-responses.json";
 
 export interface Message {
@@ -35,7 +33,6 @@ interface ChatBotActions {
 
 type UseChatBotReturn = ChatBotState & ChatBotActions;
 
-const typedChunks = chunksData as KnowledgeChunk[];
 const typedFallback = fallbackData as unknown as FallbackData;
 const STORAGE_KEY = "chat_messages";
 
@@ -78,7 +75,7 @@ function findFallbackResponse(
 
   for (const entry of entries) {
     const matched = entry.patterns.some((pattern) =>
-      lowerQuery.includes(pattern.toLowerCase())
+      new RegExp("\\b" + pattern.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(lowerQuery)
     );
     if (matched) {
       return entry.response;
@@ -140,6 +137,20 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
       streamRef.current = "";
       setIsLoading(true);
 
+      const respondWithFallback = () => {
+        const fallbackResponse = findFallbackResponse(
+          query,
+          fallbackMessage,
+          langRef.current
+        );
+        const assistantMessage: Message = {
+          role: "assistant",
+          content: fallbackResponse,
+          timestamp: Date.now(),
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      };
+
       try {
         const streamed = await generateResponseStream(query, langRef.current, (token) => {
           streamRef.current += token;
@@ -153,24 +164,10 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
             timestamp: Date.now(),
           };
           setMessages((prev) => [...prev, assistantMessage]);
-          setStreamingContent("");
-          streamRef.current = "";
-          setIsLoading(false);
           return;
         }
 
-        const relevantChunks = searchChunks(query, typedChunks);
-
-        const context = relevantChunks
-          .map((chunk) => chunk.content)
-          .join("\n\n");
-
-        const promptContext =
-          context.length > 0
-            ? context
-            : "No specific context found. Provide a general helpful response about Juan David's portfolio.";
-
-        const apiResponse = await generateResponse(promptContext, query, langRef.current);
+        const apiResponse = await generateResponse(query, langRef.current);
 
         if (apiResponse) {
           const assistantMessage: Message = {
@@ -180,33 +177,13 @@ export function useChatBot(options?: UseChatBotOptions): UseChatBotReturn {
           };
           setMessages((prev) => [...prev, assistantMessage]);
         } else {
-          const fallbackResponse = findFallbackResponse(
-            query,
-            fallbackMessage,
-            langRef.current
-          );
-          const assistantMessage: Message = {
-            role: "assistant",
-            content: fallbackResponse,
-            timestamp: Date.now(),
-          };
-          setMessages((prev) => [...prev, assistantMessage]);
+          respondWithFallback();
         }
       } catch (err) {
         const message =
           err instanceof Error ? err.message : "An unexpected error occurred.";
         setError(message);
-        const fallbackResponse = findFallbackResponse(
-          query,
-          fallbackMessage,
-          langRef.current
-        );
-        const assistantMessage: Message = {
-          role: "assistant",
-          content: fallbackResponse,
-          timestamp: Date.now(),
-        };
-        setMessages((prev) => [...prev, assistantMessage]);
+        respondWithFallback();
       } finally {
         setIsLoading(false);
         setStreamingContent("");
