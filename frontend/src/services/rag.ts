@@ -1,13 +1,18 @@
+import { projects } from "../data/projects";
+import { timeline } from "../data/timeline";
+import { certifications } from "../data/certifications";
+import { skillGroups } from "../data/skills";
+
 export interface KnowledgeChunk {
   id: string;
   content: string;
+  source: "project" | "timeline" | "certification" | "skill" | "general";
+  metadata?: Record<string, unknown>;
 }
 
 export function cosineSimilarity(a: number[], b: number[]): number {
   if (a.length !== b.length) {
-    throw new Error(
-      `Vector length mismatch: ${a.length} vs ${b.length}`
-    );
+    throw new Error(`Vector length mismatch: ${a.length} vs ${b.length}`);
   }
 
   let dotProduct = 0;
@@ -29,15 +34,15 @@ function keywordScore(query: string, chunkContent: string): number {
   const queryWords = query
     .toLowerCase()
     .split(/\s+/)
-    .filter((w) => w.length > 1);
+    .filter((w) => w.length > 2);
 
   const contentLower = chunkContent.toLowerCase();
 
   let score = 0;
   for (const word of queryWords) {
-    if (contentLower.includes(word)) {
-      score += 1;
-    }
+    const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi");
+    const matches = contentLower.match(regex);
+    if (matches) score += matches.length;
   }
   return score;
 }
@@ -54,7 +59,7 @@ export function searchChunks(
   return scored
     .filter((s) => s.score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
+    .slice(0, 5)
     .map((s) => s.chunk);
 }
 
@@ -82,11 +87,7 @@ export async function generateResponseStream(
     const response = await fetch(`${getApiUrl()}/api/chat/stream`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query,
-        session_id: sessionId,
-        lang,
-      }),
+      body: JSON.stringify({ query, session_id: sessionId, lang }),
     });
 
     if (!response.ok || !response.body) return null;
@@ -141,11 +142,7 @@ export async function generateResponse(
       const response = await fetch(`${getApiUrl()}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          query,
-          session_id: sessionId,
-          lang,
-        }),
+        body: JSON.stringify({ query, session_id: sessionId, lang }),
       });
 
       if (response.ok) {
@@ -158,4 +155,114 @@ export async function generateResponse(
   }
 
   return null;
+}
+
+function buildProjectChunks(): KnowledgeChunk[] {
+  return projects.map((p) => ({
+    id: `project-${p.id}`,
+    content: `${p.title}. ${p.description}. Technologies: ${p.techs.join(", ")}. ${p.detail?.overview || ""} ${p.detail?.architecture || ""} Highlights: ${p.detail?.highlights?.join(" ") || ""} Role: ${p.detail?.role || ""}`,
+    source: "project",
+    metadata: { slug: p.slug, category: p.category, techs: p.techs },
+  }));
+}
+
+function buildTimelineChunks(): KnowledgeChunk[] {
+  return timeline.map((t) => ({
+    id: `timeline-${t.year}-${t.title.replace(/\s+/g, "-").toLowerCase()}`,
+    content: `${t.title} (${t.year}${t.month ? ` ${t.month}` : ""}). ${t.description}`,
+    source: "timeline",
+    metadata: { year: t.year, month: t.month },
+  }));
+}
+
+function buildCertificationChunks(): KnowledgeChunk[] {
+  return certifications.map((c, i) => ({
+    id: `cert-${i}`,
+    content: `Certification: ${c.name} issued by ${c.issuer}`,
+    source: "certification",
+    metadata: { name: c.name, issuer: c.issuer },
+  }));
+}
+
+function buildSkillChunks(): KnowledgeChunk[] {
+  const chunks: KnowledgeChunk[] = [];
+  for (const group of skillGroups) {
+    for (const skill of group.skills) {
+      chunks.push({
+        id: `skill-${group.title}-${skill.name}`,
+        content: `Skill: ${skill.name} (${group.title}) - Proficiency: ${skill.level}/5`,
+        source: "skill",
+        metadata: { group: group.title, name: skill.name, level: skill.level },
+      });
+    }
+  }
+  return chunks;
+}
+
+function buildGeneralChunks(): KnowledgeChunk[] {
+  const general = [
+    {
+      id: "general-profile",
+      content: `Juan David Valencia is a Backend Python Developer & AI Engineer at Trajectory Inc. (Initus Area — Backend & AI Core). 5+ years experience. Building enterprise MCP for Claude with 140+ tools. Remote from Colombia since June 1, 2026.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-mcp",
+      content: `MCP (Model Context Protocol) expertise: 152+ tools built total (140+ at Trajectory Inc., 12 in Orion personal project). Tool schema design (JSON Schema), FastAPI MCP server implementation, LLM tool-calling optimization (>95% accuracy), agent orchestration.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-ai-ml",
+      content: `AI/ML Production: LLM fine-tuning (BERT, Llama), RAG pipelines (ChromaDB, ONNX embeddings), XAI (LIME, SHAP, Grad-CAM), MLOps (CI/CD, model registry, A/B testing, drift monitoring). NLP: Transformers, spaCy, NLTK, HuggingFace.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-backend",
+      content: `Backend Engineering: FastAPI async, PostgreSQL (asyncpg/SQLAlchemy), Redis, WebSocket. Clean architecture (routers→services→repositories), dependency injection. Docker multi-stage, Railway/Render deployment, health checks, graceful shutdown.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-education",
+      content: `Education: Software Engineering (Politécnico Grancolombiano, 2026), Diploma in Computer Science (Politécnico Grancolombiano, 2025), Software Analysis & Development (SENA, 2020-2022). AI Bootcamp MinTIC (2025-2026): 20 weeks, 33 labs.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-orion",
+      content: `Orion MCP: Personal MCP server with 12 tools across memory (remember, recall, revise, forget, browse), knowledge graph (link, find, browse), session management (remember, recall, browse), and whoami. ChromaDB + ONNX embeddings for semantic search.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-lucius",
+      content: `Lucius: AI Agent Auditor — automated evaluation framework for AI agents and MCP tools. LLM-as-judge for tool-calling accuracy, hallucination detection, regression testing. CI/CD integration. In development.`,
+      source: "general" as const,
+    },
+  ];
+  return general;
+}
+
+let cachedChunks: KnowledgeChunk[] | null = null;
+
+export function getKnowledgeChunks(): KnowledgeChunk[] {
+  if (cachedChunks) return cachedChunks;
+  cachedChunks = [
+    ...buildProjectChunks(),
+    ...buildTimelineChunks(),
+    ...buildCertificationChunks(),
+    ...buildSkillChunks(),
+    ...buildGeneralChunks(),
+  ];
+  return cachedChunks;
+}
+
+export function generateLocalResponse(query: string, lang: "en" | "es"): string {
+  const chunks = searchChunks(query, getKnowledgeChunks());
+  if (chunks.length === 0) return "";
+
+  const relevantContent = chunks.map((c) => c.content).join("\n\n");
+
+  const prompt = lang === "en"
+    ? `Based on the following information about Juan David Valencia, answer the user's question concisely and naturally. Use only the provided information.\n\nInformation:\n${relevantContent}\n\nQuestion: ${query}\n\nAnswer:`
+    : `Basándote en la siguiente información sobre Juan David Valencia, responde la pregunta del usuario de forma concisa y natural. Usa solo la información proporcionada.\n\nInformación:\n${relevantContent}\n\nPregunta: ${query}\n\nRespuesta:`;
+
+  return prompt;
 }
