@@ -23,6 +23,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 5,
+    slug: "orion-mcp",
+    title: "Orion — Personal MCP Server",
+    description:
+      "Personal MCP (Model Context Protocol) server with 12 tools for memory, knowledge graph, and session management. ChromaDB + ONNX embeddings for semantic search, FastAPI backend.",
+    image: "/orion.png",
+    techs: [
+      "Python",
+      "FastAPI",
+      "MCP",
+      "ChromaDB",
+      "ONNX",
+      "PostgreSQL",
+      "Docker",
+    ],
+    category: "ai-ml",
+    metrics: {
+      labCount: 12,
+    },
+    detail: {
+      overview:
+        "Orion is a personal MCP server that implements a hybrid memory architecture for AI assistants. It provides 12 tools across three domains: memory (remember, recall, revise, forget, browse), knowledge graph (link concepts, find related, browse graph), and session management (remember session, recall session, browse sessions). The system uses ChromaDB with ONNX embeddings for semantic search and TF-IDF fallback, enabling persistent context across conversations.",
+      architecture:
+        "MCP server built with Python and FastAPI following the Model Context Protocol specification. ChromaDB vector database with ONNX Runtime embeddings (all-MiniLM-L6-v2) for semantic similarity search. JSON flat-file persistence for memory and graph data. Hybrid retrieval: semantic (ChromaDB) + keyword (TF-IDF) with reciprocal rank fusion. Tools exposed as MCP functions with JSON Schema validation.",
+      highlights: [
+        "12 MCP tools: memory (5), knowledge graph (3), session management (3), whoami (1)",
+        "ChromaDB + ONNX embeddings for semantic search with TF-IDF fallback",
+        "Hybrid retrieval: semantic + keyword with reciprocal rank fusion",
+        "Knowledge graph with 4 relation types: depends_on, relates_to, alternative_to, supersedes",
+        "Session memory: master context + individual session history",
+        "Clean architecture: tools/, app.py, server.py, orion_config.py separation",
+        "Type-safe with Pydantic models, full lint/typecheck (ruff, mypy)",
+      ],
+      role: "Solo Developer. Designed hybrid memory architecture, implemented MCP protocol compliance, built ChromaDB+ONNX embedding pipeline, created knowledge graph with relationship traversal, configured CI/CD with linting and type checking.",
+    },
+  },
+  {
     id: 4,
     slug: "mcp-trajectoric",
     title: "MCP Corporativo — Trajectory Inc.",
@@ -168,6 +205,42 @@ export const projects: Project[] = [
         "Spec-driven development with openspec/ documentation",
       ],
       role: "Solo Developer. Designed and implemented the full stack: FastAPI backend, React frontend, Docker infrastructure, and automated deployment to Railway and Netlify.",
+    },
+  },
+  {
+    id: 6,
+    slug: "lucius",
+    title: "Lucius — AI Agent Auditor",
+    description:
+      "Automated evaluation framework for AI agents and MCP tools. LLM-as-judge for tool-calling accuracy, hallucination detection, and regression testing.",
+    image: "/lucius.png",
+    techs: [
+      "Python",
+      "FastAPI",
+      "LLM",
+      "MCP",
+      "Pytest",
+      "Docker",
+    ],
+    category: "ai-ml",
+    metrics: {
+      labCount: 0,
+    },
+    detail: {
+      overview:
+        "Lucius is an automated auditing and evaluation framework for AI agents and MCP tools. It uses LLM-as-judge methodology to evaluate tool-calling accuracy, detect hallucinations, and run regression tests against MCP tool schemas. Designed to integrate into CI/CD pipelines for continuous quality assurance of AI systems.",
+      architecture:
+        "FastAPI service that orchestrates evaluation runs. Test cases defined as YAML/JSON with expected tool calls and outcomes. LLM evaluator (configurable: GPT-4, Claude, local models) scores actual vs expected behavior. Metrics: tool-calling accuracy, parameter correctness, response quality, latency. Results stored in PostgreSQL with dashboard for trend analysis.",
+      highlights: [
+        "LLM-as-judge evaluation pipeline for MCP tool calls",
+        "Hallucination detection: validates tool outputs against schemas",
+        "Regression testing: compares agent behavior across versions",
+        "Configurable evaluators: OpenAI, Anthropic, local LLMs (Ollama)",
+        "CI/CD integration: GitHub Actions, GitLab CI support",
+        "Metrics dashboard: accuracy trends, failure categorization",
+        "Schema validation: JSON Schema compliance for tool definitions",
+      ],
+      role: "Solo Developer. Designed evaluation methodology, implemented LLM-as-judge pipeline, built test case DSL, created CI/CD integration templates. (Project in development — details to be expanded.)",
     },
   },
 ];
