@@ -9,7 +9,7 @@ const es = {
       greeting: "Hola, soy Juan David",
       role: "AI Developer en Trajectory Inc.",
       subtitle:
-        "Ingeniero de Software especializado en IA, NLP y desarrollo Full-Stack. Construyo aplicaciones completas — desde pipelines de ML hasta APIs en produccion.",
+        "Ingeniero de Software especializado en IA, NLP y desarrollo Backend. Construyo sistemas de IA en produccion — desde herramientas MCP y pipelines de ML hasta APIs escalables.",
       projectsBtn: "Proyectos",
       aboutBtn: "Sobre mi",
       cvBtn: "Descargar CV",
@@ -17,19 +17,19 @@ const es = {
     home: {
       stats: [
         { label: "Años de Experiencia", value: 5, suffix: "+" },
-        { label: "Proyectos IA", value: 3 },
+        { label: "Herramientas MCP", value: 140, suffix: "+" },
         { label: "Labs ML", value: 33, suffix: "+" },
         { label: "Actualmente en", value: 0, suffix: "Trajectory" },
       ],
       ctaTitle: "¿Tienes un proyecto de IA en mente?",
       ctaSubtitle:
-        "Construyo soluciones completas: desde el modelo ML hasta la API y la interfaz. Hablemos de como puedo ayudarte.",
+        "Construyo soluciones completas de backend e IA: desde herramientas MCP y modelos ML hasta APIs escalables. Hablemos de como puedo ayudarte.",
       ctaContact: "Contactame",
       ctaProjects: "Ver Proyectos",
     },
     projects: {
       title: "Proyectos",
-      subtitle: "Aplicaciones de Machine Learning, NLP y Full Stack",
+      subtitle: "Aplicaciones de Machine Learning, NLP, Backend y Full Stack",
       all: "Todos",
       aiMl: "IA & ML",
       fullStack: "Full Stack",
@@ -38,19 +38,19 @@ const es = {
     about: {
       title: "Sobre mi",
       p1:
-        "Soy AI Developer en Trajectory Inc., construyendo soluciones de IA en produccion para clientes empresariales. Mi trabajo abarca el ciclo completo de ML — desde la preparacion de datos y entrenamiento de modelos hasta el despliegue como APIs REST escalables. Combino conocimiento profundo en NLP, Transformers y XAI con ingenieria full-stack para entregar productos de IA de principio a fin.",
+        "Soy AI Developer en Trajectory Inc., construyendo un MCP (Model Context Protocol) empresarial para Claude con mas de 140 herramientas integradas. Trabajo en el area Initus — el nucleo de backend e IA de la empresa. Mi trabajo abarca desarrollo de herramientas MCP, ingenieria backend con FastAPI, sistemas de NLP e infraestructura de IA en produccion.",
       p2:
-        "Mi formacion en IA (MinTIC) cubrio el pipeline completo de machine learning — preparacion de datos, entrenamiento, evaluacion, interpretabilidad y MLOps — a traves de 33 laboratorios practicos. Trabajo diariamente con Python, FastAPI, React, TypeScript, PostgreSQL, Docker y herramientas modernas de LLM.",
+        "Mi formacion en IA (MinTIC) cubrio el pipeline completo de machine learning — preparacion de datos, entrenamiento, evaluacion, interpretabilidad y MLOps — en 20 semanas intensivas con 33 laboratorios practicos. Trabajo diariamente con Python, FastAPI, PostgreSQL, Docker, LLMs y arquitectura MCP.",
       p3:
-        "Radicado en Bogotá, Colombia. Trabajando presencialmente en Trajectory Inc. desde junio de 2025.",
+        "Radicado en Palmira, Colombia. Trabajando remotamente para Trajectory Inc. (Canada) desde junio de 2026.",
       philosophy: "Filosofia",
       quote:
         "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalon a la vez.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Objetivos Actuales",
-      goal1: "Dominar orquestacion de LLMs y arquitecturas basadas en agentes",
-      goal2: "Contribuir a sistemas de IA en produccion a escala",
-      goal3: "Construir y desplegar un producto SaaS personal de IA",
+      goal1: "Dominar arquitectura MCP y ecosistemas de agentes de IA",
+      goal2: "Construir y desplegar un producto SaaS personal de IA",
+      goal3: "Contribuir a proyectos open-source de IA/MCP",
       goal4: "Certificacion cloud (AWS/GCP)",
     },
     contact: {
@@ -115,7 +115,7 @@ const es = {
         },
         {
           title: "AI Developer — Trajectory Inc.",
-          desc: "Desarrollando soluciones de IA para clientes empresariales. Construyendo pipelines de ML en produccion, sistemas de NLP y APIs escalables. Trabajando con LLMs, embeddings e infraestructura moderna de IA en un equipo presencial en Bogotá.",
+          desc: "Desarrollando un MCP empresarial para Claude con mas de 140 herramientas integradas en el area Initus (backend e IA). El MCP conecta a Claude con todos los datos, APIs y flujos de la empresa. Trabajando remotamente desde Colombia para esta empresa canadiense desde junio de 2026.",
         },
       ],
     },
@@ -124,8 +124,8 @@ const es = {
       entries: [
         { name: "Bootcamp IA", issuer: "MinTIC" },
         { name: "Diplomado en C.C.", issuer: "Politécnico" },
+        { name: "Ing. de Software", issuer: "Politécnico" },
         { name: "Desarrollo Soft.", issuer: "SENA" },
-        { name: "Ingles B1", issuer: "SENA" },
       ],
     },
     footer: {
@@ -160,4 +160,3 @@ const es = {
   },
 
 export default es;
-

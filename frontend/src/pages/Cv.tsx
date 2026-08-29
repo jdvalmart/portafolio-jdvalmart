@@ -7,8 +7,8 @@ const CvPage = () => {
   return (
     <>
       <Helmet>
-        <title>CV — Juan David Valencia | AI Engineer</title>
-        <meta name="description" content="Juan David Valencia — CV/Resume. AI Engineer & ML Engineer specialized in NLP, Transformers, XAI, and Full-Stack development with React, FastAPI, TensorFlow, and Python." />
+        <title>CV — Juan David Valencia | AI Developer</title>
+        <meta name="description" content="Juan David Valencia — CV/Resume. AI Developer specializing in MCP, NLP, Backend Engineering, and production AI systems with Python, FastAPI, and LLMs." />
       </Helmet>
 
       <section className="max-w-4xl mx-auto py-20 px-6">
@@ -23,7 +23,7 @@ const CvPage = () => {
 
           {/* Contact */}
           <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-1">
-            <p>Bogotá, Colombia</p>
+            <p>Palmira, Valle del Cauca, Colombia</p>
             <p>juanvalencia9411@outlook.com</p>
             <p>linkedin.com/in/jdvalmart</p>
             <p>github.com/jdvalmart</p>
@@ -34,9 +34,9 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Summary</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               AI Developer at Trajectory Inc. with 5+ years of experience combining
-              machine learning expertise with production-ready engineering. Skilled in the full ML lifecycle — from
-              data preparation to model deployment as REST APIs — using Python, FastAPI, LLMs,
-              React, TypeScript, and PostgreSQL.
+              backend engineering and AI expertise. Building an enterprise MCP for Claude with 140+ tools
+              that connect company data, APIs, and workflows. Skilled in Python, FastAPI, PostgreSQL,
+              Docker, LLMs, and MCP architecture. Working remotely from Colombia.
             </p>
           </div>
 
@@ -50,23 +50,23 @@ const CvPage = () => {
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">AI / ML</p>
-                <p>TensorFlow, scikit-learn, HuggingFace, NLTK, spaCy, LIME, SHAP, Grad-CAM</p>
+                <p>TensorFlow, scikit-learn, HuggingFace, NLTK, spaCy, LIME, SHAP, Grad-CAM, MCP</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">Backend</p>
                 <p>FastAPI, NestJS, PostgreSQL, Docker</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">Frontend</p>
-                <p>React, TypeScript, Tailwind CSS, Next.js</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">Frontend (Secondary)</p>
+                <p>React, TypeScript, Tailwind CSS, Vue.js</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">MLOps</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">DevOps</p>
                 <p>Docker, REST APIs, CI/CD, Netlify, Railway</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">Specialties</p>
-                <p>NLP, XAI, Transformers, Sentiment Analysis, NER</p>
+                <p>NLP, XAI, MCP, Transformers, Sentiment Analysis, NER</p>
               </div>
             </div>
           </div>
@@ -87,23 +87,23 @@ const CvPage = () => {
                     Trajectory Inc.
                   </a>
                 </p>
-                <p className="text-xs text-zinc-400">Jun 2025 — Present</p>
-                <p>Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs with LLMs, embeddings, and modern AI infrastructure.</p>
+                <p className="text-xs text-zinc-400">Jun 2026 — Present</p>
+                <p>Developing an enterprise MCP for Claude with 140+ integrated tools in the Initus area. Connecting Claude to all company data, APIs, and workflows. Backend engineering with FastAPI and PostgreSQL. Remote from Colombia for this Canadian company.</p>
+              </div>
+              <div>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">Technology Media Operator</p>
+                <p className="text-xs text-zinc-400">2021 — May 2026</p>
+                <p>Monitored critical security systems for 200+ users with 99% availability. Automated inventory management with Python and SQL, reducing manual work by 30%.</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">AI Bootcamp — MinTIC</p>
-                <p className="text-xs text-zinc-400">Jan — Apr 2025</p>
+                <p className="text-xs text-zinc-400">2025 — 2026</p>
                 <p>20 intensive weeks covering ML, Deep Learning, NLP, XAI, and MLOps. 33+ labs completed.</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">Full-Stack Developer Intern — SENA</p>
                 <p className="text-xs text-zinc-400">2022</p>
                 <p>Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Agile teams with Scrum.</p>
-              </div>
-              <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">Technology Media Operator</p>
-                <p className="text-xs text-zinc-400">2021-2022</p>
-                <p>Monitored critical security systems for 200+ users with 99% availability. Automated inventory management with Python and SQL.</p>
               </div>
             </div>
           </div>
@@ -113,12 +113,16 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Education</h3>
             <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">Software Engineering</p>
+                <p>Politecnico Grancolombiano — 2026</p>
+              </div>
+              <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">Diploma in Computer Science</p>
                 <p>Politecnico Grancolombiano — 2025</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">Software Analysis & Development</p>
-                <p>SENA — 2021-2024</p>
+                <p>SENA — 2020-2022</p>
               </div>
             </div>
           </div>
@@ -126,7 +130,7 @@ const CvPage = () => {
           {/* Languages */}
           <div>
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">Languages</h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">Spanish (Native), English (B1)</p>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">Spanish (Native), English (Intermediate)</p>
           </div>
         </div>
       </section>

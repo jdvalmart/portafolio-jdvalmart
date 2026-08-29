@@ -6,6 +6,11 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    name: "Software Eng.",
+    issuer: "Politécnico",
+    icon: "SE",
+  },
+  {
     name: "AI Bootcamp",
     issuer: "MinTIC",
     icon: "AI",
@@ -19,10 +24,5 @@ export const certifications: Certification[] = [
     name: "Software Dev.",
     issuer: "SENA",
     icon: "SD",
-  },
-  {
-    name: "English B1",
-    issuer: "SENA",
-    icon: "EN",
   },
 ];

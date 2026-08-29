@@ -10,7 +10,7 @@ const en = {
       greeting: "Hi, I'm Juan David",
       role: "AI Developer at Trajectory Inc.",
       subtitle:
-        "Software Engineer specialized in AI, NLP & Full-Stack development. I build complete applications — from ML pipelines to production APIs.",
+        "Software Engineer specialized in AI, NLP & Backend development. I build production AI systems — from MCP tools and ML pipelines to scalable APIs.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
       cvBtn: "Download CV",
@@ -18,19 +18,19 @@ const en = {
     home: {
       stats: [
         { label: "Years Experience", value: 5, suffix: "+" },
-        { label: "AI Projects", value: 3 },
+        { label: "MCP Tools Built", value: 140, suffix: "+" },
         { label: "ML Labs", value: 33, suffix: "+" },
         { label: "Currently at", value: 0, suffix: "Trajectory" },
       ],
       ctaTitle: "Have an AI project in mind?",
       ctaSubtitle:
-        "I build complete solutions: from the ML model to the API and the interface. Let's talk about how I can help you.",
+        "I build complete backend and AI solutions: from MCP tools and ML models to scalable APIs. Let's talk about how I can help you.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
     projects: {
       title: "Projects",
-      subtitle: "Machine Learning, NLP, and Full Stack applications",
+      subtitle: "Machine Learning, NLP, Backend, and Full Stack applications",
       all: "All",
       aiMl: "AI & ML",
       fullStack: "Full Stack",
@@ -39,19 +39,19 @@ const en = {
     about: {
       title: "About Me",
       p1:
-        "I'm an AI Developer at Trajectory Inc., building production AI solutions for enterprise clients. My work spans the full ML lifecycle — from data preparation and model training to deployment as scalable REST APIs. I combine deep technical knowledge in NLP, Transformers, and XAI with full-stack engineering to deliver end-to-end AI products.",
+        "I'm an AI Developer at Trajectory Inc., building an enterprise MCP (Model Context Protocol) for Claude with over 140 integrated tools. Working in the Initus area — the backend and AI core of the company. My work spans MCP tool development, backend engineering with FastAPI, NLP systems, and production AI infrastructure.",
       p2:
-        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 33 hands-on labs. I work daily with Python, FastAPI, React, TypeScript, PostgreSQL, Docker, and modern LLM tooling.",
+        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 20 intensive weeks with 33 hands-on labs. I work daily with Python, FastAPI, PostgreSQL, Docker, LLMs, and MCP architecture.",
       p3:
-        "Based in Bogotá, Colombia. Working in-person at Trajectory Inc. since June 2025.",
+        "Based in Palmira, Colombia. Working remotely for Trajectory Inc. (Canada) since June 2026.",
       philosophy: "Philosophy",
       quote:
         "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Current Goals",
-      goal1: "Master LLM orchestration and agent-based architectures",
-      goal2: "Contribute to production AI systems at scale",
-      goal3: "Build and deploy a personal AI SaaS product",
+      goal1: "Master MCP architecture and AI agent ecosystems",
+      goal2: "Build and deploy a personal AI SaaS product",
+      goal3: "Contribute to open-source AI/MCP projects",
       goal4: "Cloud certification (AWS/GCP)",
     },
     contact: {
@@ -116,7 +116,7 @@ const en = {
         },
         {
           title: "AI Developer — Trajectory Inc.",
-          desc: "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in an in-person team in Bogotá.",
+          desc: "Developing an enterprise MCP for Claude with 140+ integrated tools in the Initus area (backend & AI core). The MCP connects Claude to all company data, APIs, and workflows. Working remotely from Colombia for this Canadian company since June 2026.",
         },
       ],
     },
@@ -125,8 +125,8 @@ const en = {
       entries: [
         { name: "AI Bootcamp", issuer: "MinTIC" },
         { name: "Diploma in C.S.", issuer: "Politécnico" },
+        { name: "Software Eng.", issuer: "Politécnico" },
         { name: "Software Dev.", issuer: "SENA" },
-        { name: "English B1", issuer: "SENA" },
       ],
     },
     footer: {
@@ -161,4 +161,3 @@ const en = {
   },
 
 export default en;
-

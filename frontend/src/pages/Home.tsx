@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     <>
       <Helmet>
         <title>Juan David Valencia — AI Developer | Portfolio</title>
-        <meta name="description" content="Juan David Valencia — AI Developer at Trajectory Inc. NLP, Transformers, LLMs, and Full-Stack development." />
+        <meta name="description" content="Juan David Valencia — AI Developer at Trajectory Inc. building enterprise MCP tools for Claude. Specialized in Python, FastAPI, NLP, and Backend Engineering." />
       </Helmet>
       <div
         ref={ref}

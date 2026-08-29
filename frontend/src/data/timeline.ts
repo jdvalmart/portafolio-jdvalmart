@@ -39,10 +39,10 @@ export const timeline: TimelineEntry[] = [
       "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politecnico Grancolombiano.",
   },
   {
-    year: 2025,
+    year: 2026,
     month: "Jun — Present",
     title: "AI Developer — Trajectory Inc.",
     description:
-      "Developing AI-powered solutions for enterprise clients. Building production ML pipelines, NLP systems, and scalable APIs. Working with LLMs, embeddings, and modern AI infrastructure in a collaborative in-person team in Bogotá.",
+      "Developing an enterprise MCP for Claude with 140+ integrated tools in the Initus area (backend & AI core). The MCP connects Claude to all company data, APIs, and workflows. Working remotely from Colombia for this Canadian company.",
   },
 ];

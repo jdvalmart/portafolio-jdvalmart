@@ -29,10 +29,11 @@ export const skillGroups: SkillGroupData[] = [
     title: "AI & Machine Learning",
     skills: [
       { name: "NLP", level: 5 },
-      { name: "Transformers", level: 4 },
-      { name: "TensorFlow", level: 4 },
+      { name: "MCP", level: 4 },
       { name: "LLMs", level: 4 },
+      { name: "Transformers", level: 4 },
       { name: "XAI", level: 4 },
+      { name: "TensorFlow", level: 4 },
       { name: "scikit-learn", level: 4 },
     ],
   },
@@ -41,8 +42,8 @@ export const skillGroups: SkillGroupData[] = [
     skills: [
       { name: "Python", level: 5 },
       { name: "FastAPI", level: 5 },
-      { name: "Docker", level: 4 },
       { name: "PostgreSQL", level: 4 },
+      { name: "Docker", level: 4 },
     ],
   },
   {
@@ -51,7 +52,7 @@ export const skillGroups: SkillGroupData[] = [
       { name: "React", level: 4 },
       { name: "TypeScript", level: 4 },
       { name: "Tailwind", level: 4 },
-      { name: "Next.js", level: 2 },
+      { name: "Vue.js", level: 3 },
     ],
   },
   {
@@ -129,7 +130,7 @@ export const Skills = () => {
             <h3 className="text-sm font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wide mb-5 text-center">
               {group.title}
             </h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-4 justify-items-center">
               {group.skills.map((skill) => (
                 <SkillRing key={skill.name} skill={skill} />
               ))}

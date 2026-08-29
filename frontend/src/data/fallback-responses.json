@@ -23,7 +23,7 @@
         ]
       },
       {
-        "response": "Juan David works with React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL, and Docker. In AI/ML he uses TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, and XAI techniques like LIME, SHAP, and Grad-CAM.",
+        "response": "Juan David's core stack is Python, FastAPI, PostgreSQL, and Docker. In AI/ML he works with TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, and XAI. He also builds MCP tools for Claude. Frontend (React, TypeScript) is secondary in his current role.",
         "patterns": [
           "skills",
           "habilidades",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "response": "Juan David has 3 main projects: Pequelectores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one would you like to know more about?",
+        "response": "Juan David has 4 key projects: an enterprise MCP for Claude (140+ tools at Trajectory Inc.), Pequelectores (AI book recommendation for children), Bootcamp IA (33 ML labs with XAI), and Book-Tracker (full-stack library manager). Which one would you like to know more about?",
         "patterns": [
           "proyectos",
           "projects",
@@ -46,7 +46,7 @@
         ]
       },
       {
-        "response": "Juan David has 5+ years of experience. He started as a Technology Media Operator automating with Python. In 2022 he interned as a Full-Stack Developer at SENA. In 2025 he completed MinTIC's AI Bootcamp. He now works as an AI Engineer & ML Engineer.",
+        "response": "Juan David has 5+ years of experience. He started as a Technology Media Operator automating with Python. In 2022 he interned as a Full-Stack Developer at SENA. In 2025-2026 he completed MinTIC's AI Bootcamp. Since June 2026 he works as an AI Developer at Trajectory Inc. (Canada), building an enterprise MCP for Claude with 140+ integrated tools — remotely from Colombia.",
         "patterns": [
           "experiencia",
           "experience",
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "response": "Juan David studied at Politecnico Grancolombiano and SENA. He completed the MinTIC AI Bootcamp in 2025 — 20 weeks covering Machine Learning, NLP, Deep Learning, XAI, and MLOps. He holds a Diploma in Computer Science and certifications in TensorFlow, FastAPI, and React.",
+        "response": "Juan David holds a Software Engineering degree from Politecnico Grancolombiano (2026). He completed the MinTIC AI Bootcamp (20 weeks of ML, Deep Learning, NLP, XAI, MLOps) and a Diploma in Computer Science. He also has a Software Development degree from SENA.",
         "patterns": [
           "educación",
           "education",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "response": "You can contact Juan David through the contact form on this site, or connect on LinkedIn. He's open to AI/ML engineering opportunities, full-stack development, and collaborations.",
+        "response": "You can contact Juan David through the contact form on this site, or connect on LinkedIn. He's open to AI/ML engineering opportunities, backend development, and collaborations.",
         "patterns": [
           "contacto",
           "contact",
@@ -122,14 +122,21 @@
         ]
       },
       {
-        "response": "Juan David holds a Diploma in Computer Science (2025) from Politecnico Grancolombiano covering software architecture (SOA, JEE, .NET), advanced algorithms (graph theory, text search), and computational complexity.",
+        "response": "Juan David works as an AI Developer at Trajectory Inc., a Canadian company. He's part of the Initus area (backend & AI core), building an enterprise MCP (Model Context Protocol) for Claude. The MCP has grown from ~6 to 140+ tools and connects Claude to all company data, APIs, and workflows. He works remotely from Colombia.",
         "patterns": [
-          "diploma",
-          "diplomado",
-          "computer science",
-          "ciencias de la computacion",
-          "arquitectura de software",
-          "algoritmia"
+          "mcp",
+          "trajectory",
+          "trajectoric",
+          "claude",
+          "initus",
+          "tools",
+          "herramientas",
+          "trabajo actual",
+          "current job",
+          "canada",
+          "canadá",
+          "remoto",
+          "remote"
         ]
       },
       {
@@ -164,7 +171,7 @@
         ]
       },
       {
-        "response": "Juan David maneja React, TypeScript, Tailwind CSS, FastAPI, Python, PostgreSQL y Docker. En IA/ML trabaja con TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, y técnicas de XAI como LIME, SHAP y Grad-CAM.",
+        "response": "El stack principal de Juan David es Python, FastAPI, PostgreSQL y Docker. En IA/ML trabaja con TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy y XAI. También construye herramientas MCP para Claude. Frontend (React, TypeScript) es secundario en su rol actual.",
         "patterns": [
           "skills",
           "habilidades",
@@ -176,7 +183,7 @@
         ]
       },
       {
-        "response": "Juan David tiene 3 proyectos principales: Pequelectores (recomendador de libros con IA para niños), Bootcamp IA (33 laboratorios de ML con XAI), y Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa más?",
+        "response": "Juan David tiene 4 proyectos clave: un MCP empresarial para Claude (140+ herramientas en Trajectory Inc.), Pequelectores (recomendador de libros con IA para niños), Bootcamp IA (33 laboratorios de ML con XAI), y Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa más?",
         "patterns": [
           "proyectos",
           "projects",
@@ -187,7 +194,7 @@
         ]
       },
       {
-        "response": "Juan David tiene más de 5 años de experiencia. Empezó como Operador de Medios Tecnológicos automatizando con Python. En 2022 hizo prácticas en SENA como Full-Stack Developer. En 2025 completó el Bootcamp IA de MinTIC. Actualmente trabaja como AI Engineer & ML Engineer.",
+        "response": "Juan David tiene más de 5 años de experiencia. Empezó como Operador de Medios Tecnológicos automatizando con Python. En 2022 hizo prácticas en SENA como Full-Stack Developer. En 2025-2026 completó el Bootcamp IA de MinTIC. Desde junio de 2026 trabaja como AI Developer en Trajectory Inc. (Canadá), construyendo un MCP empresarial para Claude con más de 140 herramientas integradas — remotamente desde Colombia.",
         "patterns": [
           "experiencia",
           "experience",
@@ -197,7 +204,7 @@
         ]
       },
       {
-        "response": "Juan David estudió en el Politécnico Grancolombiano y el SENA. Completó el Bootcamp de IA de MinTIC en 2025 — 20 semanas de Machine Learning, NLP, Deep Learning, XAI y MLOps. Tiene un Diplomado en Ciencias de la Computación y certificaciones en TensorFlow, FastAPI y React.",
+        "response": "Juan David tiene un título de Ingeniería de Software del Politécnico Grancolombiano (2026). Completó el Bootcamp IA de MinTIC (20 semanas de ML, Deep Learning, NLP, XAI, MLOps) y un Diplomado en Ciencias de la Computación. También tiene un título de Desarrollo de Software del SENA.",
         "patterns": [
           "educación",
           "education",
@@ -208,7 +215,7 @@
         ]
       },
       {
-        "response": "Puedes contactar a Juan David a través del formulario en este sitio, o en LinkedIn. Está abierto a oportunidades de AI/ML, desarrollo full-stack y colaboraciones.",
+        "response": "Puedes contactar a Juan David a través del formulario en este sitio, o en LinkedIn. Está abierto a oportunidades de AI/ML, desarrollo backend y colaboraciones.",
         "patterns": [
           "contacto",
           "contact",
@@ -263,14 +270,21 @@
         ]
       },
       {
-        "response": "Juan David tiene un Diplomado en Ciencias de la Computación (2025) del Politécnico Grancolombiano que cubre arquitectura de software (SOA, JEE, .NET), algoritmia avanzada (teoría de grafos, búsqueda en texto) y complejidad computacional.",
+        "response": "Juan David trabaja como AI Developer en Trajectory Inc., una empresa canadiense. Forma parte del área Initus (backend e IA), construyendo un MCP (Model Context Protocol) empresarial para Claude. El MCP ha crecido de ~6 a más de 140 herramientas y conecta a Claude con todos los datos, APIs y flujos de la empresa. Trabaja remotamente desde Colombia.",
         "patterns": [
-          "diploma",
-          "diplomado",
-          "computer science",
-          "ciencias de la computacion",
-          "arquitectura de software",
-          "algoritmia"
+          "mcp",
+          "trajectory",
+          "trajectoric",
+          "claude",
+          "initus",
+          "tools",
+          "herramientas",
+          "trabajo actual",
+          "current job",
+          "canada",
+          "canadá",
+          "remoto",
+          "remote"
         ]
       },
       {

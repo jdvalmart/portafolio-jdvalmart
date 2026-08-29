@@ -23,6 +23,40 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 4,
+    slug: "mcp-trajectoric",
+    title: "MCP Corporativo — Trajectory Inc.",
+    description:
+      "Enterprise MCP for Claude with 140+ integrated tools connecting all company data, APIs, and workflows. Built in the Initus area (backend & AI core).",
+    image: "/mcp.png",
+    techs: [
+      "Python",
+      "FastAPI",
+      "MCP",
+      "Claude",
+      "PostgreSQL",
+      "Docker",
+    ],
+    category: "ai-ml",
+    metrics: {
+      labCount: 140,
+    },
+    detail: {
+      overview:
+        "An enterprise-scale MCP (Model Context Protocol) for Claude that connects the AI assistant to all company information. The MCP provides 140+ tools that allow Claude to interact with corporate data, internal APIs, and business workflows. Working in the Initus area — the backend and AI core of Trajectory Inc.",
+      architecture:
+        "MCP server built with Python and FastAPI, exposing tools that integrate with PostgreSQL databases, REST APIs, and internal services. The MCP grew from ~6 tools at inception to 140+, scaling Claude's capabilities to query data, trigger workflows, and automate processes across the organization.",
+      highlights: [
+        "140+ MCP tools connecting Claude to enterprise data and APIs",
+        "Scaling from 6 to 140+ tools since joining the Initus team",
+        "Backend engineering with FastAPI and PostgreSQL",
+        "Integration with internal APIs and business workflows",
+        "Remote collaboration with a Canadian company from Colombia",
+      ],
+      role: "AI Developer in the Initus area. Building and maintaining MCP tools, backend APIs, and integration layers that connect Claude to company systems.",
+    },
+  },
+  {
     id: 1,
     slug: "pequeletores",
     title: "Pequelectores",
