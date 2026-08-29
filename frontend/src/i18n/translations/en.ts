@@ -8,9 +8,9 @@ const en = {
     },
     hero: {
       greeting: "Hi, I'm Juan David",
-      role: "AI Developer at Trajectory Inc.",
+      role: "Backend Python Developer & AI Engineer at Trajectory Inc.",
       subtitle:
-        "Software Engineer specialized in AI, NLP & Backend development. I build production AI systems — from MCP tools and ML pipelines to scalable APIs.",
+        "Backend Python Developer specialized in AI/ML & MCP. I build production AI systems — from MCP tools and RAG pipelines to scalable FastAPI backends. Currently building enterprise MCP for Claude (140+ tools) in Initus area.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
       cvBtn: "Download CV",
@@ -18,7 +18,7 @@ const en = {
     home: {
       stats: [
         { label: "Years Experience", value: 5, suffix: "+" },
-        { label: "MCP Tools Built", value: 140, suffix: "+" },
+        { label: "MCP Tools Built", value: 152, suffix: "+" },
         { label: "ML Labs", value: 33, suffix: "+" },
         { label: "Currently at", value: 0, suffix: "Trajectory" },
       ],
@@ -39,11 +39,11 @@ const en = {
     about: {
       title: "About Me",
       p1:
-        "I'm an AI Developer at Trajectory Inc., building an enterprise MCP (Model Context Protocol) for Claude with over 140 integrated tools. Working in the Initus area — the backend and AI core of the company. My work spans MCP tool development, backend engineering with FastAPI, NLP systems, and production AI infrastructure.",
+        "I'm a Backend Python Developer & AI Engineer at Trajectory Inc., building an enterprise MCP (Model Context Protocol) for Claude with over 140 integrated tools. Working in the Initus area — the backend and AI core of the company. My work spans MCP tool development, backend engineering with FastAPI, NLP systems, and production AI infrastructure.",
       p2:
         "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 20 intensive weeks with 33 hands-on labs. I work daily with Python, FastAPI, PostgreSQL, Docker, LLMs, and MCP architecture.",
       p3:
-        "Based in Palmira, Colombia. Working remotely for Trajectory Inc. (Canada) since June 2026.",
+        "Based in Palmira, Colombia. Working remotely for Trajectory Inc. (Canada) since June 1, 2026.",
       philosophy: "Philosophy",
       quote:
         "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
@@ -107,16 +107,16 @@ const en = {
           desc: "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum.",
         },
         {
-          title: "AI Bootcamp — MinTIC",
-          desc: "20 intensive weeks with Talento Tech: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. 33 labs completed with TensorFlow, HuggingFace, and model deployment as APIs.",
+          title: "AI Bootcamp — MinTIC (Talento Tech)",
+          desc: "20 intensive weeks: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. 33 labs completed with TensorFlow, HuggingFace, and model deployment as APIs.",
         },
         {
           title: "Diploma in Computer Science",
-          desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politecnico Grancolombiano.",
+          desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politécnico Grancolombiano.",
         },
         {
-          title: "AI Developer — Trajectory Inc.",
-          desc: "Developing an enterprise MCP for Claude with 140+ integrated tools in the Initus area (backend & AI core). The MCP connects Claude to all company data, APIs, and workflows. Working remotely from Colombia for this Canadian company since June 2026.",
+          title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
+          desc: "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas, FastAPI endpoints, LLM tool-calling optimization (>95%). Production NLP: Transformer fine-tuning, RAG (ChromaDB), XAI (LIME/SHAP), MLOps. Remote from Colombia since Jun 1, 2026.",
         },
       ],
     },
@@ -158,6 +158,6 @@ const en = {
       books: "books",
       details: "Details",
     },
-  },
+  }
 
 export default en;
