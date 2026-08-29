@@ -81,40 +81,34 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{lang === "en" ? "Technical Skills" : "Habilidades Técnicas"}</h3>
             <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Languages" : "Lenguajes"}</p>
-                <p>Python, TypeScript, JavaScript, SQL</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Programming Languages" : "Lenguajes de Programación"}</p>
+                <p>{lang === "en" ? "Python (Expert), SQL (Advanced), TypeScript (Intermediate)" : "Python (Experto), SQL (Avanzado), TypeScript (Intermedio)"}</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "MCP / AI Protocols" : "MCP / Protocolos de IA"}</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI / ML Engineering" : "Ingeniería IA / ML"}</p>
                 <p>{lang === "en"
-                  ? "Model Context Protocol (tools, resources, prompts), Claude tool-calling optimization, function calling schemas, agent orchestration"
-                  : "Model Context Protocol (herramientas, recursos, prompts), optimización de tool-calling en Claude, esquemas de function calling, orquestación de agentes"}</p>
-              </div>
-              <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI / ML Production" : "IA / ML en Producción"}</p>
-                <p>{lang === "en"
-                  ? "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), A/B testing, observability"
-                  : "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), A/B testing, observabilidad"}</p>
+                  ? "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP (Model Context Protocol), agent orchestration"
+                  : "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP (Model Context Protocol), orquestación de agentes"}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI / ML Frameworks" : "Frameworks IA / ML"}</p>
-                <p>TensorFlow, scikit-learn, HuggingFace, NLTK, spaCy, LIME, SHAP, Grad-CAM</p>
+                <p>TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Backend" : "Backend"}</p>
-                <p>FastAPI, NestJS, PostgreSQL, Docker, Redis, asyncpg, SQLAlchemy</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</p>
+                <p>{lang === "en" ? "PostgreSQL (Advanced), SQLAlchemy, asyncpg, Redis, data modeling, query optimization" : "PostgreSQL (Avanzado), SQLAlchemy, asyncpg, Redis, modelado de datos, optimización de consultas"}</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Frontend (Secondary)" : "Frontend (Secundario)"}</p>
-                <p>React, TypeScript, Tailwind CSS, Vue.js</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Backend & APIs" : "Backend y APIs"}</p>
+                <p>{lang === "en" ? "FastAPI (Expert), REST API design, async Python, dependency injection, clean architecture" : "FastAPI (Experto), diseño de REST APIs, Python asíncrono, inyección de dependencias, arquitectura limpia"}</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "DevOps" : "DevOps"}</p>
-                <p>Docker, REST APIs, CI/CD, Netlify, Railway, Render</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "MLOps & Production" : "MLOps y Producción"}</p>
+                <p>{lang === "en" ? "CI/CD for ML models, model registry, A/B testing, drift monitoring, Docker, observability" : "CI/CD para modelos ML, registro de modelos, A/B testing, monitoreo de drift, Docker, observabilidad"}</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Specialties" : "Especialidades"}</p>
-                <p>NLP, XAI, MCP, Transformers, Sentiment Analysis, NER, RAG</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Core Specialties" : "Especialidades Principales"}</p>
+                <p>Python, SQL, AI/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL</p>
               </div>
             </div>
           </div>

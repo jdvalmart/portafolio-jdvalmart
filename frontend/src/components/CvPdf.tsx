@@ -131,14 +131,13 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         github: "github.com/jdvalmart",
       },
       skills: {
-        languages: "Python, TypeScript, JavaScript, SQL",
-        mcp: "Model Context Protocol (tools, resources, prompts), Claude tool-calling optimization, function calling schemas, agent orchestration",
-        ai_ml: "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), A/B testing, observability",
-        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace, NLTK, spaCy, LIME, SHAP, Grad-CAM",
-        backend: "FastAPI, NestJS, PostgreSQL, Docker, Redis, asyncpg, SQLAlchemy",
-        frontend: "React, TypeScript, Tailwind CSS, Vue.js",
-        devops: "Docker, REST APIs, CI/CD, Netlify, Railway, Render",
-        specialties: "NLP, XAI, MCP, Transformers, Sentiment Analysis, NER, RAG",
+        languages: "Python (Expert), SQL (Advanced), TypeScript (Intermediate)",
+        ai_ml: "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP (Model Context Protocol), agent orchestration",
+        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM",
+        data_databases: "PostgreSQL (Advanced), SQLAlchemy, asyncpg, Redis, data modeling, query optimization",
+        backend_apis: "FastAPI (Expert), REST API design, async Python, dependency injection, clean architecture",
+        mlops: "CI/CD for ML models, model registry, A/B testing, drift monitoring, Docker, observability",
+        specialties: "Python, SQL, AI/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL",
       },
       experience: [
         {
@@ -215,14 +214,13 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         github: "github.com/jdvalmart",
       },
       skills: {
-        languages: "Python, TypeScript, JavaScript, SQL",
-        mcp: "Model Context Protocol (herramientas, recursos, prompts), optimización de tool-calling en Claude, esquemas de function calling, orquestación de agentes",
-        ai_ml: "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), A/B testing, observabilidad",
-        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace, NLTK, spaCy, LIME, SHAP, Grad-CAM",
-        backend: "FastAPI, NestJS, PostgreSQL, Docker, Redis, asyncpg, SQLAlchemy",
-        frontend: "React, TypeScript, Tailwind CSS, Vue.js",
-        devops: "Docker, REST APIs, CI/CD, Netlify, Railway, Render",
-        specialties: "NLP, XAI, MCP, Transformers, Análisis de Sentimientos, NER, RAG",
+        languages: "Python (Experto), SQL (Avanzado), TypeScript (Intermedio)",
+        ai_ml: "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP (Model Context Protocol), orquestación de agentes",
+        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM",
+        data_databases: "PostgreSQL (Avanzado), SQLAlchemy, asyncpg, Redis, modelado de datos, optimización de consultas",
+        backend_apis: "FastAPI (Experto), diseño de REST APIs, Python asíncrono, inyección de dependencias, arquitectura limpia",
+        mlops: "CI/CD para modelos ML, registro de modelos, A/B testing, monitoreo de drift, Docker, observabilidad",
+        specialties: "Python, SQL, IA/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL",
       },
       experience: [
         {
@@ -320,25 +318,22 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         <Text style={styles.skillCategory}>Languages</Text>
         <Text style={styles.skillList}>{tr.skills.languages}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "MCP / AI Protocols" : "MCP / Protocolos de IA"}</Text>
-        <Text style={styles.skillList}>{tr.skills.mcp}</Text>
-
-        <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Production" : "IA / ML en Producción"}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Engineering" : "Ingeniería IA / ML"}</Text>
         <Text style={styles.skillList}>{tr.skills.ai_ml}</Text>
 
         <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Frameworks" : "Frameworks IA / ML"}</Text>
         <Text style={styles.skillList}>{tr.skills.ai_ml_tools}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Backend" : "Backend"}</Text>
-        <Text style={styles.skillList}>{tr.skills.backend}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</Text>
+        <Text style={styles.skillList}>{tr.skills.data_databases}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Frontend (Secondary)" : "Frontend (Secundario)"}</Text>
-        <Text style={styles.skillList}>{tr.skills.frontend}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Backend & APIs" : "Backend y APIs"}</Text>
+        <Text style={styles.skillList}>{tr.skills.backend_apis}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "DevOps" : "DevOps"}</Text>
-        <Text style={styles.skillList}>{tr.skills.devops}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "MLOps & Production" : "MLOps y Producción"}</Text>
+        <Text style={styles.skillList}>{tr.skills.mlops}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Specialties" : "Especialidades"}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Core Specialties" : "Especialidades Principales"}</Text>
         <Text style={styles.skillList}>{tr.skills.specialties}</Text>
 
         <View style={styles.divider} />
