@@ -1,8 +1,35 @@
-import { Link } from "react-router-dom";
-import { useT } from "../i18n/LanguageContext";
+import { Link, useNavigate } from "react-router-dom";
+import { useT } from "../i18n/useLanguage";
+import { useState, useCallback } from "react";
+import { CvPdf } from "./CvPdf";
 
 export const Hero = () => {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const navigate = useNavigate();
+  const [isGeneratingCV, setIsGeneratingCV] = useState(false);
+
+  const handleDownloadCV = useCallback(async () => {
+    setIsGeneratingCV(true);
+    try {
+      const { pdf } = await import("@react-pdf/renderer");
+      const doc = pdf(<CvPdf lang={lang} />);
+      const generatedBlob = await doc.toBlob();
+      const url = URL.createObjectURL(generatedBlob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `Juan_David_Valencia_CV_${lang.toUpperCase()}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+      navigate("/cv");
+    } finally {
+      setIsGeneratingCV(false);
+    }
+  }, [lang, navigate]);
+
   return (
     <section className="relative min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden bg-[linear-gradient(to_bottom_right,#f0fdfa,#ecfeff)] dark:bg-[linear-gradient(to_bottom_right,#0f172a,#042f2e)]">
       {/* CSS grid pattern overlay */}
@@ -38,12 +65,17 @@ export const Hero = () => {
             >
               {t.hero.aboutBtn}
             </Link>
-            <Link
-              to="/cv"
-              className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition"
+            <button
+              onClick={handleDownloadCV}
+              disabled={isGeneratingCV}
+              className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              aria-label={lang === "en" ? "Download CV as PDF" : "Descargar CV como PDF"}
             >
-              {t.hero.cvBtn}
-            </Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              {isGeneratingCV ? (lang === "en" ? "Generating..." : "Generando...") : t.hero.cvBtn}
+            </button>
           </div>
         </div>
 
