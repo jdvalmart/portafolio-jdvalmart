@@ -1,15 +1,6 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { translations, type Lang } from "./translations";
-
-type T = (typeof translations)[Lang];
-
-interface LanguageContextValue {
-  lang: Lang;
-  setLang: (l: Lang) => void;
-  t: T;
-}
-
-const LanguageContext = createContext<LanguageContextValue | null>(null);
+import { LanguageContext } from "./LanguageContextType";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
@@ -33,10 +24,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       {children}
     </LanguageContext.Provider>
   );
-}
-
-export function useT(): LanguageContextValue {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useT must be used within LanguageProvider");
-  return ctx;
 }

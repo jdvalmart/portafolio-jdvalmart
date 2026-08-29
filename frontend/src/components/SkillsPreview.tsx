@@ -1,7 +1,6 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { skillGroups } from "./Skills";
-import type { SkillLevel } from "./Skills";
-import { useT } from "../i18n/LanguageContext";
+import { skillGroups, type SkillLevel } from "../data/skills";
+import { useT } from "../i18n/useLanguage";
 
 /**
  * Extracts the top N skills (by level) across all skill groups.
