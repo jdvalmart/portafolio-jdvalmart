@@ -1,7 +1,7 @@
 import type { Project } from "../data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 interface FeaturedProjectsProps {
   projects: Project[];

@@ -1,6 +1,6 @@
 import { timeline } from "../data/timeline";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 interface TimelineEntryTranslated {
   year: number;

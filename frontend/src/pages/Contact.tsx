@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -39,6 +39,7 @@ const Contact = () => {
       const body = encodeURIComponent(
         `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
       );
+      // eslint-disable-next-line react-hooks/immutability
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
       setStatus("success");
       return;

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import {
   cosineSimilarity,
   searchChunks,
@@ -39,18 +39,22 @@ describe('searchChunks', () => {
     {
       id: '1',
       content: 'Juan David is an AI Engineer specializing in NLP and Transformers',
+      source: 'general',
     },
     {
       id: '2',
       content: 'He completed a 20-week Bootcamp IA with MINTIC',
+      source: 'general',
     },
     {
       id: '3',
       content: 'He built Pequelectores, a children reading tracker with FastAPI',
+      source: 'general',
     },
     {
       id: '4',
       content: 'Python and TypeScript are his primary programming languages',
+      source: 'general',
     },
   ]
 

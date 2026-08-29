@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback, type KeyboardEvent } from "react";
 import { useChatBot } from "../hooks/useChatBot";
 import type { Message } from "../hooks/useChatBot";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 /**
  * Typing indicator — three animated dots.

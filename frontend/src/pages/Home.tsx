@@ -6,7 +6,7 @@ import type { Stat } from "../components/StatsBar";
 import { FeaturedProjects } from "../components/FeaturedProjects";
 import { SkillsPreview } from "../components/SkillsPreview";
 import { projects } from "../data/projects";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 const Home: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();

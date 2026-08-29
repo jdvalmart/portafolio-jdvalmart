@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 interface Props {
   project: Project;

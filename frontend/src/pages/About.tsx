@@ -3,7 +3,7 @@ import { Skills } from "../components/Skills";
 import { Timeline } from "../components/Timeline";
 import { CertBadges } from "../components/CertBadges";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 const About: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();

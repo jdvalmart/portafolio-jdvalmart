@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 const ChatBot = lazy(() => import("./ChatBot"));
 

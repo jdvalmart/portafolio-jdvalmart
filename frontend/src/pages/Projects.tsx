@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/LanguageContext";
+import { useT } from "../i18n/useLanguage";
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "ai-ml" | "full-stack">("all");
