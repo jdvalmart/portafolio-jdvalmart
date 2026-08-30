@@ -23,48 +23,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 5,
-    slug: "orion-mcp",
-    title: "Orion — Personal MCP Server",
+    id: 1,
+    slug: "mcp-corporate",
+    title: "MCP Corporativo — Trajectory",
     description:
-      "Personal MCP (Model Context Protocol) server with 12 tools for memory, knowledge graph, and session management. ChromaDB + ONNX embeddings for semantic search, FastAPI backend.",
-    image: "/orion.png",
-    techs: [
-      "Python",
-      "FastAPI",
-      "MCP",
-      "ChromaDB",
-      "ONNX",
-      "PostgreSQL",
-      "Docker",
-    ],
-    category: "ai-ml",
-    metrics: {
-      labCount: 12,
-    },
-    detail: {
-      overview:
-        "Orion is a personal MCP server that implements a hybrid memory architecture for AI assistants. It provides 12 tools across three domains: memory (remember, recall, revise, forget, browse), knowledge graph (link concepts, find related, browse graph), and session management (remember session, recall session, browse sessions). The system uses ChromaDB with ONNX embeddings for semantic search and TF-IDF fallback, enabling persistent context across conversations.",
-      architecture:
-        "MCP server built with Python and FastAPI following the Model Context Protocol specification. ChromaDB vector database with ONNX Runtime embeddings (all-MiniLM-L6-v2) for semantic similarity search. JSON flat-file persistence for memory and graph data. Hybrid retrieval: semantic (ChromaDB) + keyword (TF-IDF) with reciprocal rank fusion. Tools exposed as MCP functions with JSON Schema validation.",
-      highlights: [
-        "12 MCP tools: memory (5), knowledge graph (3), session management (3), whoami (1)",
-        "ChromaDB + ONNX embeddings for semantic search with TF-IDF fallback",
-        "Hybrid retrieval: semantic + keyword with reciprocal rank fusion",
-        "Knowledge graph with 4 relation types: depends_on, relates_to, alternative_to, supersedes",
-        "Session memory: master context + individual session history",
-        "Clean architecture: tools/, app.py, server.py, orion_config.py separation",
-        "Type-safe with Pydantic models, full lint/typecheck (ruff, mypy)",
-      ],
-      role: "Solo Developer. Designed hybrid memory architecture, implemented MCP protocol compliance, built ChromaDB+ONNX embedding pipeline, created knowledge graph with relationship traversal, configured CI/CD with linting and type checking.",
-    },
-  },
-  {
-    id: 4,
-    slug: "mcp-trajectoric",
-    title: "MCP Corporativo — Trajectory Inc.",
-    description:
-      "Enterprise MCP for Claude with 140+ integrated tools connecting all company data, APIs, and workflows. Built in the Initus area (backend & AI core).",
+      "Enterprise MCP server with 140+ tools connecting Claude to all enterprise data, APIs, and workflows. Built in the Initus area (backend & AI core).",
     image: "/mcp.png",
     techs: [
       "Python",
@@ -88,14 +51,14 @@ export const projects: Project[] = [
         "Scaling from 6 to 140+ tools since joining the Initus team",
         "Backend engineering with FastAPI and PostgreSQL",
         "Integration with internal APIs and business workflows",
-        "Remote collaboration with a Canadian company from Colombia",
+        "On-site collaboration with a Canadian company from Colombia",
       ],
-      role: "AI Developer in the Initus area. Building and maintaining MCP tools, backend APIs, and integration layers that connect Claude to company systems.",
+      role: "AI Software Developer in the Initus area. Building and maintaining MCP tools, backend APIs, and integration layers that connect AI assistants to company systems.",
     },
   },
   {
-    id: 1,
-    slug: "pequeletores",
+    id: 2,
+    slug: "pequelectores",
     title: "Pequelectores",
     description:
       "Book recommendation system for children (ages 6-14) with AI-powered TF-IDF recommendations, reading streaks, badge gamification, and JWT parent auth.",
@@ -131,116 +94,105 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 2,
-    slug: "bootcamp-ia-mintic",
-    title: "Bootcamp IA — MinTIC",
+    id: 3,
+    slug: "machine-deep-learning",
+    title: "MachineDeepLearning",
     description:
-      "33 hands-on labs across ML, Deep Learning, NLP, Big Data, and distributed systems with XAI explainability.",
-    image: "/xai.png",
+      "Repository with 20+ practical labs covering EDA, supervised/unsupervised ML, NLP, neural networks, and model deployment as APIs.",
+    image: "/ml.png",
     techs: [
       "Python",
       "TensorFlow",
       "scikit-learn",
-      "HuggingFace",
       "NLTK",
       "spaCy",
+      "HuggingFace",
       "LIME",
       "SHAP",
       "Grad-CAM",
-      "Spark",
-      "Docker",
     ],
-    repoUrl: "https://github.com/jdvalmart/bootcamp-ia-mintic",
+    repoUrl: "https://github.com/jdvalmart/MachineDeepLearning",
     category: "ai-ml",
     metrics: {
-      labCount: 33,
+      labCount: 20,
+    },
+    detail: {
+      overview:
+        "A comprehensive learning repository documenting the full machine learning lifecycle. Contains 20+ hands-on laboratories covering exploratory data analysis, supervised and unsupervised learning, NLP, neural networks, and model deployment as REST APIs.",
+      architecture:
+        "Organized into progressive modules: EDA, supervised learning (regression, classification), unsupervised learning (clustering), NLP with Transformers, and deep learning (MLP, CNN, LSTM). Each lab includes theory, implementation, evaluation, and API deployment steps.",
+      highlights: [
+        "20+ practical labs covering full ML lifecycle",
+        "XAI implementations: LIME, SHAP, Grad-CAM",
+        "NLP with Transformers (HuggingFace), spaCy, NLTK",
+        "Model deployment as REST APIs with FastAPI",
+        "Comprehensive documentation for each lab",
+      ],
+      role: "Solo developer. Completed all labs independently, documenting theory, implementation, evaluation, and production deployment steps.",
+    },
+  },
+  {
+    id: 4,
+    slug: "xai-cifar10",
+    title: "XAI CIFAR-10",
+    description:
+      "CNN with 87.14% accuracy on CIFAR-10, implementing three XAI techniques for computer vision model explainability.",
+    image: "/xai.png",
+    techs: [
+      "Python",
+      "TensorFlow",
+      "LIME",
+      "SHAP",
+      "Grad-CAM",
+    ],
+    category: "ai-ml",
+    metrics: {
       accuracy: 87.14,
     },
     detail: {
       overview:
-        "A comprehensive learning repository documenting the full machine learning lifecycle. Built during MinTIC's 20-week intensive AI Bootcamp, it contains 33 hands-on laboratories progressing from basic ML concepts to advanced deep learning, NLP, XAI, and MLOps. Each lab includes theory, code, results, and documentation.",
+        "A computer vision project achieving 87.14% accuracy on CIFAR-10 using CNN, with comprehensive XAI implementation for model explainability.",
       architecture:
-        "Organized into progressive modules: Machine Learning fundamentals (scikit-learn), Deep Learning (TensorFlow/Keras), NLP with Transformers (HuggingFace), and MLOps. Each lab is self-contained with Jupyter notebooks covering data preparation, model training, evaluation, interpretation, and API deployment.",
+        "CNN architecture trained on CIFAR-10 with data augmentation. XAI layer implemented using LIME for local explanations, SHAP for feature importance, and Grad-CAM for visual heatmaps.",
       highlights: [
-        "CNN image classifier achieving 87.14% accuracy on CIFAR-10 with XAI explainability (LIME, SHAP, Grad-CAM)",
-        "RNN/LSTM sequence models for text generation and sentiment analysis",
-        "GAN implementation for synthetic data generation",
-        "Transformer fine-tuning with HuggingFace for text classification and NER",
-        "Big Data processing with Apache Spark and Hadoop",
-        "Distributed messaging with Apache Kafka for streaming data pipelines",
+        "87.14% accuracy on CIFAR-10",
+        "Three XAI techniques: LIME, SHAP, Grad-CAM",
+        "Visual heatmap explanations for model decisions",
+        "Comparative analysis of XAI methods",
       ],
-      role: "Solo learner. Completed all 33 labs independently, documenting each experiment with theory, implementation, results analysis, and production deployment steps.",
+      role: "Solo developer. Designed CNN architecture, implemented training pipeline, and integrated three XAI techniques for model explainability.",
     },
   },
   {
-    id: 3,
+    id: 5,
     slug: "book-tracker",
-    title: "Book-Tracker",
+    title: "Book Tracker",
     description:
-      "Full-stack application for managing personal book collections and tracking reading progress.",
+      "Full-stack CRUD application for managing personal book collections with documented REST API, Docker Compose containerization, and cloud deployment.",
     image: "/book-tracker.png",
     techs: [
       "React",
       "TypeScript",
-      "Tailwind",
       "FastAPI",
       "PostgreSQL",
       "Docker",
-      "Railway",
     ],
     liveUrl: "https://book-tracker1.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/book-tracker",
     category: "full-stack",
     detail: {
       overview:
-        "A full-stack CRUD application demonstrating clean architecture and production deployment practices. Users can add, update, and delete books, toggle read/unread status, and view reading statistics. Features dark mode, skeleton loading states, toast notifications, and Docker Compose for local development.",
+        "A full-stack CRUD application demonstrating clean architecture and production deployment practices. Users can add, update, and delete books, toggle read/unread status, and view reading statistics.",
       architecture:
-        "Three-layer backend separation: FastAPI routers (HTTP), services (business logic), and SQLAlchemy Core models (data). React 19 frontend with Context API state management and Axios HTTP client. PostgreSQL 15 with UUID-based primary keys. Docker Compose orchestrates PostgreSQL, FastAPI backend, and Nginx-served React build.",
+        "Three-layer backend separation: FastAPI routers (HTTP), services (business logic), and SQLAlchemy Core models (data). React 18 frontend with Context API state management. PostgreSQL 15 with UUID primary keys. Docker Compose orchestrates PostgreSQL, FastAPI backend, and Nginx-served React build.",
       highlights: [
         "Clean three-layer backend separation with async SQLAlchemy Core",
-        "Dark mode with system preference detection and FOUC prevention",
-        "Skeleton loading cards and toast notifications with slide-in animation",
-        "Reading statistics dashboard with color-coded progress bar",
-        "Docker Compose with health checks for zero-dependency local setup",
-        "Spec-driven development with openspec/ documentation",
+        "Documented REST API with OpenAPI/Swagger",
+        "Docker Compose containerization for local development and deployment",
+        "Reading statistics dashboard with progress tracking",
+        "TypeScript throughout for type safety",
       ],
-      role: "Solo Developer. Designed and implemented the full stack: FastAPI backend, React frontend, Docker infrastructure, and automated deployment to Railway and Netlify.",
-    },
-  },
-  {
-    id: 6,
-    slug: "lucius",
-    title: "Lucius — AI Agent Auditor",
-    description:
-      "Automated evaluation framework for AI agents and MCP tools. LLM-as-judge for tool-calling accuracy, hallucination detection, and regression testing.",
-    image: "/lucius.png",
-    techs: [
-      "Python",
-      "FastAPI",
-      "LLM",
-      "MCP",
-      "Pytest",
-      "Docker",
-    ],
-    category: "ai-ml",
-    metrics: {
-      labCount: 0,
-    },
-    detail: {
-      overview:
-        "Lucius is an automated auditing and evaluation framework for AI agents and MCP tools. It uses LLM-as-judge methodology to evaluate tool-calling accuracy, detect hallucinations, and run regression tests against MCP tool schemas. Designed to integrate into CI/CD pipelines for continuous quality assurance of AI systems.",
-      architecture:
-        "FastAPI service that orchestrates evaluation runs. Test cases defined as YAML/JSON with expected tool calls and outcomes. LLM evaluator (configurable: GPT-4, Claude, local models) scores actual vs expected behavior. Metrics: tool-calling accuracy, parameter correctness, response quality, latency. Results stored in PostgreSQL with dashboard for trend analysis.",
-      highlights: [
-        "LLM-as-judge evaluation pipeline for MCP tool calls",
-        "Hallucination detection: validates tool outputs against schemas",
-        "Regression testing: compares agent behavior across versions",
-        "Configurable evaluators: OpenAI, Anthropic, local LLMs (Ollama)",
-        "CI/CD integration: GitHub Actions, GitLab CI support",
-        "Metrics dashboard: accuracy trends, failure categorization",
-        "Schema validation: JSON Schema compliance for tool definitions",
-      ],
-      role: "Solo Developer. Designed evaluation methodology, implemented LLM-as-judge pipeline, built test case DSL, created CI/CD integration templates. (Project in development — details to be expanded.)",
+      role: "Solo Developer. Designed and implemented full stack: FastAPI backend, React frontend, Docker infrastructure, cloud deployment.",
     },
   },
 ];

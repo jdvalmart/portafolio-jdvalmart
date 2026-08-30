@@ -26,45 +26,54 @@ export const ringColors: Record<number, { fill: string; stroke: string }> = {
 
 export const skillGroups: SkillGroupData[] = [
   {
-    title: "Backend & AI",
+    title: "AI & Machine Learning",
+    skills: [
+      { name: "Regression", level: 4 },
+      { name: "Classification", level: 4 },
+      { name: "Clustering", level: 4 },
+      { name: "Neural Networks", level: 4 },
+      { name: "LLM Fine-tuning", level: 3 },
+      { name: "RAG Pipelines", level: 4 },
+      { name: "ONNX Embeddings", level: 4 },
+      { name: "Vector Search (ChromaDB)", level: 4 },
+      { name: "NLP (Transformers, spaCy, NLTK)", level: 4 },
+      { name: "XAI (LIME, SHAP, Grad-CAM)", level: 3 },
+    ],
+  },
+  {
+    title: "Backend & APIs",
     skills: [
       { name: "Python", level: 5 },
+      { name: "FastAPI", level: 5 },
       { name: "SQL", level: 4 },
-      { name: "FastAPI", level: 4 },
-      { name: "MCP", level: 4 },
-      { name: "PostgreSQL", level: 4 },
-      { name: "ChromaDB", level: 3 },
-    ],
-  },
-  {
-    title: "AI / ML",
-    skills: [
-      { name: "ML Algorithms", level: 4 },
-      { name: "LLM Fine-tuning", level: 3 },
-      { name: "RAG", level: 3 },
-      { name: "ONNX", level: 3 },
-      { name: "XAI", level: 3 },
-    ],
-  },
-  {
-    title: "Frontend & Mobile",
-    skills: [
-      { name: "React", level: 3 },
       { name: "JavaScript", level: 3 },
-      { name: "React Native", level: 2 },
       { name: "Node.js", level: 2 },
+      { name: "REST APIs", level: 4 },
+      { name: "Async Services", level: 4 },
+      { name: "Clean Architecture", level: 4 },
+      { name: "MCP (Model Context Protocol)", level: 4 },
     ],
   },
   {
-    title: "Tools & Practices",
+    title: "Data & Databases",
     skills: [
+      { name: "PostgreSQL", level: 4 },
+      { name: "MySQL", level: 3 },
+      { name: "ChromaDB", level: 4 },
+      { name: "Pandas / NumPy", level: 4 },
+      { name: "Feature Engineering", level: 3 },
+      { name: "Data Cleaning", level: 4 },
+    ],
+  },
+  {
+    title: "DevOps & Practices",
+    skills: [
+      { name: "Git / GitHub", level: 5 },
       { name: "Docker", level: 2 },
-      { name: "Git", level: 4 },
       { name: "CI/CD", level: 2 },
-      { name: "Linux/Unix", level: 3 },
-      { name: "Code Reviews", level: 3 },
+      { name: "Agile / Scrum", level: 4 },
+      { name: "Code Reviews", level: 4 },
       { name: "Testing", level: 3 },
-      { name: "Agile/Scrum", level: 3 },
     ],
   },
 ];

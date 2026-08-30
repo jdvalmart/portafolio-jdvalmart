@@ -16,7 +16,7 @@ export const timeline: TimelineEntry[] = [
     year: 2021,
     title: "Technology Media Operator",
     description:
-      "Monitored critical security systems for 200+ users with 99% availability. Managed inventory and logistics operations in private security sector.",
+      "Monitored critical security systems for 200+ users with 99% availability. Developed Python/SQL automation scripts for inventory management, reducing manual processing by 30%. Forged operational discipline and zero-error culture.",
   },
   {
     year: 2022,
@@ -41,8 +41,8 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2026,
     month: "Jun — Present",
-    title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
+    title: "AI Software Developer — Trajectory Inc.",
     description:
-      "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas (JSON Schema), FastAPI endpoints, LLM tool-calling optimization. RAG pipelines: ChromaDB, ONNX embeddings, hybrid search. Backend: FastAPI async, PostgreSQL, clean architecture. On-site in Bogotá for Canadian company.",
+      "Initus Area (Backend & AI Core). Building scalable AI-powered applications with Python, FastAPI, React. Production RAG pipelines (ChromaDB, ONNX). Enterprise MCP for Claude (140+ tools). Full ML lifecycle management. Clean architecture, code reviews, agile collaboration with Canadian team.",
   },
 ];

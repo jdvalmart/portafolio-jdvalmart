@@ -10,7 +10,7 @@ const es = {
       greeting: "Hola, soy Juan David",
       role: "Desarrollador de Software IA en Trajectory Inc.",
       subtitle:
-        "Desarrollador de Software IA especializado en ML, RAG y MCP. Construyendo aplicaciones escalables con IA: investigando e implementando modelos ML, pipelines RAG con ChromaDB/ONNX, MCP empresarial para Claude (140+ herramientas). Python, SQL, JavaScript, FastAPI, React. Presencial en Bogotá.",
+        "Desarrollador de Software IA especializado en construir aplicaciones y servicios de IA escalables. Ciclo completo de ML: investigación, diseño, entrenamiento, despliegue, optimización. Python · FastAPI · LLMs · RAG · MCP · Machine Learning.",
       projectsBtn: "Proyectos",
       aboutBtn: "Sobre mí",
       cvBtn: "Descargar CV",
@@ -24,7 +24,7 @@ const es = {
       ],
       ctaTitle: "¿Tienes un proyecto de IA en mente?",
       ctaSubtitle:
-        "Construyo soluciones de backend e IA: desde herramientas MCP y modelos ML hasta APIs escalables. Hablemos de cómo puedo ayudarte.",
+        "Construyo aplicaciones y servicios de IA escalables para el ámbito empresarial. Desde investigación de algoritmos hasta despliegue en producción. Hablemos de cómo puedo ayudarte.",
       ctaContact: "Contáctame",
       ctaProjects: "Ver Proyectos",
     },
@@ -39,9 +39,9 @@ const es = {
     about: {
       title: "Sobre mí",
       p1:
-        "Soy Desarrollador de Software IA en Trajectory Inc., construyendo aplicaciones escalables con IA en el área Initus — el núcleo de backend e IA de la empresa. Mi trabajo abarca el ciclo completo de ML: investigación y diseño de algoritmos, preparación de datos, entrenamiento, evaluación, optimización y despliegue de modelos. Construyo pipelines RAG con ChromaDB y embeddings ONNX, desarrollo MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas, y colaboro con el equipo de producto para entregar funcionalidades basadas en IA.",
+        "Soy Desarrollador de Software IA en Trajectory Inc., especializado en la construcción de aplicaciones y servicios de IA escalables para el ámbito empresarial. Mi enfoque es 100% en el desarrollo de software impulsado por inteligencia artificial, abarcando el ciclo de vida completo del machine learning: desde la investigación y diseño de algoritmos hasta el despliegue, optimización y monitoreo de modelos en producción.",
       p2:
-        "Mi formación en IA (MinTIC) cubrió el pipeline completo de machine learning — preparación de datos, entrenamiento, evaluación, interpretabilidad y MLOps — en 20 semanas intensivas con 33 laboratorios prácticos. Trabajo diariamente con Python, FastAPI, PostgreSQL, Docker, LLMs, React y arquitectura MCP.",
+        "Mi formación como Ingeniero de Software y mi paso por un bootcamp intensivo de IA (MinTIC) me permiten unir la disciplina de la ingeniería de software con las técnicas más avanzadas de deep learning, NLP y MLOps. Antes de dedicarme a la IA, pasé 5 años monitoreando sistemas de seguridad críticos. Esa experiencia forjó mi disciplina operativa, mi tolerancia cero al error y mi habilidad para mantener sistemas con alta disponibilidad, principios que ahora aplico para construir agentes de IA y pipelines de datos robustos y confiables.",
       p3:
         "Radicado en Bogotá, Colombia. Trabajando presencialmente para Trajectory Inc. (Canadá) desde junio de 2026.",
       philosophy: "Filosofía",
@@ -100,19 +100,23 @@ const es = {
         },
         {
           title: "Operador de Medios Tecnológicos",
-          desc: "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Gestión de inventario y operaciones logísticas en sector de seguridad privada.",
+          desc: "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Desarrollé scripts de automatización en Python y SQL para gestión de inventario, reduciendo procesamiento manual 30%. Forjé disciplina operativa y cultura de cero errores.",
         },
         {
           title: "Practicante Desarrollador Full-Stack (SENA) — 6 meses",
           desc: "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Primera experiencia en equipos ágiles con Scrum. Prácticas de 6 meses.",
         },
         {
+          title: "Bootcamp IA — MinTIC (Talento Tech)",
+          desc: "20 semanas intensivas: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. 33 laboratorios completados con TensorFlow, HuggingFace y despliegue de modelos como APIs.",
+        },
+        {
           title: "Diplomado en Ciencias de la Computación",
           desc: "Patrones de arquitectura de software (SOA, JEE, .NET), algoritmos avanzados (teoría de grafos, búsqueda en texto, estructuras de datos) y análisis de complejidad en Politécnico Grancolombiano.",
         },
         {
-          title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
-          desc: "Área Initus (Backend & AI Core). Construyendo MCP empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización flujos, lógica de negocio. Esquemas MCP, endpoints FastAPI, optimización tool-calling LLM. Pipelines RAG: ChromaDB, embeddings ONNX, búsqueda híbrida. Backend: FastAPI async, PostgreSQL, arquitectura limpia. Presencial en Bogotá para empresa canadiense.",
+          title: "Desarrollador de Software IA — Trajectory Inc.",
+          desc: "Área Initus (Backend & AI Core). Construcción de aplicaciones escalables con IA usando Python, FastAPI, React. Pipelines RAG producción (ChromaDB, ONNX). MCP empresarial para Claude (140+ herramientas). Ciclo completo ML. Arquitectura limpia, code reviews, colaboración ágil con equipo canadiense.",
         },
       ],
     },
@@ -154,6 +158,6 @@ const es = {
       books: "libros",
       details: "Detalles",
     },
-  }
+}
 
 export default es;

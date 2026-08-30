@@ -114,6 +114,17 @@ const styles = StyleSheet.create({
     borderBottom: "0.5px solid #e4e4e7",
     marginVertical: 8,
   },
+  badge: {
+    fontSize: 7,
+    fontWeight: "bold",
+    color: "#0d9488",
+    backgroundColor: "#f0fdfa",
+    paddingHorizontal: 4,
+    paddingVertical: 1,
+    borderRadius: 4,
+    marginRight: 4,
+    marginBottom: 4,
+  },
 });
 
 interface CvPdfProps {
@@ -123,21 +134,22 @@ interface CvPdfProps {
 export const CvPdf = ({ lang }: CvPdfProps) => {
   const translations = {
     en: {
-      summary: "AI Software Developer at Trajectory Inc. (Initus Area — Backend & AI Core) since June 2026. Developing and maintaining scalable AI-powered applications: researching, designing, and implementing ML models; building RAG pipelines with ChromaDB and ONNX embeddings; developing enterprise MCP (Model Context Protocol) for Claude with 140+ tools. Full ML lifecycle: data collection, cleaning, model training, evaluation, optimization, and deployment. Collaborating with product team to deliver AI-based features. Prior: 6-month Full-Stack internship (SENA, 2022) with Vue.js, PHP/Laravel, MySQL. 5+ years as Technology Media Operator in private security. AI Bootcamp MinTIC (2025-2026): 20 weeks, 33 labs in ML, DL, NLP, XAI. On-site in Bogotá, Colombia.",
+      summary: "AI Software Developer at Trajectory Inc., specialized in building scalable AI-powered applications and services for the enterprise. My focus is 100% on AI-driven software development, covering the full ML lifecycle: from algorithm research and design to deployment, optimization, and monitoring of models in production. My Software Engineering background and intensive AI bootcamp (MinTIC) enable me to combine software engineering discipline with advanced deep learning, NLP, and MLOps techniques. Previously spent 5 years monitoring critical security systems, forging operational discipline, zero-error tolerance, and high-availability principles that I now apply to building robust AI agents and data pipelines.",
       contact: {
         location: "Bogotá, Colombia",
         email: "juanvalencia9411@outlook.com",
         linkedin: "linkedin.com/in/jdvalmart",
         github: "github.com/jdvalmart",
       },
+      badges: [
+        "Available: On-site, Remote, Hybrid",
+        "Open to relocation in Colombia",
+      ],
       skills: {
-        languages: "Python, SQL, JavaScript",
-        ai_ml: "ML algorithms (regression, classification, clustering, neural networks), LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP, agent orchestration, model optimization",
-        databases: "PostgreSQL, MySQL, ChromaDB, data cleaning, preprocessing, feature engineering",
-        backend_apis: "FastAPI, REST API design, async Python, clean architecture, Node.js basics",
-        frontend_mobile: "React, React Native basics, Vue.js basics",
-        tools_practices: "Docker (basic), Git, CI/CD basics, Linux/Unix, code reviews, testing, agile/Scrum",
-        specialties: "Python, SQL, JavaScript, AI/ML, MCP, FastAPI, PostgreSQL, ChromaDB, RAG, LLMs",
+        ai_ml: "Models: Regression, Classification, Clustering, Neural Networks (MLP, CNN, LSTM). LLMs & RAG: Fine-tuning, RAG Pipelines, Embeddings (ONNX), Vector Search (ChromaDB). NLP & XAI: Transformers (HuggingFace), spaCy, NLTK; LIME, SHAP, Grad-CAM.",
+        backend_apis: "Languages: Python (Advanced), SQL, JavaScript. Frameworks: FastAPI (Expert), Node.js (Basic). Architecture: REST APIs, Async Services, Clean Architecture, MCP (Model Context Protocol).",
+        data_databases: "Processing: Pandas, NumPy, Feature Engineering, Data Cleaning. Storage: PostgreSQL, MySQL, ChromaDB.",
+        devops_practices: "Tools: Git/GitHub, Docker (Basic), CI/CD (Basic). Methodologies: Agile/Scrum, Code Reviews, Testing.",
       },
       devExperience: [
         {
@@ -145,14 +157,12 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
           company: "Trajectory Inc. — Initus Area (Backend & AI Core)",
           date: "Jun 2026 — Present | On-site Bogotá, Colombia (Canadian company)",
           details: [
-            "Develop and maintain scalable AI-powered web applications using Python, FastAPI, and React",
-            "Research, design, and implement ML models: algorithm selection, data preparation, training, evaluation, and optimization",
-            "Build RAG pipelines with ChromaDB, ONNX embeddings, hybrid search; LLM integration patterns for production",
-            "Develop enterprise MCP (Model Context Protocol) for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic",
-            "Full ML lifecycle: data collection, cleaning, model training, evaluation, deployment, and monitoring",
-            "Collaborate with product team to deliver AI-based features; code reviews, testing, and problem resolution",
-            "Backend: FastAPI async services, PostgreSQL, clean architecture (routers→services→repositories)",
-            "Docker (basic), Git, CI/CD pipelines, on-site collaboration with Canadian team",
+            "Enterprise AI Architecture: Develop and maintain scalable AI-powered web applications using Python, FastAPI, and React.",
+            "Production RAG Pipelines: Build Retrieval-Augmented Generation pipelines with ChromaDB and ONNX embeddings, implementing hybrid search and LLM integration patterns for production environments.",
+            "Enterprise MCP at Scale: Lead development of enterprise MCP (Model Context Protocol) for Claude, a 140+ tool system integrating PostgreSQL access, REST API wrappers, and complex business workflow automation.",
+            "Full ML Lifecycle: Manage complete machine learning lifecycle: data collection, cleaning, preparation; training, evaluation, optimization, and deployment of models.",
+            "Robust Backend: Develop async backend services with FastAPI, PostgreSQL, applying clean architecture principles (routers → services → repositories).",
+            "Agile Collaboration: Actively collaborate with product team to define features, conduct code reviews, testing, and problem resolution in high-demand environment with Canadian team.",
           ],
         },
         {
@@ -172,43 +182,46 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
           company: "Private Security Sector",
           date: "2021 — May 2026",
           details: [
-            "Monitored critical security systems for 200+ users with 99% availability",
-            "Managed inventory and logistics operations in private security sector",
+            "Critical Systems Management: Real-time monitoring of CCTV, alarms, and radiocommunications for 200+ users, maintaining 99% availability.",
+            "Python Automation: Developed automation scripts with Python and SQL for inventory management, reducing manual processing time by 30%.",
+            "Operational Discipline: Rigorous process documentation, incident management, and technology infrastructure maintenance, forging a culture of reliability and zero errors.",
           ],
         },
       ],
       education: [
         { title: "Software Engineering", school: "Politécnico Grancolombiano — 2026" },
+        { title: "AI Bootcamp (Basic & Intermediate) — Talento Tech, MinTIC", school: "2025 — 2026 | 20 weeks, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
         { title: "Diploma in Computer Science", school: "Politécnico Grancolombiano — 2025" },
-        { title: "Software Analysis & Development", school: "SENA — 2020-2022" },
-        { title: "AI Bootcamp — MinTIC (Talento Tech)", school: "2025 — 2026 | 20 weeks, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
+        { title: "Software Analysis & Development Technologist", school: "SENA — 2020-2022" },
       ],
+      certifications: "Python · FastAPI · PostgreSQL · Docker · Git & GitHub · React · TypeScript · Machine Learning · Deep Learning",
       languages: "Spanish (Native), English (Intermediate)",
       sections: {
         summary: "PROFESSIONAL SUMMARY",
-        skills: "TECHNICAL SKILLS",
+        skills: "KEY TECHNICAL SKILLS",
         devExperience: "DEVELOPMENT EXPERIENCE",
         otherExperience: "OTHER EXPERIENCE",
-        education: "EDUCATION",
+        education: "EDUCATION & CERTIFICATIONS",
         languages: "LANGUAGES",
       },
     },
     es: {
-      summary: "Desarrollador de Software IA en Trajectory Inc. (Área Initus — Backend & AI Core) desde junio 2026. Desarrollando y manteniendo aplicaciones escalables con IA: investigando, diseñando e implementando modelos ML; construyendo pipelines RAG con ChromaDB y embeddings ONNX; desarrollando MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas. Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, optimización y despliegue de modelos. Colaboración con equipo de producto para entregar funcionalidades basadas en IA. Previa: prácticas Full-Stack 6 meses (SENA, 2022) con Vue.js, PHP/Laravel, MySQL. 5+ años como Operador de Medios Tecnológicos en seguridad privada. Bootcamp IA MinTIC (2025-2026): 20 semanas, 33 labs ML, DL, NLP, XAI. Presencial en Bogotá, Colombia.",
+      summary: "Desarrollador de Software IA en Trajectory Inc., especializado en la construcción de aplicaciones y servicios de IA escalables para el ámbito empresarial. Mi enfoque es 100% en el desarrollo de software impulsado por inteligencia artificial, abarcando el ciclo de vida completo del machine learning: desde la investigación y diseño de algoritmos hasta el despliegue, optimización y monitoreo de modelos en producción. Mi formación como Ingeniero de Software y mi paso por un bootcamp intensivo de IA (MinTIC) me permiten unir la disciplina de la ingeniería de software con las técnicas más avanzadas de deep learning, NLP y MLOps. Antes de dedicarme a la IA, pasé 5 años monitoreando sistemas de seguridad críticos. Esa experiencia forjó mi disciplina operativa, mi tolerancia cero al error y mi habilidad para mantener sistemas con alta disponibilidad, principios que ahora aplico para construir agentes de IA y pipelines de datos robustos y confiables.",
       contact: {
         location: "Bogotá, Colombia",
         email: "juanvalencia9411@outlook.com",
         linkedin: "linkedin.com/in/jdvalmart",
         github: "github.com/jdvalmart",
       },
+      badges: [
+        "Disponible: Presencial, Remoto, Híbrido",
+        "Abierto a reubicación en Colombia",
+      ],
       skills: {
-        languages: "Python, SQL, JavaScript",
-        ai_ml: "Algoritmos ML (regresión, clasificación, clustering, redes neuronales), fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP, orquestación de agentes, optimización de modelos",
-        databases: "PostgreSQL, MySQL, ChromaDB, limpieza de datos, preprocesamiento, feature engineering",
-        backend_apis: "FastAPI, diseño de REST APIs, Python asíncrono, arquitectura limpia, Node.js básico",
-        frontend_mobile: "React, React Native básico, Vue.js básico",
-        tools_practices: "Docker (básico), Git, CI/CD básico, Linux/Unix, revisiones de código, pruebas, ágil/Scrum",
-        specialties: "Python, SQL, JavaScript, IA/ML, MCP, FastAPI, PostgreSQL, ChromaDB, RAG, LLMs",
+        ai_ml: "Modelos: Regresión, Clasificación, Clustering, Redes Neuronales (MLP, CNN, LSTM). LLMs & RAG: Fine-tuning, Pipelines RAG, Embeddings (ONNX), Búsqueda Vectorial (ChromaDB). NLP & XAI: Transformers (HuggingFace), spaCy, NLTK; LIME, SHAP, Grad-CAM.",
+        backend_apis: "Lenguajes: Python (Avanzado), SQL, JavaScript. Frameworks: FastAPI (Experto), Node.js (Básico). Arquitectura: APIs REST, Servicios Async, Arquitectura Limpia, MCP (Model Context Protocol).",
+        data_databases: "Procesamiento: Pandas, NumPy, Feature Engineering, Limpieza de Datos. Almacenamiento: PostgreSQL, MySQL, ChromaDB.",
+        devops_practices: "Herramientas: Git/GitHub, Docker (Básico), CI/CD (Básico). Metodologías: Ágil/Scrum, Revisiones de Código, Testing.",
       },
       devExperience: [
         {
@@ -216,14 +229,12 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
           company: "Trajectory Inc. — Área Initus (Backend & AI Core)",
           date: "Jun 2026 — Presente | Presencial Bogotá, Colombia (empresa canadiense)",
           details: [
-            "Desarrollar y mantener aplicaciones web escalables con IA usando Python, FastAPI y React",
-            "Investigar, diseñar e implementar modelos ML: selección de algoritmos, preparación de datos, entrenamiento, evaluación y optimización",
-            "Construir pipelines RAG con ChromaDB, embeddings ONNX, búsqueda híbrida; patrones de integración LLM para producción",
-            "Desarrollar MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización de flujos, lógica de negocio",
-            "Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, despliegue y monitoreo de modelos",
-            "Colaborar con equipo de producto para definir y entregar funcionalidades IA; revisiones de código, pruebas y resolución de problemas",
-            "Backend: Servicios async FastAPI, PostgreSQL, arquitectura limpia (routers→services→repositories)",
-            "Docker (básico), Git, pipelines CI/CD, colaboración presencial con equipo canadiense",
+            "Arquitectura de IA Empresarial: Desarrollo y mantenimiento de aplicaciones web escalables con IA utilizando Python, FastAPI y React.",
+            "Pipelines RAG en Producción: Construyo pipelines de Retrieval-Augmented Generation (RAG) con ChromaDB y embeddings ONNX, implementando búsqueda híbrida y patrones de integración LLM para entornos productivos.",
+            "Desarrollo MCP a Escala: Lidero el desarrollo del MCP (Model Context Protocol) empresarial para Claude, un sistema con más de 140 herramientas que integra acceso a PostgreSQL, wrappers de APIs REST y automatización de flujos de negocio complejos.",
+            "Ciclo de Vida del ML: Gestiono el ciclo completo de machine learning: recolección, limpieza y preparación de datos; entrenamiento, evaluación, optimización y despliegue de modelos.",
+            "Backend Robusto: Desarrollo servicios backend asíncronos con FastAPI, utilizando PostgreSQL y aplicando principios de arquitectura limpia (routers → services → repositories).",
+            "Colaboración Ágil: Colaboro activamente con el equipo de producto para definir funcionalidades, realizo revisiones de código, pruebas y resolución de problemas en un entorno de alta exigencia con equipo canadiense.",
           ],
         },
         {
@@ -243,24 +254,26 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
           company: "Sector Seguridad Privada",
           date: "2021 — Mayo 2026",
           details: [
-            "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad",
-            "Gestión de inventario y operaciones logísticas en sector de seguridad privada",
+            "Gestión de Sistemas Críticos: Monitoreo en tiempo real de sistemas CCTV, alarmas y radiocomunicaciones para más de 200 usuarios, manteniendo un 99% de disponibilidad.",
+            "Automatización con Python: Desarrollé scripts de automatización con Python y SQL para la gestión de inventario, reduciendo el tiempo de procesamiento manual en un 30%.",
+            "Disciplina Operativa: Documentación rigurosa de procesos, gestión de incidencias y mantenimiento de infraestructura tecnológica, forjando una cultura de confiabilidad y cero errores.",
           ],
         },
       ],
       education: [
         { title: "Ingeniería de Software", school: "Politécnico Grancolombiano — 2026" },
+        { title: "Bootcamp IA (Básico e Intermedio) — Talento Tech, MinTIC", school: "2025 — 2026 | 20 semanas, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
         { title: "Diplomado en Ciencias de la Computación", school: "Politécnico Grancolombiano — 2025" },
-        { title: "Bootcamp IA — MinTIC (Talento Tech)", school: "2025 — 2026 | 20 semanas, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
-        { title: "Análisis y Desarrollo de Software", school: "SENA — 2020-2022" },
+        { title: "Tecnólogo en Análisis y Desarrollo de Software", school: "SENA — 2020-2022" },
       ],
+      certifications: "Python · FastAPI · PostgreSQL · Docker · Git & GitHub · React · TypeScript · Machine Learning · Deep Learning",
       languages: "Español (Nativo), Inglés (Intermedio)",
       sections: {
         summary: "RESUMEN PROFESIONAL",
-        skills: "HABILIDADES TÉCNICAS",
+        skills: "HABILIDADES TÉCNICAS CLAVE",
         devExperience: "EXPERIENCIA EN DESARROLLO",
         otherExperience: "OTRA EXPERIENCIA",
-        education: "EDUCACIÓN",
+        education: "FORMACIÓN Y CERTIFICACIONES",
         languages: "IDIOMAS",
       },
     },
@@ -274,6 +287,13 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         {/* Header */}
         <Text style={styles.name}>Juan David Valencia</Text>
         <Text style={styles.role}>{lang === "en" ? "AI Software Developer" : "Desarrollador de Software IA"}</Text>
+
+        {/* Badges */}
+        <View style={{ flexDirection: "row", flexWrap: "wrap", marginBottom: 12 }}>
+          {tr.badges.map((badge, i) => (
+            <Text key={i} style={styles.badge}>{badge}</Text>
+          ))}
+        </View>
 
         {/* Contact */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 16, marginBottom: 16 }}>
@@ -291,26 +311,17 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
 
         {/* Skills */}
         <Text style={styles.sectionTitle}>{tr.sections.skills}</Text>
-        <Text style={styles.skillCategory}>Languages</Text>
-        <Text style={styles.skillList}>{tr.skills.languages}</Text>
-
-        <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Engineering" : "Ingeniería IA / ML"}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "AI & Machine Learning" : "AI & Machine Learning"}</Text>
         <Text style={styles.skillList}>{tr.skills.ai_ml}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</Text>
-        <Text style={styles.skillList}>{tr.skills.databases}</Text>
-
-        <Text style={styles.skillCategory}>{lang === "en" ? "Backend & APIs" : "Backend y APIs"}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Backend & APIs" : "Backend & APIs"}</Text>
         <Text style={styles.skillList}>{tr.skills.backend_apis}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Frontend & Mobile" : "Frontend y Móvil"}</Text>
-        <Text style={styles.skillList}>{tr.skills.frontend_mobile}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</Text>
+        <Text style={styles.skillList}>{tr.skills.data_databases}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "Tools & Practices" : "Herramientas y Prácticas"}</Text>
-        <Text style={styles.skillList}>{tr.skills.tools_practices}</Text>
-
-        <Text style={styles.skillCategory}>{lang === "en" ? "Core Specialties" : "Especialidades Principales"}</Text>
-        <Text style={styles.skillList}>{tr.skills.specialties}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "DevOps & Practices" : "DevOps y Prácticas"}</Text>
+        <Text style={styles.skillList}>{tr.skills.devops_practices}</Text>
 
         <View style={styles.divider} />
 
@@ -352,6 +363,12 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
             <Text style={styles.eduSchool}>{edu.school}</Text>
           </View>
         ))}
+
+        <View style={styles.divider} />
+
+        {/* Certifications */}
+        <Text style={styles.sectionTitle}>Certifications</Text>
+        <Text style={styles.skillList}>{tr.certifications}</Text>
 
         <View style={styles.divider} />
 

@@ -10,7 +10,7 @@ const en = {
       greeting: "Hi, I'm Juan David",
       role: "AI Software Developer at Trajectory Inc.",
       subtitle:
-        "AI Software Developer specialized in ML, RAG & MCP. Building scalable AI-powered applications: researching & implementing ML models, RAG pipelines with ChromaDB/ONNX, enterprise MCP for Claude (140+ tools). Python, SQL, JavaScript, FastAPI, React. On-site in Bogotá.",
+        "AI Software Developer specialized in building scalable AI-powered applications and services. Full ML lifecycle: research, design, training, deployment, optimization. Python · FastAPI · LLMs · RAG · MCP · Machine Learning.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
       cvBtn: "Download CV",
@@ -24,7 +24,7 @@ const en = {
       ],
       ctaTitle: "Have an AI project in mind?",
       ctaSubtitle:
-        "I build backend and AI solutions: from MCP tools and ML models to scalable APIs. Let's talk about how I can help you.",
+        "I build scalable AI-powered applications and services for the enterprise. From algorithm research to production deployment. Let's talk about how I can help you.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
@@ -39,9 +39,9 @@ const en = {
     about: {
       title: "About Me",
       p1:
-        "I'm an AI Software Developer at Trajectory Inc., building scalable AI-powered applications in the Initus area — the backend and AI core of the company. My work spans the full ML lifecycle: researching and designing ML algorithms, data preparation, model training, evaluation, optimization, and deployment. I build RAG pipelines with ChromaDB and ONNX embeddings, develop enterprise MCP (Model Context Protocol) for Claude with 140+ tools, and collaborate with the product team to deliver AI-based features.",
+        "I'm an AI Software Developer at Trajectory Inc., specialized in building scalable AI-powered applications and services for the enterprise. My focus is 100% on AI-driven software development, covering the full ML lifecycle: from algorithm research and design to deployment, optimization, and monitoring of models in production.",
       p2:
-        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 20 intensive weeks with 33 hands-on labs. I work daily with Python, FastAPI, PostgreSQL, Docker, LLMs, React, and MCP architecture.",
+        "My Software Engineering background and intensive AI bootcamp (MinTIC) enable me to combine software engineering discipline with advanced deep learning, NLP, and MLOps techniques. Previously spent 5 years monitoring critical security systems, forging operational discipline, zero-error tolerance, and high-availability principles that I now apply to building robust AI agents and data pipelines.",
       p3:
         "Based in Bogotá, Colombia. Working on-site for Trajectory Inc. (Canada) since June 2026.",
       philosophy: "Philosophy",
@@ -100,7 +100,7 @@ const en = {
         },
         {
           title: "Technology Media Operator",
-          desc: "Monitored critical security systems for 200+ users with 99% availability. Managed inventory and logistics operations in private security sector.",
+          desc: "Monitored critical security systems for 200+ users with 99% availability. Developed Python/SQL automation scripts for inventory management, reducing manual processing by 30%. Forged operational discipline and zero-error culture.",
         },
         {
           title: "Full-Stack Developer Internship (SENA) — 6 months",
@@ -115,8 +115,8 @@ const en = {
           desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politécnico Grancolombiano.",
         },
         {
-          title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
-          desc: "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas (JSON Schema), FastAPI endpoints, LLM tool-calling optimization. RAG pipelines: ChromaDB, ONNX embeddings, hybrid search. Backend: FastAPI async, PostgreSQL, clean architecture. On-site in Bogotá for Canadian company.",
+          title: "AI Software Developer — Trajectory Inc.",
+          desc: "Initus Area (Backend & AI Core). Building scalable AI-powered applications with Python, FastAPI, React. Production RAG pipelines (ChromaDB, ONNX). Enterprise MCP for Claude (140+ tools). Full ML lifecycle management. Clean architecture, code reviews, agile collaboration with Canadian team.",
         },
       ],
     },
@@ -158,6 +158,6 @@ const en = {
       books: "books",
       details: "Details",
     },
-  }
+}
 
 export default en;
