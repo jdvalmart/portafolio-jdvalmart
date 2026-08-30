@@ -31,8 +31,8 @@ const CvPage = () => {
   return (
     <>
       <Helmet>
-        <title>CV — Juan David Valencia | AI Developer</title>
-        <meta name="description" content="Juan David Valencia — CV/Resume. Backend Python Developer & AI Engineer specializing in MCP, NLP, Backend Engineering, and production AI systems with Python, FastAPI, and LLMs." />
+        <title>CV — Juan David Valencia | Backend Python Developer</title>
+        <meta name="description" content="Juan David Valencia — CV/Resume. Backend Python Developer & AI Engineer at Trajectory Inc. Specializing in Python, SQL, MCP, FastAPI, and AI/ML systems." />
       </Helmet>
 
       <section className="max-w-4xl mx-auto py-20 px-6">
@@ -60,7 +60,7 @@ const CvPage = () => {
 
           {/* Contact */}
           <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-1">
-            <p>Palmira, Valle del Cauca, Colombia</p>
+            <p>Bogotá, Colombia</p>
             <p>juanvalencia9411@outlook.com</p>
             <p>linkedin.com/in/jdvalmart</p>
             <p>github.com/jdvalmart</p>
@@ -71,8 +71,8 @@ const CvPage = () => {
             <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{lang === "en" ? "Professional Summary" : "Resumen Profesional"}</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {lang === "en"
-                ? "Backend Python Developer & AI Engineer at Trajectory Inc. (Initus Area — Backend & AI Core) with 5+ years of experience. Building an enterprise MCP (Model Context Protocol) for Claude with 140+ custom tools exposing: PostgreSQL data access, REST API integrations, internal workflow automation, and business logic execution. Designing MCP tool schemas, implementing FastAPI endpoints, optimizing LLM tool-calling accuracy (>95%). Production ML pipelines: NLP (Transformers, spaCy, NLTK), XAI (LIME, SHAP, Grad-CAM), MLOps. Remote from Colombia."
-                : "Backend Python Developer & AI Engineer en Trajectory Inc. (Área Initus — Backend & AI Core) con 5+ años de experiencia. Construyendo un MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas personalizadas que exponen: acceso a datos PostgreSQL, integraciones REST API, automatización de flujos internos y ejecución de lógica de negocio. Diseñando esquemas de herramientas MCP, implementando endpoints FastAPI, optimizando precisión de tool-calling de LLM (>95%). Pipelines ML en producción: NLP (Transformers, spaCy, NLTK), XAI (LIME, SHAP, Grad-CAM), MLOps. Remoto desde Colombia."}
+                ? "AI Software Developer at Trajectory Inc. (Initus Area — Backend & AI Core) since June 2026. Developing and maintaining scalable AI-powered applications: researching, designing, and implementing ML models; building RAG pipelines with ChromaDB and ONNX embeddings; developing enterprise MCP (Model Context Protocol) for Claude with 140+ tools. Full ML lifecycle: data collection, cleaning, model training, evaluation, optimization, and deployment. Collaborating with product team to deliver AI-based features. Prior: 6-month Full-Stack internship (SENA, 2022) with Vue.js, PHP/Laravel, MySQL. 5+ years as Technology Media Operator in private security. AI Bootcamp MinTIC (2025-2026): 20 weeks, 33 labs in ML, DL, NLP, XAI. On-site in Bogotá, Colombia."
+                : "Desarrollador de Software IA en Trajectory Inc. (Área Initus — Backend & AI Core) desde junio 2026. Desarrollando y manteniendo aplicaciones escalables con IA: investigando, diseñando e implementando modelos ML; construyendo pipelines RAG con ChromaDB y embeddings ONNX; desarrollando MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas. Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, optimización y despliegue de modelos. Colaboración con equipo de producto para entregar funcionalidades basadas en IA. Previa: prácticas Full-Stack 6 meses (SENA, 2022) con Vue.js, PHP/Laravel, MySQL. 5+ años como Operador de Medios Tecnológicos en seguridad privada. Bootcamp IA MinTIC (2025-2026): 20 semanas, 33 labs ML, DL, NLP, XAI. Presencial en Bogotá, Colombia."}
             </p>
           </div>
 
@@ -82,40 +82,40 @@ const CvPage = () => {
             <div className="space-y-4 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Programming Languages" : "Lenguajes de Programación"}</p>
-                <p>{lang === "en" ? "Python (Expert), SQL (Advanced), TypeScript (Intermediate)" : "Python (Experto), SQL (Avanzado), TypeScript (Intermedio)"}</p>
+                <p>{lang === "en" ? "Python, SQL, JavaScript" : "Python, SQL, JavaScript"}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI / ML Engineering" : "Ingeniería IA / ML"}</p>
                 <p>{lang === "en"
-                  ? "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP (Model Context Protocol), agent orchestration"
-                  : "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP (Model Context Protocol), orquestación de agentes"}</p>
-              </div>
-              <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI / ML Frameworks" : "Frameworks IA / ML"}</p>
-                <p>TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM</p>
+                  ? "ML algorithms (regression, classification, clustering, neural networks), LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP, agent orchestration, model optimization"
+                  : "Algoritmos ML (regresión, clasificación, clustering, redes neuronales), fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP, orquestación de agentes, optimización de modelos"}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</p>
-                <p>{lang === "en" ? "PostgreSQL (Advanced), SQLAlchemy, asyncpg, Redis, data modeling, query optimization" : "PostgreSQL (Avanzado), SQLAlchemy, asyncpg, Redis, modelado de datos, optimización de consultas"}</p>
+                <p>{lang === "en" ? "PostgreSQL, MySQL, ChromaDB, data cleaning, preprocessing, feature engineering" : "PostgreSQL, MySQL, ChromaDB, limpieza de datos, preprocesamiento, feature engineering"}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Backend & APIs" : "Backend y APIs"}</p>
-                <p>{lang === "en" ? "FastAPI (Expert), REST API design, async Python, dependency injection, clean architecture" : "FastAPI (Experto), diseño de REST APIs, Python asíncrono, inyección de dependencias, arquitectura limpia"}</p>
+                <p>{lang === "en" ? "FastAPI, REST API design, async Python, clean architecture, Node.js basics" : "FastAPI, diseño de REST APIs, Python asíncrono, arquitectura limpia, Node.js básico"}</p>
               </div>
               <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "MLOps & Production" : "MLOps y Producción"}</p>
-                <p>{lang === "en" ? "CI/CD for ML models, model registry, A/B testing, drift monitoring, Docker, observability" : "CI/CD para modelos ML, registro de modelos, A/B testing, monitoreo de drift, Docker, observabilidad"}</p>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Frontend & Mobile" : "Frontend y Móvil"}</p>
+                <p>{lang === "en" ? "React, React Native basics, Vue.js basics" : "React, React Native básico, Vue.js básico"}</p>
+              </div>
+              <div>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Tools & Practices" : "Herramientas y Prácticas"}</p>
+                <p>{lang === "en" ? "Docker (basic), Git, CI/CD basics, Linux/Unix, code reviews, testing, agile/Scrum" : "Docker (básico), Git, CI/CD básico, Linux/Unix, revisiones de código, pruebas, ágil/Scrum"}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Core Specialties" : "Especialidades Principales"}</p>
-                <p>Python, SQL, AI/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL</p>
+                <p>Python, SQL, JavaScript, AI/ML, MCP, FastAPI, PostgreSQL, ChromaDB, RAG, LLMs</p>
               </div>
             </div>
           </div>
 
           {/* Experience */}
           <div>
-            <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{lang === "en" ? "Professional Experience" : "Experiencia Profesional"}</h3>
+            <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{lang === "en" ? "Development Experience" : "Experiencia en Desarrollo"}</h3>
             <div className="space-y-5 text-sm text-zinc-600 dark:text-zinc-400">
               <div className="border-l-2 border-teal-500 pl-4">
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">
@@ -130,36 +130,35 @@ const CvPage = () => {
                     Trajectory Inc.
                   </a>
                 </p>
-                <p className="text-xs text-zinc-400">{lang === "en" ? "Jun 1, 2026 — Present | Remote (Colombia) for Canadian company" : "1 Jun 2026 — Presente | Remoto (Colombia) para empresa canadiense"}</p>
+                <p className="text-xs text-zinc-400">{lang === "en" ? "Jun 2026 — Present | On-site Bogotá, Colombia (Canadian company)" : "Jun 2026 — Presente | Presencial Bogotá, Colombia (empresa canadiense)"}</p>
                 <p className="font-medium text-zinc-600 dark:text-zinc-400 mt-2 mb-1">{lang === "en" ? "Initus Area: Backend & AI Core" : "Área Initus: Backend & AI Core"}</p>
                 <ul className="space-y-1.5 list-disc list-inside ml-2">
-                  <li>{lang === "en" ? "MCP Development: Built 140+ MCP tools from ~6 initial: PostgreSQL queries, REST API wrappers, business workflow triggers, data transformation pipelines, auth/permission layers" : "Desarrollo MCP: Construcción de 140+ herramientas MCP desde ~6 iniciales: consultas PostgreSQL, wrappers REST API, triggers de flujos de negocio, pipelines de transformación de datos, capas de auth/permisos"}</li>
-                  <li>{lang === "en" ? "Designed tool schemas (JSON Schema) optimizing Claude's tool-calling accuracy (>95%)" : "Diseño de esquemas de herramientas (JSON Schema) optimizando precisión de tool-calling de Claude (>95%)"}</li>
-                  <li>{lang === "en" ? "Implemented MCP server with FastAPI: streaming responses, error handling, rate limiting" : "Implementación de servidor MCP con FastAPI: respuestas streaming, manejo de errores, rate limiting"}</li>
-                  <li>{lang === "en" ? "Integrated with internal services: user management, billing, analytics, document processing" : "Integración con servicios internos: gestión de usuarios, facturación, analíticas, procesamiento de documentos"}</li>
-                  <li>{lang === "en" ? "AI/ML Engineering: Production NLP: Transformer fine-tuning (BERT, Llama), custom tokenizers, ONNX export" : "Ingeniería IA/ML: NLP en producción: fine-tuning de Transformers (BERT, Llama), tokenizers personalizados, exportación ONNX"}</li>
-                  <li>{lang === "en" ? "RAG pipelines: ChromaDB vector store, embedding models, hybrid search (keyword + semantic)" : "Pipelines RAG: almacén vectorial ChromaDB, modelos de embedding, búsqueda híbrida (keyword + semántica)"}</li>
-                  <li>{lang === "en" ? "XAI integration: LIME/SHAP explanations for model decisions in production APIs" : "Integración XAI: explicaciones LIME/SHAP para decisiones de modelos en APIs de producción"}</li>
-                  <li>{lang === "en" ? "MLOps: CI/CD for ML models, model registry, A/B testing framework, drift monitoring" : "MLOps: CI/CD para modelos ML, registro de modelos, framework A/B testing, monitoreo de drift"}</li>
-                  <li>{lang === "en" ? "Backend Engineering: FastAPI async services: PostgreSQL (asyncpg/SQLAlchemy), Redis caching, WebSocket" : "Ingeniería Backend: Servicios async FastAPI: PostgreSQL (asyncpg/SQLAlchemy), Redis caching, WebSocket"}</li>
-                  <li>{lang === "en" ? "Clean architecture: routers → services → repositories, dependency injection" : "Arquitectura limpia: routers → services → repositories, inyección de dependencias"}</li>
-                  <li>{lang === "en" ? "Docker multi-stage builds, Railway/Render deployment, health checks, graceful shutdown" : "Docker multi-stage builds, despliegue en Railway/Render, health checks, graceful shutdown"}</li>
+                  <li>{lang === "en" ? "Develop and maintain scalable AI-powered web applications using Python, FastAPI, and React" : "Desarrollar y mantener aplicaciones web escalables con IA usando Python, FastAPI y React"}</li>
+                  <li>{lang === "en" ? "Research, design, and implement ML models: algorithm selection, data preparation, training, evaluation, and optimization" : "Investigar, diseñar e implementar modelos ML: selección de algoritmos, preparación de datos, entrenamiento, evaluación y optimización"}</li>
+                  <li>{lang === "en" ? "Build RAG pipelines with ChromaDB, ONNX embeddings, hybrid search; LLM integration patterns for production" : "Construir pipelines RAG con ChromaDB, embeddings ONNX, búsqueda híbrida; patrones de integración LLM para producción"}</li>
+                  <li>{lang === "en" ? "Develop enterprise MCP (Model Context Protocol) for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic" : "Desarrollar MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización de flujos, lógica de negocio"}</li>
+                  <li>{lang === "en" ? "Full ML lifecycle: data collection, cleaning, model training, evaluation, deployment, and monitoring" : "Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, despliegue y monitoreo de modelos"}</li>
+                  <li>{lang === "en" ? "Collaborate with product team to define and deliver AI-based features; code reviews, testing, and problem resolution" : "Colaborar con equipo de producto para definir y entregar funcionalidades IA; revisiones de código, pruebas y resolución de problemas"}</li>
+                  <li>{lang === "en" ? "Backend: FastAPI async services, PostgreSQL, clean architecture (routers→services→repositories)" : "Backend: Servicios async FastAPI, PostgreSQL, arquitectura limpia (routers→services→repositories)"}</li>
+                  <li>{lang === "en" ? "Docker (basic), Git, CI/CD pipelines, on-site collaboration with Canadian team" : "Docker (básico), Git, pipelines CI/CD, colaboración presencial con equipo canadiense"}</li>
                 </ul>
               </div>
+              <div className="border-l-2 border-teal-500 pl-4">
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Full-Stack Developer Intern (6 months)" : "Practicante Desarrollador Full-Stack (6 meses)"}</p>
+                <p className="text-xs text-zinc-400">2022</p>
+                <p>{lang === "en" ? "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. Agile teams with Scrum. 6-month internship at SENA." : "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Equipos ágiles con Scrum. Prácticas de 6 meses en SENA."}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Experience */}
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-2">{lang === "en" ? "Other Experience" : "Otra Experiencia"}</h3>
+            <div className="space-y-5 text-sm text-zinc-600 dark:text-zinc-400">
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Technology Media Operator" : "Operador de Medios Tecnológicos"}</p>
                 <p className="text-xs text-zinc-400">{lang === "en" ? "2021 — May 2026" : "2021 — Mayo 2026"}</p>
-                <p>{lang === "en" ? "Monitored critical security systems for 200+ users with 99% availability. Automated inventory management with Python and SQL, reducing manual work by 30%." : "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Automatización de gestión de inventario con Python y SQL, reduciendo trabajo manual 30%."}</p>
-              </div>
-              <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI Bootcamp — MinTIC (Talento Tech)" : "Bootcamp IA — MinTIC (Talento Tech)"}</p>
-                <p className="text-xs text-zinc-400">2025 — 2026</p>
-                <p>{lang === "en" ? "20 intensive weeks covering ML, Deep Learning, NLP, XAI, MLOps, and Cloud. 33+ hands-on labs completed with TensorFlow, HuggingFace, and model deployment as APIs." : "20 semanas intensivas cubriendo ML, Deep Learning, NLP, XAI, MLOps y Cloud. 33+ laboratorios prácticos con TensorFlow, HuggingFace y despliegue de modelos como APIs."}</p>
-              </div>
-              <div>
-                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Full-Stack Developer Intern" : "Practicante Desarrollador Full-Stack"}</p>
-                <p className="text-xs text-zinc-400">2022</p>
-                <p>{lang === "en" ? "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum." : "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Primera experiencia en equipos ágiles con Scrum."}</p>
+                <p>{lang === "en" ? "Monitored critical security systems for 200+ users with 99% availability. Managed inventory and logistics operations in private security sector." : "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Gestión de inventario y operaciones logísticas en sector de seguridad privada."}</p>
               </div>
             </div>
           </div>
@@ -175,6 +174,10 @@ const CvPage = () => {
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Diploma in Computer Science" : "Diplomado en Ciencias de la Computación"}</p>
                 <p>Politécnico Grancolombiano — 2025</p>
+              </div>
+              <div>
+                <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "AI Bootcamp — MinTIC (Talento Tech)" : "Bootcamp IA — MinTIC (Talento Tech)"}</p>
+                <p>{lang === "en" ? "20 intensive weeks: ML, Deep Learning, NLP, XAI, MLOps, Cloud. 33+ labs with TensorFlow, HuggingFace, model deployment as APIs." : "20 semanas intensivas: ML, Deep Learning, NLP, XAI, MLOps, Cloud. 33+ labs con TensorFlow, HuggingFace, despliegue de modelos como APIs."}</p>
               </div>
               <div>
                 <p className="font-medium text-zinc-700 dark:text-zinc-300">{lang === "en" ? "Software Analysis & Development" : "Análisis y Desarrollo de Software"}</p>

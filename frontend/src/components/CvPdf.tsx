@@ -123,71 +123,57 @@ interface CvPdfProps {
 export const CvPdf = ({ lang }: CvPdfProps) => {
   const translations = {
     en: {
-      summary: "Backend Python Developer & AI Engineer at Trajectory Inc. (Initus Area — Backend & AI Core) with 5+ years of experience. Building an enterprise MCP (Model Context Protocol) for Claude with 140+ custom tools exposing: PostgreSQL data access, REST API integrations, internal workflow automation, and business logic execution. Designing MCP tool schemas, implementing FastAPI endpoints, optimizing LLM tool-calling accuracy. Production ML pipelines: NLP (Transformers, spaCy, NLTK), XAI (LIME, SHAP, Grad-CAM), MLOps. Remote from Colombia.",
+      summary: "AI Software Developer at Trajectory Inc. (Initus Area — Backend & AI Core) since June 2026. Developing and maintaining scalable AI-powered applications: researching, designing, and implementing ML models; building RAG pipelines with ChromaDB and ONNX embeddings; developing enterprise MCP (Model Context Protocol) for Claude with 140+ tools. Full ML lifecycle: data collection, cleaning, model training, evaluation, optimization, and deployment. Collaborating with product team to deliver AI-based features. Prior: 6-month Full-Stack internship (SENA, 2022) with Vue.js, PHP/Laravel, MySQL. 5+ years as Technology Media Operator in private security. AI Bootcamp MinTIC (2025-2026): 20 weeks, 33 labs in ML, DL, NLP, XAI. On-site in Bogotá, Colombia.",
       contact: {
-        location: "Palmira, Valle del Cauca, Colombia",
+        location: "Bogotá, Colombia",
         email: "juanvalencia9411@outlook.com",
         linkedin: "linkedin.com/in/jdvalmart",
         github: "github.com/jdvalmart",
       },
       skills: {
-        languages: "Python (Expert), SQL (Advanced), TypeScript (Intermediate)",
-        ai_ml: "LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP (Model Context Protocol), agent orchestration",
-        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM",
-        data_databases: "PostgreSQL (Advanced), SQLAlchemy, asyncpg, Redis, data modeling, query optimization",
-        backend_apis: "FastAPI (Expert), REST API design, async Python, dependency injection, clean architecture",
-        mlops: "CI/CD for ML models, model registry, A/B testing, drift monitoring, Docker, observability",
-        specialties: "Python, SQL, AI/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL",
+        languages: "Python, SQL, JavaScript",
+        ai_ml: "ML algorithms (regression, classification, clustering, neural networks), LLM fine-tuning, RAG pipelines, embedding models (ONNX), vector search (ChromaDB), model serving (FastAPI), MCP, agent orchestration, model optimization",
+        databases: "PostgreSQL, MySQL, ChromaDB, data cleaning, preprocessing, feature engineering",
+        backend_apis: "FastAPI, REST API design, async Python, clean architecture, Node.js basics",
+        frontend_mobile: "React, React Native basics, Vue.js basics",
+        tools_practices: "Docker (basic), Git, CI/CD basics, Linux/Unix, code reviews, testing, agile/Scrum",
+        specialties: "Python, SQL, JavaScript, AI/ML, MCP, FastAPI, PostgreSQL, ChromaDB, RAG, LLMs",
       },
-      experience: [
+      devExperience: [
         {
-          title: "Backend Python Developer | AI Engineer",
+          title: "AI Software Developer",
           company: "Trajectory Inc. — Initus Area (Backend & AI Core)",
-          date: "Jun 1, 2026 — Present | Remote (Colombia) for Canadian company",
+          date: "Jun 2026 — Present | On-site Bogotá, Colombia (Canadian company)",
           details: [
-            "MCP Development: Built 140+ MCP tools from ~6 initial: PostgreSQL queries, REST API wrappers, business workflow triggers, data transformation pipelines, auth/permission layers",
-            "Designed tool schemas (JSON Schema) optimizing Claude's tool-calling accuracy (>95%)",
-            "Implemented MCP server with FastAPI: streaming responses, error handling, rate limiting",
-            "Integrated with internal services: user management, billing, analytics, document processing",
-            "AI/ML Engineering: Production NLP: Transformer fine-tuning (BERT, Llama), custom tokenizers, ONNX export",
-            "RAG pipelines: ChromaDB vector store, embedding models, hybrid search (keyword + semantic)",
-            "XAI integration: LIME/SHAP explanations for model decisions in production APIs",
-            "MLOps: CI/CD for ML models, model registry, A/B testing framework, drift monitoring",
-            "Backend Engineering: FastAPI async services: PostgreSQL (asyncpg/SQLAlchemy), Redis caching, WebSocket",
-            "Clean architecture: routers → services → repositories, dependency injection",
-            "Docker multi-stage builds, Railway/Render deployment, health checks, graceful shutdown",
+            "Develop and maintain scalable AI-powered web applications using Python, FastAPI, and React",
+            "Research, design, and implement ML models: algorithm selection, data preparation, training, evaluation, and optimization",
+            "Build RAG pipelines with ChromaDB, ONNX embeddings, hybrid search; LLM integration patterns for production",
+            "Develop enterprise MCP (Model Context Protocol) for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic",
+            "Full ML lifecycle: data collection, cleaning, model training, evaluation, deployment, and monitoring",
+            "Collaborate with product team to deliver AI-based features; code reviews, testing, and problem resolution",
+            "Backend: FastAPI async services, PostgreSQL, clean architecture (routers→services→repositories)",
+            "Docker (basic), Git, CI/CD pipelines, on-site collaboration with Canadian team",
           ],
         },
+        {
+          title: "Full-Stack Developer Intern (6 months)",
+          company: "SENA",
+          date: "2022",
+          details: [
+            "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel",
+            "Managed MySQL databases",
+            "Agile teams with Scrum. 6-month internship at SENA",
+          ],
+        },
+      ],
+      otherExperience: [
         {
           title: "Technology Media Operator",
           company: "Private Security Sector",
           date: "2021 — May 2026",
           details: [
             "Monitored critical security systems for 200+ users with 99% availability",
-            "Automated inventory management with Python and SQL, reducing manual work by 30%",
-            "Discovered passion for automation and backend development",
-          ],
-        },
-        {
-          title: "AI Bootcamp — MinTIC (Talento Tech)",
-          company: "",
-          date: "2025 — 2026",
-          details: [
-            "20 intensive weeks covering ML, Deep Learning, NLP, XAI, MLOps, and Cloud",
-            "33+ hands-on labs completed with TensorFlow, HuggingFace, and model deployment as APIs",
-            "CNN image classifier achieving 87.14% accuracy on CIFAR-10 with XAI explainability",
-            "Transformer fine-tuning with HuggingFace for text classification and NER",
-            "Big Data processing with Apache Spark and distributed messaging with Apache Kafka",
-          ],
-        },
-        {
-          title: "Full-Stack Developer Intern",
-          company: "SENA",
-          date: "2022",
-          details: [
-            "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel",
-            "Managed MySQL databases",
-            "First experience in agile teams with Scrum",
+            "Managed inventory and logistics operations in private security sector",
           ],
         },
       ],
@@ -195,95 +181,85 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         { title: "Software Engineering", school: "Politécnico Grancolombiano — 2026" },
         { title: "Diploma in Computer Science", school: "Politécnico Grancolombiano — 2025" },
         { title: "Software Analysis & Development", school: "SENA — 2020-2022" },
+        { title: "AI Bootcamp — MinTIC (Talento Tech)", school: "2025 — 2026 | 20 weeks, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
       ],
       languages: "Spanish (Native), English (Intermediate)",
       sections: {
         summary: "PROFESSIONAL SUMMARY",
         skills: "TECHNICAL SKILLS",
-        experience: "PROFESSIONAL EXPERIENCE",
+        devExperience: "DEVELOPMENT EXPERIENCE",
+        otherExperience: "OTHER EXPERIENCE",
         education: "EDUCATION",
         languages: "LANGUAGES",
       },
     },
     es: {
-      summary: "Backend Python Developer & AI Engineer en Trajectory Inc. (Área Initus — Backend & AI Core) con 5+ años de experiencia. Construyendo un MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas personalizadas que exponen: acceso a datos PostgreSQL, integraciones REST API, automatización de flujos internos y ejecución de lógica de negocio. Diseñando esquemas de herramientas MCP, implementando endpoints FastAPI, optimizando precisión de tool-calling de LLM. Pipelines ML en producción: NLP (Transformers, spaCy, NLTK), XAI (LIME, SHAP, Grad-CAM), MLOps. Remoto desde Colombia.",
+      summary: "Desarrollador de Software IA en Trajectory Inc. (Área Initus — Backend & AI Core) desde junio 2026. Desarrollando y manteniendo aplicaciones escalables con IA: investigando, diseñando e implementando modelos ML; construyendo pipelines RAG con ChromaDB y embeddings ONNX; desarrollando MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas. Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, optimización y despliegue de modelos. Colaboración con equipo de producto para entregar funcionalidades basadas en IA. Previa: prácticas Full-Stack 6 meses (SENA, 2022) con Vue.js, PHP/Laravel, MySQL. 5+ años como Operador de Medios Tecnológicos en seguridad privada. Bootcamp IA MinTIC (2025-2026): 20 semanas, 33 labs ML, DL, NLP, XAI. Presencial en Bogotá, Colombia.",
       contact: {
-        location: "Palmira, Valle del Cauca, Colombia",
+        location: "Bogotá, Colombia",
         email: "juanvalencia9411@outlook.com",
         linkedin: "linkedin.com/in/jdvalmart",
         github: "github.com/jdvalmart",
       },
       skills: {
-        languages: "Python (Experto), SQL (Avanzado), TypeScript (Intermedio)",
-        ai_ml: "Fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP (Model Context Protocol), orquestación de agentes",
-        ai_ml_tools: "TensorFlow, scikit-learn, HuggingFace Transformers, NLTK, spaCy, LIME, SHAP, Grad-CAM",
-        data_databases: "PostgreSQL (Avanzado), SQLAlchemy, asyncpg, Redis, modelado de datos, optimización de consultas",
-        backend_apis: "FastAPI (Experto), diseño de REST APIs, Python asíncrono, inyección de dependencias, arquitectura limpia",
-        mlops: "CI/CD para modelos ML, registro de modelos, A/B testing, monitoreo de drift, Docker, observabilidad",
-        specialties: "Python, SQL, IA/ML, MCP, NLP, RAG, XAI, FastAPI, PostgreSQL",
+        languages: "Python, SQL, JavaScript",
+        ai_ml: "Algoritmos ML (regresión, clasificación, clustering, redes neuronales), fine-tuning de LLM, pipelines RAG, modelos de embedding (ONNX), búsqueda vectorial (ChromaDB), serving de modelos (FastAPI), MCP, orquestación de agentes, optimización de modelos",
+        databases: "PostgreSQL, MySQL, ChromaDB, limpieza de datos, preprocesamiento, feature engineering",
+        backend_apis: "FastAPI, diseño de REST APIs, Python asíncrono, arquitectura limpia, Node.js básico",
+        frontend_mobile: "React, React Native básico, Vue.js básico",
+        tools_practices: "Docker (básico), Git, CI/CD básico, Linux/Unix, revisiones de código, pruebas, ágil/Scrum",
+        specialties: "Python, SQL, JavaScript, IA/ML, MCP, FastAPI, PostgreSQL, ChromaDB, RAG, LLMs",
       },
-      experience: [
+      devExperience: [
         {
-          title: "Backend Python Developer | AI Engineer",
+          title: "Desarrollador de Software IA",
           company: "Trajectory Inc. — Área Initus (Backend & AI Core)",
-          date: "1 Jun 2026 — Presente | Remoto (Colombia) para empresa canadiense",
+          date: "Jun 2026 — Presente | Presencial Bogotá, Colombia (empresa canadiense)",
           details: [
-            "Desarrollo MCP: Construcción de 140+ herramientas MCP desde ~6 iniciales: consultas PostgreSQL, wrappers REST API, triggers de flujos de negocio, pipelines de transformación de datos, capas de auth/permisos",
-            "Diseño de esquemas de herramientas (JSON Schema) optimizando precisión de tool-calling de Claude (>95%)",
-            "Implementación de servidor MCP con FastAPI: respuestas streaming, manejo de errores, rate limiting",
-            "Integración con servicios internos: gestión de usuarios, facturación, analíticas, procesamiento de documentos",
-            "Ingeniería IA/ML: NLP en producción: fine-tuning de Transformers (BERT, Llama), tokenizers personalizados, exportación ONNX",
-            "Pipelines RAG: almacén vectorial ChromaDB, modelos de embedding, búsqueda híbrida (keyword + semántica)",
-            "Integración XAI: explicaciones LIME/SHAP para decisiones de modelos en APIs de producción",
-            "MLOps: CI/CD para modelos ML, registro de modelos, framework A/B testing, monitoreo de drift",
-            "Ingeniería Backend: Servicios async FastAPI: PostgreSQL (asyncpg/SQLAlchemy), Redis caching, WebSocket",
-            "Arquitectura limpia: routers → services → repositories, inyección de dependencias",
-            "Docker multi-stage builds, despliegue en Railway/Render, health checks, graceful shutdown",
+            "Desarrollar y mantener aplicaciones web escalables con IA usando Python, FastAPI y React",
+            "Investigar, diseñar e implementar modelos ML: selección de algoritmos, preparación de datos, entrenamiento, evaluación y optimización",
+            "Construir pipelines RAG con ChromaDB, embeddings ONNX, búsqueda híbrida; patrones de integración LLM para producción",
+            "Desarrollar MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización de flujos, lógica de negocio",
+            "Ciclo completo de ML: recolección y limpieza de datos, entrenamiento, evaluación, despliegue y monitoreo de modelos",
+            "Colaborar con equipo de producto para definir y entregar funcionalidades IA; revisiones de código, pruebas y resolución de problemas",
+            "Backend: Servicios async FastAPI, PostgreSQL, arquitectura limpia (routers→services→repositories)",
+            "Docker (básico), Git, pipelines CI/CD, colaboración presencial con equipo canadiense",
           ],
         },
+        {
+          title: "Practicante Desarrollador Full-Stack (6 meses)",
+          company: "SENA",
+          date: "2022",
+          details: [
+            "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel",
+            "Gestión de bases de datos MySQL",
+            "Equipos ágiles con Scrum. Prácticas de 6 meses en SENA",
+          ],
+        },
+      ],
+      otherExperience: [
         {
           title: "Operador de Medios Tecnológicos",
           company: "Sector Seguridad Privada",
           date: "2021 — Mayo 2026",
           details: [
             "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad",
-            "Automatización de gestión de inventario con Python y SQL, reduciendo trabajo manual 30%",
-            "Descubrimiento de pasión por automatización y desarrollo backend",
-          ],
-        },
-        {
-          title: "Bootcamp IA — MinTIC (Talento Tech)",
-          company: "",
-          date: "2025 — 2026",
-          details: [
-            "20 semanas intensivas cubriendo ML, Deep Learning, NLP, XAI, MLOps y Cloud",
-            "33+ laboratorios prácticos con TensorFlow, HuggingFace y despliegue de modelos como APIs",
-            "Clasificador CNN con 87.14% accuracy en CIFAR-10 con explicabilidad XAI",
-            "Fine-tuning de Transformers con HuggingFace para clasificación de texto y NER",
-            "Procesamiento Big Data con Apache Spark y mensajería distribuida con Apache Kafka",
-          ],
-        },
-        {
-          title: "Practicante Desarrollador Full-Stack",
-          company: "SENA",
-          date: "2022",
-          details: [
-            "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel",
-            "Gestión de bases de datos MySQL",
-            "Primera experiencia en equipos ágiles con Scrum",
+            "Gestión de inventario y operaciones logísticas en sector de seguridad privada",
           ],
         },
       ],
       education: [
         { title: "Ingeniería de Software", school: "Politécnico Grancolombiano — 2026" },
         { title: "Diplomado en Ciencias de la Computación", school: "Politécnico Grancolombiano — 2025" },
+        { title: "Bootcamp IA — MinTIC (Talento Tech)", school: "2025 — 2026 | 20 semanas, 33 labs: ML, DL, NLP, XAI, MLOps, Cloud" },
         { title: "Análisis y Desarrollo de Software", school: "SENA — 2020-2022" },
       ],
       languages: "Español (Nativo), Inglés (Intermedio)",
       sections: {
         summary: "RESUMEN PROFESIONAL",
         skills: "HABILIDADES TÉCNICAS",
-        experience: "EXPERIENCIA PROFESIONAL",
+        devExperience: "EXPERIENCIA EN DESARROLLO",
+        otherExperience: "OTRA EXPERIENCIA",
         education: "EDUCACIÓN",
         languages: "IDIOMAS",
       },
@@ -297,7 +273,7 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <Text style={styles.name}>Juan David Valencia</Text>
-        <Text style={styles.role}>{lang === "en" ? "Backend Python Developer & AI Engineer" : "Backend Python Developer & AI Engineer"}</Text>
+        <Text style={styles.role}>{lang === "en" ? "AI Software Developer" : "Desarrollador de Software IA"}</Text>
 
         {/* Contact */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 16, marginBottom: 16 }}>
@@ -321,26 +297,41 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Engineering" : "Ingeniería IA / ML"}</Text>
         <Text style={styles.skillList}>{tr.skills.ai_ml}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "AI / ML Frameworks" : "Frameworks IA / ML"}</Text>
-        <Text style={styles.skillList}>{tr.skills.ai_ml_tools}</Text>
-
         <Text style={styles.skillCategory}>{lang === "en" ? "Data & Databases" : "Datos y Bases de Datos"}</Text>
-        <Text style={styles.skillList}>{tr.skills.data_databases}</Text>
+        <Text style={styles.skillList}>{tr.skills.databases}</Text>
 
         <Text style={styles.skillCategory}>{lang === "en" ? "Backend & APIs" : "Backend y APIs"}</Text>
         <Text style={styles.skillList}>{tr.skills.backend_apis}</Text>
 
-        <Text style={styles.skillCategory}>{lang === "en" ? "MLOps & Production" : "MLOps y Producción"}</Text>
-        <Text style={styles.skillList}>{tr.skills.mlops}</Text>
+        <Text style={styles.skillCategory}>{lang === "en" ? "Frontend & Mobile" : "Frontend y Móvil"}</Text>
+        <Text style={styles.skillList}>{tr.skills.frontend_mobile}</Text>
+
+        <Text style={styles.skillCategory}>{lang === "en" ? "Tools & Practices" : "Herramientas y Prácticas"}</Text>
+        <Text style={styles.skillList}>{tr.skills.tools_practices}</Text>
 
         <Text style={styles.skillCategory}>{lang === "en" ? "Core Specialties" : "Especialidades Principales"}</Text>
         <Text style={styles.skillList}>{tr.skills.specialties}</Text>
 
         <View style={styles.divider} />
 
-        {/* Experience */}
-        <Text style={styles.sectionTitle}>{tr.sections.experience}</Text>
-        {tr.experience.map((exp, i) => (
+        {/* Development Experience */}
+        <Text style={styles.sectionTitle}>{tr.sections.devExperience}</Text>
+        {tr.devExperience.map((exp, i) => (
+          <View key={i}>
+            <Text style={styles.expTitle}>{exp.title}</Text>
+            {exp.company && <Text style={styles.expCompany}>{exp.company}</Text>}
+            <Text style={styles.expDate}>{exp.date}</Text>
+            {exp.details.map((detail, j) => (
+              <Text key={j} style={styles.bullet}>• {detail}</Text>
+            ))}
+          </View>
+        ))}
+
+        <View style={styles.divider} />
+
+        {/* Other Experience */}
+        <Text style={styles.sectionTitle}>{tr.sections.otherExperience}</Text>
+        {tr.otherExperience.map((exp, i) => (
           <View key={i}>
             <Text style={styles.expTitle}>{exp.title}</Text>
             {exp.company && <Text style={styles.expCompany}>{exp.company}</Text>}

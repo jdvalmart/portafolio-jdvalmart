@@ -16,13 +16,13 @@ export const timeline: TimelineEntry[] = [
     year: 2021,
     title: "Technology Media Operator",
     description:
-      "Monitored critical security systems for 200+ users with 99% availability. Discovered automation by writing Python and SQL scripts to optimize inventory — reducing manual work by 30%.",
+      "Monitored critical security systems for 200+ users with 99% availability. Managed inventory and logistics operations in private security sector.",
   },
   {
     year: 2022,
-    title: "Full-Stack Developer Internship (SENA)",
+    title: "Full-Stack Developer Internship (SENA) — 6 months",
     description:
-      "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum.",
+      "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum. 6-month internship.",
   },
   {
     year: 2025,
@@ -40,9 +40,9 @@ export const timeline: TimelineEntry[] = [
   },
   {
     year: 2026,
-    month: "Jun 1 — Present",
+    month: "Jun — Present",
     title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
     description:
-      "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic execution. MCP tool schemas (JSON Schema), FastAPI endpoints, LLM tool-calling optimization (>95% accuracy). Production NLP: Transformer fine-tuning (BERT, Llama), custom tokenizers, ONNX export. RAG pipelines: ChromaDB vector store, embedding models, hybrid search. XAI: LIME/SHAP explanations in production APIs. MLOps: CI/CD for ML models, model registry, A/B testing, drift monitoring. Backend: FastAPI async, PostgreSQL (asyncpg/SQLAlchemy), Redis, WebSocket. Clean architecture, Docker multi-stage, Railway/Render deployment. Remote from Colombia for Canadian company.",
+      "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas (JSON Schema), FastAPI endpoints, LLM tool-calling optimization. RAG pipelines: ChromaDB, ONNX embeddings, hybrid search. Backend: FastAPI async, PostgreSQL, clean architecture. On-site in Bogotá for Canadian company.",
   },
 ];

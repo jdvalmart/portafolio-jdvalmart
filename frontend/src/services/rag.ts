@@ -203,22 +203,22 @@ function buildGeneralChunks(): KnowledgeChunk[] {
   const general = [
     {
       id: "general-profile",
-      content: `Juan David Valencia is a Backend Python Developer & AI Engineer at Trajectory Inc. (Initus Area — Backend & AI Core). 5+ years experience. Building enterprise MCP for Claude with 140+ tools. Remote from Colombia since June 1, 2026.`,
+      content: `Juan David Valencia is an AI Software Developer at Trajectory Inc. (Initus Area — Backend & AI Core) since June 2026. Developing scalable AI-powered applications: researching, designing, implementing ML models; building RAG pipelines with ChromaDB and ONNX embeddings; developing enterprise MCP for Claude with 140+ tools. Full ML lifecycle: data collection, cleaning, training, evaluation, optimization, deployment. Collaborating with product team for AI features. Prior: 6-month Full-Stack internship (SENA, 2022) with Vue.js, PHP/Laravel, MySQL. 5+ years as Technology Media Operator in private security. AI Bootcamp MinTIC (2025-2026): 20 weeks, 33 labs in ML, DL, NLP, XAI. On-site in Bogotá, Colombia.`,
       source: "general" as const,
     },
     {
       id: "general-mcp",
-      content: `MCP (Model Context Protocol) expertise: 152+ tools built total (140+ at Trajectory Inc., 12 in Orion personal project). Tool schema design (JSON Schema), FastAPI MCP server implementation, LLM tool-calling optimization (>95% accuracy), agent orchestration.`,
+      content: `MCP (Model Context Protocol) expertise: 140+ tools built at Trajectory Inc. Tool schema design (JSON Schema), FastAPI MCP server implementation, LLM tool-calling optimization, agent orchestration.`,
       source: "general" as const,
     },
     {
       id: "general-ai-ml",
-      content: `AI/ML Production: LLM fine-tuning (BERT, Llama), RAG pipelines (ChromaDB, ONNX embeddings), XAI (LIME, SHAP, Grad-CAM), MLOps (CI/CD, model registry, A/B testing, drift monitoring). NLP: Transformers, spaCy, NLTK, HuggingFace.`,
+      content: `AI/ML: ML algorithms (regression, classification, clustering, neural networks), LLM fine-tuning, RAG pipelines (ChromaDB, ONNX embeddings), vector search, model optimization, XAI (LIME, SHAP, Grad-CAM). NLP: Transformers, spaCy, NLTK, HuggingFace. Full ML lifecycle: data preparation, training, evaluation, deployment.`,
       source: "general" as const,
     },
     {
       id: "general-backend",
-      content: `Backend Engineering: FastAPI async, PostgreSQL (asyncpg/SQLAlchemy), Redis, WebSocket. Clean architecture (routers→services→repositories), dependency injection. Docker multi-stage, Railway/Render deployment, health checks, graceful shutdown.`,
+      content: `Backend & APIs: FastAPI, REST API design, async Python, clean architecture (routers→services→repositories), Node.js basics. Frontend: React, React Native basics, JavaScript. Full ML lifecycle: data preparation, training, evaluation, deployment.`,
       source: "general" as const,
     },
     {
@@ -234,6 +234,11 @@ function buildGeneralChunks(): KnowledgeChunk[] {
     {
       id: "general-lucius",
       content: `Lucius: AI Agent Auditor — automated evaluation framework for AI agents and MCP tools. LLM-as-judge for tool-calling accuracy, hallucination detection, regression testing. CI/CD integration. In development.`,
+      source: "general" as const,
+    },
+    {
+      id: "general-databases",
+      content: `Databases: PostgreSQL, MySQL, ChromaDB (vector search).`,
       source: "general" as const,
     },
   ];

@@ -8,29 +8,29 @@ const es = {
     },
     hero: {
       greeting: "Hola, soy Juan David",
-      role: "Backend Python Developer & AI Engineer en Trajectory Inc.",
+      role: "Desarrollador de Software IA en Trajectory Inc.",
       subtitle:
-        "Backend Python Developer especializado en IA/ML y MCP. Construyo sistemas de IA en producción — desde herramientas MCP y pipelines RAG hasta backends FastAPI escalables. Actualmente construyendo MCP empresarial para Claude (140+ herramientas) en área Initus.",
+        "Desarrollador de Software IA especializado en ML, RAG y MCP. Construyendo aplicaciones escalables con IA: investigando e implementando modelos ML, pipelines RAG con ChromaDB/ONNX, MCP empresarial para Claude (140+ herramientas). Python, SQL, JavaScript, FastAPI, React. Presencial en Bogotá.",
       projectsBtn: "Proyectos",
       aboutBtn: "Sobre mí",
       cvBtn: "Descargar CV",
     },
     home: {
       stats: [
-        { label: "Años de Experiencia", value: 5, suffix: "+" },
-        { label: "Herramientas MCP", value: 152, suffix: "+" },
+        { label: "Años en Tech", value: 5, suffix: "+" },
+        { label: "Herramientas MCP", value: 140, suffix: "+" },
         { label: "Labs ML", value: 33, suffix: "+" },
         { label: "Actualmente en", value: 0, suffix: "Trajectory" },
       ],
       ctaTitle: "¿Tienes un proyecto de IA en mente?",
       ctaSubtitle:
-        "Construyo soluciones completas de backend e IA: desde herramientas MCP y modelos ML hasta APIs escalables. Hablemos de cómo puedo ayudarte.",
+        "Construyo soluciones de backend e IA: desde herramientas MCP y modelos ML hasta APIs escalables. Hablemos de cómo puedo ayudarte.",
       ctaContact: "Contáctame",
       ctaProjects: "Ver Proyectos",
     },
     projects: {
       title: "Proyectos",
-      subtitle: "Aplicaciones de Machine Learning, NLP, Backend y Full Stack",
+      subtitle: "Aplicaciones de Machine Learning, NLP, Backend e IA",
       all: "Todos",
       aiMl: "IA & ML",
       fullStack: "Full Stack",
@@ -39,19 +39,19 @@ const es = {
     about: {
       title: "Sobre mí",
       p1:
-        "Soy Backend Python Developer & AI Engineer en Trajectory Inc., construyendo un MCP (Model Context Protocol) empresarial para Claude con más de 140 herramientas integradas. Trabajo en el área Initus — el núcleo de backend e IA de la empresa. Mi trabajo abarca desarrollo de herramientas MCP, ingeniería backend con FastAPI, sistemas de NLP e infraestructura de IA en producción.",
+        "Soy Desarrollador de Software IA en Trajectory Inc., construyendo aplicaciones escalables con IA en el área Initus — el núcleo de backend e IA de la empresa. Mi trabajo abarca el ciclo completo de ML: investigación y diseño de algoritmos, preparación de datos, entrenamiento, evaluación, optimización y despliegue de modelos. Construyo pipelines RAG con ChromaDB y embeddings ONNX, desarrollo MCP (Model Context Protocol) empresarial para Claude con 140+ herramientas, y colaboro con el equipo de producto para entregar funcionalidades basadas en IA.",
       p2:
-        "Mi formación en IA (MinTIC) cubrió el pipeline completo de machine learning — preparación de datos, entrenamiento, evaluación, interpretabilidad y MLOps — en 20 semanas intensivas con 33 laboratorios prácticos. Trabajo diariamente con Python, FastAPI, PostgreSQL, Docker, LLMs y arquitectura MCP.",
+        "Mi formación en IA (MinTIC) cubrió el pipeline completo de machine learning — preparación de datos, entrenamiento, evaluación, interpretabilidad y MLOps — en 20 semanas intensivas con 33 laboratorios prácticos. Trabajo diariamente con Python, FastAPI, PostgreSQL, Docker, LLMs, React y arquitectura MCP.",
       p3:
-        "Radicado en Palmira, Colombia. Trabajando remotamente para Trajectory Inc. (Canadá) desde el 1 de junio de 2026.",
+        "Radicado en Bogotá, Colombia. Trabajando presencialmente para Trajectory Inc. (Canadá) desde junio de 2026.",
       philosophy: "Filosofía",
       quote:
         "\"No hay ascensor hacia lo que vale la pena. Se sube por las escaleras, un escalón a la vez.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Objetivos Actuales",
-      goal1: "Dominar arquitectura MCP y ecosistemas de agentes de IA",
+      goal1: "Dominar desarrollo de modelos ML y ecosistemas de agentes IA",
       goal2: "Construir y desplegar un producto SaaS personal de IA",
-      goal3: "Contribuir a proyectos open-source de IA/MCP",
+      goal3: "Contribuir a proyectos open-source de IA/ML",
       goal4: "Certificación cloud (AWS/GCP)",
     },
     contact: {
@@ -100,15 +100,11 @@ const es = {
         },
         {
           title: "Operador de Medios Tecnológicos",
-          desc: "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Descubrí la automatización escribiendo scripts en Python y SQL para optimizar inventario — reduciendo trabajo manual 30%.",
+          desc: "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Gestión de inventario y operaciones logísticas en sector de seguridad privada.",
         },
         {
-          title: "Practicante Desarrollador Full-Stack (SENA)",
-          desc: "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Primera experiencia en equipos ágiles con Scrum.",
-        },
-        {
-          title: "Bootcamp IA — MinTIC (Talento Tech)",
-          desc: "20 semanas intensivas: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. 33 laboratorios completados con TensorFlow, HuggingFace y despliegue de modelos como APIs.",
+          title: "Practicante Desarrollador Full-Stack (SENA) — 6 meses",
+          desc: "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Primera experiencia en equipos ágiles con Scrum. Prácticas de 6 meses.",
         },
         {
           title: "Diplomado en Ciencias de la Computación",
@@ -116,14 +112,14 @@ const es = {
         },
         {
           title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
-          desc: "Área Initus (Backend & AI Core). Construyendo MCP empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización flujos, lógica de negocio. Esquemas MCP, endpoints FastAPI, optimización tool-calling LLM (>95%). NLP producción: fine-tuning Transformers, RAG (ChromaDB), XAI (LIME/SHAP), MLOps. Remoto desde Colombia desde 1 jun 2026.",
+          desc: "Área Initus (Backend & AI Core). Construyendo MCP empresarial para Claude con 140+ herramientas: acceso PostgreSQL, wrappers REST API, automatización flujos, lógica de negocio. Esquemas MCP, endpoints FastAPI, optimización tool-calling LLM. Pipelines RAG: ChromaDB, embeddings ONNX, búsqueda híbrida. Backend: FastAPI async, PostgreSQL, arquitectura limpia. Presencial en Bogotá para empresa canadiense.",
         },
       ],
     },
     certs: {
-      title: "Certificaciones",
+      title: "Certificaciones y Formación",
       entries: [
-        { name: "Bootcamp IA", issuer: "MinTIC" },
+        { name: "Bootcamp IA — MinTIC (Talento Tech)", issuer: "2025 — 2026 | 20 semanas, 33 labs" },
         { name: "Diplomado en C.C.", issuer: "Politécnico" },
         { name: "Ing. de Software", issuer: "Politécnico" },
         { name: "Desarrollo Soft.", issuer: "SENA" },
@@ -135,7 +131,7 @@ const es = {
     },
     chatbot: {
       welcome:
-        "¡Hola! Soy el asistente virtual de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y educación. ¿En qué te ayudo? \u{1F60A}",
+        "¡Hola! Soy el asistente virtual de Juan David. Puedo contarte sobre sus habilidades, proyectos, experiencia y formación. ¿En qué te ayudo? \u{1F60A}",
       assistant: "Asistente IA",
       placeholder: "Pregúntame lo que quieras...",
       sendMessage: "Enviar mensaje",

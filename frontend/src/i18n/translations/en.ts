@@ -8,29 +8,29 @@ const en = {
     },
     hero: {
       greeting: "Hi, I'm Juan David",
-      role: "Backend Python Developer & AI Engineer at Trajectory Inc.",
+      role: "AI Software Developer at Trajectory Inc.",
       subtitle:
-        "Backend Python Developer specialized in AI/ML & MCP. I build production AI systems — from MCP tools and RAG pipelines to scalable FastAPI backends. Currently building enterprise MCP for Claude (140+ tools) in Initus area.",
+        "AI Software Developer specialized in ML, RAG & MCP. Building scalable AI-powered applications: researching & implementing ML models, RAG pipelines with ChromaDB/ONNX, enterprise MCP for Claude (140+ tools). Python, SQL, JavaScript, FastAPI, React. On-site in Bogotá.",
       projectsBtn: "Projects",
       aboutBtn: "About Me",
       cvBtn: "Download CV",
     },
     home: {
       stats: [
-        { label: "Years Experience", value: 5, suffix: "+" },
-        { label: "MCP Tools Built", value: 152, suffix: "+" },
+        { label: "Years in Tech", value: 5, suffix: "+" },
+        { label: "MCP Tools Built", value: 140, suffix: "+" },
         { label: "ML Labs", value: 33, suffix: "+" },
         { label: "Currently at", value: 0, suffix: "Trajectory" },
       ],
       ctaTitle: "Have an AI project in mind?",
       ctaSubtitle:
-        "I build complete backend and AI solutions: from MCP tools and ML models to scalable APIs. Let's talk about how I can help you.",
+        "I build backend and AI solutions: from MCP tools and ML models to scalable APIs. Let's talk about how I can help you.",
       ctaContact: "Contact Me",
       ctaProjects: "View Projects",
     },
     projects: {
       title: "Projects",
-      subtitle: "Machine Learning, NLP, Backend, and Full Stack applications",
+      subtitle: "Machine Learning, NLP, Backend, and AI applications",
       all: "All",
       aiMl: "AI & ML",
       fullStack: "Full Stack",
@@ -39,19 +39,19 @@ const en = {
     about: {
       title: "About Me",
       p1:
-        "I'm a Backend Python Developer & AI Engineer at Trajectory Inc., building an enterprise MCP (Model Context Protocol) for Claude with over 140 integrated tools. Working in the Initus area — the backend and AI core of the company. My work spans MCP tool development, backend engineering with FastAPI, NLP systems, and production AI infrastructure.",
+        "I'm an AI Software Developer at Trajectory Inc., building scalable AI-powered applications in the Initus area — the backend and AI core of the company. My work spans the full ML lifecycle: researching and designing ML algorithms, data preparation, model training, evaluation, optimization, and deployment. I build RAG pipelines with ChromaDB and ONNX embeddings, develop enterprise MCP (Model Context Protocol) for Claude with 140+ tools, and collaborate with the product team to deliver AI-based features.",
       p2:
-        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 20 intensive weeks with 33 hands-on labs. I work daily with Python, FastAPI, PostgreSQL, Docker, LLMs, and MCP architecture.",
+        "My AI training (MinTIC) covered the complete machine learning pipeline — data prep, training, evaluation, interpretability, and MLOps — across 20 intensive weeks with 33 hands-on labs. I work daily with Python, FastAPI, PostgreSQL, Docker, LLMs, React, and MCP architecture.",
       p3:
-        "Based in Palmira, Colombia. Working remotely for Trajectory Inc. (Canada) since June 1, 2026.",
+        "Based in Bogotá, Colombia. Working on-site for Trajectory Inc. (Canada) since June 2026.",
       philosophy: "Philosophy",
       quote:
         "\"There is no elevator to what's worth it. You climb the stairs, one step at a time.\"",
       quoteAuthor: "— Juan David Valencia",
       goals: "Current Goals",
-      goal1: "Master MCP architecture and AI agent ecosystems",
+      goal1: "Master ML model development and AI agent ecosystems",
       goal2: "Build and deploy a personal AI SaaS product",
-      goal3: "Contribute to open-source AI/MCP projects",
+      goal3: "Contribute to open-source AI/ML projects",
       goal4: "Cloud certification (AWS/GCP)",
     },
     contact: {
@@ -100,11 +100,11 @@ const en = {
         },
         {
           title: "Technology Media Operator",
-          desc: "Monitored critical security systems for 200+ users with 99% availability. Discovered automation by writing Python and SQL scripts to optimize inventory — reducing manual work by 30%.",
+          desc: "Monitored critical security systems for 200+ users with 99% availability. Managed inventory and logistics operations in private security sector.",
         },
         {
-          title: "Full-Stack Developer Internship (SENA)",
-          desc: "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum.",
+          title: "Full-Stack Developer Internship (SENA) — 6 months",
+          desc: "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum. 6-month internship.",
         },
         {
           title: "AI Bootcamp — MinTIC (Talento Tech)",
@@ -116,14 +116,14 @@ const en = {
         },
         {
           title: "Backend Python Developer | AI Engineer — Trajectory Inc.",
-          desc: "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas, FastAPI endpoints, LLM tool-calling optimization (>95%). Production NLP: Transformer fine-tuning, RAG (ChromaDB), XAI (LIME/SHAP), MLOps. Remote from Colombia since Jun 1, 2026.",
+          desc: "Initus Area (Backend & AI Core). Building enterprise MCP for Claude with 140+ tools: PostgreSQL access, REST API wrappers, workflow automation, business logic. MCP tool schemas (JSON Schema), FastAPI endpoints, LLM tool-calling optimization. RAG pipelines: ChromaDB, ONNX embeddings, hybrid search. Backend: FastAPI async, PostgreSQL, clean architecture. On-site in Bogotá for Canadian company.",
         },
       ],
     },
     certs: {
-      title: "Certifications",
+      title: "Certifications & Education",
       entries: [
-        { name: "AI Bootcamp", issuer: "MinTIC" },
+        { name: "AI Bootcamp — MinTIC (Talento Tech)", issuer: "2025 — 2026 | 20 weeks, 33 labs" },
         { name: "Diploma in C.S.", issuer: "Politécnico" },
         { name: "Software Eng.", issuer: "Politécnico" },
         { name: "Software Dev.", issuer: "SENA" },
