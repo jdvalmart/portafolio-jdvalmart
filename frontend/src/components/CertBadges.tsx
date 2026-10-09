@@ -18,11 +18,7 @@ function CertBadge({ cert, animate }: { cert: CertBadgeTranslated; animate: bool
         border border-teal-100 dark:border-teal-900
         text-center
         transition-all duration-500 ease-out
-        ${
-          animate
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-4 scale-95"
-        }
+        ${animate ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}
       `}
     >
       <span
@@ -78,16 +74,9 @@ export function CertBadges() {
         {t.certs.title}
       </h2>
 
-      <div
-        ref={ref}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-4"
-      >
+      <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {translatedCerts.map((cert) => (
-          <CertBadge
-            key={cert.name}
-            cert={cert}
-            animate={isVisible}
-          />
+          <CertBadge key={cert.name} cert={cert} animate={isVisible} />
         ))}
       </div>
     </section>

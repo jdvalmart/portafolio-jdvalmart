@@ -9,13 +9,7 @@ interface TimelineEntryTranslated {
   description: string;
 }
 
-function TimelineItem({
-  entry,
-  isLast,
-}: {
-  entry: TimelineEntryTranslated;
-  isLast: boolean;
-}) {
+function TimelineItem({ entry, isLast }: { entry: TimelineEntryTranslated; isLast: boolean }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -50,7 +44,8 @@ function TimelineItem({
           rounded-full
         "
       >
-        {entry.year}{entry.month ? ` · ${entry.month}` : ""}
+        {entry.year}
+        {entry.month ? ` · ${entry.month}` : ""}
       </span>
 
       <h3
@@ -96,11 +91,7 @@ export function Timeline() {
 
       <div className="relative">
         {entries.map((entry, index) => (
-          <TimelineItem
-            key={entry.year}
-            entry={entry}
-            isLast={index === timeline.length - 1}
-          />
+          <TimelineItem key={entry.year} entry={entry} isLast={index === timeline.length - 1} />
         ))}
       </div>
     </section>

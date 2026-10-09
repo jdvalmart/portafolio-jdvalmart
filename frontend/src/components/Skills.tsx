@@ -13,13 +13,17 @@ function SkillRing({ skill }: { skill: SkillLevel }) {
     <div className="flex flex-col items-center gap-1.5 group">
       <svg width="60" height="60" viewBox="0 0 60 60" className="w-14 h-14 sm:w-16 sm:h-16">
         <circle
-          cx="30" cy="30" r={radius}
+          cx="30"
+          cy="30"
+          r={radius}
           fill="none"
           className="stroke-zinc-100 dark:stroke-zinc-700"
           strokeWidth="3"
         />
         <circle
-          cx="30" cy="30" r={radius}
+          cx="30"
+          cy="30"
+          r={radius}
           fill="none"
           className={colors.stroke}
           strokeWidth="3"
@@ -30,11 +34,14 @@ function SkillRing({ skill }: { skill: SkillLevel }) {
           style={{ transition: "stroke-dashoffset 1.5s ease-out" }}
         />
         <circle
-          cx="30" cy="30" r={radius - 6}
+          cx="30"
+          cy="30"
+          r={radius - 6}
           className={`${colors.fill} opacity-20 transition-opacity group-hover:opacity-40`}
         />
         <text
-          x="30" y="34"
+          x="30"
+          y="34"
           textAnchor="middle"
           className="fill-zinc-700 dark:fill-zinc-300 text-[10px] font-bold"
           fontFamily="system-ui, sans-serif"

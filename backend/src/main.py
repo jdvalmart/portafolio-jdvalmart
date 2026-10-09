@@ -4,8 +4,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter
-from slowapi.util import get_remote_address
 from slowapi.middleware import SlowAPIMiddleware
+from slowapi.util import get_remote_address
+
 from src.config import settings
 from src.routers import chat
 from src.services.rag_service import init_rag
@@ -53,8 +54,8 @@ app.include_router(chat.router)
 
 @app.get("/api/health")
 async def health():
+    from src.services.rag_service import CACHE, SESSIONS, _lock
     from src.services.vector_store import is_initialized as store_initialized
-    from src.services.rag_service import SESSIONS, CACHE, _lock
 
     async with _lock:
         session_count = len(SESSIONS)

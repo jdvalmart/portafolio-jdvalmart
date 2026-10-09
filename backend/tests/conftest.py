@@ -1,7 +1,7 @@
 import os
+
 import pytest
-from unittest.mock import AsyncMock, MagicMock, patch
-from httpx import AsyncClient, ASGITransport
+from httpx import ASGITransport, AsyncClient
 
 os.environ["HF_API_KEY"] = "test_hf_key"
 os.environ["GROQ_API_KEY"] = "test_groq_key"

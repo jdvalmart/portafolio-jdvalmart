@@ -12,10 +12,7 @@ const ProjectDetail = () => {
         <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-200 mb-4">
           Project not found
         </h2>
-        <Link
-          to="/projects"
-          className="text-teal-600 hover:text-teal-700 font-medium"
-        >
+        <Link to="/projects" className="text-teal-600 hover:text-teal-700 font-medium">
           ← Back to projects
         </Link>
       </div>
@@ -42,7 +39,7 @@ const ProjectDetail = () => {
         </h1>
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {(project.category === "ai-ml" ? "AI & ML" : "Full Stack").split(" ").map((tag) => (
+          {(project.category === "ai-ml" ? "AI & ML" : "Full Stack").split(" ").map((tag) =>
             tag !== "&" ? (
               <span
                 key={tag}
@@ -51,7 +48,7 @@ const ProjectDetail = () => {
                 {tag}
               </span>
             ) : null
-          ))}
+          )}
         </div>
 
         <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10">
@@ -75,10 +72,7 @@ const ProjectDetail = () => {
               </h2>
               <ul className="space-y-2">
                 {project.detail.highlights.map((h, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-zinc-600 dark:text-zinc-400"
-                  >
+                  <li key={i} className="flex items-start gap-2 text-zinc-600 dark:text-zinc-400">
                     <span className="text-teal-500 mt-1 shrink-0">▹</span>
                     {h}
                   </li>

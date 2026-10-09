@@ -37,16 +37,19 @@ function AnimatedCounter({
     let current = 0;
     let step = 0;
 
-    const timer = setInterval(() => {
-      step++;
-      current += increment;
-      if (step >= totalSteps) {
-        setDisplay(value);
-        clearInterval(timer);
-      } else {
-        setDisplay(Math.floor(current));
-      }
-    }, Math.floor(duration / totalSteps));
+    const timer = setInterval(
+      () => {
+        step++;
+        current += increment;
+        if (step >= totalSteps) {
+          setDisplay(value);
+          clearInterval(timer);
+        } else {
+          setDisplay(Math.floor(current));
+        }
+      },
+      Math.floor(duration / totalSteps)
+    );
 
     return () => clearInterval(timer);
   }, [animate, value]);
@@ -110,10 +113,7 @@ export function StatsBar({ stats }: StatsBarProps) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section
-      ref={ref}
-      className="py-12 px-4"
-    >
+    <section ref={ref} className="py-12 px-4">
       <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
         {stats.map((stat) => (
           <StatCard key={stat.label} stat={stat} animate={isVisible} />

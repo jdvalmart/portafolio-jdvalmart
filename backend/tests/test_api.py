@@ -1,5 +1,5 @@
-import json
 from unittest.mock import AsyncMock, patch
+
 import pytest
 from httpx import AsyncClient
 
@@ -23,6 +23,7 @@ class TestHealthEndpoint:
     @pytest.mark.asyncio
     async def test_health_vector_store_reflects_state(self, client: AsyncClient):
         import src.services.vector_store as vs
+
         vs._initialized = False
         response = await client.get("/api/health")
         data = response.json()
@@ -33,10 +34,13 @@ class TestChatEndpoint:
     @pytest.mark.asyncio
     async def test_chat_returns_200_with_response(self, client: AsyncClient):
         from src.services.rag_service import CACHE, SESSIONS
+
         CACHE.clear()
         SESSIONS.clear()
 
-        with patch("src.services.rag_service.chat_response", AsyncMock(return_value="Mocked LLM response.")):
+        with patch(
+            "src.services.rag_service.chat_response", AsyncMock(return_value="Mocked LLM response.")
+        ):
             with patch("src.services.rag_service.is_initialized", return_value=False):
                 response = await client.post(
                     "/api/chat",
@@ -57,6 +61,7 @@ class TestChatEndpoint:
     @pytest.mark.asyncio
     async def test_chat_uses_fallback_when_llm_unavailable(self, client: AsyncClient):
         from src.services.rag_service import CACHE, SESSIONS
+
         CACHE.clear()
         SESSIONS.clear()
 
@@ -77,6 +82,7 @@ class TestChatEndpoint:
     @pytest.mark.asyncio
     async def test_chat_spanish_language(self, client: AsyncClient):
         from src.services.rag_service import CACHE, SESSIONS
+
         CACHE.clear()
         SESSIONS.clear()
 
@@ -133,6 +139,7 @@ class TestChatEndpoint:
     @pytest.mark.asyncio
     async def test_chat_auto_generates_session_id(self, client: AsyncClient):
         from src.services.rag_service import CACHE, SESSIONS
+
         CACHE.clear()
         SESSIONS.clear()
 
@@ -155,6 +162,7 @@ class TestChatStreamEndpoint:
     @pytest.mark.asyncio
     async def test_stream_returns_sse_response(self, client: AsyncClient):
         from src.services.rag_service import SESSIONS
+
         SESSIONS.clear()
 
         with patch("src.services.rag_service.is_initialized", return_value=False):
@@ -172,6 +180,7 @@ class TestChatStreamEndpoint:
     @pytest.mark.asyncio
     async def test_stream_returns_done_when_no_api_key(self, client: AsyncClient):
         from src.services.rag_service import SESSIONS
+
         SESSIONS.clear()
 
         with patch("src.services.rag_service.is_initialized", return_value=False):
@@ -202,6 +211,7 @@ class TestChatStreamEndpoint:
     @pytest.mark.asyncio
     async def test_stream_includes_correct_headers(self, client: AsyncClient):
         from src.services.rag_service import SESSIONS
+
         SESSIONS.clear()
 
         with patch("src.services.rag_service.is_initialized", return_value=False):

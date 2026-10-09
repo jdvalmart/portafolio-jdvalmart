@@ -13,9 +13,7 @@ const ChatBot = lazy(() => import("../components/ChatBot"));
 
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-pulse text-teal-600 text-sm">
-      Loading...
-    </div>
+    <div className="animate-pulse text-teal-600 text-sm">Loading...</div>
   </div>
 );
 
@@ -38,9 +36,7 @@ const RouteError = () => (
 function LazyRoute({ children }: { children: ReactNode }) {
   return (
     <ErrorBoundary fallback={<RouteError />}>
-      <Suspense fallback={<PageLoader />}>
-        {children}
-      </Suspense>
+      <Suspense fallback={<PageLoader />}>{children}</Suspense>
     </ErrorBoundary>
   );
 }

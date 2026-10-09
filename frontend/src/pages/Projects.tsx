@@ -10,10 +10,7 @@ const Projects: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
   const { t } = useT();
 
-  const filtered =
-    filter === "all"
-      ? projects
-      : projects.filter((p) => p.category === filter);
+  const filtered = filter === "all" ? projects : projects.filter((p) => p.category === filter);
 
   const labels: Record<"all" | "ai-ml" | "full-stack", string> = {
     all: t.projects.all,
@@ -25,7 +22,10 @@ const Projects: React.FC = () => {
     <div className="max-w-6xl mx-auto py-16 px-4">
       <Helmet>
         <title>Projects — Juan David Valencia | AI Engineer</title>
-        <meta name="description" content="Juan David Valencia's projects in Machine Learning, NLP, and Full Stack development." />
+        <meta
+          name="description"
+          content="Juan David Valencia's projects in Machine Learning, NLP, and Full Stack development."
+        />
       </Helmet>
       <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 text-center mb-6">
         {t.projects.title}
@@ -65,9 +65,7 @@ const Projects: React.FC = () => {
             ))}
           </div>
         ) : (
-          <p className="text-center text-zinc-500 py-16 text-lg">
-            {t.projects.noProjects}
-          </p>
+          <p className="text-center text-zinc-500 py-16 text-lg">{t.projects.noProjects}</p>
         )}
       </div>
     </div>

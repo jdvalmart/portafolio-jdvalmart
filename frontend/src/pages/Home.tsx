@@ -13,22 +13,21 @@ const Home: React.FC = () => {
   const { t } = useT();
 
   const rawStats = t.home.stats as unknown as Stat[];
-  const stats: Stat[] = rawStats.map((s, i) =>
-    i === 3 ? { ...s, isLabel: true } : s
-  );
+  const stats: Stat[] = rawStats.map((s, i) => (i === 3 ? { ...s, isLabel: true } : s));
 
   return (
     <>
       <Helmet>
         <title>Juan David Valencia — AI Developer | Portfolio</title>
-        <meta name="description" content="Juan David Valencia — AI Developer at Trajectory Inc. building enterprise MCP tools for Claude. Specialized in Python, FastAPI, NLP, and Backend Engineering." />
+        <meta
+          name="description"
+          content="Juan David Valencia — AI Developer at Trajectory Inc. building enterprise MCP tools for Claude. Specialized in Python, FastAPI, NLP, and Backend Engineering."
+        />
       </Helmet>
       <div
         ref={ref}
         className={`${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         } transition-all duration-700`}
       >
         <Hero />
@@ -58,12 +57,8 @@ const Home: React.FC = () => {
       {/* Call to Action */}
       <section className="py-20 bg-teal-600 dark:bg-teal-800" aria-label="Call to action">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            {t.home.ctaTitle}
-          </h2>
-          <p className="text-teal-100 text-lg mb-8">
-            {t.home.ctaSubtitle}
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{t.home.ctaTitle}</h2>
+          <p className="text-teal-100 text-lg mb-8">{t.home.ctaSubtitle}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"

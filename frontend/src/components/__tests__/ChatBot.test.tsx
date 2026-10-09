@@ -11,16 +11,14 @@ vi.mock("../../hooks/useChatBot", () => ({
   useChatBot: (...args: unknown[]) => mockUseChatBot(...args),
 }));
 
-vi.mock("../../i18n/LanguageContext", () => ({
+vi.mock("../../i18n/useLanguage", () => ({
   useT: () => mockUseT(),
 }));
 
 import ChatBot from "../../components/ChatBot";
 
 const defaultChatState = {
-  messages: [
-    { role: "assistant" as const, content: "Welcome!", timestamp: 1 },
-  ],
+  messages: [{ role: "assistant" as const, content: "Welcome!", timestamp: 1 }],
   isLoading: false,
   error: null,
   streamingContent: "",
@@ -152,9 +150,7 @@ describe("ChatBot", () => {
       expect(screen.getByText("AI Assistant")).toBeInTheDocument();
 
       const closeButtons = screen.getAllByLabelText("Close");
-      const headerCloseBtn = closeButtons.find(
-        (btn) => !btn.classList.contains("fixed")
-      );
+      const headerCloseBtn = closeButtons.find((btn) => !btn.classList.contains("fixed"));
       fireEvent.click(headerCloseBtn!);
 
       expect(screen.getByLabelText("Open")).toBeVisible();

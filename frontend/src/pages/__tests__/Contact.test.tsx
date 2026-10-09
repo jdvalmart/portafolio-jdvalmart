@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 const mockUseT = vi.fn();
 
-vi.mock("../../i18n/LanguageContext", () => ({
+vi.mock("../../i18n/useLanguage", () => ({
   useT: () => mockUseT(),
 }));
 

@@ -12,9 +12,16 @@ const About: React.FC = () => {
     <>
       <Helmet>
         <title>About — Juan David Valencia | AI Developer</title>
-        <meta name="description" content="About Juan David Valencia — AI Developer at Trajectory Inc. building enterprise MCP tools for Claude. 5+ years experience in Python, FastAPI, NLP, and Backend Engineering." />
+        <meta
+          name="description"
+          content="About Juan David Valencia — AI Developer at Trajectory Inc. building enterprise MCP tools for Claude. 5+ years experience in Python, FastAPI, NLP, and Backend Engineering."
+        />
       </Helmet>
-      <section id="about" className="max-w-5xl mx-auto py-20 px-6" aria-label="Professional profile">
+      <section
+        id="about"
+        className="max-w-5xl mx-auto py-20 px-6"
+        aria-label="Professional profile"
+      >
         <h2 className="text-3xl font-bold mb-10 text-center text-zinc-900 dark:text-zinc-100">
           {t.about.title}
         </h2>
@@ -22,9 +29,7 @@ const About: React.FC = () => {
         <div
           ref={ref}
           className={`${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           } transition-all duration-700 space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed`}
         >
           <p>{t.about.p1}</p>

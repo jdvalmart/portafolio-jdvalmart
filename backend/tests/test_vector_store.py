@@ -1,9 +1,9 @@
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
 from src.services.vector_store import (
     _get_client,
-    get_collection,
-    is_initialized,
     initialize_store,
+    is_initialized,
     search,
 )
 
@@ -11,10 +11,12 @@ from src.services.vector_store import (
 class TestGetClient:
     def setup_method(self):
         import src.services.vector_store as vs
+
         vs._client = None
 
     def test_creates_client_with_correct_config(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._initialized = False
 
@@ -28,6 +30,7 @@ class TestGetClient:
 
     def test_caches_client_instance(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._initialized = False
 
@@ -44,11 +47,13 @@ class TestGetClient:
 class TestIsInitialized:
     def test_returns_false_initially(self):
         import src.services.vector_store as vs
+
         vs._initialized = False
         assert is_initialized() is False
 
     def test_returns_true_after_init(self):
         import src.services.vector_store as vs
+
         vs._initialized = True
         assert is_initialized() is True
 
@@ -56,12 +61,14 @@ class TestIsInitialized:
 class TestInitializeStore:
     def setup_method(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = False
 
     def test_adds_chunks_to_collection(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = False
@@ -85,6 +92,7 @@ class TestInitializeStore:
 
     def test_skips_if_already_populated(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = False
@@ -105,6 +113,7 @@ class TestInitializeStore:
 
     def test_sets_correct_metadata(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = False
@@ -129,12 +138,14 @@ class TestInitializeStore:
 class TestSearch:
     def setup_method(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = False
 
     def test_returns_results_with_correct_shape(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = True
@@ -158,6 +169,7 @@ class TestSearch:
 
     def test_calculates_score_from_distance(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = True
@@ -178,6 +190,7 @@ class TestSearch:
 
     def test_handles_missing_distances(self):
         import src.services.vector_store as vs
+
         vs._client = None
         vs._collection = None
         vs._initialized = True

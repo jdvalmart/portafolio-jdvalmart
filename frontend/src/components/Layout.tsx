@@ -47,16 +47,47 @@ const Layout = ({ children }: LayoutProps) => {
               aria-label="JDV Logo"
             >
               {/* Head */}
-              <ellipse cx="18" cy="10" rx="9" ry="7.5" className="fill-teal-600 dark:fill-teal-500" />
+              <ellipse
+                cx="18"
+                cy="10"
+                rx="9"
+                ry="7.5"
+                className="fill-teal-600 dark:fill-teal-500"
+              />
               {/* Eyes */}
               <circle cx="14.5" cy="8" r="1.3" className="fill-white" />
               <circle cx="21.5" cy="8" r="1.3" className="fill-white" />
               {/* Tentacles */}
-              <path d="M10 16.5 Q 8 24 10 28" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
-              <path d="M13.5 17 Q 12.5 25 13.5 30" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
-              <path d="M18 17.5 Q 18 27 18 31" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
-              <path d="M22.5 17 Q 23.5 25 22.5 30" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
-              <path d="M26 16.5 Q 28 24 26 28" className="stroke-teal-600 dark:stroke-teal-500" strokeWidth="2.2" strokeLinecap="round" />
+              <path
+                d="M10 16.5 Q 8 24 10 28"
+                className="stroke-teal-600 dark:stroke-teal-500"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M13.5 17 Q 12.5 25 13.5 30"
+                className="stroke-teal-600 dark:stroke-teal-500"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M18 17.5 Q 18 27 18 31"
+                className="stroke-teal-600 dark:stroke-teal-500"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M22.5 17 Q 23.5 25 22.5 30"
+                className="stroke-teal-600 dark:stroke-teal-500"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M26 16.5 Q 28 24 26 28"
+                className="stroke-teal-600 dark:stroke-teal-500"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
             </svg>
             <span className="text-lg font-extrabold tracking-tighter">
               <span className="text-teal-600 dark:text-teal-400">jd</span>
@@ -74,7 +105,15 @@ const Layout = ({ children }: LayoutProps) => {
               aria-label={isDark ? t.darkMode.light : t.darkMode.dark}
             >
               {isDark ? (
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <circle cx="12" cy="12" r="5" />
                   <line x1="12" y1="1" x2="12" y2="3" />
                   <line x1="12" y1="21" x2="12" y2="23" />
@@ -86,7 +125,15 @@ const Layout = ({ children }: LayoutProps) => {
                   <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
               )}
@@ -97,12 +144,28 @@ const Layout = ({ children }: LayoutProps) => {
               aria-label="Toggle menu"
             >
               {open ? (
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <line x1="3" y1="12" x2="21" y2="12" />
                   <line x1="3" y1="18" x2="21" y2="18" />
@@ -165,7 +228,15 @@ const Layout = ({ children }: LayoutProps) => {
               className="ml-1 p-2 text-zinc-500 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
               aria-label={isDark ? t.darkMode.light : t.darkMode.dark}
             >
-              <svg className="w-5 h-5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                className="w-5 h-5 transition-transform duration-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 {isDark ? (
                   <>
                     <circle cx="12" cy="12" r="5" />
@@ -217,7 +288,9 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
 
       {/* Main */}
-              <main id="main-content" tabIndex={-1} className="flex-1 outline-none">{children}</main>
+      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
+        {children}
+      </main>
 
       {/* Footer — compact single row */}
       <footer className="bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
@@ -276,7 +349,13 @@ const Layout = ({ children }: LayoutProps) => {
           className="fixed bottom-6 right-6 z-40 bg-teal-600 text-white rounded-full w-11 h-11 shadow-lg hover:bg-teal-700 transition flex items-center justify-center"
           aria-label={t.backToTop}
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
           </svg>
         </button>

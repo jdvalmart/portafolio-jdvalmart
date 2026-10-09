@@ -42,14 +42,10 @@ export const Hero = () => {
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
             {t.hero.greeting}
             <br />
-            <span className="text-teal-600 dark:text-teal-400">
-              {t.hero.role}
-            </span>
+            <span className="text-teal-600 dark:text-teal-400">{t.hero.role}</span>
           </h1>
 
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            {t.hero.subtitle}
-          </p>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">{t.hero.subtitle}</p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -71,8 +67,19 @@ export const Hero = () => {
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               aria-label={lang === "en" ? "Download CV as PDF" : "Descargar CV como PDF"}
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
               </svg>
               {isGeneratingCV ? (lang === "en" ? "Generating..." : "Generando...") : t.hero.cvBtn}
             </button>
@@ -105,11 +112,32 @@ export const Hero = () => {
             <line x1="106" y1="36" x2="94" y2="92" className="stroke-teal-300" strokeWidth="1.5" />
             <line x1="154" y1="46" x2="106" y2="92" className="stroke-teal-300" strokeWidth="1.5" />
             <line x1="46" y1="160" x2="94" y2="164" className="stroke-teal-300" strokeWidth="1.5" />
-            <line x1="106" y1="164" x2="154" y2="160" className="stroke-teal-300" strokeWidth="1.5" />
+            <line
+              x1="106"
+              y1="164"
+              x2="154"
+              y2="160"
+              className="stroke-teal-300"
+              strokeWidth="1.5"
+            />
             <line x1="48" y1="106" x2="94" y2="108" className="stroke-teal-300" strokeWidth="1.5" />
-            <line x1="106" y1="108" x2="152" y2="106" className="stroke-teal-300" strokeWidth="1.5" />
+            <line
+              x1="106"
+              y1="108"
+              x2="152"
+              y2="106"
+              className="stroke-teal-300"
+              strokeWidth="1.5"
+            />
             <line x1="48" y1="94" x2="48" y2="154" className="stroke-teal-300" strokeWidth="1.5" />
-            <line x1="152" y1="94" x2="152" y2="154" className="stroke-teal-300" strokeWidth="1.5" />
+            <line
+              x1="152"
+              y1="94"
+              x2="152"
+              y2="154"
+              className="stroke-teal-300"
+              strokeWidth="1.5"
+            />
             {/* Data pulse animation */}
             <circle cx="100" cy="100" r="4" className="fill-teal-600">
               <animate attributeName="r" values="4;14;4" dur="3s" repeatCount="indefinite" />

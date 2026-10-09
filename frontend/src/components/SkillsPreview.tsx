@@ -17,9 +17,7 @@ function SkillCard({ skill, animate }: { skill: SkillLevel; animate: boolean }) 
   return (
     <div className="p-4 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 shadow-sm">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
-          {skill.name}
-        </span>
+        <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">{skill.name}</span>
         <span className="text-xs font-bold text-teal-600 dark:text-teal-400 tabular-nums">
           {skill.level}/10
         </span>
@@ -50,10 +48,7 @@ export function SkillsPreview() {
         {t.coreSkills}
       </h2>
 
-      <div
-        ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {topSkills.map((skill) => (
           <SkillCard key={skill.name} skill={skill} animate={isVisible} />
         ))}

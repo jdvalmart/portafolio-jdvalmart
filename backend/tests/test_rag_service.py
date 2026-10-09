@@ -1,16 +1,18 @@
 import time
 from unittest.mock import AsyncMock, patch
+
 import pytest
+
 from src.services.rag_service import (
+    CACHE,
+    SESSIONS,
     _cache_key,
+    _fallback,
+    _keyword_search,
     _prune_cache,
     _prune_sessions,
-    _keyword_search,
-    _fallback,
     run_rag,
     search_context,
-    SESSIONS,
-    CACHE,
 )
 
 
@@ -113,9 +115,7 @@ class TestKeywordSearch:
         assert results == []
 
     def test_respects_top_k_limit(self):
-        chunks = [
-            {"id": f"c{i}", "content": f"Python content {i}"} for i in range(10)
-        ]
+        chunks = [{"id": f"c{i}", "content": f"Python content {i}"} for i in range(10)]
         results = _keyword_search("Python", chunks, top_k=3)
         assert len(results) == 3
 
@@ -159,12 +159,14 @@ class TestFallback:
 
     def test_all_english_entries_return_strings(self):
         from src.services.rag_service import FALLBACK_EN
+
         for _, response in FALLBACK_EN:
             assert isinstance(response, str)
             assert len(response) > 20
 
     def test_all_spanish_entries_return_strings(self):
         from src.services.rag_service import FALLBACK_ES
+
         for _, response in FALLBACK_ES:
             assert isinstance(response, str)
             assert len(response) > 20
@@ -175,6 +177,7 @@ class TestRecordExchange:
     async def test_creates_session_if_not_exists(self):
         SESSIONS.clear()
         from src.services.rag_service import record_exchange as async_record
+
         await async_record("query", "response", "new-session", "en")
         assert "new-session" in SESSIONS
         assert len(SESSIONS["new-session"]["history"]) == 2
@@ -183,13 +186,16 @@ class TestRecordExchange:
     async def test_appends_to_existing_session(self):
         SESSIONS.clear()
         from src.services.rag_service import record_exchange as async_record
+
         await async_record("q1", "r1", "s1", "en")
         await async_record("q2", "r2", "s1", "en")
         assert len(SESSIONS["s1"]["history"]) == 4
 
     @pytest.mark.asyncio
     async def test_truncates_history_at_max_length(self):
-        from src.services.rag_service import MAX_HISTORY, record_exchange as async_record
+        from src.services.rag_service import MAX_HISTORY
+        from src.services.rag_service import record_exchange as async_record
+
         SESSIONS.clear()
         for i in range(MAX_HISTORY + 5):
             await async_record(f"q{i}", f"r{i}", "s1", "en")
@@ -202,6 +208,7 @@ class TestRecordExchange:
         old_time = time.time() - 100
         SESSIONS["s1"] = {"history": [], "last_active": old_time}
         from src.services.rag_service import record_exchange as async_record
+
         await async_record("q", "r", "s1", "en")
         assert SESSIONS["s1"]["last_active"] > old_time
 
