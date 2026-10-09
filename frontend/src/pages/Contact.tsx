@@ -90,7 +90,10 @@ const Contact = () => {
     <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
       <Helmet>
         <title>Contact — Juan David Valencia | AI Engineer</title>
-        <meta name="description" content="Contact Juan David Valencia — AI Engineer & ML Engineer. Open to AI/ML opportunities, full-stack projects, and collaborations." />
+        <meta
+          name="description"
+          content="Contact Juan David Valencia — AI Engineer & ML Engineer. Open to AI/ML opportunities, full-stack projects, and collaborations."
+        />
       </Helmet>
       <h2 className="text-3xl font-bold mb-6 text-center">{t.contact.title}</h2>
 
@@ -119,11 +122,7 @@ const Contact = () => {
             </p>
           </div>
         ) : (
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="max-w-lg mx-auto space-y-5"
-            noValidate
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto space-y-5" noValidate>
             {/* Name */}
             <div>
               <label
@@ -206,9 +205,7 @@ const Contact = () => {
 
             {/* Error message */}
             {status === "error" && (
-              <p className="text-red-500 text-sm text-center">
-                {t.contact.errorText}
-              </p>
+              <p className="text-red-500 text-sm text-center">{t.contact.errorText}</p>
             )}
 
             {/* Submit button */}
