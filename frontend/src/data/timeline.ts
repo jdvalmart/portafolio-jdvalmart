@@ -43,6 +43,6 @@ export const timeline: TimelineEntry[] = [
     month: "Jun — Present",
     title: "AI Software Developer — Trajectory Inc.",
     description:
-      "Initus Area (Backend & AI Core). Building scalable AI-powered applications with Python, FastAPI, React. Production RAG pipelines (ChromaDB, ONNX). Enterprise MCP for Claude (140+ tools). Full ML lifecycle management. Clean architecture, code reviews, agile collaboration with Canadian team.",
+      "Building an enterprise MCP platform that connects AI assistants to internal systems. Production RAG pipelines (ChromaDB, embeddings). Python, FastAPI, PostgreSQL, Docker. Clean architecture, code reviews, agile collaboration with a Canadian team.",
   },
 ];

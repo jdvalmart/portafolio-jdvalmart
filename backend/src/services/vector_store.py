@@ -1,5 +1,8 @@
+from typing import Any, cast
+
 import chromadb
 from chromadb.config import Settings as ChromaSettings
+
 from src.config import settings
 
 _client: chromadb.ClientAPI | None = None
@@ -57,8 +60,8 @@ def initialize_store(chunks: list[dict], embeddings: list[list[float]]) -> None:
     collection.add(
         ids=ids,
         documents=documents,
-        embeddings=embeddings,
-        metadatas=metadatas,
+        embeddings=cast(Any, embeddings),
+        metadatas=cast(Any, metadatas),
     )
 
     _initialized = True
@@ -67,22 +70,24 @@ def initialize_store(chunks: list[dict], embeddings: list[list[float]]) -> None:
 def search(query_embedding: list[float], top_k: int = 3) -> list[dict]:
     collection = get_collection()
     results = collection.query(
-        query_embeddings=[query_embedding],
+        query_embeddings=cast(Any, [query_embedding]),
         n_results=top_k,
     )
 
-    documents: list[list[str]] = results.get("documents", [[]])
-    metadatas: list[list[dict]] = results.get("metadatas", [[{}]])
-    distances: list[list[float]] = results.get("distances", [[0.0]])
+    documents = results.get("documents") or [[]]
+    metadatas = results.get("metadatas") or [[]]
+    distances = results.get("distances") or [[]]
 
     output: list[dict] = []
     for i, doc in enumerate(documents[0]):
         score = 1.0 - distances[0][i] if i < len(distances[0]) else 0.0
         meta = metadatas[0][i] if i < len(metadatas[0]) else {}
-        output.append({
-            "content": doc,
-            "id": meta.get("id", ""),
-            "score": round(score, 4),
-        })
+        output.append(
+            {
+                "content": doc,
+                "id": (meta or {}).get("id", ""),
+                "score": round(score, 4),
+            }
+        )
 
     return output

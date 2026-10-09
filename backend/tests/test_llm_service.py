@@ -1,6 +1,9 @@
 from unittest.mock import AsyncMock, patch
+
+import httpx
 import pytest
-from src.services.llm_service import build_messages, chat_response, chat_response_stream
+
+from src.services.llm_service import build_messages, chat_response
 
 
 class TestBuildMessages:
@@ -126,7 +129,7 @@ class TestChatResponse:
     async def test_returns_none_on_network_error(self):
         mock_client = AsyncMock()
         mock_client.__aenter__.return_value = mock_client
-        mock_client.post = AsyncMock(side_effect=Exception("Network error"))
+        mock_client.post = AsyncMock(side_effect=httpx.ConnectError("Network error"))
 
         with patch("src.services.llm_service.httpx.AsyncClient", return_value=mock_client):
             with patch("src.services.llm_service.settings") as mock_settings:
@@ -154,9 +157,7 @@ class TestChatResponse:
     async def test_strips_response_content(self):
         mock_response = AsyncMock()
         mock_response.status_code = 200
-        mock_response.json = lambda: {
-            "choices": [{"message": {"content": "  Hello world!  "}}]
-        }
+        mock_response.json = lambda: {"choices": [{"message": {"content": "  Hello world!  "}}]}
 
         mock_client = AsyncMock()
         mock_client.__aenter__.return_value = mock_client

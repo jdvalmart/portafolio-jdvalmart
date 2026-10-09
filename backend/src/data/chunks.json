@@ -1,0 +1,62 @@
+[
+    {
+        "id": "profile-01",
+        "content": "Juan David Valencia is an AI Software Developer at Trajectory Inc. since June 2026, building production AI-powered services and backend systems. He focuses on RAG pipelines, LLM infrastructure, and MCP (Model Context Protocol) integrations, with Python, FastAPI, PostgreSQL, ChromaDB, and Docker as his daily stack."
+    },
+    {
+        "id": "profile-02",
+        "content": "His professional philosophy is: 'There is no elevator to what is worth it. You climb the stairs, one step at a time.' He believes in fundamentals-first learning and building solid foundations before adopting frameworks."
+    },
+    {
+        "id": "skills-01",
+        "content": "Juan David's core stack is Python, FastAPI, PostgreSQL, ChromaDB, and Docker, with clean architecture (routers, services, repositories) and async services. Frontend is secondary: React and TypeScript."
+    },
+    {
+        "id": "skills-02",
+        "content": "In AI engineering he works with LLMs, Retrieval-Augmented Generation (RAG), embeddings (ONNX, all-MiniLM-L6-v2), vector search (ChromaDB), prompt and tool schema design, and MCP. He also has a solid foundation in classical machine learning, deep learning, NLP, and Explainable AI (LIME, SHAP, Grad-CAM)."
+    },
+    {
+        "id": "project-orion",
+        "content": "Orion is Juan David's personal MCP server that gives AI assistants persistent memory and context. It exposes 12 tools across memory (remember, recall, revise, forget, browse), a knowledge graph (link, find, browse), session management (remember, recall, browse), and a professional profile (whoami). It uses ChromaDB with ONNX embeddings for semantic search and follows a clean architecture with FastMCP, Pydantic, and typed, tested modules."
+    },
+    {
+        "id": "project-pequelectores",
+        "content": "Pequelectores is a book recommendation system for children aged 6-14. It uses content-based AI (TF-IDF with cosine similarity) to recommend books, plus reading streaks, badge gamification, and JWT parent authentication. Built with React, TypeScript, FastAPI, Python, PostgreSQL, scikit-learn, and Docker."
+    },
+    {
+        "id": "project-book-tracker",
+        "content": "Book-Tracker is a full-stack application for managing personal book collections and tracking reading progress. Built with React, TypeScript, Tailwind CSS, FastAPI, PostgreSQL, and Docker, using a three-layer backend separation with async SQLAlchemy."
+    },
+    {
+        "id": "experience-01",
+        "content": "Juan David started his career in 2021 as a Technology Media Operator, where he automated inventory management with Python and SQL scripts and monitored critical security systems, developing operational discipline and a high-availability mindset."
+    },
+    {
+        "id": "experience-02",
+        "content": "In 2022, he completed his SENA internship as a Full-Stack Developer, building Vue.js frontends and PHP/Laravel backends with MySQL databases, working in agile teams using Scrum."
+    },
+    {
+        "id": "experience-03",
+        "content": "In 2025, he completed the MinTIC Artificial Intelligence Bootcamp: 20 intensive weeks covering Machine Learning, Deep Learning, NLP, XAI, and MLOps, applied through hands-on labs with TensorFlow and HuggingFace."
+    },
+    {
+        "id": "experience-04",
+        "content": "Since June 2026, Juan David works as an AI Software Developer at Trajectory Inc., building an enterprise MCP platform that connects AI assistants to internal systems through configuration, with identity, permissions, credentials, and observability handled by a single core. He collaborates with a Canadian team from Bogota, Colombia."
+    },
+    {
+        "id": "diploma-01",
+        "content": "Juan David holds a Diploma in Computer Science (2025) from Politecnico Grancolombiano. It covers software architecture (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and computational complexity."
+    },
+    {
+        "id": "education-01",
+        "content": "Juan David is a Software Engineering student at Politecnico Grancolombiano (2026) and holds a Diploma in Computer Science (2025) from the same institution. He also completed the Tecnologo ADSO program at SENA (2020-2022) and the MinTIC AI Bootcamp (2025)."
+    },
+    {
+        "id": "certifications-01",
+        "content": "Juan David's verified education and training includes: AI Bootcamp (Basico + Intermedio) from Talento Tech, MinTIC (2025-2026); Diploma in Computer Science from Politecnico Grancolombiano (2025); Software Engineering at Politecnico Grancolombiano (in progress); and Tecnologo ADSO from SENA (2020-2022)."
+    },
+    {
+        "id": "contact-01",
+        "content": "You can contact Juan David through the contact form on this website, by email at juanvalencia9411@outlook.com, or on LinkedIn. He is based in Bogota, Colombia and is open to AI engineering, RAG, LLM, and backend opportunities."
+    }
+]

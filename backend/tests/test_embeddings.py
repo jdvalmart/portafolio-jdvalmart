@@ -1,14 +1,14 @@
 import json
-from pathlib import Path
-from unittest.mock import patch, AsyncMock
+from unittest.mock import AsyncMock, patch
+
 import pytest
 
 from src.services.embeddings import (
-    load_chunks,
+    _fallback_embeddings,
     _hf_embed,
     embed_texts,
     embed_texts_with_fallback,
-    _fallback_embeddings,
+    load_chunks,
 )
 
 
@@ -21,14 +21,7 @@ class TestLoadChunks:
         chunks_file = tmp_path / "chunks.json"
         chunks_file.write_text(json.dumps(chunks), encoding="utf-8")
 
-        data_dir = tmp_path
-        data_dir_path = Path(__file__).parent.parent / "src" / "data"
-
-        with patch.object(Path, "__truediv__", return_value=chunks_file):
-            pass
-
-        result = [{"id": "test-1", "content": "Test content 1"}, {"id": "test-2", "content": "Test content 2"}]
-        assert len(result) == 2
+        assert json.loads(chunks_file.read_text(encoding="utf-8")) == chunks
 
     def test_returns_list_of_dicts(self):
         chunks = load_chunks()

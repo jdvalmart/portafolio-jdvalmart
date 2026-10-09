@@ -1,14 +1,15 @@
 import json
 import logging
 from pathlib import Path
+
 import httpx
+
 from src.config import settings
 
 logger = logging.getLogger(__name__)
 HF_EMBED_URL = f"https://api-inference.huggingface.co/models/{settings.embedding_model}"
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-CHUNKS_PATH = PROJECT_ROOT / "shared" / "data" / "chunks.json"
+CHUNKS_PATH = Path(__file__).parent.parent / "data" / "chunks.json"
 
 
 def load_chunks() -> list[dict]:
@@ -43,7 +44,7 @@ async def _hf_embed(texts: list[str]) -> list[list[float]] | None:
                 if isinstance(data[0], list):
                     return data
 
-            logger.error(f"Unexpected HF embed response shape")
+            logger.error("Unexpected HF embed response shape")
             return None
 
     except Exception as e:
@@ -51,11 +52,8 @@ async def _hf_embed(texts: list[str]) -> list[list[float]] | None:
         return None
 
 
-async def embed_texts(texts: list[str]) -> list[list[float]]:
-    result = await _hf_embed(texts)
-    if result is not None:
-        return result
-    return None
+async def embed_texts(texts: list[str]) -> list[list[float]] | None:
+    return await _hf_embed(texts)
 
 
 async def embed_texts_with_fallback(texts: list[str]) -> list[list[float]]:
@@ -68,6 +66,7 @@ async def embed_texts_with_fallback(texts: list[str]) -> list[list[float]]:
 
 def _fallback_embeddings(texts: list[str], dim: int = 384) -> list[list[float]]:
     import hashlib
+
     fallback: list[list[float]] = []
     for text in texts:
         h = hashlib.sha256(text.encode()).digest()

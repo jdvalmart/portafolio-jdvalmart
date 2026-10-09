@@ -1,6 +1,11 @@
 import json
+import logging
+
 import httpx
+
 from src.config import settings
+
+logger = logging.getLogger(__name__)
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
@@ -67,6 +72,7 @@ async def chat_response(
             )
 
             if response.status_code != 200:
+                logger.warning("Groq returned status %s", response.status_code)
                 return None
 
             data = response.json()
@@ -76,7 +82,8 @@ async def chat_response(
 
             return None
 
-    except Exception:
+    except httpx.HTTPError as exc:
+        logger.warning("Groq request failed: %s", exc)
         return None
 
 
@@ -90,8 +97,9 @@ async def chat_response_stream(
         return
 
     try:
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            async with client.stream(
+        async with (
+            httpx.AsyncClient(timeout=30.0) as client,
+            client.stream(
                 "POST",
                 GROQ_URL,
                 headers={
@@ -106,32 +114,34 @@ async def chat_response_stream(
                     "top_p": 0.95,
                     "stream": True,
                 },
-            ) as response:
-                if response.status_code != 200:
+            ) as response,
+        ):
+            if response.status_code != 200:
+                yield "data: [DONE]\n\n"
+                return
+
+            async for line in response.aiter_lines():
+                if not line or not line.startswith("data: "):
+                    continue
+
+                data_str = line[6:]
+                if data_str == "[DONE]":
                     yield "data: [DONE]\n\n"
                     return
 
-                async for line in response.aiter_lines():
-                    if not line or not line.startswith("data: "):
-                        continue
+                try:
+                    data = json.loads(data_str)
+                    choices = data.get("choices", [])
+                    if choices and len(choices) > 0:
+                        delta = choices[0].get("delta", {})
+                        content = delta.get("content", "")
+                        if content:
+                            yield f"data: {json.dumps({'token': content})}\n\n"
+                except json.JSONDecodeError:
+                    continue
 
-                    data_str = line[6:]
-                    if data_str == "[DONE]":
-                        yield "data: [DONE]\n\n"
-                        return
+            yield "data: [DONE]\n\n"
 
-                    try:
-                        data = json.loads(data_str)
-                        choices = data.get("choices", [])
-                        if choices and len(choices) > 0:
-                            delta = choices[0].get("delta", {})
-                            content = delta.get("content", "")
-                            if content:
-                                yield f"data: {json.dumps({'token': content})}\n\n"
-                    except json.JSONDecodeError:
-                        continue
-
-                yield "data: [DONE]\n\n"
-
-    except Exception:
+    except httpx.HTTPError as exc:
+        logger.warning("Groq stream failed: %s", exc)
         yield "data: [DONE]\n\n"

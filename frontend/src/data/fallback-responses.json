@@ -10,15 +10,30 @@
         "patterns": ["cómo estás", "como estas", "how are you", "qué tal"]
       },
       {
-        "response": "Juan David's core stack: Python, FastAPI, PostgreSQL, Docker, MCP. AI/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, XAI (LIME, SHAP, Grad-CAM), RAG (ChromaDB, ONNX). Frontend (React, TypeScript) is secondary.",
-        "patterns": ["skills", "habilidades", "tecnologías", "stack", "tech stack", "qué sabes hacer", "que sabes hacer"]
+        "response": "Juan David's core stack: Python, FastAPI, PostgreSQL, Docker, and ChromaDB, with React and TypeScript as secondary frontend skills. In AI engineering he works with RAG, LLMs, embeddings, vector search, and MCP.",
+        "patterns": [
+          "skills",
+          "habilidades",
+          "tecnologías",
+          "stack",
+          "tech stack",
+          "qué sabes hacer",
+          "que sabes hacer"
+        ]
       },
       {
-        "response": "Key projects: 1) Trajectory Enterprise MCP (140+ tools, Initus area), 2) Orion personal MCP (12 tools: memory, graph, sessions), 3) Pequelectores (AI book recommender for kids, TF-IDF, XAI), 4) MinTIC AI Bootcamp (33 labs), 5) Book-Tracker (full-stack CRUD), 6) Lucius (AI auditor, in dev).",
-        "patterns": ["proyectos", "projects", "portafolio", "portfolio", "qué has hecho", "que has hecho"]
+        "response": "Highlighted projects: 1) Orion (personal MCP server for AI memory), 2) Pequelectores (AI book recommender for kids), 3) Book-Tracker (full-stack library manager). Which one interests you?",
+        "patterns": [
+          "proyectos",
+          "projects",
+          "portafolio",
+          "portfolio",
+          "qué has hecho",
+          "que has hecho"
+        ]
       },
       {
-        "response": "5+ years exp: Trajectory Inc. (2026-presente, Initus, MCP 140+ tools), Tech Media Operator (2021-2026, Python/SQL automation), MinTIC AI Bootcamp (2025-2026, 33 labs), Full-Stack Intern SENA (2022, Vue.js/PHP/Laravel).",
+        "response": "5+ years exp: AI Software Developer at Trajectory Inc. (since June 2026), Tech Media Operator (Python/SQL automation), MinTIC AI Bootcamp (2025-2026, 33 labs), Full-Stack Intern SENA (2022, Vue.js/PHP/Laravel).",
         "patterns": ["experiencia", "experience", "trayectoria", "carrera", "career"]
       },
       {
@@ -40,15 +55,30 @@
         "patterns": ["cómo estás", "como estas", "how are you", "qué tal"]
       },
       {
-        "response": "Stack principal: Python, FastAPI, PostgreSQL, Docker, MCP. IA/ML: TensorFlow, HuggingFace, scikit-learn, NLTK, spaCy, XAI (LIME, SHAP, Grad-CAM), RAG (ChromaDB, ONNX). Frontend (React, TypeScript) es secundario.",
-        "patterns": ["skills", "habilidades", "tecnologías", "stack", "tech stack", "qué sabes hacer", "que sabes hacer"]
+        "response": "Stack principal: Python, FastAPI, PostgreSQL, Docker y ChromaDB, con React y TypeScript como frontend secundario. En ingeniería de IA trabaja con RAG, LLMs, embeddings, búsqueda vectorial y MCP.",
+        "patterns": [
+          "skills",
+          "habilidades",
+          "tecnologías",
+          "stack",
+          "tech stack",
+          "qué sabes hacer",
+          "que sabes hacer"
+        ]
       },
       {
-        "response": "Proyectos clave: 1) MCP Empresarial Trajectory (140+ tools, área Initus), 2) Orion MCP personal (12 tools: memoria, grafo, sesiones), 3) Pequelectores (recomendador libros IA niños, TF-IDF, XAI), 4) Bootcamp IA MinTIC (33 labs), 5) Book-Tracker (full-stack CRUD), 6) Lucius (auditor IA, en desarrollo).",
-        "patterns": ["proyectos", "projects", "portafolio", "portfolio", "qué has hecho", "que has hecho"]
+        "response": "Proyectos destacados: 1) Orion (MCP personal para memoria de IA), 2) Pequelectores (recomendador de libros con IA para niños), 3) Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa?",
+        "patterns": [
+          "proyectos",
+          "projects",
+          "portafolio",
+          "portfolio",
+          "qué has hecho",
+          "que has hecho"
+        ]
       },
       {
-        "response": "5+ años exp: Trajectory Inc. (2026-presente, Initus, MCP 140+ tools), Operador Medios Tecnológicos (2021-2026, automatización Python/SQL), Bootcamp IA MinTIC (2025-2026, 33 labs), Practicante Full-Stack SENA (2022, Vue.js/PHP/Laravel).",
+        "response": "5+ años exp: AI Software Developer en Trajectory Inc. (desde junio 2026), Operador Medios Tecnológicos (automatización Python/SQL), Bootcamp IA MinTIC (2025-2026, 33 labs), Practicante Full-Stack SENA (2022, Vue.js/PHP/Laravel).",
         "patterns": ["experiencia", "experience", "trayectoria", "carrera", "career"]
       },
       {

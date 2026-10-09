@@ -24,36 +24,25 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    slug: "mcp-corporate",
-    title: "MCP Corporativo — Trajectory",
+    slug: "enterprise-mcp-platform",
+    title: "Enterprise MCP Platform",
     description:
-      "Enterprise MCP server with 140+ tools connecting Claude to all enterprise data, APIs, and workflows. Built in the Initus area (backend & AI core).",
+      "Multi-tenant MCP platform: a single core for identity, permissions, credentials, and observability, with integrations enabled by configuration and human confirmation for sensitive changes.",
     image: "/mcp.png",
-    techs: [
-      "Python",
-      "FastAPI",
-      "MCP",
-      "Claude",
-      "PostgreSQL",
-      "Docker",
-    ],
+    techs: ["Python", "FastAPI", "MCP", "PostgreSQL", "Docker", "AWS"],
     category: "ai-ml",
-    metrics: {
-      labCount: 140,
-    },
     detail: {
       overview:
-        "An enterprise-scale MCP (Model Context Protocol) for Claude that connects the AI assistant to all company information. The MCP provides 140+ tools that allow Claude to interact with corporate data, internal APIs, and business workflows. Working in the Initus area — the backend and AI core of Trajectory Inc.",
+        "A multi-tenant MCP (Model Context Protocol) platform that connects AI assistants to enterprise systems through a single core handling identity, permissions, credentials, and observability. Integrations are enabled by configuration without redeploys, and sensitive changes require human confirmation.",
       architecture:
-        "MCP server built with Python and FastAPI, exposing tools that integrate with PostgreSQL databases, REST APIs, and internal services. The MCP grew from ~6 tools at inception to 140+, scaling Claude's capabilities to query data, trigger workflows, and automate processes across the organization.",
+        "Python and FastAPI service exposing MCP tools over a shared core. PostgreSQL for relational data, configuration-driven integrations, and a permissions/credential layer. Deployed on AWS (EC2 and Lambda) with observability built in.",
       highlights: [
-        "140+ MCP tools connecting Claude to enterprise data and APIs",
-        "Scaling from 6 to 140+ tools since joining the Initus team",
-        "Backend engineering with FastAPI and PostgreSQL",
-        "Integration with internal APIs and business workflows",
-        "On-site collaboration with a Canadian company from Colombia",
+        "Single core for identity, permissions, credentials, and observability",
+        "Integrations activated by configuration, no redeploy required",
+        "Human-in-the-loop confirmation for sensitive changes",
+        "Python, FastAPI, PostgreSQL, Docker on AWS EC2 + Lambda",
       ],
-      role: "AI Software Developer in the Initus area. Building and maintaining MCP tools, backend APIs, and integration layers that connect AI assistants to company systems.",
+      role: "AI Software Developer. Building and maintaining the MCP core, integration layers, and backend APIs that connect AI assistants to enterprise systems.",
     },
   },
   {
@@ -138,13 +127,7 @@ export const projects: Project[] = [
     description:
       "CNN with 87.14% accuracy on CIFAR-10, implementing three XAI techniques for computer vision model explainability.",
     image: "/xai.png",
-    techs: [
-      "Python",
-      "TensorFlow",
-      "LIME",
-      "SHAP",
-      "Grad-CAM",
-    ],
+    techs: ["Python", "TensorFlow", "LIME", "SHAP", "Grad-CAM"],
     category: "ai-ml",
     metrics: {
       accuracy: 87.14,
@@ -170,13 +153,7 @@ export const projects: Project[] = [
     description:
       "Full-stack CRUD application for managing personal book collections with documented REST API, Docker Compose containerization, and cloud deployment.",
     image: "/book-tracker.png",
-    techs: [
-      "React",
-      "TypeScript",
-      "FastAPI",
-      "PostgreSQL",
-      "Docker",
-    ],
+    techs: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
     liveUrl: "https://book-tracker1.netlify.app/",
     repoUrl: "https://github.com/jdvalmart/book-tracker",
     category: "full-stack",

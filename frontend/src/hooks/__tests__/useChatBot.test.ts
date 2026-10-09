@@ -38,9 +38,7 @@ describe("useChatBot", () => {
 
   describe("initial state", () => {
     it("starts with welcome message", () => {
-      const { result } = renderHook(() =>
-        useChatBot({ welcomeMessage: "Welcome!", lang: "en" })
-      );
+      const { result } = renderHook(() => useChatBot({ welcomeMessage: "Welcome!", lang: "en" }));
 
       expect(result.current.messages).toHaveLength(1);
       expect(result.current.messages[0].role).toBe("assistant");
@@ -188,9 +186,7 @@ describe("useChatBot", () => {
       mockGenerateResponseStream.mockResolvedValue(null);
       mockGenerateResponse.mockResolvedValue(null);
 
-      const { result } = renderHook(() =>
-        useChatBot({ lang: "es" })
-      );
+      const { result } = renderHook(() => useChatBot({ lang: "es" }));
 
       await act(async () => {
         await result.current.sendMessage("hola");
@@ -218,14 +214,10 @@ describe("useChatBot", () => {
     });
 
     it("loads saved messages from sessionStorage", () => {
-      const saved = JSON.stringify([
-        { role: "assistant", content: "Saved message", timestamp: 1 },
-      ]);
+      const saved = JSON.stringify([{ role: "assistant", content: "Saved message", timestamp: 1 }]);
       sessionStorage.setItem("chat_messages", saved);
 
-      const { result } = renderHook(() =>
-        useChatBot({ welcomeMessage: "New welcome" })
-      );
+      const { result } = renderHook(() => useChatBot({ welcomeMessage: "New welcome" }));
 
       expect(result.current.messages).toHaveLength(1);
       expect(result.current.messages[0].content).toBe("Saved message");

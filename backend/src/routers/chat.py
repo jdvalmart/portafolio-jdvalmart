@@ -4,8 +4,9 @@ import uuid
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
-from src.services.rag_service import run_rag, search_context, record_exchange
+
 from src.services.llm_service import build_messages, chat_response_stream
+from src.services.rag_service import record_exchange, run_rag, search_context
 
 router = APIRouter(prefix="/api/chat", tags=["chat"])
 
@@ -34,7 +35,7 @@ async def chat(req: ChatRequest):
         )
         return ChatResponse(response=answer, session_id=req.session_id)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @router.post("/stream")
@@ -75,4 +76,4 @@ async def chat_stream(req: ChatRequest):
             },
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
