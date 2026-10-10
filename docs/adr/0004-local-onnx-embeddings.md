@@ -13,8 +13,9 @@ retrieval silently: the chatbot still answers, but over irrelevant context.
 ## Decision
 
 Run the embedding model (`all-MiniLM-L6-v2`) locally using ONNX Runtime instead
-of calling the HuggingFace API. Precompute document embeddings at build/seed time
-and remove the SHA-256 fallback entirely.
+of calling the HuggingFace API. The model is downloaded into the image at build
+time, document embeddings are computed once on first initialization and
+persisted in ChromaDB, and the SHA-256 fallback is removed entirely.
 
 ## Consequences
 

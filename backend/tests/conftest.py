@@ -3,7 +3,6 @@ import os
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-os.environ["HF_API_KEY"] = "test_hf_key"
 os.environ["GROQ_API_KEY"] = "test_groq_key"
 os.environ["ALLOWED_ORIGINS"] = "http://localhost:5173"
 os.environ["CHROMA_PERSIST_PATH"] = ":memory:"
@@ -12,20 +11,21 @@ from src.main import app  # noqa: E402
 
 
 @pytest.fixture(autouse=True)
-def clear_module_state():
-    import src.services.rag_service as rag
+async def clear_module_state():
+    import src.services.state as state_module
     import src.services.vector_store as vs
 
-    rag.SESSIONS.clear()
-    rag.CACHE.clear()
+    state_module.reset_state()
+    await state_module.get_state().clear()
+
     vs._client = None
     vs._collection = None
     vs._initialized = False
 
     yield
 
-    rag.SESSIONS.clear()
-    rag.CACHE.clear()
+    await state_module.get_state().clear()
+    state_module.reset_state()
     vs._client = None
     vs._collection = None
     vs._initialized = False
