@@ -83,6 +83,19 @@ export default function ChatBot() {
     }
   }, [isOpen]);
 
+  // Open the panel (and optionally send a query) from anywhere on the site.
+  useEffect(() => {
+    const handler = (event: Event) => {
+      setIsOpen(true);
+      const detail = (event as CustomEvent<{ query?: string }>).detail;
+      if (detail?.query) {
+        void sendMessage(detail.query);
+      }
+    };
+    window.addEventListener("open-cv-chat", handler);
+    return () => window.removeEventListener("open-cv-chat", handler);
+  }, [sendMessage]);
+
   const handleSend = useCallback(async () => {
     const trimmed = input.trim();
     if (!trimmed || isLoading) return;

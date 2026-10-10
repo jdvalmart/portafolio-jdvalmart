@@ -10,6 +10,10 @@ export const Hero = () => {
   const router = useRouter();
   const [isGeneratingCV, setIsGeneratingCV] = useState(false);
 
+  const handleTalk = useCallback(() => {
+    window.dispatchEvent(new CustomEvent("open-cv-chat"));
+  }, []);
+
   const handleDownloadCV = useCallback(async () => {
     setIsGeneratingCV(true);
     try {
@@ -44,7 +48,7 @@ export const Hero = () => {
       />
       <div className="max-w-5xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 break-words">
+          <h1 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6 break-words">
             {t.hero.greeting}
             <br />
             <span className="text-teal-600 dark:text-teal-400">{t.hero.role}</span>
@@ -53,9 +57,19 @@ export const Hero = () => {
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">{t.hero.subtitle}</p>
 
           <div className="flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={handleTalk}
+              className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition inline-flex items-center justify-center gap-2"
+            >
+              <span className="animate-token" aria-hidden="true">
+                ●
+              </span>
+              {t.hero.talkBtn}
+            </button>
+
             <Link
               href="/projects"
-              className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition"
+              className="px-6 py-3 border border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-teal-900/20 transition"
             >
               {t.hero.projectsBtn}
             </Link>

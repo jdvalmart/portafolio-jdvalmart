@@ -21,6 +21,7 @@ export const t = {
     role: "AI Software Developer at Trajectory Inc.",
     subtitle:
       "AI Software Developer specialized in building scalable AI-powered applications and services. Full ML lifecycle: research, design, training, deployment, optimization. Python · FastAPI · LLMs · RAG · MCP · Machine Learning.",
+    talkBtn: "Talk to my CV",
     projectsBtn: "Projects",
     aboutBtn: "About Me",
     cvBtn: "Download CV",
@@ -37,6 +38,18 @@ export const t = {
       "I build scalable AI-powered applications and services for the enterprise. From algorithm research to production deployment. Let's talk about how I can help you.",
     ctaContact: "Contact Me",
     ctaProjects: "View Projects",
+    talkEyebrow: "My portfolio is not read, it is conversed",
+    talkTitle: "Talk to my CV",
+    talkSubtitle:
+      "Ask a question and a RAG agent built by me answers from my real experience, projects, and stack — no scrolling required.",
+    talkPlaceholder: "Ask about my experience, projects, or stack…",
+    talkCta: "Ask",
+    talkPrompts: [
+      "What projects have you built?",
+      "What is your experience with RAG?",
+      "What is your tech stack?",
+      "Are you open to new opportunities?",
+    ],
   },
   projects: {
     title: "Projects",
@@ -48,9 +61,21 @@ export const t = {
   },
   about: {
     title: "About Me",
+    eyebrow: "Who I am",
+    intro:
+      "I'm Juan David Valencia, an AI Software Developer who builds systems that turn language models into useful, reliable products.",
     p1: "I'm an AI Software Developer at Trajectory Inc., specialized in building scalable AI-powered applications and services for the enterprise. My focus is 100% on AI-driven software development, covering the full ML lifecycle: from algorithm research and design to deployment, optimization, and monitoring of models in production.",
     p2: "My Software Engineering background and intensive AI bootcamp (MinTIC) enable me to combine software engineering discipline with advanced deep learning, NLP, and MLOps techniques. Previously spent 5 years monitoring critical security systems, forging operational discipline, zero-error tolerance, and high-availability principles that I now apply to building robust AI agents and data pipelines.",
     p3: "Based in Bogotá, Colombia. Working on-site for Trajectory Inc. (Canada) since June 2026.",
+    storyTitle: "From critical systems to AI",
+    story1:
+      "I grew up in Palmira and moved to Bogotá to build my career. For five years I monitored critical security systems, where a downtime is not an option. That experience shaped how I think about software: observability, reliability, and accountability first.",
+    story2:
+      "I moved into software engineering and then into AI, drawn by explainability, retrieval-augmented generation, and agents that can actually do work. Today I design and ship RAG pipelines, LLM infrastructure, and MCP integrations that connect assistants to real systems.",
+    nowTitle: "What I do today",
+    now: "I build a multi-tenant MCP platform at Trajectory Inc. and, on my own time, projects like Orion — a personal MCP server for AI memory — to keep learning in public.",
+    connectTitle: "Let's connect",
+    connectText: "I'm open to AI engineering, RAG, LLM, and backend opportunities.",
     philosophy: "Philosophy",
     quote: '"There is no elevator to what\'s worth it. You climb the stairs, one step at a time."',
     quoteAuthor: "— Juan David Valencia",

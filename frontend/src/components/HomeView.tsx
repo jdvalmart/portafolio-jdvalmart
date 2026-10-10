@@ -9,6 +9,7 @@ import { FeaturedProjects } from "./FeaturedProjects";
 import { Hero } from "./Hero";
 import { SkillsPreview } from "./SkillsPreview";
 import { StatsBar, type Stat } from "./StatsBar";
+import { TalkToCV } from "./TalkToCV";
 
 const rawStats = t.home.stats as unknown as Stat[];
 const stats: Stat[] = rawStats.map((stat, index) =>
@@ -26,6 +27,8 @@ export function HomeView() {
       >
         <Hero />
       </div>
+
+      <TalkToCV />
 
       <section className="py-12" aria-label="Key statistics">
         <div className="max-w-5xl mx-auto px-6">
