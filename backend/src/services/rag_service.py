@@ -110,7 +110,7 @@ FALLBACK_EN: list[tuple[list[str], str]] = [
     ),
     (
         ["projects", "project", "built", "created", "made"],
-        "Juan David's highlighted projects include Orion (a personal MCP server for AI memory), Pequelectores (an AI book recommender for children), and Book-Tracker (a full-stack library manager). Which one interests you?",
+        "Juan David's highlighted projects include Orion (an open-source MCP server for AI memory), Mishkan (a Colombian e-commerce platform), Pacioli (a local-first personal finance app), and Pequelectores (an AI book recommender for children). Which one interests you?",
     ),
     (
         ["skills", "tech", "stack", "technologies", "know", "tools"],
@@ -161,7 +161,7 @@ FALLBACK_ES: list[tuple[list[str], str]] = [
     ),
     (
         ["projects", "project", "proyectos", "built", "created", "creado", "hecho"],
-        "Entre los proyectos destacados de Juan David estan Orion (MCP personal para memoria de IA), Pequelectores (recomendador de libros con IA para ninos) y Book-Tracker (gestion de bibliotecas full-stack). ¿Cual te interesa?",
+        "Entre los proyectos destacados de Juan David estan Orion (MCP open source para memoria de IA), Mishkan (e-commerce para el mercado colombiano), Pacioli (app de finanzas personales local-first) y Pequelectores (recomendador de libros con IA para ninos). ¿Cual te interesa?",
     ),
     (
         ["skills", "tech", "stack", "tecnologias", "herramientas", "sabe", "maneja"],

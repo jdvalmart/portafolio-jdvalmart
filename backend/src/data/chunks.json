@@ -17,7 +17,19 @@
     },
     {
         "id": "project-orion",
-        "content": "Orion is Juan David's personal MCP server that gives AI assistants persistent memory and context. It exposes 12 tools across memory (remember, recall, revise, forget, browse), a knowledge graph (link, find, browse), session management (remember, recall, browse), and a professional profile (whoami). It uses ChromaDB with ONNX embeddings for semantic search and follows a clean architecture with FastMCP, Pydantic, and typed, tested modules."
+        "content": "Orion is Juan David's open-source personal MCP server that gives AI assistants persistent memory, semantic search, a knowledge graph, and cross-session context. It exposes 12 tools across memory (remember, recall, revise, forget, browse), a knowledge graph (link, find, browse), session management (remember, recall, browse), and a professional profile (whoami). It uses FastMCP over stdio and HTTP, ChromaDB with local ONNX embeddings for semantic search, and strict typing with Pydantic, mypy, and ruff. It is MIT licensed."
+    },
+    {
+        "id": "project-mishkan",
+        "content": "Mishkan is an e-commerce platform for Christian products (Bibles, books, devotionals, accessories) aimed at the Colombian market. Built with FastAPI (SQLAlchemy 2.0 async, asyncpg, Alembic migrations), a Next.js App Router frontend (TypeScript, Tailwind, TanStack Query), PostgreSQL, and Wompi for payments, on Docker with a VPS deployment target. Key decisions are documented in 22 ADRs, covering money as integer minor units, per-line VAT, VAT-exempt books, a webhook-driven idempotent order lifecycle, and crawlable per-product SEO."
+    },
+    {
+        "id": "project-pacioli",
+        "content": "Pacioli is an open-source personal finance web app inspired by double-entry bookkeeping. It is local-first: SQLite by default and PostgreSQL when DATABASE_URL is set. The backend is FastAPI with Pydantic and money stored as integer cents; the frontend is React 19, Vite, Tailwind v4, shadcn/ui, Recharts, and TanStack Query. Features include budgets, transactions, credit-card cycles with installments (1-60) and interest, savings pockets/CDTs/stocks, and four report panels. It is MIT licensed."
+    },
+    {
+        "id": "project-enterprise-mcp",
+        "content": "Juan David also works on a private, multi-tenant enterprise MCP platform that connects AI assistants to enterprise systems. It has a single core for identity, permissions, credentials, and observability; integrations are enabled by configuration without redeploys; and sensitive changes require human confirmation. It runs on Python and FastAPI with PostgreSQL, deployed on AWS EC2 and Lambda."
     },
     {
         "id": "project-pequelectores",

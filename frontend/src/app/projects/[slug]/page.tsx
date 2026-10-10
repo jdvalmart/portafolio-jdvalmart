@@ -42,9 +42,21 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">{project.title}</h1>
 
-      <span className="inline-block text-xs bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 px-2.5 py-1 rounded-full mb-6">
-        {categoryLabel}
-      </span>
+      <div className="flex flex-wrap items-center gap-2 mb-6">
+        <span className="text-xs bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 px-2.5 py-1 rounded-full">
+          {categoryLabel}
+        </span>
+        {project.status && (
+          <span className="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2.5 py-1 rounded-full">
+            {project.status}
+          </span>
+        )}
+        {project.year && (
+          <span className="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2.5 py-1 rounded-full">
+            {project.year}
+          </span>
+        )}
+      </div>
 
       <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10">
         {project.detail.overview}
@@ -52,14 +64,47 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         <div className="md:col-span-2 space-y-8">
+          {project.detail.problem && (
+            <div>
+              <h2 className="font-display text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">
+                The problem
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                {project.detail.problem}
+              </p>
+            </div>
+          )}
+
           <div>
-            <h2 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">
-              Architecture
+            <h2 className="font-display text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">
+              How I built it
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {project.detail.architecture}
             </p>
           </div>
+
+          {project.detail.challenges && (
+            <div>
+              <h2 className="font-display text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">
+                What was hard
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                {project.detail.challenges}
+              </p>
+            </div>
+          )}
+
+          {project.detail.learnings && (
+            <div>
+              <h2 className="font-display text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">
+                What I learned
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                {project.detail.learnings}
+              </p>
+            </div>
+          )}
 
           <div>
             <h2 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-3">

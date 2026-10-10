@@ -29,7 +29,7 @@ export const t = {
   home: {
     stats: [
       { label: "Years in Tech", value: 5, suffix: "+" },
-      { label: "Projects Built", value: 6, suffix: "+" },
+      { label: "Projects Built", value: 8, suffix: "+" },
       { label: "ML Labs", value: 33, suffix: "+" },
       { label: "Currently at", value: 0, suffix: "Trajectory" },
     ],
@@ -53,11 +53,9 @@ export const t = {
   },
   projects: {
     title: "Projects",
-    subtitle: "Machine Learning, NLP, Backend, and AI applications",
-    all: "All",
-    aiMl: "AI & ML",
-    fullStack: "Full Stack",
-    noProjects: "No projects found for this category.",
+    subtitle: "AI engineering, RAG, MCP, and full-stack products",
+    labsTitle: "Labs & experiments",
+    labsSubtitle: "Learning projects and hands-on work from my training.",
   },
   about: {
     title: "About Me",

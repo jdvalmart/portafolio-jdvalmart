@@ -22,7 +22,7 @@
         ]
       },
       {
-        "response": "Highlighted projects: 1) Orion (personal MCP server for AI memory), 2) Pequelectores (AI book recommender for kids), 3) Book-Tracker (full-stack library manager). Which one interests you?",
+        "response": "Highlighted projects: 1) Orion (open-source MCP server for AI memory), 2) Mishkan (Colombian e-commerce platform), 3) Pacioli (local-first personal finance app), 4) Pequelectores (AI book recommender for kids). Which one interests you?",
         "patterns": [
           "proyectos",
           "projects",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "response": "Proyectos destacados: 1) Orion (MCP personal para memoria de IA), 2) Pequelectores (recomendador de libros con IA para niños), 3) Book-Tracker (gestión de bibliotecas full-stack). ¿Cuál te interesa?",
+        "response": "Proyectos destacados: 1) Orion (MCP open source para memoria de IA), 2) Mishkan (e-commerce para el mercado colombiano), 3) Pacioli (app de finanzas personales local-first), 4) Pequelectores (recomendador de libros con IA para niños). ¿Cuál te interesa?",
         "patterns": [
           "proyectos",
           "projects",
