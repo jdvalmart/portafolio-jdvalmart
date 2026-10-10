@@ -48,12 +48,12 @@ export const Hero = () => {
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">{t.hero.subtitle}</p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition"
             >
               {t.hero.projectsBtn}
-            </a>
+            </Link>
 
             <Link
               to="/about"

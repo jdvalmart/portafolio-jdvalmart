@@ -173,11 +173,11 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         ai_ml:
           "Models: Regression, Classification, Clustering, Neural Networks (MLP, CNN, LSTM). LLMs & RAG: Fine-tuning, RAG Pipelines, Embeddings (ONNX), Vector Search (ChromaDB). NLP & XAI: Transformers (HuggingFace), spaCy, NLTK; LIME, SHAP, Grad-CAM.",
         backend_apis:
-          "Languages: Python (Advanced), SQL, JavaScript. Frameworks: FastAPI (Expert), Node.js (Basic). Architecture: REST APIs, Async Services, Clean Architecture, MCP (Model Context Protocol).",
+          "Languages: Python (Advanced), SQL, JavaScript. Frameworks: FastAPI (Advanced), Node.js (Basic). Architecture: REST APIs, Async Services, Clean Architecture, MCP (Model Context Protocol).",
         data_databases:
           "Processing: Pandas, NumPy, Feature Engineering, Data Cleaning. Storage: PostgreSQL, MySQL, ChromaDB.",
         devops_practices:
-          "Tools: Git/GitHub, Docker (Basic), CI/CD (Basic). Methodologies: Agile/Scrum, Code Reviews, Testing.",
+          "Tools: Git/GitHub, Docker (Intermediate), CI/CD (Intermediate). Methodologies: Agile/Scrum, Code Reviews, Testing.",
       },
       devExperience: [
         {
@@ -251,11 +251,11 @@ export const CvPdf = ({ lang }: CvPdfProps) => {
         ai_ml:
           "Modelos: Regresión, Clasificación, Clustering, Redes Neuronales (MLP, CNN, LSTM). LLMs & RAG: Fine-tuning, Pipelines RAG, Embeddings (ONNX), Búsqueda Vectorial (ChromaDB). NLP & XAI: Transformers (HuggingFace), spaCy, NLTK; LIME, SHAP, Grad-CAM.",
         backend_apis:
-          "Lenguajes: Python (Avanzado), SQL, JavaScript. Frameworks: FastAPI (Experto), Node.js (Básico). Arquitectura: APIs REST, Servicios Async, Arquitectura Limpia, MCP (Model Context Protocol).",
+          "Lenguajes: Python (Avanzado), SQL, JavaScript. Frameworks: FastAPI (Avanzado), Node.js (Básico). Arquitectura: APIs REST, Servicios Async, Arquitectura Limpia, MCP (Model Context Protocol).",
         data_databases:
           "Procesamiento: Pandas, NumPy, Feature Engineering, Limpieza de Datos. Almacenamiento: PostgreSQL, MySQL, ChromaDB.",
         devops_practices:
-          "Herramientas: Git/GitHub, Docker (Básico), CI/CD (Básico). Metodologías: Ágil/Scrum, Revisiones de Código, Testing.",
+          "Herramientas: Git/GitHub, Docker (Intermedio), CI/CD (Intermedio). Metodologías: Ágil/Scrum, Revisiones de Código, Testing.",
       },
       devExperience: [
         {

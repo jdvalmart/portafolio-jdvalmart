@@ -12,14 +12,14 @@ function getTopSkills(n: number): SkillLevel[] {
 }
 
 function SkillCard({ skill, animate }: { skill: SkillLevel; animate: boolean }) {
-  const widthPercent = skill.level * 10; // level 1-10 → 10%-100%
+  const widthPercent = skill.level * 20; // level 1-5 → 20%-100%
 
   return (
     <div className="p-4 rounded-xl bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 shadow-sm">
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">{skill.name}</span>
         <span className="text-xs font-bold text-teal-600 dark:text-teal-400 tabular-nums">
-          {skill.level}/10
+          {skill.level}/5
         </span>
       </div>
       <div className="h-2 bg-zinc-100 dark:bg-zinc-700 rounded-full overflow-hidden">

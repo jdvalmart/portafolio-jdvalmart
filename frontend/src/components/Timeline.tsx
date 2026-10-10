@@ -1,15 +1,8 @@
-import { timeline } from "../data/timeline";
+import { timeline, type TimelineEntry } from "../data/timeline";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useT } from "../i18n/useLanguage";
 
-interface TimelineEntryTranslated {
-  year: number;
-  month?: string;
-  title: string;
-  description: string;
-}
-
-function TimelineItem({ entry, isLast }: { entry: TimelineEntryTranslated; isLast: boolean }) {
+function TimelineItem({ entry, isLast }: { entry: TimelineEntry; isLast: boolean }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -71,12 +64,6 @@ function TimelineItem({ entry, isLast }: { entry: TimelineEntryTranslated; isLas
 
 export function Timeline() {
   const { t } = useT();
-  const entries: TimelineEntryTranslated[] = timeline.map((entry, index) => ({
-    year: entry.year,
-    month: entry.month,
-    title: t.timeline.entries[index]?.title ?? entry.title,
-    description: t.timeline.entries[index]?.desc ?? entry.description,
-  }));
 
   return (
     <section className="py-16 px-4 max-w-3xl mx-auto">
@@ -90,8 +77,12 @@ export function Timeline() {
       </h2>
 
       <div className="relative">
-        {entries.map((entry, index) => (
-          <TimelineItem key={entry.year} entry={entry} isLast={index === timeline.length - 1} />
+        {timeline.map((entry, index) => (
+          <TimelineItem
+            key={`${entry.year}-${entry.title}`}
+            entry={entry}
+            isLast={index === timeline.length - 1}
+          />
         ))}
       </div>
     </section>

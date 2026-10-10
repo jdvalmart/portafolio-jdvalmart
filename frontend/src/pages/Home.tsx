@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { Hero } from "../components/Hero";
 import { StatsBar } from "../components/StatsBar";
@@ -60,18 +61,18 @@ const Home: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{t.home.ctaTitle}</h2>
           <p className="text-teal-100 text-lg mb-8">{t.home.ctaSubtitle}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-8 py-3 bg-white text-teal-700 rounded-lg font-semibold hover:bg-teal-50 transition"
             >
               {t.home.ctaContact}
-            </a>
-            <a
-              href="/projects"
+            </Link>
+            <Link
+              to="/projects"
               className="px-8 py-3 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition"
             >
               {t.home.ctaProjects}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -65,7 +65,7 @@ const es = {
     submit: "Enviar mensaje",
     sending: "Enviando...",
     successTitle: "¡Gracias por contactarme!",
-    successText: "Este es un portafolio demo — envíame un email directo a",
+    successText: "Gracias por tu mensaje. También puedes escribirme directamente a",
     errorText: "Algo salió mal. Inténtalo de nuevo o envía email directamente.",
     sendEmail: "Enviar Email",
     linkedIn: "LinkedIn",
@@ -88,32 +88,6 @@ const es = {
   coreSkills: "Habilidades Principales",
   timeline: {
     title: "Línea de Tiempo",
-    entries: [
-      {
-        title: "Inicio Estudios Tecnológicos (SENA)",
-        desc: "Comencé Análisis y Desarrollo de Software mientras trabajaba tiempo completo. Primer contacto con programación, bases de datos y diseño de software.",
-      },
-      {
-        title: "Operador de Medios Tecnológicos",
-        desc: "Monitoreo de sistemas críticos de seguridad para 200+ usuarios con 99% disponibilidad. Desarrollé scripts de automatización en Python y SQL para gestión de inventario, reduciendo procesamiento manual 30%. Forjé disciplina operativa y cultura de cero errores.",
-      },
-      {
-        title: "Practicante Desarrollador Full-Stack (SENA) — 6 meses",
-        desc: "Construcción de interfaces frontend con Vue.js y APIs backend con PHP/Laravel. Gestión de bases de datos MySQL. Primera experiencia en equipos ágiles con Scrum. Prácticas de 6 meses.",
-      },
-      {
-        title: "Bootcamp IA — MinTIC (Talento Tech)",
-        desc: "20 semanas intensivas: Machine Learning, NLP, Deep Learning, XAI, MLOps y Cloud. 33 laboratorios completados con TensorFlow, HuggingFace y despliegue de modelos como APIs.",
-      },
-      {
-        title: "Diplomado en Ciencias de la Computación",
-        desc: "Patrones de arquitectura de software (SOA, JEE, .NET), algoritmos avanzados (teoría de grafos, búsqueda en texto, estructuras de datos) y análisis de complejidad en Politécnico Grancolombiano.",
-      },
-      {
-        title: "Desarrollador de Software IA — Trajectory Inc.",
-        desc: "Construcción de una plataforma MCP empresarial que conecta asistentes de IA con sistemas internos. Pipelines RAG en producción (ChromaDB, embeddings). Python, FastAPI, PostgreSQL, Docker. Arquitectura limpia, code reviews, colaboración ágil con equipo canadiense.",
-      },
-    ],
   },
   certs: {
     title: "Certificaciones y Formación",

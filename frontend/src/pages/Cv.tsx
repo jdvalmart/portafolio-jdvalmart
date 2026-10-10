@@ -136,8 +136,8 @@ const CvPage = () => {
                 </p>
                 <p>
                   {lang === "en"
-                    ? "Languages: Python (Advanced), SQL, JavaScript. Frameworks: FastAPI (Expert), Node.js (Basic). Architecture: REST APIs, Async Services, Clean Architecture, MCP (Model Context Protocol)."
-                    : "Lenguajes: Python (Avanzado), SQL, JavaScript. Frameworks: FastAPI (Experto), Node.js (Básico). Arquitectura: APIs REST, Servicios Async, Arquitectura Limpia, MCP (Model Context Protocol)."}
+                    ? "Languages: Python (Advanced), SQL, JavaScript. Frameworks: FastAPI (Advanced), Node.js (Basic). Architecture: REST APIs, Async Services, Clean Architecture, MCP (Model Context Protocol)."
+                    : "Lenguajes: Python (Avanzado), SQL, JavaScript. Frameworks: FastAPI (Avanzado), Node.js (Básico). Arquitectura: APIs REST, Servicios Async, Arquitectura Limpia, MCP (Model Context Protocol)."}
                 </p>
               </div>
               <div>
@@ -156,8 +156,8 @@ const CvPage = () => {
                 </p>
                 <p>
                   {lang === "en"
-                    ? "Tools: Git/GitHub, Docker (Basic), CI/CD (Basic). Methodologies: Agile/Scrum, Code Reviews, Testing."
-                    : "Herramientas: Git/GitHub, Docker (Básico), CI/CD (Básico). Metodologías: Ágil/Scrum, Revisiones de Código, Testing."}
+                    ? "Tools: Git/GitHub, Docker (Intermediate), CI/CD (Intermediate). Methodologies: Agile/Scrum, Code Reviews, Testing."
+                    : "Herramientas: Git/GitHub, Docker (Intermedio), CI/CD (Intermedio). Metodologías: Ágil/Scrum, Revisiones de Código, Testing."}
                 </p>
               </div>
             </div>

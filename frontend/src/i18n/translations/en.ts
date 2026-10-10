@@ -64,7 +64,7 @@ const en = {
     submit: "Send Message",
     sending: "Sending...",
     successTitle: "Thanks for reaching out!",
-    successText: "This is a demo portfolio — send me a direct email at",
+    successText: "Thanks for your message. You can also reach me directly at",
     errorText: "Something went wrong. Please try again or email directly.",
     sendEmail: "Send Email",
     linkedIn: "LinkedIn",
@@ -87,32 +87,6 @@ const en = {
   coreSkills: "Core Skills",
   timeline: {
     title: "Experience Timeline",
-    entries: [
-      {
-        title: "Started Tech Studies (SENA)",
-        desc: "Began Software Analysis & Development program while working full-time. First contact with programming, databases, and software design.",
-      },
-      {
-        title: "Technology Media Operator",
-        desc: "Monitored critical security systems for 200+ users with 99% availability. Developed Python/SQL automation scripts for inventory management, reducing manual processing by 30%. Forged operational discipline and zero-error culture.",
-      },
-      {
-        title: "Full-Stack Developer Internship (SENA) — 6 months",
-        desc: "Built frontend interfaces with Vue.js and backend APIs with PHP/Laravel. Managed MySQL databases. First experience in agile teams with Scrum. 6-month internship.",
-      },
-      {
-        title: "AI Bootcamp — MinTIC (Talento Tech)",
-        desc: "20 intensive weeks: Machine Learning, NLP, Deep Learning, XAI, MLOps, and Cloud. 33 labs completed with TensorFlow, HuggingFace, and model deployment as APIs.",
-      },
-      {
-        title: "Diploma in Computer Science",
-        desc: "Software architecture patterns (SOA, JEE, .NET), advanced algorithms (graph theory, text search, data structures), and complexity analysis at Politécnico Grancolombiano.",
-      },
-      {
-        title: "AI Software Developer — Trajectory Inc.",
-        desc: "Building an enterprise MCP platform that connects AI assistants to internal systems. Production RAG pipelines (ChromaDB, embeddings). Python, FastAPI, PostgreSQL, Docker. Clean architecture, code reviews, agile collaboration with a Canadian team.",
-      },
-    ],
   },
   certs: {
     title: "Certifications & Education",

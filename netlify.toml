@@ -4,11 +4,6 @@
   base = "frontend"
 
 [[redirects]]
-  from = "/cv/*"
-  to = "/cv/:splat"
-  status = 200
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
