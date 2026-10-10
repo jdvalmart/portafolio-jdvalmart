@@ -13,8 +13,17 @@ export const t = {
   nav: {
     home: "Home",
     projects: "Projects",
+    notes: "Notes",
     about: "About",
     contact: "Contact",
+  },
+  notes: {
+    title: "Notes",
+    subtitle: "Writing about what I build and learn: RAG, LLMs, MCP, and backend engineering.",
+    empty: "No notes yet.",
+    backToNotes: "← All notes",
+    minRead: "min read",
+    tags: "Tags",
   },
   hero: {
     greeting: "Hi, I'm Juan David",

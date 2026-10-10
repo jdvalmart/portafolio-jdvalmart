@@ -68,6 +68,10 @@
         "content": "Juan David's verified education and training includes: AI Bootcamp (Basico + Intermedio) from Talento Tech, MinTIC (2025-2026); Diploma in Computer Science from Politecnico Grancolombiano (2025); Software Engineering at Politecnico Grancolombiano (in progress); and Tecnologo ADSO from SENA (2020-2022)."
     },
     {
+        "id": "note-rag-onnx",
+        "content": "In his note 'How I built a RAG chatbot with ChromaDB and local ONNX embeddings', Juan David explains the retrieval-augmented chatbot on this site. It retrieves the most relevant chunks of his own content, augments the prompt, and generates a grounded answer. Embeddings run locally with all-MiniLM-L6-v2 via ONNX Runtime instead of a hosted API, removing latency and external dependencies. ChromaDB stores the vectors with cosine similarity, and FastAPI streams the answer with Server-Sent Events. Sessions and cache live behind a stateless store (in-memory or Redis). His key lesson: own your retrieval, fail loudly, and keep retrieval logic in one place."
+    },
+    {
         "id": "contact-01",
         "content": "You can contact Juan David through the contact form on this website, by email at juanvalencia9411@outlook.com, or on LinkedIn. He is based in Bogota, Colombia and is open to AI engineering, RAG, LLM, and backend opportunities."
     }

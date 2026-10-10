@@ -1,0 +1,128 @@
+---
+title: "How I built a RAG chatbot with ChromaDB and local ONNX embeddings"
+description: "A practical walkthrough of the retrieval-augmented chatbot behind this site: local embeddings, vector search, streaming answers, and graceful degradation."
+date: "2026-10-08"
+tags: ["RAG", "ChromaDB", "ONNX", "FastAPI", "LLM"]
+---
+
+Most "chat with my data" demos break the moment the embedding API is down, the
+free tier expires, or the first request hits a sleeping server. I wanted the
+assistant on this site to keep working no matter what, and to prove a point:
+retrieval-augmented generation is not magic, it is a pipeline you can own end to
+end.
+
+This is how I built it, and the decisions I would make again.
+
+## The shape of the pipeline
+
+At its core, a RAG system is three steps:
+
+1. **Retrieve** the most relevant pieces of your own content for a question.
+2. **Augment** the prompt with that context.
+3. **Generate** an answer grounded in it.
+
+The hard part is almost never step three. It is step one. If retrieval returns
+the wrong context, a perfect model will still give you a confident, wrong answer.
+
+So I focused everything on making retrieval fast, local, and honest.
+
+## Embeddings: local ONNX instead of an API
+
+My first version called a hosted embeddings API at request time. It worked, but
+it introduced three problems at once: latency, a hard external dependency, and a
+tempting failure mode. When the API failed, my code silently fell back to a
+hashing function that produced vectors with no semantic meaning. The chatbot
+still answered — over irrelevant context. That is worse than failing loudly.
+
+The fix was to stop depending on the network. I now use `all-MiniLM-L6-v2`
+through ONNX Runtime, running in-process:
+
+```python
+from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
+
+_embedding_function = ONNXMiniLM_L6_V2()
+
+def embed(texts: list[str]) -> list[list[float]]:
+    return [[float(value) for value in vector]
+            for vector in _embedding_function(texts)]
+```
+
+A 384-dimensional model, no API key, no per-request cost, and the same result
+every time. The SHA-256 fallback is gone — if embeddings fail now, the service
+fails, and I want to know about it.
+
+## Retrieval: ChromaDB with cosine similarity
+
+The corpus is a small set of curated documents about my work. I compute their
+embeddings once on startup and store them in ChromaDB:
+
+```python
+collection = client.get_or_create_collection(
+    name="portfolio_chunks",
+    metadata={"hnsw:space": "cosine"},
+)
+collection.add(ids=ids, documents=documents, embeddings=embeddings)
+```
+
+At query time the flow is short:
+
+```python
+query_embedding = (await embed_texts([query]))[0]
+results = collection.query(query_embeddings=[query_embedding], n_results=3)
+context = "\n\n".join(result["content"] for result in results)
+```
+
+For a knowledge base this size, three chunks is plenty. More context mostly adds
+noise and cost.
+
+## Generation: stream the answer
+
+The backend is FastAPI. The endpoint returns Server-Sent Events so the answer
+appears token by token instead of after a long pause:
+
+```python
+async def generate():
+    async for chunk in chat_response_stream(messages):
+        yield chunk
+    yield "data: [DONE]\n\n"
+
+return StreamingResponse(generate(), media_type="text/event-stream")
+```
+
+The prompt is strict: use only the provided context, and if the answer is not
+there, say so. A model that admits ignorance is more useful than one that
+invents.
+
+## Make it stateless
+
+Early on, conversation history lived in a Python dictionary. That is fine until
+you restart the process or run more than one instance — then a follow-up
+question can land on a server that has never seen the conversation.
+
+I moved sessions and the response cache behind a small interface with two
+implementations: an in-memory store for local development and Redis for
+production. The API process itself holds no state, so it can scale
+horizontally and restart without losing context.
+
+## What was actually hard
+
+The model and the vector database were the easy parts. The hard parts were the
+boring ones:
+
+- **Silent degradation.** The SHA-256 fallback looked like resilience and was
+  actually a bug generator. Removing it made the system simpler and more
+  trustworthy.
+- **Splitting one truth.** I briefly had retrieval logic in both the frontend
+  and the backend. They drifted within days. Now the backend owns retrieval and
+  the frontend only talks to it.
+- **Cold starts.** A sleeping host makes the first question feel broken. Local
+  embeddings and a warm process cut that down dramatically.
+
+## What I would tell you
+
+Own your retrieval. A local embedding model is small enough to be boring, and
+boring is exactly what you want in the part of the system that decides what the
+LLM gets to see. Fail loudly, keep retrieval in one place, and let the model do
+the one thing it is good at: writing an answer from the context you gave it.
+
+You can try the result on the home page — it is the "Talk to my CV" agent.

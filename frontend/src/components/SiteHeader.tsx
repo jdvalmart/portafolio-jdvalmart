@@ -10,6 +10,7 @@ import { useDarkMode } from "@/hooks/useDarkMode";
 const NAV_ITEMS = [
   { href: "/", label: t.nav.home },
   { href: "/projects", label: t.nav.projects },
+  { href: "/notes", label: t.nav.notes },
   { href: "/about", label: t.nav.about },
   { href: "/contact", label: t.nav.contact },
 ];

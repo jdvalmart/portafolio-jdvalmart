@@ -14,6 +14,13 @@ body {
   font-family: var(--font-sans);
 }
 
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
 @keyframes token-pulse {
   0%,
   100% {
