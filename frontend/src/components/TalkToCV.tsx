@@ -29,7 +29,7 @@ export function TalkToCV() {
       aria-label="Talk to my CV"
     >
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-4">
+        <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-4">
           <span className="animate-token" aria-hidden="true">
             ●
           </span>

@@ -58,12 +58,16 @@ jdvalmart-dev/
 │   │   │   ├── robots.ts           # Generated robots.txt
 │   │   │   └── opengraph-image.tsx # Dynamic OG/Twitter image (next/og)
 │   │   ├── components/             # Hero, ChatBot, Timeline, Skills, views…
-│   │   ├── content/site.ts         # English site copy + site constants
+│   │   ├── content/
+│   │   │   ├── site.ts             # English site copy + site constants
+│   │   │   └── notes/*.mdx         # Notes (blog) articles
+│   │   ├── lib/notes.ts            # MDX frontmatter loading
 │   │   ├── hooks/                  # useChatBot, useDarkMode, useScrollReveal
 │   │   ├── services/rag.ts         # Backend chat client (SSE)
 │   │   └── data/                   # Projects, skills, timeline, certifications
-│   ├── public/
+│   ├── public/                     # favicon, portrait.jpg
 │   ├── next.config.ts
+│   ├── lighthouserc.json           # Lighthouse CI budgets
 │   ├── vitest.config.ts
 │   └── package.json
 │
@@ -162,6 +166,10 @@ graph TD
 - Project category filter (All / AI & ML / Full Stack)
 - 5 code-split chunks: `React.lazy()` for Projects, About, Contact, CV, ChatBot
 
+### Notes
+- MDX notes rendered statically under `/notes` and `/notes/[slug]`
+- Frontmatter (title, description, date, tags) and computed reading time
+
 ### Contact
 - React Hook Form + Zod validation
 - Formspree API with automatic mailto fallback when no API key is set
@@ -241,6 +249,29 @@ npm run build
 
 ---
 
+## Quality
+
+Every change is gated locally and in CI:
+
+- **Backend** — `ruff check .`, `ruff format --check .`, `mypy`, `pytest` (91 tests)
+- **Frontend** — `eslint`, `prettier --check`, `tsc --noEmit`, `vitest` (39 tests), `next build`
+
+Performance and SEO budgets are checked with Lighthouse CI:
+
+```bash
+cd frontend
+npm run build
+npm run lighthouse
+```
+
+Targets: Performance ≥ 90, Accessibility ≥ 90, Best Practices ≥ 90, SEO ≥ 90.
+
+### Assets
+
+Place the professional portrait at `frontend/public/portrait.jpg` (portrait
+orientation, roughly 4:5). Until it exists the About page shows a graceful
+initials fallback instead of a broken image.
+
 ## Roadmap
 
 | Phase | Status | Description |
@@ -250,8 +281,10 @@ npm run build
 | **2. Content hygiene** | Done | Honest skills, timeline single source, profile repositioning, URL unification |
 | **3. Reliable RAG** | Done | Local ONNX embeddings, external session state, observability |
 | **4. Next.js SSG** | Done | SEO-friendly static rendering, metadata API, sitemap, English-only |
-| **5. Identity** | Planned | Visual identity, conversational hero, About with photo |
-| **6. Deep content** | Planned | Project articles (Mishkan, Orion, Pacioli) and a notes/blog section |
+| **5. Identity** | Done | Visual identity, conversational hero, About with photo |
+| **6. Deep content** | Done | Project case studies (Orion, Mishkan, Pacioli) and a Labs section |
+| **7. Notes** | Done | MDX notes section with a first RAG article |
+| **8. Hardening** | Done | Accessibility, Lighthouse budgets, cleanup |
 
 ---
 

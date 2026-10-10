@@ -35,7 +35,7 @@ const CvPage = () => {
     <>
       <section className="max-w-4xl mx-auto py-20 px-6">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-center flex-1">{t.hero.cvBtn}</h2>
+          <h1 className="font-display text-3xl font-bold text-center flex-1">{t.hero.cvBtn}</h1>
           <button
             onClick={handleDownload}
             disabled={isGenerating}
@@ -69,9 +69,9 @@ const CvPage = () => {
         <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-8 space-y-6">
           {/* Name */}
           <div>
-            <h1 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
+            <h2 className="font-display text-2xl font-bold text-zinc-800 dark:text-zinc-100">
               Juan David Valencia
-            </h1>
+            </h2>
             <p className="text-teal-600 dark:text-teal-400 text-lg">{t.hero.role}</p>
           </div>
 

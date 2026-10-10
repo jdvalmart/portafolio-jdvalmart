@@ -27,7 +27,7 @@ export function AboutView() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             } transition-all duration-700`}
           >
-            <p className="text-xs font-semibold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-3">
               {t.about.eyebrow}
             </p>
             <h1 className="font-display text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
