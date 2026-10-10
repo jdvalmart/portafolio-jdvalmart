@@ -6,6 +6,10 @@ frontend/node_modules
 dist
 frontend/dist
 dist-ssr
+.next
+frontend/.next
+frontend/out
+*.tsbuildinfo
 
 # Environment
 .env

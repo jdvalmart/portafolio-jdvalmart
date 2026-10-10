@@ -3,7 +3,7 @@ import { generateResponse } from "../rag";
 
 describe("generateResponse", () => {
   beforeEach(() => {
-    vi.stubEnv("VITE_API_URL", "http://localhost:8000");
+    vi.stubEnv("NEXT_PUBLIC_API_URL", "http://localhost:8000");
   });
 
   afterEach(() => {
@@ -40,7 +40,7 @@ describe("generateResponse", () => {
   });
 
   it("returns null when no API URL is configured", async () => {
-    vi.stubEnv("VITE_API_URL", "");
+    vi.stubEnv("NEXT_PUBLIC_API_URL", "");
 
     const result = await generateResponse("Who are you?");
     expect(result).toBeNull();

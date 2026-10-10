@@ -1,6 +1,8 @@
-import { useScrollReveal } from "../hooks/useScrollReveal";
-import { skillGroups, type SkillLevel } from "../data/skills";
-import { useT } from "../i18n/useLanguage";
+"use client";
+
+import { t } from "@/content/site";
+import { skillGroups, type SkillLevel } from "@/data/skills";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /**
  * Extracts the top N skills (by level) across all skill groups.
@@ -34,7 +36,6 @@ function SkillCard({ skill, animate }: { skill: SkillLevel; animate: boolean }) 
 
 export function SkillsPreview() {
   const { ref, isVisible } = useScrollReveal();
-  const { t } = useT();
   const topSkills = getTopSkills(6);
 
   return (

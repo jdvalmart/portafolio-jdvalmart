@@ -1,5 +1,5 @@
-import { useT } from "../i18n/useLanguage";
-import { LEVELS, ringColors, skillGroups, type SkillLevel } from "../data/skills";
+import { t } from "@/content/site";
+import { LEVELS, ringColors, skillGroups, type SkillLevel } from "@/data/skills";
 
 function SkillRing({ skill }: { skill: SkillLevel }) {
   const radius = 22;
@@ -57,8 +57,6 @@ function SkillRing({ skill }: { skill: SkillLevel }) {
 }
 
 export const Skills = () => {
-  const { t } = useT();
-
   return (
     <section id="skills" className="max-w-4xl mx-auto px-6 pb-20">
       <h2 className="text-3xl font-bold text-center mb-10 text-zinc-900 dark:text-zinc-100">

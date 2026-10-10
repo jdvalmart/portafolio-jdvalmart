@@ -1,6 +1,9 @@
+.next
+out
 dist
 node_modules
 package-lock.json
 bun.lock
 public
 coverage
+next-env.d.ts

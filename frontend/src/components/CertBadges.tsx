@@ -1,6 +1,8 @@
-import { certifications } from "../data/certifications";
-import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/useLanguage";
+"use client";
+
+import { t } from "@/content/site";
+import { certifications } from "@/data/certifications";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface CertBadgeTranslated {
   name: string;
@@ -55,7 +57,6 @@ function CertBadge({ cert, animate }: { cert: CertBadgeTranslated; animate: bool
 
 export function CertBadges() {
   const { ref, isVisible } = useScrollReveal();
-  const { t } = useT();
 
   const translatedCerts: CertBadgeTranslated[] = certifications.map((cert, index) => ({
     name: t.certs.entries[index]?.name ?? cert.name,

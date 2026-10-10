@@ -1,7 +1,11 @@
-import type { Project } from "../data/projects";
+"use client";
+
+import Link from "next/link";
+
+import { t } from "@/content/site";
+import type { Project } from "@/data/projects";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ProjectCard } from "./ProjectCard";
-import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/useLanguage";
 
 interface FeaturedProjectsProps {
   projects: Project[];
@@ -9,7 +13,6 @@ interface FeaturedProjectsProps {
 
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   const { ref, isVisible } = useScrollReveal();
-  const { t } = useT();
   const featured = projects.slice(0, 3);
 
   return (
@@ -25,7 +28,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         >
           {t.featured.title}
         </h2>
-        <a
+        <Link
           href="/projects"
           className="
             group inline-flex items-center gap-1.5
@@ -45,7 +48,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           >
             →
           </span>
-        </a>
+        </Link>
       </div>
 
       {/* Project Grid with scroll reveal */}

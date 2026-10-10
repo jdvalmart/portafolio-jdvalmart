@@ -1,7 +1,10 @@
-import { useState, useRef, useEffect, useCallback, type KeyboardEvent } from "react";
-import { useChatBot } from "../hooks/useChatBot";
-import type { Message } from "../hooks/useChatBot";
-import { useT } from "../i18n/useLanguage";
+"use client";
+
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
+
+import { t } from "@/content/site";
+import { useChatBot } from "@/hooks/useChatBot";
+import type { Message } from "@/hooks/useChatBot";
 
 /**
  * Typing indicator — three animated dots.
@@ -58,11 +61,10 @@ function ChatBubble({ message }: { message: Message }) {
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const { t, lang } = useT();
   const { messages, isLoading, error, sendMessage, streamingContent } = useChatBot({
     welcomeMessage: t.chatbot.welcome,
     fallbackMessage: t.chatbot.fallback,
-    lang,
+    lang: "en",
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);

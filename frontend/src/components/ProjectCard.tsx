@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import type { Project } from "../data/projects";
-import { useT } from "../i18n/useLanguage";
+import Link from "next/link";
+
+import { t } from "@/content/site";
+import type { Project } from "@/data/projects";
 
 interface Props {
   project: Project;
 }
 
 export function ProjectCard({ project }: Props) {
-  const { t } = useT();
-
   return (
     <article
       className="
@@ -291,7 +290,7 @@ export function ProjectCard({ project }: Props) {
           )}
 
           <Link
-            to={`/projects/${project.slug}`}
+            href={`/projects/${project.slug}`}
             className="
               text-sm
               font-medium

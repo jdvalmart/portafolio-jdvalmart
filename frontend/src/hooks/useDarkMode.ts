@@ -8,40 +8,37 @@ interface DarkModeResult {
 const STORAGE_KEY = "theme";
 const DARK_CLASS = "dark";
 
-function getInitialDark(): boolean {
-  // Check localStorage first
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored !== null) {
-    return stored === DARK_CLASS;
-  }
-  // Fall back to system preference
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
-
 /**
  * Dark mode hook that:
  * - Reads/writes localStorage key "theme"
  * - Syncs the <html> element's "dark" class
  * - Detects prefers-color-scheme on first visit
  * - Returns { isDark, toggle }
+ *
+ * SSR-safe: the initial state is `null` until mounted, so the stored
+ * preference is only read on the client.
  */
 export function useDarkMode(): DarkModeResult {
-  const [isDark, setIsDark] = useState<boolean>(getInitialDark);
+  const [isDark, setIsDark] = useState<boolean | null>(null);
 
-  // Sync the <html> class whenever isDark changes
   useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add(DARK_CLASS);
-    } else {
-      root.classList.remove(DARK_CLASS);
-    }
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const initial =
+      stored !== null
+        ? stored === DARK_CLASS
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDark(initial);
+  }, []);
+
+  useEffect(() => {
+    if (isDark === null) return;
+    document.documentElement.classList.toggle(DARK_CLASS, isDark);
     localStorage.setItem(STORAGE_KEY, isDark ? DARK_CLASS : "light");
   }, [isDark]);
 
   const toggle = useCallback(() => {
-    setIsDark((prev) => !prev);
+    setIsDark((prev) => !(prev ?? false));
   }, []);
 
-  return { isDark, toggle };
+  return { isDark: isDark ?? false, toggle };
 }

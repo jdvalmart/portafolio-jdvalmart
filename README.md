@@ -20,11 +20,11 @@ Portfolio and RAG chatbot for an AI Software Developer specializing in Retrieval
 ```mermaid
 graph TB
     subgraph Browser["Browser"]
-        SPA["React 19 SPA<br/>Vite · TypeScript<br/>Tailwind CSS 4"]
+        SPA["Next.js App Router<br/>SSG · TypeScript<br/>Tailwind CSS 4"]
     end
 
-    subgraph CDN["Netlify"]
-        Assets["Static Assets<br/>JS · CSS · SVG"]
+    subgraph CDN["Vercel"]
+        Assets["Static HTML · JS · CSS<br/>Image optimization"]
     end
 
     subgraph Backend["FastAPI RAG Backend (Render)"]
@@ -37,7 +37,7 @@ graph TB
         FormAPI["POST /f/{form-id}"]
     end
 
-    SPA -->|"react-router v7"| CDN
+    SPA -->|"static assets (SSG)"| CDN
     SPA -->|"fetch stream (SSE)"| ChatAPI
     ChatAPI --> Vector
     ChatAPI --> Groq
@@ -50,31 +50,32 @@ graph TB
 
 ```
 jdvalmart-dev/
-├── frontend/                       # React 19 · TypeScript · Vite
+├── frontend/                       # Next.js 15 (App Router, SSG) · TypeScript
 │   ├── src/
-│   │   ├── components/             # UI: Layout, Hero, ChatBot, Timeline, Skills…
-│   │   ├── pages/                  # Home, Projects, About, Contact, CV
-│   │   ├── routes/                 # Lazy-loaded route definitions
+│   │   ├── app/                    # Routes: layout, page, about, projects, contact, cv
+│   │   │   ├── layout.tsx          # Metadata API, JSON-LD, header/footer, widgets
+│   │   │   ├── sitemap.ts          # Generated sitemap.xml
+│   │   │   ├── robots.ts           # Generated robots.txt
+│   │   │   └── opengraph-image.tsx # Dynamic OG/Twitter image (next/og)
+│   │   ├── components/             # Hero, ChatBot, Timeline, Skills, views…
+│   │   ├── content/site.ts         # English site copy + site constants
 │   │   ├── hooks/                  # useChatBot, useDarkMode, useScrollReveal
-│   │   ├── services/rag.ts         # Keyword retrieval + HuggingFace API
-│   │   ├── data/                   # Knowledge base, projects, timeline, certs
-│   │   └── i18n/                   # EN/ES translations + LanguageContext
+│   │   ├── services/rag.ts         # Backend chat client (SSE)
+│   │   └── data/                   # Projects, skills, timeline, certifications
 │   ├── public/
-│   ├── index.html                  # Open Graph, Twitter Card, JSON-LD
-│   ├── vite.config.ts
+│   ├── next.config.ts
 │   ├── vitest.config.ts
 │   └── package.json
 │
-├── backend/                        # [Phase 2] FastAPI RAG microservice
+├── backend/                        # FastAPI RAG microservice
 │   ├── src/
 │   │   ├── routers/
-│   │   ├── services/               # embeddings · vector_store · rag · llm
+│   │   ├── services/               # embeddings · vector_store · rag · llm · state
 │   │   └── data/chunks.json
 │   ├── tests/
 │   ├── pyproject.toml
 │   └── Dockerfile
 │
-├── netlify.toml
 └── README.md
 ```
 
@@ -155,7 +156,7 @@ graph TD
 
 ### UX
 - Dark mode with system preference detection and `localStorage` persistence
-- Full English/Spanish i18n via React Context
+- English-only site with server-rendered pages (SSG)
 - Scroll-triggered counter animations (0 → target at 60 fps)
 - IntersectionObserver-based fade-in/slide-in on scroll
 - Project category filter (All / AI & ML / Full Stack)
@@ -167,8 +168,9 @@ graph TD
 - Loading and error states
 
 ### SEO & accessibility
-- `react-helmet-async` with per-page `<title>` and `<meta name="description">`
-- Open Graph, Twitter Card, JSON-LD structured data in `index.html`
+- Next.js Metadata API with per-page `<title>`, description, and canonical URLs
+- Static pre-rendering (SSG), `sitemap.xml`, `robots.txt`, and dynamic OG/Twitter images
+- JSON-LD `Person` structured data
 - Skip-to-content link, `aria-expanded` on chatbot toggle, `aria-live="polite"` on messages
 - Semantic HTML throughout
 
@@ -189,18 +191,16 @@ graph TD
 
 | Layer | Stack |
 |-------|-------|
-| Framework | React 19 · TypeScript 5.9 |
-| Build | Vite 7 |
+| Framework | Next.js 15 (App Router, SSG) · React 19 · TypeScript 5.9 |
 | Styling | Tailwind CSS 4 |
-| Routing | React Router v7 |
 | Forms | React Hook Form + Zod 4 |
-| SEO | react-helmet-async |
+| SEO | Next.js Metadata API · sitemap · robots · next/og |
 | Contact | Formspree API |
-| Backend | FastAPI · ChromaDB · ONNX embeddings |
+| Backend | FastAPI · ChromaDB · ONNX embeddings · Redis (optional) |
 | AI | Groq (llama-3.1-8b-instant) · SSE streaming |
 | Testing | Vitest 4 · React Testing Library 16 |
-| Linting | ESLint 9 · typescript-eslint 8 |
-| Deploy | Netlify (frontend) · Render (backend) |
+| Linting | ESLint 9 · typescript-eslint 8 · Prettier |
+| Deploy | Vercel (frontend) · Render (backend) |
 
 ---
 
@@ -248,8 +248,8 @@ npm run build
 | **0. Quality tooling** | Done | CI (ruff, mypy, pytest, eslint, prettier, tsc, vitest, build), pre-commit, Dependabot, ADRs |
 | **1. Critical fixes** | Done | Self-contained backend image, remove confidential data, single RAG path |
 | **2. Content hygiene** | Done | Honest skills, timeline single source, profile repositioning, URL unification |
-| **3. Reliable RAG** | Next | Local ONNX embeddings, external session state, observability |
-| **4. Next.js SSG** | Planned | SEO-friendly static rendering, metadata API, sitemap |
+| **3. Reliable RAG** | Done | Local ONNX embeddings, external session state, observability |
+| **4. Next.js SSG** | Done | SEO-friendly static rendering, metadata API, sitemap, English-only |
 | **5. Identity** | Planned | Visual identity, conversational hero, About with photo |
 | **6. Deep content** | Planned | Project articles (Mishkan, Orion, Pacioli) and a notes/blog section |
 

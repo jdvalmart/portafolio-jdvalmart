@@ -1,34 +1,39 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useT } from "../i18n/useLanguage";
-import { useState, useCallback } from "react";
-import { CvPdf } from "./CvPdf";
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+
+import { t } from "@/content/site";
 
 export const Hero = () => {
-  const { t, lang } = useT();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isGeneratingCV, setIsGeneratingCV] = useState(false);
 
   const handleDownloadCV = useCallback(async () => {
     setIsGeneratingCV(true);
     try {
-      const { pdf } = await import("@react-pdf/renderer");
-      const doc = pdf(<CvPdf lang={lang} />);
+      const [{ pdf }, { CvPdf }] = await Promise.all([
+        import("@react-pdf/renderer"),
+        import("./CvPdf"),
+      ]);
+      const doc = pdf(<CvPdf lang="en" />);
       const generatedBlob = await doc.toBlob();
       const url = URL.createObjectURL(generatedBlob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `Juan_David_Valencia_CV_${lang.toUpperCase()}.pdf`;
+      link.download = "Juan_David_Valencia_CV.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     } catch (err) {
       console.error("PDF generation failed:", err);
-      navigate("/cv");
+      router.push("/cv");
     } finally {
       setIsGeneratingCV(false);
     }
-  }, [lang, navigate]);
+  }, [router]);
 
   return (
     <section className="relative min-h-svh flex items-start md:items-center pt-24 md:pt-0 overflow-x-hidden bg-[linear-gradient(to_bottom_right,#f0fdfa,#ecfeff)] dark:bg-[linear-gradient(to_bottom_right,#0f172a,#042f2e)]">
@@ -49,14 +54,14 @@ export const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/projects"
+              href="/projects"
               className="px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition"
             >
               {t.hero.projectsBtn}
             </Link>
 
             <Link
-              to="/about"
+              href="/about"
               className="px-6 py-3 border border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-teal-900/20 transition"
             >
               {t.hero.aboutBtn}
@@ -65,7 +70,7 @@ export const Hero = () => {
               onClick={handleDownloadCV}
               disabled={isGeneratingCV}
               className="px-6 py-3 bg-zinc-900 text-white rounded-lg font-medium hover:bg-zinc-800 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              aria-label={lang === "en" ? "Download CV as PDF" : "Descargar CV como PDF"}
+              aria-label="Download CV as PDF"
             >
               <svg
                 className="w-4 h-4"
@@ -81,7 +86,7 @@ export const Hero = () => {
                   d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                 />
               </svg>
-              {isGeneratingCV ? (lang === "en" ? "Generating..." : "Generando...") : t.hero.cvBtn}
+              {isGeneratingCV ? "Generating..." : t.hero.cvBtn}
             </button>
           </div>
         </div>

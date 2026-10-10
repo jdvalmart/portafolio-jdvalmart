@@ -3,16 +3,11 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 const mockSendMessage = vi.fn();
 const mockUseChatBot = vi.fn();
-const mockUseT = vi.fn();
 
 Element.prototype.scrollIntoView = vi.fn();
 
 vi.mock("../../hooks/useChatBot", () => ({
   useChatBot: (...args: unknown[]) => mockUseChatBot(...args),
-}));
-
-vi.mock("../../i18n/useLanguage", () => ({
-  useT: () => mockUseT(),
 }));
 
 import ChatBot from "../../components/ChatBot";
@@ -25,51 +20,34 @@ const defaultChatState = {
   sendMessage: mockSendMessage,
 };
 
-const defaultT = {
-  t: {
-    chatbot: {
-      welcome: "Welcome!",
-      assistant: "AI Assistant",
-      placeholder: "Ask anything...",
-      sendMessage: "Send",
-      closeChat: "Close",
-      openChat: "Open",
-      fallback: "Fallback",
-    },
-  },
-  lang: "en" as const,
-  setLang: vi.fn(),
-};
-
 describe("ChatBot", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockUseChatBot.mockReturnValue(defaultChatState);
-    mockUseT.mockReturnValue(defaultT);
   });
 
   describe("rendering", () => {
     it("renders the FAB button", () => {
       render(<ChatBot />);
-      expect(screen.getByLabelText("Open")).toBeInTheDocument();
+      expect(screen.getByLabelText("Open chat")).toBeInTheDocument();
     });
 
     it("shows chat panel when FAB is clicked", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
+      fireEvent.click(screen.getByLabelText("Open chat"));
       expect(screen.getByText("AI Assistant")).toBeInTheDocument();
     });
 
     it("shows welcome message in the panel", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
+      fireEvent.click(screen.getByLabelText("Open chat"));
       expect(screen.getByText("Welcome!")).toBeInTheDocument();
     });
 
     it("hides FAB when panel is open", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      const closeButtons = screen.getAllByLabelText("Close");
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      const closeButtons = screen.getAllByLabelText("Close chat");
       expect(closeButtons.length).toBeGreaterThanOrEqual(1);
     });
   });
@@ -77,8 +55,8 @@ describe("ChatBot", () => {
   describe("input", () => {
     it("renders text input when panel is open", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      expect(screen.getByPlaceholderText("Ask anything...")).toBeInTheDocument();
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      expect(screen.getByPlaceholderText("Ask me anything...")).toBeInTheDocument();
     });
 
     it("disables input when loading", () => {
@@ -87,14 +65,14 @@ describe("ChatBot", () => {
         isLoading: true,
       });
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      expect(screen.getByPlaceholderText("Ask anything...")).toBeDisabled();
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      expect(screen.getByPlaceholderText("Ask me anything...")).toBeDisabled();
     });
 
     it("calls sendMessage on Enter key", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      const input = screen.getByPlaceholderText("Ask anything...");
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      const input = screen.getByPlaceholderText("Ask me anything...");
       fireEvent.change(input, { target: { value: "Hello" } });
       fireEvent.keyDown(input, { key: "Enter" });
       expect(mockSendMessage).toHaveBeenCalledWith("Hello");
@@ -102,19 +80,19 @@ describe("ChatBot", () => {
 
     it("calls sendMessage on send button click", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      const input = screen.getByPlaceholderText("Ask anything...");
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      const input = screen.getByPlaceholderText("Ask me anything...");
       fireEvent.change(input, { target: { value: "Test message" } });
-      fireEvent.click(screen.getByLabelText("Send"));
+      fireEvent.click(screen.getByLabelText("Send message"));
       expect(mockSendMessage).toHaveBeenCalledWith("Test message");
     });
 
     it("does not send empty messages", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
-      const input = screen.getByPlaceholderText("Ask anything...");
+      fireEvent.click(screen.getByLabelText("Open chat"));
+      const input = screen.getByPlaceholderText("Ask me anything...");
       fireEvent.change(input, { target: { value: "   " } });
-      fireEvent.click(screen.getByLabelText("Send"));
+      fireEvent.click(screen.getByLabelText("Send message"));
       expect(mockSendMessage).not.toHaveBeenCalled();
     });
   });
@@ -126,7 +104,7 @@ describe("ChatBot", () => {
         streamingContent: "Typing...",
       });
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
+      fireEvent.click(screen.getByLabelText("Open chat"));
       expect(screen.getByText("Typing...")).toBeInTheDocument();
     });
   });
@@ -138,7 +116,7 @@ describe("ChatBot", () => {
         error: "Something went wrong",
       });
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
+      fireEvent.click(screen.getByLabelText("Open chat"));
       expect(screen.getByText("Something went wrong")).toBeInTheDocument();
     });
   });
@@ -146,14 +124,14 @@ describe("ChatBot", () => {
   describe("close", () => {
     it("closes panel on close button click", () => {
       render(<ChatBot />);
-      fireEvent.click(screen.getByLabelText("Open"));
+      fireEvent.click(screen.getByLabelText("Open chat"));
       expect(screen.getByText("AI Assistant")).toBeInTheDocument();
 
-      const closeButtons = screen.getAllByLabelText("Close");
+      const closeButtons = screen.getAllByLabelText("Close chat");
       const headerCloseBtn = closeButtons.find((btn) => !btn.classList.contains("fixed"));
       fireEvent.click(headerCloseBtn!);
 
-      expect(screen.getByLabelText("Open")).toBeVisible();
+      expect(screen.getByLabelText("Open chat")).toBeVisible();
     });
   });
 });

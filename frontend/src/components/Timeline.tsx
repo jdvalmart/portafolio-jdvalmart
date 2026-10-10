@@ -1,6 +1,8 @@
-import { timeline, type TimelineEntry } from "../data/timeline";
-import { useScrollReveal } from "../hooks/useScrollReveal";
-import { useT } from "../i18n/useLanguage";
+"use client";
+
+import { t } from "@/content/site";
+import { timeline, type TimelineEntry } from "@/data/timeline";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 function TimelineItem({ entry, isLast }: { entry: TimelineEntry; isLast: boolean }) {
   const { ref, isVisible } = useScrollReveal();
@@ -63,8 +65,6 @@ function TimelineItem({ entry, isLast }: { entry: TimelineEntry; isLast: boolean
 }
 
 export function Timeline() {
-  const { t } = useT();
-
   return (
     <section className="py-16 px-4 max-w-3xl mx-auto">
       <h2

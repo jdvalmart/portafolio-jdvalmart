@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { useScrollReveal } from "../hooks/useScrollReveal";
+
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export interface Stat {
   label: string;
